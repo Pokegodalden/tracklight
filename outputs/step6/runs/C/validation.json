@@ -1,0 +1,5729 @@
+{
+  "version": "ps1-validation-0.2.0",
+  "scenario": "C",
+  "report": {
+    "status": "UNVERIFIED",
+    "full_feasibility_established": false,
+    "official_validation": "NOT_RUN",
+    "rule_checks": {
+      "R01": "PASS_UNDER_PROFILE",
+      "R02": "PASS_UNDER_PROFILE",
+      "R03": "PASS_UNDER_PROFILE",
+      "R04": "PASS_UNDER_PROFILE",
+      "R05": "PASS_UNDER_PROFILE",
+      "R06": "PASS_UNDER_PROFILE",
+      "R07": "PASS_UNDER_PROFILE",
+      "R08": "PASS_UNDER_PROFILE",
+      "R09": "PASS_UNDER_PROFILE",
+      "R10": "CONDITIONAL_ASSIGNMENT",
+      "R12": "UNVERIFIED",
+      "R13": "UNVERIFIED",
+      "R15": "UNVERIFIED",
+      "R16": "UNVERIFIED",
+      "R17": "UNVERIFIED",
+      "R18": "PASS_UNDER_PROFILE",
+      "R19": "PASS_UNDER_PROFILE",
+      "R21": "PASS_UNDER_PROFILE",
+      "R22": "NOT_APPLICABLE",
+      "R23": "NOT_APPLICABLE",
+      "R24": "PASS_UNDER_PROFILE",
+      "R25": "PASS_UNDER_PROFILE",
+      "R26": "PASS_UNDER_PROFILE",
+      "R27": "PASS_UNDER_PROFILE",
+      "R28": "PASS_UNDER_PROFILE",
+      "R30": "PASS_UNDER_PROFILE",
+      "R31": "PASS_UNDER_PROFILE",
+      "R32": "UNVERIFIED",
+      "R33": "PASS_UNDER_PROFILE"
+    },
+    "findings": [
+      {
+        "rule_id": "R32",
+        "code": "scenario_c_input_unconfirmed",
+        "severity": "unverified",
+        "activities": [],
+        "location_id": null,
+        "week": null,
+        "observed": null,
+        "expected": null,
+        "source": null,
+        "message": "No organiser confirmation of the Scenario C input manifest is available."
+      },
+      {
+        "rule_id": "R12",
+        "code": "protection_unverified",
+        "severity": "unverified",
+        "activities": [],
+        "location_id": null,
+        "week": null,
+        "observed": null,
+        "expected": null,
+        "source": null,
+        "message": "Complete protection validation is unavailable: buffer geometry, mirror extent, interchange propagation or temporal/exemption semantics are unresolved."
+      },
+      {
+        "rule_id": "R13",
+        "code": "protection_unverified",
+        "severity": "unverified",
+        "activities": [],
+        "location_id": null,
+        "week": null,
+        "observed": null,
+        "expected": null,
+        "source": null,
+        "message": "Complete protection validation is unavailable: buffer geometry, mirror extent, interchange propagation or temporal/exemption semantics are unresolved."
+      },
+      {
+        "rule_id": "R15",
+        "code": "protection_unverified",
+        "severity": "unverified",
+        "activities": [],
+        "location_id": null,
+        "week": null,
+        "observed": null,
+        "expected": null,
+        "source": null,
+        "message": "Complete protection validation is unavailable: buffer geometry, mirror extent, interchange propagation or temporal/exemption semantics are unresolved."
+      },
+      {
+        "rule_id": "R16",
+        "code": "protection_unverified",
+        "severity": "unverified",
+        "activities": [],
+        "location_id": null,
+        "week": null,
+        "observed": null,
+        "expected": null,
+        "source": null,
+        "message": "Complete protection validation is unavailable: buffer geometry, mirror extent, interchange propagation or temporal/exemption semantics are unresolved."
+      },
+      {
+        "rule_id": "R17",
+        "code": "protection_unverified",
+        "severity": "unverified",
+        "activities": [],
+        "location_id": null,
+        "week": null,
+        "observed": null,
+        "expected": null,
+        "source": null,
+        "message": "Complete protection validation is unavailable: buffer geometry, mirror extent, interchange propagation or temporal/exemption semantics are unresolved."
+      }
+    ],
+    "metrics": {
+      "scope": "Provisional arithmetic, not a feasibility or official-score verdict.",
+      "workload_unit_scale": 2,
+      "workload": [
+        {
+          "activity_id": "A001",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-06-13"
+        },
+        {
+          "activity_id": "A002",
+          "required_scaled": 2,
+          "delivered_scaled": 2,
+          "complete": true,
+          "completion_date": "2027-03-21"
+        },
+        {
+          "activity_id": "A003",
+          "required_scaled": 10,
+          "delivered_scaled": 10,
+          "complete": true,
+          "completion_date": "2027-05-16"
+        },
+        {
+          "activity_id": "A004",
+          "required_scaled": 6,
+          "delivered_scaled": 6,
+          "complete": true,
+          "completion_date": "2027-06-13"
+        },
+        {
+          "activity_id": "A006",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-01-24"
+        },
+        {
+          "activity_id": "A007",
+          "required_scaled": 14,
+          "delivered_scaled": 14,
+          "complete": true,
+          "completion_date": "2027-06-13"
+        },
+        {
+          "activity_id": "A008",
+          "required_scaled": 10,
+          "delivered_scaled": 10,
+          "complete": true,
+          "completion_date": "2027-05-23"
+        },
+        {
+          "activity_id": "A009",
+          "required_scaled": 14,
+          "delivered_scaled": 14,
+          "complete": true,
+          "completion_date": "2027-03-07"
+        },
+        {
+          "activity_id": "A011",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-06-06"
+        },
+        {
+          "activity_id": "A012",
+          "required_scaled": 14,
+          "delivered_scaled": 14,
+          "complete": true,
+          "completion_date": "2027-05-30"
+        },
+        {
+          "activity_id": "A013",
+          "required_scaled": 10,
+          "delivered_scaled": 10,
+          "complete": true,
+          "completion_date": "2027-07-04"
+        },
+        {
+          "activity_id": "A014",
+          "required_scaled": 14,
+          "delivered_scaled": 14,
+          "complete": true,
+          "completion_date": "2027-05-16"
+        },
+        {
+          "activity_id": "A017",
+          "required_scaled": 14,
+          "delivered_scaled": 14,
+          "complete": true,
+          "completion_date": "2027-06-27"
+        },
+        {
+          "activity_id": "A019",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-05-16"
+        },
+        {
+          "activity_id": "A020",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-05-30"
+        },
+        {
+          "activity_id": "A021",
+          "required_scaled": 6,
+          "delivered_scaled": 6,
+          "complete": true,
+          "completion_date": "2027-03-21"
+        },
+        {
+          "activity_id": "A023",
+          "required_scaled": 14,
+          "delivered_scaled": 14,
+          "complete": true,
+          "completion_date": "2027-07-25"
+        },
+        {
+          "activity_id": "A025",
+          "required_scaled": 14,
+          "delivered_scaled": 14,
+          "complete": true,
+          "completion_date": "2027-05-30"
+        },
+        {
+          "activity_id": "A028",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-03-14"
+        },
+        {
+          "activity_id": "A031",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-01-17"
+        },
+        {
+          "activity_id": "A035",
+          "required_scaled": 6,
+          "delivered_scaled": 6,
+          "complete": true,
+          "completion_date": "2027-03-21"
+        },
+        {
+          "activity_id": "A036",
+          "required_scaled": 14,
+          "delivered_scaled": 14,
+          "complete": true,
+          "completion_date": "2027-07-18"
+        },
+        {
+          "activity_id": "A037",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-04-18"
+        },
+        {
+          "activity_id": "A038",
+          "required_scaled": 6,
+          "delivered_scaled": 6,
+          "complete": true,
+          "completion_date": "2027-05-16"
+        },
+        {
+          "activity_id": "A039",
+          "required_scaled": 14,
+          "delivered_scaled": 14,
+          "complete": true,
+          "completion_date": "2027-04-11"
+        },
+        {
+          "activity_id": "A040",
+          "required_scaled": 14,
+          "delivered_scaled": 14,
+          "complete": true,
+          "completion_date": "2027-05-23"
+        },
+        {
+          "activity_id": "A041",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-03-28"
+        },
+        {
+          "activity_id": "A042",
+          "required_scaled": 6,
+          "delivered_scaled": 6,
+          "complete": true,
+          "completion_date": "2027-06-27"
+        },
+        {
+          "activity_id": "A043",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-07-04"
+        },
+        {
+          "activity_id": "A046",
+          "required_scaled": 10,
+          "delivered_scaled": 10,
+          "complete": true,
+          "completion_date": "2027-07-11"
+        },
+        {
+          "activity_id": "A047",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-04-11"
+        },
+        {
+          "activity_id": "A048",
+          "required_scaled": 6,
+          "delivered_scaled": 6,
+          "complete": true,
+          "completion_date": "2027-01-24"
+        },
+        {
+          "activity_id": "A049",
+          "required_scaled": 10,
+          "delivered_scaled": 10,
+          "complete": true,
+          "completion_date": "2027-07-18"
+        },
+        {
+          "activity_id": "A050",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-06-27"
+        },
+        {
+          "activity_id": "A051",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-07-18"
+        },
+        {
+          "activity_id": "A054",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-05-09"
+        },
+        {
+          "activity_id": "A055",
+          "required_scaled": 2,
+          "delivered_scaled": 2,
+          "complete": true,
+          "completion_date": "2027-06-27"
+        },
+        {
+          "activity_id": "A056",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-06-06"
+        },
+        {
+          "activity_id": "A057",
+          "required_scaled": 14,
+          "delivered_scaled": 14,
+          "complete": true,
+          "completion_date": "2027-06-20"
+        },
+        {
+          "activity_id": "A058",
+          "required_scaled": 14,
+          "delivered_scaled": 14,
+          "complete": true,
+          "completion_date": "2027-03-07"
+        },
+        {
+          "activity_id": "A059",
+          "required_scaled": 14,
+          "delivered_scaled": 14,
+          "complete": true,
+          "completion_date": "2027-05-23"
+        },
+        {
+          "activity_id": "A060",
+          "required_scaled": 6,
+          "delivered_scaled": 6,
+          "complete": true,
+          "completion_date": "2027-04-18"
+        },
+        {
+          "activity_id": "A061",
+          "required_scaled": 14,
+          "delivered_scaled": 14,
+          "complete": true,
+          "completion_date": "2027-05-09"
+        },
+        {
+          "activity_id": "A063",
+          "required_scaled": 2,
+          "delivered_scaled": 2,
+          "complete": true,
+          "completion_date": "2027-03-21"
+        },
+        {
+          "activity_id": "A064",
+          "required_scaled": 2,
+          "delivered_scaled": 2,
+          "complete": true,
+          "completion_date": "2027-04-25"
+        },
+        {
+          "activity_id": "A065",
+          "required_scaled": 2,
+          "delivered_scaled": 2,
+          "complete": true,
+          "completion_date": "2027-05-16"
+        },
+        {
+          "activity_id": "A066",
+          "required_scaled": 2,
+          "delivered_scaled": 2,
+          "complete": true,
+          "completion_date": "2027-07-11"
+        },
+        {
+          "activity_id": "A069",
+          "required_scaled": 4,
+          "delivered_scaled": 4,
+          "complete": true,
+          "completion_date": "2027-07-04"
+        },
+        {
+          "activity_id": "A070",
+          "required_scaled": 10,
+          "delivered_scaled": 10,
+          "complete": true,
+          "completion_date": "2027-04-18"
+        },
+        {
+          "activity_id": "A071",
+          "required_scaled": 2,
+          "delivered_scaled": 2,
+          "complete": true,
+          "completion_date": "2027-06-13"
+        },
+        {
+          "activity_id": "A072",
+          "required_scaled": 2,
+          "delivered_scaled": 2,
+          "complete": true,
+          "completion_date": "2027-06-13"
+        },
+        {
+          "activity_id": "A073",
+          "required_scaled": 2,
+          "delivered_scaled": 2,
+          "complete": true,
+          "completion_date": "2027-06-20"
+        },
+        {
+          "activity_id": "A074",
+          "required_scaled": 2,
+          "delivered_scaled": 2,
+          "complete": true,
+          "completion_date": "2027-05-16"
+        },
+        {
+          "activity_id": "A075",
+          "required_scaled": 2,
+          "delivered_scaled": 2,
+          "complete": true,
+          "completion_date": "2027-06-20"
+        }
+      ],
+      "contracts": [
+        {
+          "contract_number": "C001",
+          "completion_date": "2027-06-13",
+          "overrun_days": 0
+        },
+        {
+          "contract_number": "C002",
+          "completion_date": "2027-07-04",
+          "overrun_days": 0
+        },
+        {
+          "contract_number": "C003",
+          "completion_date": "2027-06-27",
+          "overrun_days": 0
+        },
+        {
+          "contract_number": "C004",
+          "completion_date": "2027-07-25",
+          "overrun_days": 0
+        },
+        {
+          "contract_number": "C005",
+          "completion_date": "2027-03-14",
+          "overrun_days": 0
+        },
+        {
+          "contract_number": "C006",
+          "completion_date": "2027-07-18",
+          "overrun_days": 14
+        },
+        {
+          "contract_number": "C007",
+          "completion_date": "2027-07-11",
+          "overrun_days": 0
+        },
+        {
+          "contract_number": "C008",
+          "completion_date": "2027-07-18",
+          "overrun_days": 0
+        },
+        {
+          "contract_number": "C009",
+          "completion_date": "2027-06-27",
+          "overrun_days": 0
+        },
+        {
+          "contract_number": "C010",
+          "completion_date": "2027-05-23",
+          "overrun_days": 7
+        },
+        {
+          "contract_number": "C011",
+          "completion_date": "2027-07-11",
+          "overrun_days": 0
+        },
+        {
+          "contract_number": "C012",
+          "completion_date": "2027-06-20",
+          "overrun_days": 0
+        },
+        {
+          "contract_number": "C013",
+          "completion_date": "2027-05-16",
+          "overrun_days": 0
+        },
+        {
+          "contract_number": "C014",
+          "completion_date": "2027-06-20",
+          "overrun_days": 0
+        }
+      ],
+      "all_work_complete": true,
+      "activity_delay_days": 21,
+      "contract_delay_days": 21,
+      "contract_weighted_delay": 21,
+      "activity_weighted_delay_tenths": 252,
+      "excess_location_week_units": 0,
+      "eclo_activity_accesses": 0,
+      "score_tenths": 252,
+      "score_decimal": "25.2",
+      "score_eligible": false,
+      "capacity": [
+        {
+          "location_id": "PLAT:ALP:H01:EB",
+          "week": 9,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:EB",
+          "week": 10,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 3,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 5,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 6,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 7,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 8,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 9,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 11,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 12,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 13,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 15,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 22,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 25,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 26,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H01:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:WB",
+          "week": 3,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:WB",
+          "week": 5,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:WB",
+          "week": 6,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:WB",
+          "week": 7,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:WB",
+          "week": 8,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:WB",
+          "week": 9,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:WB",
+          "week": 22,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:H02:WB",
+          "week": 26,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S01:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S01:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S01:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S01:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S01:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S01:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S01:EB",
+          "week": 21,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S02:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S02:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S02:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S02:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S02:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S02:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S02:EB",
+          "week": 21,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S02:WB",
+          "week": 1,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S02:WB",
+          "week": 5,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S02:WB",
+          "week": 11,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S02:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:EB",
+          "week": 9,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:EB",
+          "week": 10,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:EB",
+          "week": 20,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:EB",
+          "week": 21,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 1,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 3,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 5,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 6,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 7,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 8,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 9,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 11,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 12,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 22,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 25,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 26,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 27,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 28,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S03:WB",
+          "week": 29,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:EB",
+          "week": 9,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:EB",
+          "week": 10,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 1,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 3,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 5,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 6,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 7,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 8,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 9,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 11,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 12,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 21,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 22,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 25,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 26,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 27,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 28,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S04:WB",
+          "week": 29,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:EB",
+          "week": 2,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:EB",
+          "week": 3,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:EB",
+          "week": 4,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:EB",
+          "week": 5,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:EB",
+          "week": 6,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:EB",
+          "week": 7,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:EB",
+          "week": 9,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:WB",
+          "week": 22,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:WB",
+          "week": 23,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:WB",
+          "week": 24,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:WB",
+          "week": 25,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:WB",
+          "week": 26,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S05:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:EB",
+          "week": 2,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:EB",
+          "week": 3,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:EB",
+          "week": 4,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:EB",
+          "week": 5,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:EB",
+          "week": 6,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:EB",
+          "week": 7,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:EB",
+          "week": 9,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 1,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 16,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 19,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 20,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 22,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 23,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 24,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 25,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 26,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S06:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:WB",
+          "week": 1,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:WB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:WB",
+          "week": 16,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:WB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:WB",
+          "week": 19,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:WB",
+          "week": 20,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S07:WB",
+          "week": 22,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:WB",
+          "week": 1,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:WB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:WB",
+          "week": 16,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:WB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:WB",
+          "week": 19,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:ALP:S08:WB",
+          "week": 20,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 5,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 11,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 12,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 21,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 24,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 26,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 27,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:EB",
+          "week": 28,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:WB",
+          "week": 16,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:WB",
+          "week": 18,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:WB",
+          "week": 19,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:WB",
+          "week": 20,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H01:WB",
+          "week": 24,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 5,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 11,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 12,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 21,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 24,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:EB",
+          "week": 26,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:WB",
+          "week": 16,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:WB",
+          "week": 18,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:WB",
+          "week": 19,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:WB",
+          "week": 20,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:WB",
+          "week": 23,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:WB",
+          "week": 24,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:WB",
+          "week": 25,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:WB",
+          "week": 26,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:H02:WB",
+          "week": 28,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S11:WB",
+          "week": 8,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S11:WB",
+          "week": 9,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S11:WB",
+          "week": 10,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S11:WB",
+          "week": 11,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S11:WB",
+          "week": 12,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S11:WB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S11:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S12:WB",
+          "week": 8,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S12:WB",
+          "week": 9,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S12:WB",
+          "week": 10,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S12:WB",
+          "week": 11,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S12:WB",
+          "week": 12,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S12:WB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S12:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S12:WB",
+          "week": 19,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S13:EB",
+          "week": 1,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S13:EB",
+          "week": 2,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S13:EB",
+          "week": 3,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S13:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S13:WB",
+          "week": 8,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S13:WB",
+          "week": 9,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S13:WB",
+          "week": 10,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S13:WB",
+          "week": 11,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S13:WB",
+          "week": 12,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S13:WB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S13:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S13:WB",
+          "week": 19,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:EB",
+          "week": 1,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:EB",
+          "week": 2,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:EB",
+          "week": 3,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:EB",
+          "week": 11,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:EB",
+          "week": 24,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:EB",
+          "week": 26,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:EB",
+          "week": 27,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:EB",
+          "week": 28,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:WB",
+          "week": 8,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:WB",
+          "week": 9,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:WB",
+          "week": 10,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:WB",
+          "week": 11,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:WB",
+          "week": 12,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:WB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S14:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 5,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 11,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 12,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 17,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 21,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 23,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 24,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:EB",
+          "week": 26,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:WB",
+          "week": 16,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:WB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:WB",
+          "week": 19,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:WB",
+          "week": 20,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:WB",
+          "week": 23,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:WB",
+          "week": 25,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:WB",
+          "week": 26,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S15:WB",
+          "week": 28,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 11,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 12,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 17,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 19,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 21,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 23,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 24,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:EB",
+          "week": 26,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:WB",
+          "week": 16,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:WB",
+          "week": 23,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:WB",
+          "week": 25,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:WB",
+          "week": 26,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S16:WB",
+          "week": 28,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:EB",
+          "week": 11,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:EB",
+          "week": 16,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:EB",
+          "week": 17,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:EB",
+          "week": 18,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:EB",
+          "week": 19,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:EB",
+          "week": 21,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:EB",
+          "week": 23,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:EB",
+          "week": 24,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:EB",
+          "week": 26,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S17:WB",
+          "week": 28,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S18:EB",
+          "week": 16,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S18:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S18:EB",
+          "week": 18,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S18:EB",
+          "week": 19,
+          "groups": 2,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S18:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S18:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S18:EB",
+          "week": 24,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S18:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S18:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "PLAT:BET:S18:WB",
+          "week": 28,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H01_H02:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H01_H02:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H01_H02:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H01_H02:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H01_H02:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H01_H02:WB",
+          "week": 3,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H01_H02:WB",
+          "week": 5,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H01_H02:WB",
+          "week": 6,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H01_H02:WB",
+          "week": 7,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H01_H02:WB",
+          "week": 8,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H01_H02:WB",
+          "week": 9,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H01_H02:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H01_H02:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H01_H02:WB",
+          "week": 26,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H02_S05:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H02_S05:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H02_S05:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H02_S05:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H02_S05:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H02_S05:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:H02_S05:WB",
+          "week": 22,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S01_S02:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S01_S02:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S01_S02:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S01_S02:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S01_S02:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S01_S02:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S01_S02:EB",
+          "week": 21,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S02_S03:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S02_S03:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S02_S03:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S02_S03:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S02_S03:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S02_S03:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S02_S03:EB",
+          "week": 21,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S02_S03:WB",
+          "week": 1,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S02_S03:WB",
+          "week": 5,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S02_S03:WB",
+          "week": 11,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S02_S03:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:EB",
+          "week": 9,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:EB",
+          "week": 10,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 1,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 3,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 5,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 6,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 7,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 8,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 9,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 11,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 12,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 13,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 15,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 22,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 25,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 26,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 27,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 28,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S03_S04:WB",
+          "week": 29,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:EB",
+          "week": 9,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:EB",
+          "week": 10,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 3,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 5,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 6,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 7,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 8,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 9,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 11,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 12,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 22,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 25,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 26,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S04_H01:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:EB",
+          "week": 2,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:EB",
+          "week": 3,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:EB",
+          "week": 4,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:EB",
+          "week": 5,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:EB",
+          "week": 6,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:EB",
+          "week": 7,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:EB",
+          "week": 9,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:WB",
+          "week": 22,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:WB",
+          "week": 23,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:WB",
+          "week": 24,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:WB",
+          "week": 25,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:WB",
+          "week": 26,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S05_S06:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S06_S07:WB",
+          "week": 1,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S06_S07:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S06_S07:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S06_S07:WB",
+          "week": 15,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S06_S07:WB",
+          "week": 16,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S06_S07:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S06_S07:WB",
+          "week": 18,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S06_S07:WB",
+          "week": 19,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S06_S07:WB",
+          "week": 20,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S06_S07:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S06_S07:WB",
+          "week": 22,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:WB",
+          "week": 1,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:WB",
+          "week": 15,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:WB",
+          "week": 16,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:WB",
+          "week": 18,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:WB",
+          "week": 19,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:ALP:S07_S08:WB",
+          "week": 20,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 5,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 11,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 12,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 21,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 24,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:WB",
+          "week": 16,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:WB",
+          "week": 18,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:WB",
+          "week": 19,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:WB",
+          "week": 20,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H01_H02:WB",
+          "week": 24,
+          "groups": 1,
+          "supply": 1,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 5,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 11,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 12,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 24,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:EB",
+          "week": 26,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:WB",
+          "week": 2,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:WB",
+          "week": 16,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:WB",
+          "week": 17,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:WB",
+          "week": 18,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:WB",
+          "week": 19,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:WB",
+          "week": 20,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:WB",
+          "week": 21,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:WB",
+          "week": 23,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:WB",
+          "week": 25,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:WB",
+          "week": 26,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:H02_S15:WB",
+          "week": 28,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S11_S12:WB",
+          "week": 8,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S11_S12:WB",
+          "week": 9,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S11_S12:WB",
+          "week": 10,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S11_S12:WB",
+          "week": 11,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S11_S12:WB",
+          "week": 12,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S11_S12:WB",
+          "week": 13,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S11_S12:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S12_S13:WB",
+          "week": 8,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S12_S13:WB",
+          "week": 9,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S12_S13:WB",
+          "week": 10,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S12_S13:WB",
+          "week": 11,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S12_S13:WB",
+          "week": 12,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S12_S13:WB",
+          "week": 13,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S12_S13:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S12_S13:WB",
+          "week": 19,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S13_S14:EB",
+          "week": 1,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S13_S14:EB",
+          "week": 2,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S13_S14:EB",
+          "week": 3,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S13_S14:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S13_S14:WB",
+          "week": 8,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S13_S14:WB",
+          "week": 9,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S13_S14:WB",
+          "week": 10,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S13_S14:WB",
+          "week": 11,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S13_S14:WB",
+          "week": 12,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S13_S14:WB",
+          "week": 13,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S13_S14:WB",
+          "week": 14,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S14_H01:EB",
+          "week": 11,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S14_H01:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S14_H01:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S14_H01:EB",
+          "week": 24,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S14_H01:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S14_H01:EB",
+          "week": 26,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S14_H01:EB",
+          "week": 27,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S14_H01:EB",
+          "week": 28,
+          "groups": 1,
+          "supply": 2,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 11,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 12,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 13,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 14,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 16,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 17,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 18,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 21,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 23,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 24,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:EB",
+          "week": 26,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:WB",
+          "week": 16,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:WB",
+          "week": 23,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:WB",
+          "week": 25,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:WB",
+          "week": 26,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S15_S16:WB",
+          "week": 28,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S16_S17:EB",
+          "week": 11,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S16_S17:EB",
+          "week": 15,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S16_S17:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S16_S17:EB",
+          "week": 19,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S16_S17:EB",
+          "week": 21,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S16_S17:EB",
+          "week": 22,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S16_S17:EB",
+          "week": 23,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S16_S17:EB",
+          "week": 24,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S16_S17:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S16_S17:EB",
+          "week": 26,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S17_S18:EB",
+          "week": 16,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S17_S18:EB",
+          "week": 17,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S17_S18:EB",
+          "week": 18,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S17_S18:EB",
+          "week": 19,
+          "groups": 2,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S17_S18:EB",
+          "week": 20,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S17_S18:EB",
+          "week": 23,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S17_S18:EB",
+          "week": 24,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S17_S18:EB",
+          "week": 25,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S17_S18:WB",
+          "week": 27,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        },
+        {
+          "location_id": "SEC:BET:S17_S18:WB",
+          "week": 28,
+          "groups": 1,
+          "supply": 4,
+          "excess": 0
+        }
+      ],
+      "eclo_working_line_weeks": {}
+    },
+    "physical_night_diagnostic": {
+      "status": "ASSIGNED_FOR_MODELLED_RELATIONS",
+      "night_limit": 7,
+      "search_budget_per_week": 5000,
+      "assumptions": [
+        "One full physical night per activity access.",
+        "Local sharing and same contract/type index imply equal nights; different indices within that scope imply different nights.",
+        "Seven is a calendar upper bound, not supplied night availability. Lower limits are diagnostic what-if assumptions."
+      ],
+      "checked_protection": "Working-core separation and Live opposite-bound working-core closures only.",
+      "unverified_protection_rules": [
+        "R12",
+        "R15",
+        "R16",
+        "R17"
+      ],
+      "physical_feasibility_established": false,
+      "operational_authorisation": false,
+      "weeks": [
+        {
+          "week": 1,
+          "status": "ASSIGNED",
+          "activity_count": 3,
+          "equality_components": 3,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A031": 1,
+            "A035": 1,
+            "A048": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 2,
+          "status": "ASSIGNED",
+          "activity_count": 6,
+          "equality_components": 5,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A006": 1,
+            "A009": 2,
+            "A012": 1,
+            "A031": 1,
+            "A048": 1,
+            "A058": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 3,
+          "status": "ASSIGNED",
+          "activity_count": 4,
+          "equality_components": 3,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A006": 1,
+            "A009": 1,
+            "A048": 1,
+            "A058": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 4,
+          "status": "ASSIGNED",
+          "activity_count": 1,
+          "equality_components": 1,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A009": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 5,
+          "status": "ASSIGNED",
+          "activity_count": 4,
+          "equality_components": 4,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A009": 1,
+            "A035": 2,
+            "A058": 1,
+            "A061": 2
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 6,
+          "status": "ASSIGNED",
+          "activity_count": 2,
+          "equality_components": 2,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A009": 1,
+            "A058": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 7,
+          "status": "ASSIGNED",
+          "activity_count": 2,
+          "equality_components": 2,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A009": 1,
+            "A058": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 8,
+          "status": "ASSIGNED",
+          "activity_count": 3,
+          "equality_components": 2,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A021": 1,
+            "A039": 1,
+            "A058": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 9,
+          "status": "ASSIGNED",
+          "activity_count": 6,
+          "equality_components": 4,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A009": 1,
+            "A021": 1,
+            "A028": 1,
+            "A039": 1,
+            "A058": 1,
+            "A069": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 10,
+          "status": "ASSIGNED",
+          "activity_count": 2,
+          "equality_components": 2,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A028": 1,
+            "A039": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 11,
+          "status": "ASSIGNED",
+          "activity_count": 11,
+          "equality_components": 5,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A002": 2,
+            "A003": 2,
+            "A019": 2,
+            "A021": 2,
+            "A035": 1,
+            "A037": 2,
+            "A039": 3,
+            "A041": 1,
+            "A061": 2,
+            "A063": 2,
+            "A070": 2
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 12,
+          "status": "ASSIGNED",
+          "activity_count": 5,
+          "equality_components": 4,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A003": 2,
+            "A039": 1,
+            "A041": 1,
+            "A061": 2,
+            "A070": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 13,
+          "status": "ASSIGNED",
+          "activity_count": 8,
+          "equality_components": 5,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A003": 1,
+            "A014": 1,
+            "A039": 1,
+            "A040": 1,
+            "A047": 1,
+            "A060": 1,
+            "A061": 1,
+            "A070": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 14,
+          "status": "ASSIGNED",
+          "activity_count": 8,
+          "equality_components": 6,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A014": 1,
+            "A039": 1,
+            "A040": 2,
+            "A047": 1,
+            "A059": 1,
+            "A060": 2,
+            "A061": 2,
+            "A070": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 15,
+          "status": "ASSIGNED",
+          "activity_count": 9,
+          "equality_components": 4,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A007": 1,
+            "A014": 1,
+            "A025": 1,
+            "A037": 1,
+            "A043": 1,
+            "A057": 1,
+            "A059": 1,
+            "A060": 1,
+            "A070": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 16,
+          "status": "ASSIGNED",
+          "activity_count": 11,
+          "equality_components": 7,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A003": 1,
+            "A007": 1,
+            "A008": 2,
+            "A012": 1,
+            "A014": 1,
+            "A025": 1,
+            "A038": 1,
+            "A040": 1,
+            "A057": 1,
+            "A059": 2,
+            "A064": 2
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 17,
+          "status": "ASSIGNED",
+          "activity_count": 12,
+          "equality_components": 9,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A007": 1,
+            "A008": 3,
+            "A011": 2,
+            "A012": 1,
+            "A014": 3,
+            "A017": 1,
+            "A020": 2,
+            "A025": 1,
+            "A040": 1,
+            "A054": 1,
+            "A059": 2,
+            "A061": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 18,
+          "status": "ASSIGNED",
+          "activity_count": 11,
+          "equality_components": 8,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A008": 1,
+            "A012": 2,
+            "A014": 2,
+            "A017": 1,
+            "A025": 1,
+            "A038": 2,
+            "A040": 1,
+            "A054": 2,
+            "A057": 1,
+            "A059": 2,
+            "A061": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 19,
+          "status": "ASSIGNED",
+          "activity_count": 13,
+          "equality_components": 9,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A003": 3,
+            "A007": 3,
+            "A008": 1,
+            "A012": 2,
+            "A014": 2,
+            "A017": 3,
+            "A019": 1,
+            "A025": 1,
+            "A038": 2,
+            "A040": 3,
+            "A059": 1,
+            "A065": 1,
+            "A074": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 20,
+          "status": "ASSIGNED",
+          "activity_count": 9,
+          "equality_components": 6,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A004": 1,
+            "A007": 2,
+            "A008": 2,
+            "A012": 1,
+            "A017": 2,
+            "A025": 2,
+            "A040": 2,
+            "A057": 2,
+            "A059": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 21,
+          "status": "ASSIGNED",
+          "activity_count": 8,
+          "equality_components": 6,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A001": 2,
+            "A007": 1,
+            "A012": 1,
+            "A020": 2,
+            "A023": 1,
+            "A025": 2,
+            "A046": 2,
+            "A056": 2
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 22,
+          "status": "ASSIGNED",
+          "activity_count": 9,
+          "equality_components": 7,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A004": 1,
+            "A011": 2,
+            "A013": 1,
+            "A023": 2,
+            "A036": 1,
+            "A046": 2,
+            "A050": 1,
+            "A056": 1,
+            "A057": 2
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 23,
+          "status": "ASSIGNED",
+          "activity_count": 12,
+          "equality_components": 5,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A001": 1,
+            "A004": 1,
+            "A007": 2,
+            "A013": 2,
+            "A017": 2,
+            "A036": 2,
+            "A042": 2,
+            "A046": 1,
+            "A049": 1,
+            "A057": 2,
+            "A071": 2,
+            "A072": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 24,
+          "status": "ASSIGNED",
+          "activity_count": 7,
+          "equality_components": 4,
+          "known_live_mirror_relations": 8,
+          "search_nodes": 0,
+          "assignment": {
+            "A013": 1,
+            "A017": 1,
+            "A036": 1,
+            "A042": 2,
+            "A057": 1,
+            "A073": 1,
+            "A075": 2
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 25,
+          "status": "ASSIGNED",
+          "activity_count": 9,
+          "equality_components": 5,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A013": 2,
+            "A017": 1,
+            "A023": 2,
+            "A036": 1,
+            "A042": 1,
+            "A046": 2,
+            "A049": 2,
+            "A050": 1,
+            "A055": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 26,
+          "status": "ASSIGNED",
+          "activity_count": 6,
+          "equality_components": 6,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A013": 1,
+            "A023": 2,
+            "A036": 1,
+            "A043": 1,
+            "A049": 1,
+            "A069": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 27,
+          "status": "ASSIGNED",
+          "activity_count": 6,
+          "equality_components": 6,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A023": 2,
+            "A036": 1,
+            "A046": 1,
+            "A049": 2,
+            "A051": 1,
+            "A066": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 28,
+          "status": "ASSIGNED",
+          "activity_count": 4,
+          "equality_components": 4,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A023": 1,
+            "A036": 1,
+            "A049": 2,
+            "A051": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        },
+        {
+          "week": 29,
+          "status": "ASSIGNED",
+          "activity_count": 1,
+          "equality_components": 1,
+          "known_live_mirror_relations": 0,
+          "search_nodes": 0,
+          "assignment": {
+            "A023": 1
+          },
+          "conflicts": [],
+          "assignment_verification_errors": [],
+          "conflict_minimality_proven": false
+        }
+      ],
+      "coverage": {
+        "scope": "Submitted accesses only; no missing work is assigned.",
+        "required_activities": 54,
+        "scheduled_activities": 54,
+        "unscheduled_activity_ids": [],
+        "incomplete_activity_ids": [],
+        "all_work_complete": true
+      }
+    }
+  },
+  "input_report": {
+    "status": "IMPORTED_WITH_UNVERIFIED_RULES",
+    "input_valid": true,
+    "schedule_feasibility": "NOT_EVALUATED",
+    "protection_validation": "UNVERIFIED",
+    "official_validation": "NOT_RUN",
+    "counts": {
+      "lines": 2,
+      "station_line_memberships": 20,
+      "distinct_stations": 18,
+      "sectors": 18,
+      "bookable_locations": 76,
+      "contracts": 14,
+      "project_type_rows": 14,
+      "activities": 54,
+      "workload_units_scaled": 384,
+      "dependency_edges": 6,
+      "network_incidence_links": 72
+    },
+    "issues": [],
+    "unconfigured_rules": [
+      "R12",
+      "R15",
+      "R17"
+    ]
+  },
+  "provenance": {
+    "input": {
+      "input_directory": "C:\\Users\\pokeg\\AppData\\Local\\Temp\\ps1-web-qhr5bqcj\\040d3c7d7fd04e54a951e721b62891e0\\inputs",
+      "input_data_sha256": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+      "files": {
+        "01_LINES.csv": {
+          "sha256": "b6e60b0e7726e4266efd059bf5061b3b3a2c9825ae7dd85a6431f41b81b383e7",
+          "size_bytes": 49
+        },
+        "02_STATIONS.csv": {
+          "sha256": "4a27d6508defd03e8c833133b523390ac8850a1c1717f309033e40f364720e24",
+          "size_bytes": 282
+        },
+        "03_SECTORS.csv": {
+          "sha256": "643fdb2bd317126b42572fafcce8f8108008e8e9c7b71c08dfd31cec11c3ee34",
+          "size_bytes": 649
+        },
+        "04_LOCATION_SUPPLY.csv": {
+          "sha256": "9d8a92d6ffd340f40dae28302ed6f88958f8661e2b046bb6b4e0b79c385be1e6",
+          "size_bytes": 3210
+        },
+        "05_BUFFER_LOCATION.csv": {
+          "sha256": "4b9fe7fd6a1f9128bd6e83405496dc64a8028f997bb1fcd28355582a6d554de0",
+          "size_bytes": 114
+        },
+        "06_PARAMETERS.csv": {
+          "sha256": "9400b7b082069c56b8cae85d56994cf06fe08ae54fcd116ff6edc890034cc8e6",
+          "size_bytes": 52
+        },
+        "07_PROJECT_DETAILS.csv": {
+          "sha256": "393f0dcc7e7b9a54f0eff12eb0dd0122dbd74f4b4b8b73b7676f9f232fb8a4c7",
+          "size_bytes": 1583
+        },
+        "08_ACTIVITY_DETAILS.csv": {
+          "sha256": "6a1ef90cd3bed93a8970ef49454e9c02e0c1df93ce8e0f0f4b071563cfb43e30",
+          "size_bytes": 4174
+        }
+      },
+      "profile_id": "ps1-provisional-0.2.0",
+      "profile_sha256": "a4f79f7e20bc4e6dbc6c07de64e1a090d443b00a5ddf81b6c04a926f143eda8e",
+      "source_updates": [
+        {
+          "file": "data/source_updates/966c976005db2e3e40a691cff268fdb8f396a5df/PS1_README.md",
+          "sha256": "e7d8f9457e62a1732fc7986cea57ad5fbd595e7cabe2e8b789e673c8335bd253",
+          "commit": "966c976005db2e3e40a691cff268fdb8f396a5df",
+          "url": "https://github.com/aochinwen/NebulaX-Hackathon-ProblemStatement/blob/966c976005db2e3e40a691cff268fdb8f396a5df/PS1/PS1_README.md"
+        }
+      ],
+      "profile_source_input_sha256": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+      "matches_profile_source_input": true,
+      "implementation_sha256": {
+        "__init__.py": "513fe13f53f0e5774b85ff928cb37c827ed18aa9f0c904dcf1f4649c863c605c",
+        "baseline_scheduler.py": "a6e446189b3d5fa33f19f684f7949a5bb059a4fd79734abdec92f701609f35f8",
+        "importer.py": "282033fc04d11b84e14c765dc3e3a19d37d2df247a62dce98ac3f391cbb0e364",
+        "network.py": "f975fce802510fe75c48525b5a7c817f8eef93ff0e928c36b6122fd4332ce309",
+        "night_diagnostic.py": "41e811075bb1728082766efbb1e306e978316dbde6bf82bfb369adae3a3c17e2",
+        "optimizer.py": "1b3b087933d97b63d8d90b98e795eb7c8970a1e5e53e75e23f536e6b67fcb8f6",
+        "schema.py": "5ac4bed57015cbd2d367852c4666e69c4da3b07679c97a6ef905e0bdce53177e",
+        "validator.py": "3048ba067236435fb9a4f702e04bd905daadc8d6a71b90ffc2846983a61895a3",
+        "webapp.py": "9b9d585dabdd385ec46a9a6be996e074abe45a6074edefb4213db071afc3aa51",
+        "workspace.py": "1298f35ab3205f6a15073dfe2859adf59a160f965cac231739e1b664efbbdb8c"
+      }
+    },
+    "schedule_directory": "C:\\Users\\pokeg\\AppData\\Local\\Temp\\ps1-roundtrip-43w5_lqt",
+    "schedule_files_sha256": {
+      "SCHEDULE_ACCESS.csv": "3ec2bd2981ca7b10b0bd96e373dbab4cda9f64e2c8baf10e50b0c84dc2ac1626",
+      "SCHEDULE_OCCUPANCY.csv": "cfd52917a1e3e15158e65a8277e361709725318acb71b8805103f008c8c56e6a",
+      "RESULTS.csv": "b8d33b337597fa197f2c95b67da2ca5da7603cacd47f539edce3b6c082488484"
+    },
+    "schedule_sha256": "f199557c87457dd53e2118dc4fffe26869f969b2714180c1f986863a30203390",
+    "night_limit": 7,
+    "search_budget_per_week": 5000,
+    "validator_source_sha256": {
+      "validator.py": "3048ba067236435fb9a4f702e04bd905daadc8d6a71b90ffc2846983a61895a3",
+      "night_diagnostic.py": "41e811075bb1728082766efbb1e306e978316dbde6bf82bfb369adae3a3c17e2"
+    }
+  }
+}

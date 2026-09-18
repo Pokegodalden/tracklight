@@ -1,0 +1,362 @@
+{
+  "version": "0.1.0",
+  "snapshot_id": "ps1-0dfd901f97bf579f",
+  "pack_sha256": "0dfd901f97bf579f74d739a39946e6e25eb30af53f639991e3d39876834450af",
+  "input_data_sha256": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+  "profile_id": "ps1-provisional-0.1.0",
+  "officially_confirmed": false,
+  "readiness": {
+    "step3_import_model": "ready_under_disclosed_assumptions",
+    "complete_protection_validation": false,
+    "official_score_equivalence": false,
+    "physical_dispatch": false
+  },
+  "claim_policy": {
+    "unverified_check_is_pass": false,
+    "missing_rule_result": "UNVERIFIED",
+    "full_feasibility_requires_all_required_checks": true,
+    "official_validation_requires_actual_tool_result": true
+  },
+  "rules": {
+    "R01": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "required_coverage": "all_activities",
+        "unit_scale": 2,
+        "standard_yield": 2,
+        "eclo_yield": 3,
+        "comparison": ">="
+      }
+    },
+    "R02": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "release_constraint": "week >= planned_start_week",
+        "calendar_rule": "R19"
+      }
+    },
+    "R03": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "max_accesses_per_activity_week": 1
+      }
+    },
+    "R04": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "sec_span": "inclusive_tunnels_and_incident_platforms",
+        "unsupported_path": "input_error"
+      }
+    },
+    "R05": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "allowed": [
+          {
+            "PM": 1
+          },
+          {
+            "PC": 1,
+            "C_max": 3
+          },
+          {
+            "C_max": 4
+          }
+        ]
+      }
+    },
+    "R06": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "count": "distinct_group_per_location_week",
+        "excess": "sum(max(0,groups-supply))"
+      }
+    },
+    "R07": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "scope": [
+          "contract_number",
+          "activity_type",
+          "week"
+        ],
+        "index_domain": "1..supplied_cap"
+      }
+    },
+    "R08": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "count": "distinct_activities_per_contract_type_week_access_night"
+      }
+    },
+    "R09": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "scope": [
+          "location_id",
+          "week",
+          "co_share_group"
+        ],
+        "global_label_identity": false
+      }
+    },
+    "R10": {
+      "status": "provisional",
+      "mode": "diagnostic",
+      "policy": {
+        "benchmark": "local_weekly_accounting",
+        "physical_night_check": "separate_diagnostic",
+        "dispatch_ready": false
+      }
+    },
+    "R11": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "source_table": "05_BUFFER_LOCATION.csv",
+        "join": "nature_of_activity -> nature_of_works"
+      }
+    },
+    "R12": {
+      "status": "deferred",
+      "mode": "unverified",
+      "policy": {
+        "geometry": null,
+        "terminal_policy": null,
+        "missing_policy_result": "UNVERIFIED"
+      }
+    },
+    "R13": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "live_requires_opposite_bound": true,
+        "extent_dependency": "R12"
+      }
+    },
+    "R14": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "capacity": "separate_by_line_bound_location",
+        "live_coupling": "protection_only"
+      }
+    },
+    "R15": {
+      "status": "deferred",
+      "mode": "unverified",
+      "policy": {
+        "cross_line_live_effect_required": true,
+        "trigger": null,
+        "affected_locations": null,
+        "missing_policy_result": "UNVERIFIED"
+      }
+    },
+    "R16": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "exemption_scope": "same_local_group",
+        "transitive": false,
+        "global_type_only_exemption": false
+      }
+    },
+    "R17": {
+      "status": "deferred",
+      "mode": "unverified",
+      "policy": {
+        "comparison_time_model": null,
+        "unmapped_overlap": "UNVERIFIED",
+        "weekly_overlap_is_violation": false
+      }
+    },
+    "R18": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "relation": "successor_first_week > predecessor_last_week",
+        "unknown_or_cycle": "input_error"
+      }
+    },
+    "R19": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "week_days": 7,
+        "release_rounding": "floor_plus_one",
+        "completion": "last_day_of_last_week"
+      }
+    },
+    "R20": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "repeat_within_horizon": true,
+        "missing_location": "input_error"
+      }
+    },
+    "R21": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "min_week": 1,
+        "max_week": "horizon_weeks",
+        "extend": false
+      }
+    },
+    "R22": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "max_excess_per_location_week": 0,
+        "eclo_allowed": false,
+        "planned_date_hard": false
+      }
+    },
+    "R23": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "max_excess_per_location_week": null,
+        "eclo_allowed": true,
+        "planned_date_hard": true,
+        "eclo_window_weeks": null
+      }
+    },
+    "R24": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "max_excess_per_location_week": 1,
+        "eclo_allowed": true,
+        "planned_date_hard": false
+      }
+    },
+    "R25": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "max_span_weeks": 2,
+        "condition": "max_week-min_week <= 1",
+        "line_windows_independent": true,
+        "cross_line_live": "both_windows"
+      }
+    },
+    "R26": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "unit": "activity_access",
+        "penalty": 5
+      }
+    },
+    "R27": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "uniform_eclo_within_local_group": true
+      }
+    },
+    "R28": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "formula_id": "ps1-activity-delay-provisional-0.1.0",
+        "contract_weights": {
+          "1": 100,
+          "2": 10,
+          "3": 1
+        },
+        "activity_multiplier_tenths": {
+          "1": 13,
+          "2": 12,
+          "3": 10
+        },
+        "delay_aggregation": "per_activity",
+        "excess_weight": 7,
+        "eclo_weight": 5,
+        "official": false
+      }
+    },
+    "R29": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "priority_mode": "weighted_sum",
+        "lexicographic_priority": false,
+        "fixed_lever_order": false
+      }
+    },
+    "R30": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "export": "working_span_only",
+        "protection": "separate_derived_records"
+      }
+    },
+    "R31": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "completion": "max_activity_finish_per_contract",
+        "overrun_target": "planned_completion_date",
+        "negative_overrun": 0,
+        "ambiguous_contract_dates": "input_error"
+      }
+    },
+    "R32": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "development_inputs": "same_frozen_eight_files",
+        "C_input_applicability": "unconfirmed",
+        "invent_amended_supply": false
+      }
+    },
+    "R33": {
+      "status": "documented",
+      "mode": "enforce",
+      "policy": {
+        "scenarios": [
+          "A",
+          "B",
+          "C"
+        ],
+        "files_per_scenario": 3,
+        "hardcoded_sample_ids": false
+      }
+    },
+    "R34": {
+      "status": "provisional",
+      "mode": "enforce",
+      "policy": {
+        "safety_relaxation": false,
+        "drop_workload": false,
+        "outcomes": [
+          "feasible_under_profile",
+          "optimal_under_profile",
+          "infeasible_under_profile",
+          "no_solution_within_limit",
+          "unverified_rules"
+        ]
+      }
+    }
+  },
+  "unconfigured_rules": [
+    "R12",
+    "R15",
+    "R17"
+  ],
+  "rules_sha256": "32bd5fc4ab794a366ab63403662983be34ca8e12c5464e1124bb555a41f5be65",
+  "examples_sha256": "aec53e6e82872cb677a9286dd52bfa3ccb08cb99027dec082c59df4e2f31dfb6"
+}

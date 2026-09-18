@@ -1,0 +1,2892 @@
+{
+  "inventory": [
+    {
+      "file": "01_LINES.csv",
+      "rows": 2,
+      "columns": [
+        "line_code",
+        "line_name"
+      ],
+      "sha256": "b6e60b0e7726e4266efd059bf5061b3b3a2c9825ae7dd85a6431f41b81b383e7"
+    },
+    {
+      "file": "02_STATIONS.csv",
+      "rows": 20,
+      "columns": [
+        "station_id",
+        "line_code",
+        "seq",
+        "is_interchange"
+      ],
+      "sha256": "4a27d6508defd03e8c833133b523390ac8850a1c1717f309033e40f364720e24"
+    },
+    {
+      "file": "03_SECTORS.csv",
+      "rows": 18,
+      "columns": [
+        "sector_id",
+        "line_code",
+        "from_station_id",
+        "to_station_id",
+        "seq",
+        "is_shared"
+      ],
+      "sha256": "643fdb2bd317126b42572fafcce8f8108008e8e9c7b71c08dfd31cec11c3ee34"
+    },
+    {
+      "file": "04_LOCATION_SUPPLY.csv",
+      "rows": 76,
+      "columns": [
+        "location_id",
+        "location_kind",
+        "line_code",
+        "bound",
+        "supply_capacity"
+      ],
+      "sha256": "9d8a92d6ffd340f40dae28302ed6f88958f8661e2b046bb6b4e0b79c385be1e6"
+    },
+    {
+      "file": "05_BUFFER_LOCATION.csv",
+      "rows": 3,
+      "columns": [
+        "nature_of_works",
+        "up_to_buffer_sectors",
+        "opposite_bound_required"
+      ],
+      "sha256": "4b9fe7fd6a1f9128bd6e83405496dc64a8028f997bb1fcd28355582a6d554de0"
+    },
+    {
+      "file": "06_PARAMETERS.csv",
+      "rows": 2,
+      "columns": [
+        "key",
+        "value"
+      ],
+      "sha256": "9400b7b082069c56b8cae85d56994cf06fe08ae54fcd116ff6edc890034cc8e6"
+    },
+    {
+      "file": "07_PROJECT_DETAILS.csv",
+      "rows": 14,
+      "columns": [
+        "contract_number",
+        "contract_description",
+        "contract_award_date",
+        "activity_type",
+        "nature_of_activity",
+        "contract_priority",
+        "contract_completion_date",
+        "planned_completion_date",
+        "number_of_workfronts",
+        "access_type",
+        "number_of_maximum_access_per_week"
+      ],
+      "sha256": "393f0dcc7e7b9a54f0eff12eb0dd0122dbd74f4b4b8b73b7676f9f232fb8a4c7"
+    },
+    {
+      "file": "08_ACTIVITY_DETAILS.csv",
+      "rows": 54,
+      "columns": [
+        "activity_id",
+        "contract_number",
+        "activity_type",
+        "start_location_id",
+        "end_location_id",
+        "total_accesses",
+        "planned_start_date",
+        "predecessor_activity_id",
+        "activity_priority"
+      ],
+      "sha256": "6a1ef90cd3bed93a8970ef49454e9c02e0c1df93ce8e0f0f4b071563cfb43e30"
+    },
+    {
+      "file": "RESULTS.csv",
+      "rows": 14,
+      "columns": [
+        "scenario",
+        "contract_number",
+        "simulated_completion_date",
+        "overrun_days"
+      ],
+      "sha256": "b815b93c64cd429c1cd000da71e364f3bd5198356ad88b2abaf58d00ffa422cc"
+    },
+    {
+      "file": "SCHEDULE_ACCESS.csv",
+      "rows": 192,
+      "columns": [
+        "activity_id",
+        "access_seq",
+        "week",
+        "eclo",
+        "access_night"
+      ],
+      "sha256": "fef1f07f28819804c82c8051d282fc332bb1094f24d5ebeb799c23bcbf22c843"
+    },
+    {
+      "file": "SCHEDULE_OCCUPANCY.csv",
+      "rows": 928,
+      "columns": [
+        "activity_id",
+        "week",
+        "location_id",
+        "co_share_group"
+      ],
+      "sha256": "efd33d33573d722db3f87e8d2bbc9af6fe7b6deaab504e8d97f2d7ac58116cf3"
+    }
+  ],
+  "parameters": {
+    "horizon_start": "2027-01-04",
+    "horizon_weeks": "30"
+  },
+  "counts": {
+    "lines": 2,
+    "station_memberships": 20,
+    "physical_station_ids": 18,
+    "sectors": 18,
+    "locations": 76,
+    "contracts": 14,
+    "activities": 54,
+    "required_access_units": 192,
+    "access_rows": 192,
+    "occupancy_rows": 928,
+    "location_week_groups": 751,
+    "co_shared_groups": 129,
+    "occupied_location_weeks": 702
+  },
+  "distributions": {
+    "nature": {
+      "Non-live (Consist)": 31,
+      "Non-live (Others)": 21,
+      "Live": 2
+    },
+    "access_type": {
+      "C": 43,
+      "PC": 10,
+      "PM": 1
+    },
+    "supply": {
+      "4": 24,
+      "2": 40,
+      "1": 12
+    },
+    "mixes": {
+      "C+C+C": 19,
+      "C": 508,
+      "C+C": 54,
+      "C+C+PC": 13,
+      "C+C+C+PC": 5,
+      "C+PC": 35,
+      "C+C+C+C": 3,
+      "PC": 111,
+      "PM": 3
+    }
+  },
+  "checks": [
+    {
+      "name": "line keys",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "station composite keys",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "sector keys",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "supply keys",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "project keys",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "activity keys",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "access sequence keys",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "one access per activity week",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "occupancy keys",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "result keys",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "blank or malformed CSV cells",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "input foreign keys",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "sample foreign keys",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "activity and project type match",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "complete exact workload",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "planned release week",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "sequential access_seq",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "access field domains and horizon",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "scenario A ECLO forbidden",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "work-span occupancy expansion",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "occupancy has access row",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "weekly distinct access-night cap",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "workfront cap",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "legal group mix",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "nominal location-week capacity",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "strict next-week predecessor interpretation",
+      "scope": "inferred, not confirmed validator rule",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    },
+    {
+      "name": "RESULTS recomputed with Sunday week end",
+      "scope": "direct",
+      "status": "PASS",
+      "count": 0,
+      "evidence": []
+    }
+  ],
+  "workload_ledger": [
+    {
+      "activity": "A001",
+      "contract": "C001",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        22,
+        23
+      ],
+      "release_week": 21,
+      "span_locations": 5
+    },
+    {
+      "activity": "A002",
+      "contract": "C001",
+      "required": 1,
+      "delivered": 1.0,
+      "weeks": [
+        18
+      ],
+      "release_week": 1,
+      "span_locations": 5
+    },
+    {
+      "activity": "A003",
+      "contract": "C001",
+      "required": 5,
+      "delivered": 5.0,
+      "weeks": [
+        11,
+        12,
+        13,
+        14,
+        16
+      ],
+      "release_week": 11,
+      "span_locations": 7
+    },
+    {
+      "activity": "A004",
+      "contract": "C001",
+      "required": 3,
+      "delivered": 3.0,
+      "weeks": [
+        21,
+        22,
+        23
+      ],
+      "release_week": 15,
+      "span_locations": 5
+    },
+    {
+      "activity": "A006",
+      "contract": "C001",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        4,
+        5
+      ],
+      "release_week": 2,
+      "span_locations": 7
+    },
+    {
+      "activity": "A007",
+      "contract": "C001",
+      "required": 7,
+      "delivered": 7.0,
+      "weeks": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22
+      ],
+      "release_week": 15,
+      "span_locations": 3
+    },
+    {
+      "activity": "A008",
+      "contract": "C002",
+      "required": 5,
+      "delivered": 5.0,
+      "weeks": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "release_week": 16,
+      "span_locations": 3
+    },
+    {
+      "activity": "A009",
+      "contract": "C002",
+      "required": 7,
+      "delivered": 7.0,
+      "weeks": [
+        17,
+        18,
+        20,
+        22,
+        23,
+        25,
+        26
+      ],
+      "release_week": 2,
+      "span_locations": 3
+    },
+    {
+      "activity": "A011",
+      "contract": "C002",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        16,
+        23
+      ],
+      "release_week": 15,
+      "span_locations": 5
+    },
+    {
+      "activity": "A012",
+      "contract": "C002",
+      "required": 7,
+      "delivered": 7.0,
+      "weeks": [
+        2,
+        3,
+        4,
+        16,
+        17,
+        18,
+        20
+      ],
+      "release_week": 2,
+      "span_locations": 5
+    },
+    {
+      "activity": "A013",
+      "contract": "C002",
+      "required": 5,
+      "delivered": 5.0,
+      "weeks": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "release_week": 21,
+      "span_locations": 3
+    },
+    {
+      "activity": "A014",
+      "contract": "C003",
+      "required": 7,
+      "delivered": 7.0,
+      "weeks": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "release_week": 13,
+      "span_locations": 3
+    },
+    {
+      "activity": "A017",
+      "contract": "C003",
+      "required": 7,
+      "delivered": 7.0,
+      "weeks": [
+        17,
+        18,
+        20,
+        22,
+        24,
+        25,
+        26
+      ],
+      "release_week": 17,
+      "span_locations": 7
+    },
+    {
+      "activity": "A019",
+      "contract": "C003",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        13,
+        14
+      ],
+      "release_week": 11,
+      "span_locations": 3
+    },
+    {
+      "activity": "A020",
+      "contract": "C003",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        13,
+        14
+      ],
+      "release_week": 13,
+      "span_locations": 7
+    },
+    {
+      "activity": "A021",
+      "contract": "C004",
+      "required": 3,
+      "delivered": 3.0,
+      "weeks": [
+        15,
+        16,
+        17
+      ],
+      "release_week": 3,
+      "span_locations": 5
+    },
+    {
+      "activity": "A023",
+      "contract": "C004",
+      "required": 7,
+      "delivered": 7.0,
+      "weeks": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "release_week": 21,
+      "span_locations": 3
+    },
+    {
+      "activity": "A025",
+      "contract": "C004",
+      "required": 7,
+      "delivered": 7.0,
+      "weeks": [
+        8,
+        10,
+        12,
+        13,
+        14,
+        20,
+        21
+      ],
+      "release_week": 8,
+      "span_locations": 5
+    },
+    {
+      "activity": "A028",
+      "contract": "C005",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        9,
+        11
+      ],
+      "release_week": 9,
+      "span_locations": 5
+    },
+    {
+      "activity": "A031",
+      "contract": "C005",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        10,
+        11
+      ],
+      "release_week": 1,
+      "span_locations": 5
+    },
+    {
+      "activity": "A035",
+      "contract": "C006",
+      "required": 3,
+      "delivered": 3.0,
+      "weeks": [
+        1,
+        26,
+        27
+      ],
+      "release_week": 1,
+      "span_locations": 5
+    },
+    {
+      "activity": "A036",
+      "contract": "C006",
+      "required": 7,
+      "delivered": 7.0,
+      "weeks": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "release_week": 22,
+      "span_locations": 3
+    },
+    {
+      "activity": "A037",
+      "contract": "C006",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        8,
+        9
+      ],
+      "release_week": 8,
+      "span_locations": 5
+    },
+    {
+      "activity": "A038",
+      "contract": "C006",
+      "required": 3,
+      "delivered": 3.0,
+      "weeks": [
+        10,
+        11,
+        27
+      ],
+      "release_week": 3,
+      "span_locations": 3
+    },
+    {
+      "activity": "A039",
+      "contract": "C006",
+      "required": 7,
+      "delivered": 7.0,
+      "weeks": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "release_week": 8,
+      "span_locations": 7
+    },
+    {
+      "activity": "A040",
+      "contract": "C007",
+      "required": 7,
+      "delivered": 7.0,
+      "weeks": [
+        13,
+        14,
+        16,
+        17,
+        20,
+        22,
+        25
+      ],
+      "release_week": 13,
+      "span_locations": 7
+    },
+    {
+      "activity": "A041",
+      "contract": "C007",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        11,
+        12
+      ],
+      "release_week": 11,
+      "span_locations": 3
+    },
+    {
+      "activity": "A042",
+      "contract": "C007",
+      "required": 3,
+      "delivered": 3.0,
+      "weeks": [
+        23,
+        24,
+        25
+      ],
+      "release_week": 23,
+      "span_locations": 7
+    },
+    {
+      "activity": "A043",
+      "contract": "C007",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        24,
+        26
+      ],
+      "release_week": 13,
+      "span_locations": 7
+    },
+    {
+      "activity": "A046",
+      "contract": "C007",
+      "required": 5,
+      "delivered": 5.0,
+      "weeks": [
+        9,
+        10,
+        11,
+        12,
+        25
+      ],
+      "release_week": 9,
+      "span_locations": 3
+    },
+    {
+      "activity": "A047",
+      "contract": "C008",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        27,
+        28
+      ],
+      "release_week": 13,
+      "span_locations": 5
+    },
+    {
+      "activity": "A048",
+      "contract": "C008",
+      "required": 3,
+      "delivered": 3.0,
+      "weeks": [
+        1,
+        2,
+        3
+      ],
+      "release_week": 1,
+      "span_locations": 3
+    },
+    {
+      "activity": "A049",
+      "contract": "C008",
+      "required": 5,
+      "delivered": 5.0,
+      "weeks": [
+        8,
+        10,
+        16,
+        18,
+        20
+      ],
+      "release_week": 8,
+      "span_locations": 5
+    },
+    {
+      "activity": "A050",
+      "contract": "C008",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        17,
+        18
+      ],
+      "release_week": 17,
+      "span_locations": 5
+    },
+    {
+      "activity": "A051",
+      "contract": "C008",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        26,
+        27
+      ],
+      "release_week": 26,
+      "span_locations": 3
+    },
+    {
+      "activity": "A054",
+      "contract": "C009",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        17,
+        18
+      ],
+      "release_week": 17,
+      "span_locations": 7
+    },
+    {
+      "activity": "A055",
+      "contract": "C009",
+      "required": 1,
+      "delivered": 1.0,
+      "weeks": [
+        24
+      ],
+      "release_week": 16,
+      "span_locations": 7
+    },
+    {
+      "activity": "A056",
+      "contract": "C009",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        23,
+        25
+      ],
+      "release_week": 18,
+      "span_locations": 7
+    },
+    {
+      "activity": "A057",
+      "contract": "C009",
+      "required": 7,
+      "delivered": 7.0,
+      "weeks": [
+        15,
+        16,
+        17,
+        18,
+        20,
+        23,
+        25
+      ],
+      "release_week": 15,
+      "span_locations": 5
+    },
+    {
+      "activity": "A058",
+      "contract": "C010",
+      "required": 7,
+      "delivered": 7.0,
+      "weeks": [
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "release_week": 2,
+      "span_locations": 7
+    },
+    {
+      "activity": "A059",
+      "contract": "C010",
+      "required": 7,
+      "delivered": 7.0,
+      "weeks": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "release_week": 14,
+      "span_locations": 5
+    },
+    {
+      "activity": "A060",
+      "contract": "C010",
+      "required": 3,
+      "delivered": 3.0,
+      "weeks": [
+        13,
+        14,
+        19
+      ],
+      "release_week": 13,
+      "span_locations": 5
+    },
+    {
+      "activity": "A061",
+      "contract": "C010",
+      "required": 7,
+      "delivered": 7.0,
+      "weeks": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "release_week": 4,
+      "span_locations": 5
+    },
+    {
+      "activity": "A063",
+      "contract": "C010",
+      "required": 1,
+      "delivered": 1.0,
+      "weeks": [
+        5
+      ],
+      "release_week": 5,
+      "span_locations": 5
+    },
+    {
+      "activity": "A064",
+      "contract": "C010",
+      "required": 1,
+      "delivered": 1.0,
+      "weeks": [
+        17
+      ],
+      "release_week": 16,
+      "span_locations": 3
+    },
+    {
+      "activity": "A065",
+      "contract": "C011",
+      "required": 1,
+      "delivered": 1.0,
+      "weeks": [
+        20
+      ],
+      "release_week": 19,
+      "span_locations": 3
+    },
+    {
+      "activity": "A066",
+      "contract": "C011",
+      "required": 1,
+      "delivered": 1.0,
+      "weeks": [
+        25
+      ],
+      "release_week": 25,
+      "span_locations": 7
+    },
+    {
+      "activity": "A069",
+      "contract": "C011",
+      "required": 2,
+      "delivered": 2.0,
+      "weeks": [
+        11,
+        12
+      ],
+      "release_week": 9,
+      "span_locations": 7
+    },
+    {
+      "activity": "A070",
+      "contract": "C011",
+      "required": 5,
+      "delivered": 5.0,
+      "weeks": [
+        15,
+        16,
+        20,
+        26,
+        27
+      ],
+      "release_week": 11,
+      "span_locations": 5
+    },
+    {
+      "activity": "A071",
+      "contract": "C011",
+      "required": 1,
+      "delivered": 1.0,
+      "weeks": [
+        27
+      ],
+      "release_week": 15,
+      "span_locations": 5
+    },
+    {
+      "activity": "A072",
+      "contract": "C012",
+      "required": 1,
+      "delivered": 1.0,
+      "weeks": [
+        26
+      ],
+      "release_week": 23,
+      "span_locations": 5
+    },
+    {
+      "activity": "A073",
+      "contract": "C012",
+      "required": 1,
+      "delivered": 1.0,
+      "weeks": [
+        25
+      ],
+      "release_week": 22,
+      "span_locations": 5
+    },
+    {
+      "activity": "A074",
+      "contract": "C013",
+      "required": 1,
+      "delivered": 1.0,
+      "weeks": [
+        21
+      ],
+      "release_week": 19,
+      "span_locations": 3
+    },
+    {
+      "activity": "A075",
+      "contract": "C014",
+      "required": 1,
+      "delivered": 1.0,
+      "weeks": [
+        29
+      ],
+      "release_week": 24,
+      "span_locations": 3
+    }
+  ],
+  "dependencies": [
+    {
+      "predecessor": "A003",
+      "successor": "A004",
+      "predecessor_last": 16,
+      "successor_first": 21
+    },
+    {
+      "predecessor": "A012",
+      "successor": "A013",
+      "predecessor_last": 20,
+      "successor_first": 22
+    },
+    {
+      "predecessor": "A037",
+      "successor": "A038",
+      "predecessor_last": 9,
+      "successor_first": 10
+    },
+    {
+      "predecessor": "A048",
+      "successor": "A049",
+      "predecessor_last": 3,
+      "successor_first": 8
+    },
+    {
+      "predecessor": "A050",
+      "successor": "A051",
+      "predecessor_last": 18,
+      "successor_first": 26
+    },
+    {
+      "predecessor": "A065",
+      "successor": "A066",
+      "predecessor_last": 20,
+      "successor_first": 25
+    }
+  ],
+  "results": [
+    {
+      "contract": "C001",
+      "last_week": 23,
+      "completion": "2027-06-13",
+      "planned": "2027-06-13",
+      "overrun": 0,
+      "priority": 3
+    },
+    {
+      "contract": "C002",
+      "last_week": 26,
+      "completion": "2027-07-04",
+      "planned": "2027-07-04",
+      "overrun": 0,
+      "priority": 2
+    },
+    {
+      "contract": "C003",
+      "last_week": 26,
+      "completion": "2027-07-04",
+      "planned": "2027-07-04",
+      "overrun": 0,
+      "priority": 1
+    },
+    {
+      "contract": "C004",
+      "last_week": 28,
+      "completion": "2027-07-18",
+      "planned": "2027-07-25",
+      "overrun": 0,
+      "priority": 1
+    },
+    {
+      "contract": "C005",
+      "last_week": 11,
+      "completion": "2027-03-21",
+      "planned": "2027-03-21",
+      "overrun": 0,
+      "priority": 3
+    },
+    {
+      "contract": "C006",
+      "last_week": 28,
+      "completion": "2027-07-18",
+      "planned": "2027-07-04",
+      "overrun": 14,
+      "priority": 3
+    },
+    {
+      "contract": "C007",
+      "last_week": 26,
+      "completion": "2027-07-04",
+      "planned": "2027-07-11",
+      "overrun": 0,
+      "priority": 1
+    },
+    {
+      "contract": "C008",
+      "last_week": 28,
+      "completion": "2027-07-18",
+      "planned": "2027-07-18",
+      "overrun": 0,
+      "priority": 3
+    },
+    {
+      "contract": "C009",
+      "last_week": 25,
+      "completion": "2027-06-27",
+      "planned": "2027-06-27",
+      "overrun": 0,
+      "priority": 3
+    },
+    {
+      "contract": "C010",
+      "last_week": 20,
+      "completion": "2027-05-23",
+      "planned": "2027-05-16",
+      "overrun": 7,
+      "priority": 3
+    },
+    {
+      "contract": "C011",
+      "last_week": 27,
+      "completion": "2027-07-11",
+      "planned": "2027-07-11",
+      "overrun": 0,
+      "priority": 2
+    },
+    {
+      "contract": "C012",
+      "last_week": 26,
+      "completion": "2027-07-04",
+      "planned": "2027-07-11",
+      "overrun": 0,
+      "priority": 1
+    },
+    {
+      "contract": "C013",
+      "last_week": 21,
+      "completion": "2027-05-30",
+      "planned": "2027-05-30",
+      "overrun": 0,
+      "priority": 2
+    },
+    {
+      "contract": "C014",
+      "last_week": 29,
+      "completion": "2027-07-25",
+      "planned": "2027-07-18",
+      "overrun": 7,
+      "priority": 3
+    }
+  ],
+  "late_activities": [
+    {
+      "activity": "A035",
+      "contract": "C006",
+      "days": 7,
+      "activity_priority": 1,
+      "contract_priority": 3,
+      "weighted": 9.1
+    },
+    {
+      "activity": "A036",
+      "contract": "C006",
+      "days": 14,
+      "activity_priority": 1,
+      "contract_priority": 3,
+      "weighted": 18.2
+    },
+    {
+      "activity": "A038",
+      "contract": "C006",
+      "days": 7,
+      "activity_priority": 3,
+      "contract_priority": 3,
+      "weighted": 7
+    },
+    {
+      "activity": "A059",
+      "contract": "C010",
+      "days": 7,
+      "activity_priority": 3,
+      "contract_priority": 3,
+      "weighted": 7
+    },
+    {
+      "activity": "A075",
+      "contract": "C014",
+      "days": 7,
+      "activity_priority": 3,
+      "contract_priority": 3,
+      "weighted": 7
+    }
+  ],
+  "scores": {
+    "contract_overrun_days": 28,
+    "activity_overrun_days": 42,
+    "activity_weighted_delay": 48.3
+  },
+  "shared_groups": [
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 22,
+      "group": "b2",
+      "activities": [
+        "A001",
+        "A017",
+        "A040"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 22,
+      "group": "b2",
+      "activities": [
+        "A001",
+        "A017",
+        "A040"
+      ]
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 22,
+      "group": "b4",
+      "activities": [
+        "A001",
+        "A017",
+        "A040"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 23,
+      "group": "b2",
+      "activities": [
+        "A001",
+        "A011"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S17:EB",
+      "week": 23,
+      "group": "b2",
+      "activities": [
+        "A001",
+        "A011"
+      ]
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 23,
+      "group": "b4",
+      "activities": [
+        "A001",
+        "A011",
+        "A057"
+      ]
+    },
+    {
+      "location": "SEC:BET:S16_S17:EB",
+      "week": 23,
+      "group": "b4",
+      "activities": [
+        "A001",
+        "A011"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S11:WB",
+      "week": 18,
+      "group": "b1",
+      "activities": [
+        "A002",
+        "A039"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S12:WB",
+      "week": 18,
+      "group": "b2",
+      "activities": [
+        "A002",
+        "A039"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 11,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A041"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 12,
+      "group": "b2",
+      "activities": [
+        "A003",
+        "A041"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 13,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A040"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 13,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A040",
+        "A060"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 13,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A060"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 13,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A040"
+      ]
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 13,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A040"
+      ]
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 13,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A060"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 14,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A040"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 14,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A040",
+        "A060"
+      ]
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 14,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A040"
+      ]
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 14,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A060"
+      ]
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 14,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A060"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 16,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A007",
+        "A040"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 16,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A007",
+        "A040",
+        "A057"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 16,
+      "group": "b2",
+      "activities": [
+        "A003",
+        "A011",
+        "A040",
+        "A057"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 16,
+      "group": "b2",
+      "activities": [
+        "A003",
+        "A011"
+      ]
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 16,
+      "group": "b1",
+      "activities": [
+        "A003",
+        "A007",
+        "A040"
+      ]
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 16,
+      "group": "b2",
+      "activities": [
+        "A003",
+        "A040",
+        "A057"
+      ]
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 16,
+      "group": "b4",
+      "activities": [
+        "A003",
+        "A011",
+        "A040"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:H01:EB",
+      "week": 21,
+      "group": "b1",
+      "activities": [
+        "A004",
+        "A074"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S03:EB",
+      "week": 21,
+      "group": "b2",
+      "activities": [
+        "A004",
+        "A025"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 15,
+      "group": "b1",
+      "activities": [
+        "A007",
+        "A057"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 17,
+      "group": "b1",
+      "activities": [
+        "A007",
+        "A017",
+        "A040"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 17,
+      "group": "b1",
+      "activities": [
+        "A007",
+        "A017",
+        "A040",
+        "A057"
+      ]
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 17,
+      "group": "b1",
+      "activities": [
+        "A007",
+        "A017",
+        "A040"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 18,
+      "group": "b1",
+      "activities": [
+        "A007",
+        "A017"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 18,
+      "group": "b1",
+      "activities": [
+        "A007",
+        "A017",
+        "A057"
+      ]
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 18,
+      "group": "b1",
+      "activities": [
+        "A007",
+        "A017"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 19,
+      "group": "b1",
+      "activities": [
+        "A007",
+        "A060"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 20,
+      "group": "b1",
+      "activities": [
+        "A007",
+        "A017",
+        "A040"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 20,
+      "group": "b1",
+      "activities": [
+        "A007",
+        "A017",
+        "A040",
+        "A057"
+      ]
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 20,
+      "group": "b1",
+      "activities": [
+        "A007",
+        "A017",
+        "A040"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 22,
+      "group": "b1",
+      "activities": [
+        "A007",
+        "A017",
+        "A036",
+        "A040"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 22,
+      "group": "b1",
+      "activities": [
+        "A007",
+        "A017",
+        "A040"
+      ]
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 22,
+      "group": "b1",
+      "activities": [
+        "A007",
+        "A017",
+        "A040"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S05:EB",
+      "week": 17,
+      "group": "b1",
+      "activities": [
+        "A009",
+        "A054"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S05:EB",
+      "week": 18,
+      "group": "b1",
+      "activities": [
+        "A009",
+        "A054"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 23,
+      "group": "b1",
+      "activities": [
+        "A011",
+        "A042",
+        "A057"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:WB",
+      "week": 16,
+      "group": "b1",
+      "activities": [
+        "A012",
+        "A049"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:WB",
+      "week": 16,
+      "group": "b1",
+      "activities": [
+        "A012",
+        "A049"
+      ]
+    },
+    {
+      "location": "SEC:BET:H02_S15:WB",
+      "week": 16,
+      "group": "b1",
+      "activities": [
+        "A012",
+        "A049"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:WB",
+      "week": 17,
+      "group": "b2",
+      "activities": [
+        "A012",
+        "A064"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:WB",
+      "week": 18,
+      "group": "b1",
+      "activities": [
+        "A012",
+        "A049"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:WB",
+      "week": 18,
+      "group": "b1",
+      "activities": [
+        "A012",
+        "A049"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:WB",
+      "week": 20,
+      "group": "b1",
+      "activities": [
+        "A012",
+        "A049"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S05:WB",
+      "week": 23,
+      "group": "b1",
+      "activities": [
+        "A013",
+        "A056"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S06:WB",
+      "week": 23,
+      "group": "b2",
+      "activities": [
+        "A013",
+        "A056"
+      ]
+    },
+    {
+      "location": "SEC:ALP:S05_S06:WB",
+      "week": 23,
+      "group": "b4",
+      "activities": [
+        "A013",
+        "A056"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S05:WB",
+      "week": 25,
+      "group": "b1",
+      "activities": [
+        "A013",
+        "A046",
+        "A056"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S06:WB",
+      "week": 25,
+      "group": "b1",
+      "activities": [
+        "A013",
+        "A046"
+      ]
+    },
+    {
+      "location": "SEC:ALP:S05_S06:WB",
+      "week": 25,
+      "group": "b4",
+      "activities": [
+        "A013",
+        "A046",
+        "A056"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 17,
+      "group": "b2",
+      "activities": [
+        "A017",
+        "A040"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 17,
+      "group": "b2",
+      "activities": [
+        "A017",
+        "A040"
+      ]
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 17,
+      "group": "b1",
+      "activities": [
+        "A017",
+        "A057"
+      ]
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 17,
+      "group": "b4",
+      "activities": [
+        "A017",
+        "A040",
+        "A057"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 18,
+      "group": "b2",
+      "activities": [
+        "A017",
+        "A057"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 18,
+      "group": "b2",
+      "activities": [
+        "A017",
+        "A057"
+      ]
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 18,
+      "group": "b2",
+      "activities": [
+        "A017",
+        "A057"
+      ]
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 18,
+      "group": "b4",
+      "activities": [
+        "A017",
+        "A057"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 20,
+      "group": "b2",
+      "activities": [
+        "A017",
+        "A040",
+        "A057"
+      ]
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 20,
+      "group": "b1",
+      "activities": [
+        "A017",
+        "A040",
+        "A057"
+      ]
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 20,
+      "group": "b4",
+      "activities": [
+        "A017",
+        "A057"
+      ]
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 22,
+      "group": "b2",
+      "activities": [
+        "A017",
+        "A040"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 24,
+      "group": "b1",
+      "activities": [
+        "A017",
+        "A036",
+        "A055"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 24,
+      "group": "b1",
+      "activities": [
+        "A017",
+        "A043",
+        "A055"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 24,
+      "group": "b2",
+      "activities": [
+        "A017",
+        "A042",
+        "A043"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 24,
+      "group": "b2",
+      "activities": [
+        "A017",
+        "A042",
+        "A043"
+      ]
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 24,
+      "group": "b1",
+      "activities": [
+        "A017",
+        "A055"
+      ]
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 24,
+      "group": "b2",
+      "activities": [
+        "A017",
+        "A043"
+      ]
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 24,
+      "group": "b4",
+      "activities": [
+        "A017",
+        "A042",
+        "A043"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 25,
+      "group": "b1",
+      "activities": [
+        "A017",
+        "A036",
+        "A040",
+        "A073"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 25,
+      "group": "b1",
+      "activities": [
+        "A017",
+        "A040",
+        "A057",
+        "A073"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 25,
+      "group": "b2",
+      "activities": [
+        "A017",
+        "A040",
+        "A042",
+        "A073"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 25,
+      "group": "b1",
+      "activities": [
+        "A017",
+        "A057"
+      ]
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 25,
+      "group": "b1",
+      "activities": [
+        "A017",
+        "A040",
+        "A073"
+      ]
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 25,
+      "group": "b1",
+      "activities": [
+        "A017",
+        "A057"
+      ]
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 25,
+      "group": "b1",
+      "activities": [
+        "A017",
+        "A057"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 26,
+      "group": "b1",
+      "activities": [
+        "A017",
+        "A036"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 26,
+      "group": "b1",
+      "activities": [
+        "A017",
+        "A043"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 26,
+      "group": "b2",
+      "activities": [
+        "A017",
+        "A043"
+      ]
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 26,
+      "group": "b2",
+      "activities": [
+        "A017",
+        "A043"
+      ]
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 26,
+      "group": "b4",
+      "activities": [
+        "A017",
+        "A043"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 13,
+      "group": "b2",
+      "activities": [
+        "A019",
+        "A060"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 14,
+      "group": "b2",
+      "activities": [
+        "A019",
+        "A040",
+        "A060"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S11:WB",
+      "week": 15,
+      "group": "b1",
+      "activities": [
+        "A021",
+        "A039"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S12:WB",
+      "week": 15,
+      "group": "b2",
+      "activities": [
+        "A021",
+        "A039"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S13:WB",
+      "week": 15,
+      "group": "b2",
+      "activities": [
+        "A021",
+        "A039"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S11:WB",
+      "week": 16,
+      "group": "b1",
+      "activities": [
+        "A021",
+        "A039"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S11:WB",
+      "week": 17,
+      "group": "b1",
+      "activities": [
+        "A021",
+        "A039"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S12:WB",
+      "week": 17,
+      "group": "b2",
+      "activities": [
+        "A021",
+        "A039"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S13:WB",
+      "week": 17,
+      "group": "b2",
+      "activities": [
+        "A021",
+        "A039"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S03:WB",
+      "week": 25,
+      "group": "b1",
+      "activities": [
+        "A023",
+        "A066"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S04:WB",
+      "week": 25,
+      "group": "b1",
+      "activities": [
+        "A023",
+        "A066"
+      ]
+    },
+    {
+      "location": "SEC:ALP:S03_S04:WB",
+      "week": 25,
+      "group": "b3",
+      "activities": [
+        "A023",
+        "A066"
+      ]
+    },
+    {
+      "location": "SEC:ALP:S03_S04:WB",
+      "week": 26,
+      "group": "b4",
+      "activities": [
+        "A023",
+        "A035",
+        "A070"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S03:WB",
+      "week": 27,
+      "group": "b1",
+      "activities": [
+        "A023",
+        "A035",
+        "A070"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S04:WB",
+      "week": 27,
+      "group": "b1",
+      "activities": [
+        "A023",
+        "A070"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S06:WB",
+      "week": 10,
+      "group": "b2",
+      "activities": [
+        "A031",
+        "A046"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S06:WB",
+      "week": 11,
+      "group": "b1",
+      "activities": [
+        "A031",
+        "A046"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S03:WB",
+      "week": 26,
+      "group": "b2",
+      "activities": [
+        "A035",
+        "A070"
+      ]
+    },
+    {
+      "location": "PLAT:ALP:S04:WB",
+      "week": 26,
+      "group": "b2",
+      "activities": [
+        "A035",
+        "A070"
+      ]
+    },
+    {
+      "location": "SEC:ALP:S03_S04:WB",
+      "week": 27,
+      "group": "b4",
+      "activities": [
+        "A035",
+        "A070"
+      ]
+    },
+    {
+      "location": "SEC:BET:S14_H01:EB",
+      "week": 24,
+      "group": "b1",
+      "activities": [
+        "A036",
+        "A055"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 8,
+      "group": "b2",
+      "activities": [
+        "A037",
+        "A061"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 9,
+      "group": "b2",
+      "activities": [
+        "A037",
+        "A061"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S17:EB",
+      "week": 27,
+      "group": "b2",
+      "activities": [
+        "A038",
+        "A071"
+      ]
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 13,
+      "group": "b3",
+      "activities": [
+        "A040",
+        "A060"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 14,
+      "group": "b2",
+      "activities": [
+        "A040",
+        "A060"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 16,
+      "group": "b1",
+      "activities": [
+        "A040",
+        "A057"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 20,
+      "group": "b1",
+      "activities": [
+        "A040",
+        "A057"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 25,
+      "group": "b2",
+      "activities": [
+        "A040",
+        "A042"
+      ]
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 25,
+      "group": "b2",
+      "activities": [
+        "A040",
+        "A073"
+      ]
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 25,
+      "group": "b4",
+      "activities": [
+        "A040",
+        "A042"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 23,
+      "group": "b1",
+      "activities": [
+        "A042",
+        "A057"
+      ]
+    },
+    {
+      "location": "PLAT:BET:S17:EB",
+      "week": 24,
+      "group": "b2",
+      "activities": [
+        "A042",
+        "A043"
+      ]
+    },
+    {
+      "location": "SEC:BET:S16_S17:EB",
+      "week": 24,
+      "group": "b4",
+      "activities": [
+        "A042",
+        "A043"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 5,
+      "group": "b1",
+      "activities": [
+        "A061",
+        "A063"
+      ]
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 5,
+      "group": "b1",
+      "activities": [
+        "A061",
+        "A063"
+      ]
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 5,
+      "group": "b1",
+      "activities": [
+        "A061",
+        "A063"
+      ]
+    }
+  ],
+  "span_locations": {
+    "A001": [
+      "PLAT:BET:S15:EB",
+      "PLAT:BET:S16:EB",
+      "PLAT:BET:S17:EB",
+      "SEC:BET:S15_S16:EB",
+      "SEC:BET:S16_S17:EB"
+    ],
+    "A002": [
+      "PLAT:BET:S11:WB",
+      "PLAT:BET:S12:WB",
+      "PLAT:BET:S13:WB",
+      "SEC:BET:S11_S12:WB",
+      "SEC:BET:S12_S13:WB"
+    ],
+    "A003": [
+      "PLAT:BET:H01:EB",
+      "PLAT:BET:H02:EB",
+      "PLAT:BET:S15:EB",
+      "PLAT:BET:S16:EB",
+      "SEC:BET:H01_H02:EB",
+      "SEC:BET:H02_S15:EB",
+      "SEC:BET:S15_S16:EB"
+    ],
+    "A004": [
+      "PLAT:ALP:H01:EB",
+      "PLAT:ALP:S03:EB",
+      "PLAT:ALP:S04:EB",
+      "SEC:ALP:S03_S04:EB",
+      "SEC:ALP:S04_H01:EB"
+    ],
+    "A006": [
+      "PLAT:ALP:H01:WB",
+      "PLAT:ALP:H02:WB",
+      "PLAT:ALP:S03:WB",
+      "PLAT:ALP:S04:WB",
+      "SEC:ALP:H01_H02:WB",
+      "SEC:ALP:S03_S04:WB",
+      "SEC:ALP:S04_H01:WB"
+    ],
+    "A007": [
+      "PLAT:BET:H01:EB",
+      "PLAT:BET:H02:EB",
+      "SEC:BET:H01_H02:EB"
+    ],
+    "A008": [
+      "PLAT:BET:S17:EB",
+      "PLAT:BET:S18:EB",
+      "SEC:BET:S17_S18:EB"
+    ],
+    "A009": [
+      "PLAT:ALP:S05:EB",
+      "PLAT:ALP:S06:EB",
+      "SEC:ALP:S05_S06:EB"
+    ],
+    "A011": [
+      "PLAT:BET:S15:EB",
+      "PLAT:BET:S16:EB",
+      "PLAT:BET:S17:EB",
+      "SEC:BET:S15_S16:EB",
+      "SEC:BET:S16_S17:EB"
+    ],
+    "A012": [
+      "PLAT:BET:H01:WB",
+      "PLAT:BET:H02:WB",
+      "PLAT:BET:S15:WB",
+      "SEC:BET:H01_H02:WB",
+      "SEC:BET:H02_S15:WB"
+    ],
+    "A013": [
+      "PLAT:ALP:S05:WB",
+      "PLAT:ALP:S06:WB",
+      "SEC:ALP:S05_S06:WB"
+    ],
+    "A014": [
+      "PLAT:ALP:S07:EB",
+      "PLAT:ALP:S08:EB",
+      "SEC:ALP:S07_S08:EB"
+    ],
+    "A017": [
+      "PLAT:BET:H01:EB",
+      "PLAT:BET:H02:EB",
+      "PLAT:BET:S15:EB",
+      "PLAT:BET:S16:EB",
+      "SEC:BET:H01_H02:EB",
+      "SEC:BET:H02_S15:EB",
+      "SEC:BET:S15_S16:EB"
+    ],
+    "A019": [
+      "PLAT:BET:S16:EB",
+      "PLAT:BET:S17:EB",
+      "SEC:BET:S16_S17:EB"
+    ],
+    "A020": [
+      "PLAT:ALP:H01:WB",
+      "PLAT:ALP:H02:WB",
+      "PLAT:ALP:S04:WB",
+      "PLAT:ALP:S05:WB",
+      "SEC:ALP:H01_H02:WB",
+      "SEC:ALP:H02_S05:WB",
+      "SEC:ALP:S04_H01:WB"
+    ],
+    "A021": [
+      "PLAT:BET:S11:WB",
+      "PLAT:BET:S12:WB",
+      "PLAT:BET:S13:WB",
+      "SEC:BET:S11_S12:WB",
+      "SEC:BET:S12_S13:WB"
+    ],
+    "A023": [
+      "PLAT:ALP:S03:WB",
+      "PLAT:ALP:S04:WB",
+      "SEC:ALP:S03_S04:WB"
+    ],
+    "A025": [
+      "PLAT:ALP:S01:EB",
+      "PLAT:ALP:S02:EB",
+      "PLAT:ALP:S03:EB",
+      "SEC:ALP:S01_S02:EB",
+      "SEC:ALP:S02_S03:EB"
+    ],
+    "A028": [
+      "PLAT:ALP:H01:EB",
+      "PLAT:ALP:S03:EB",
+      "PLAT:ALP:S04:EB",
+      "SEC:ALP:S03_S04:EB",
+      "SEC:ALP:S04_H01:EB"
+    ],
+    "A031": [
+      "PLAT:ALP:S06:WB",
+      "PLAT:ALP:S07:WB",
+      "PLAT:ALP:S08:WB",
+      "SEC:ALP:S06_S07:WB",
+      "SEC:ALP:S07_S08:WB"
+    ],
+    "A035": [
+      "PLAT:ALP:S02:WB",
+      "PLAT:ALP:S03:WB",
+      "PLAT:ALP:S04:WB",
+      "SEC:ALP:S02_S03:WB",
+      "SEC:ALP:S03_S04:WB"
+    ],
+    "A036": [
+      "PLAT:BET:H01:EB",
+      "PLAT:BET:S14:EB",
+      "SEC:BET:S14_H01:EB"
+    ],
+    "A037": [
+      "PLAT:BET:S15:EB",
+      "PLAT:BET:S16:EB",
+      "PLAT:BET:S17:EB",
+      "SEC:BET:S15_S16:EB",
+      "SEC:BET:S16_S17:EB"
+    ],
+    "A038": [
+      "PLAT:BET:S17:EB",
+      "PLAT:BET:S18:EB",
+      "SEC:BET:S17_S18:EB"
+    ],
+    "A039": [
+      "PLAT:BET:S11:WB",
+      "PLAT:BET:S12:WB",
+      "PLAT:BET:S13:WB",
+      "PLAT:BET:S14:WB",
+      "SEC:BET:S11_S12:WB",
+      "SEC:BET:S12_S13:WB",
+      "SEC:BET:S13_S14:WB"
+    ],
+    "A040": [
+      "PLAT:BET:H01:EB",
+      "PLAT:BET:H02:EB",
+      "PLAT:BET:S15:EB",
+      "PLAT:BET:S16:EB",
+      "SEC:BET:H01_H02:EB",
+      "SEC:BET:H02_S15:EB",
+      "SEC:BET:S15_S16:EB"
+    ],
+    "A041": [
+      "PLAT:BET:S15:EB",
+      "PLAT:BET:S16:EB",
+      "SEC:BET:S15_S16:EB"
+    ],
+    "A042": [
+      "PLAT:BET:S15:EB",
+      "PLAT:BET:S16:EB",
+      "PLAT:BET:S17:EB",
+      "PLAT:BET:S18:EB",
+      "SEC:BET:S15_S16:EB",
+      "SEC:BET:S16_S17:EB",
+      "SEC:BET:S17_S18:EB"
+    ],
+    "A043": [
+      "PLAT:BET:H02:EB",
+      "PLAT:BET:S15:EB",
+      "PLAT:BET:S16:EB",
+      "PLAT:BET:S17:EB",
+      "SEC:BET:H02_S15:EB",
+      "SEC:BET:S15_S16:EB",
+      "SEC:BET:S16_S17:EB"
+    ],
+    "A046": [
+      "PLAT:ALP:S05:WB",
+      "PLAT:ALP:S06:WB",
+      "SEC:ALP:S05_S06:WB"
+    ],
+    "A047": [
+      "PLAT:ALP:H02:EB",
+      "PLAT:ALP:S05:EB",
+      "PLAT:ALP:S06:EB",
+      "SEC:ALP:H02_S05:EB",
+      "SEC:ALP:S05_S06:EB"
+    ],
+    "A048": [
+      "PLAT:BET:S13:EB",
+      "PLAT:BET:S14:EB",
+      "SEC:BET:S13_S14:EB"
+    ],
+    "A049": [
+      "PLAT:BET:H02:WB",
+      "PLAT:BET:S15:WB",
+      "PLAT:BET:S16:WB",
+      "SEC:BET:H02_S15:WB",
+      "SEC:BET:S15_S16:WB"
+    ],
+    "A050": [
+      "PLAT:ALP:H01:WB",
+      "PLAT:ALP:S03:WB",
+      "PLAT:ALP:S04:WB",
+      "SEC:ALP:S03_S04:WB",
+      "SEC:ALP:S04_H01:WB"
+    ],
+    "A051": [
+      "PLAT:BET:S17:WB",
+      "PLAT:BET:S18:WB",
+      "SEC:BET:S17_S18:WB"
+    ],
+    "A054": [
+      "PLAT:ALP:H01:EB",
+      "PLAT:ALP:H02:EB",
+      "PLAT:ALP:S04:EB",
+      "PLAT:ALP:S05:EB",
+      "SEC:ALP:H01_H02:EB",
+      "SEC:ALP:H02_S05:EB",
+      "SEC:ALP:S04_H01:EB"
+    ],
+    "A055": [
+      "PLAT:BET:H01:EB",
+      "PLAT:BET:H02:EB",
+      "PLAT:BET:S13:EB",
+      "PLAT:BET:S14:EB",
+      "SEC:BET:H01_H02:EB",
+      "SEC:BET:S13_S14:EB",
+      "SEC:BET:S14_H01:EB"
+    ],
+    "A056": [
+      "PLAT:ALP:H02:WB",
+      "PLAT:ALP:S05:WB",
+      "PLAT:ALP:S06:WB",
+      "PLAT:ALP:S07:WB",
+      "SEC:ALP:H02_S05:WB",
+      "SEC:ALP:S05_S06:WB",
+      "SEC:ALP:S06_S07:WB"
+    ],
+    "A057": [
+      "PLAT:BET:H02:EB",
+      "PLAT:BET:S15:EB",
+      "PLAT:BET:S16:EB",
+      "SEC:BET:H02_S15:EB",
+      "SEC:BET:S15_S16:EB"
+    ],
+    "A058": [
+      "PLAT:ALP:H01:WB",
+      "PLAT:ALP:H02:WB",
+      "PLAT:ALP:S03:WB",
+      "PLAT:ALP:S04:WB",
+      "SEC:ALP:H01_H02:WB",
+      "SEC:ALP:S03_S04:WB",
+      "SEC:ALP:S04_H01:WB"
+    ],
+    "A059": [
+      "PLAT:ALP:S06:WB",
+      "PLAT:ALP:S07:WB",
+      "PLAT:ALP:S08:WB",
+      "SEC:ALP:S06_S07:WB",
+      "SEC:ALP:S07_S08:WB"
+    ],
+    "A060": [
+      "PLAT:BET:H02:EB",
+      "PLAT:BET:S15:EB",
+      "PLAT:BET:S16:EB",
+      "SEC:BET:H02_S15:EB",
+      "SEC:BET:S15_S16:EB"
+    ],
+    "A061": [
+      "PLAT:BET:H01:EB",
+      "PLAT:BET:H02:EB",
+      "PLAT:BET:S15:EB",
+      "SEC:BET:H01_H02:EB",
+      "SEC:BET:H02_S15:EB"
+    ],
+    "A063": [
+      "PLAT:BET:H01:EB",
+      "PLAT:BET:H02:EB",
+      "PLAT:BET:S14:EB",
+      "SEC:BET:H01_H02:EB",
+      "SEC:BET:S14_H01:EB"
+    ],
+    "A064": [
+      "PLAT:BET:S15:WB",
+      "PLAT:BET:S16:WB",
+      "SEC:BET:S15_S16:WB"
+    ],
+    "A065": [
+      "PLAT:BET:S12:WB",
+      "PLAT:BET:S13:WB",
+      "SEC:BET:S12_S13:WB"
+    ],
+    "A066": [
+      "PLAT:ALP:H01:WB",
+      "PLAT:ALP:S02:WB",
+      "PLAT:ALP:S03:WB",
+      "PLAT:ALP:S04:WB",
+      "SEC:ALP:S02_S03:WB",
+      "SEC:ALP:S03_S04:WB",
+      "SEC:ALP:S04_H01:WB"
+    ],
+    "A069": [
+      "PLAT:ALP:H01:WB",
+      "PLAT:ALP:H02:WB",
+      "PLAT:ALP:S03:WB",
+      "PLAT:ALP:S04:WB",
+      "SEC:ALP:H01_H02:WB",
+      "SEC:ALP:S03_S04:WB",
+      "SEC:ALP:S04_H01:WB"
+    ],
+    "A070": [
+      "PLAT:ALP:H01:WB",
+      "PLAT:ALP:S03:WB",
+      "PLAT:ALP:S04:WB",
+      "SEC:ALP:S03_S04:WB",
+      "SEC:ALP:S04_H01:WB"
+    ],
+    "A071": [
+      "PLAT:BET:S15:EB",
+      "PLAT:BET:S16:EB",
+      "PLAT:BET:S17:EB",
+      "SEC:BET:S15_S16:EB",
+      "SEC:BET:S16_S17:EB"
+    ],
+    "A072": [
+      "PLAT:ALP:H01:EB",
+      "PLAT:ALP:H02:EB",
+      "PLAT:ALP:S04:EB",
+      "SEC:ALP:H01_H02:EB",
+      "SEC:ALP:S04_H01:EB"
+    ],
+    "A073": [
+      "PLAT:BET:H01:EB",
+      "PLAT:BET:H02:EB",
+      "PLAT:BET:S15:EB",
+      "SEC:BET:H01_H02:EB",
+      "SEC:BET:H02_S15:EB"
+    ],
+    "A074": [
+      "PLAT:ALP:H01:EB",
+      "PLAT:ALP:H02:EB",
+      "SEC:ALP:H01_H02:EB"
+    ],
+    "A075": [
+      "PLAT:BET:H01:WB",
+      "PLAT:BET:H02:WB",
+      "SEC:BET:H01_H02:WB"
+    ]
+  }
+}

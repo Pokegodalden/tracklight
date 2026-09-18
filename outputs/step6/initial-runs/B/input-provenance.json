@@ -1,0 +1,15 @@
+{
+  "input_data_sha256": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+  "rule_profile": {
+    "profile_id": "ps1-provisional-0.2.0",
+    "profile_sha256": "a4f79f7e20bc4e6dbc6c07de64e1a090d443b00a5ddf81b6c04a926f143eda8e",
+    "source_updates": [
+      {
+        "file": "data/source_updates/966c976005db2e3e40a691cff268fdb8f396a5df/PS1_README.md",
+        "sha256": "e7d8f9457e62a1732fc7986cea57ad5fbd595e7cabe2e8b789e673c8335bd253",
+        "commit": "966c976005db2e3e40a691cff268fdb8f396a5df",
+        "url": "https://github.com/aochinwen/NebulaX-Hackathon-ProblemStatement/blob/966c976005db2e3e40a691cff268fdb8f396a5df/PS1/PS1_README.md"
+      }
+    ]
+  }
+}

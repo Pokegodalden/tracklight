@@ -1,0 +1,1070 @@
+{
+  "version": "0.1.0",
+  "snapshot_id": "ps1-0dfd901f97bf579f",
+  "pack_sha256": "0dfd901f97bf579f74d739a39946e6e25eb30af53f639991e3d39876834450af",
+  "input_data_sha256": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+  "description": "Isolated rule specifications, not runnable full submission fixtures or an official test suite.",
+  "cases": [
+    {
+      "id": "E01",
+      "title": "Workload conservation",
+      "rule_ids": [
+        "R01"
+      ],
+      "given": {
+        "required_units": 3,
+        "scenario": "B",
+        "placements": "distinct eligible weeks; other constraints satisfied"
+      },
+      "expected_by_interpretation": {
+        "two_standard": "FAIL: 2 < 3",
+        "three_standard": "PASS: 3 >= 3",
+        "two_ECLO": "PASS: 3 >= 3",
+        "one_standard_one_ECLO": "FAIL: 2.5 < 3"
+      },
+      "expectation_basis": "documented rule; hand calculation",
+      "question": null,
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E02",
+      "title": "Composition at one location/week/group",
+      "rule_ids": [
+        "R05"
+      ],
+      "given": {
+        "nature": "Non-live (Others)",
+        "same_local_group": true
+      },
+      "expected_by_interpretation": {
+        "PM": "PASS",
+        "PM+C": "FAIL",
+        "PC": "PASS",
+        "PC+3C": "PASS",
+        "4C": "PASS",
+        "2PC": "FAIL",
+        "5C": "FAIL"
+      },
+      "expectation_basis": "documented composition only",
+      "question": null,
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E03",
+      "title": "Capacity is groups, not participant rows",
+      "rule_ids": [
+        "R06",
+        "R20",
+        "R22",
+        "R23",
+        "R24"
+      ],
+      "given": {
+        "location": "L",
+        "week": 10,
+        "supply": 1
+      },
+      "expected_by_interpretation": {
+        "one_group_PC_plus_3C": "groups=1, excess=0; capacity passes A/B/C",
+        "two_groups_C_each": "excess=1; A fails, B/C capacity passes with penalty 7",
+        "three_groups_C_each": "excess=2; A/C fail, B capacity passes with penalty 14",
+        "two_groups_at_each_of_three_locations": "total excess=3; B/C excess penalty=21 if each location has supply 1"
+      },
+      "expectation_basis": "documented group/excess arithmetic; other constraints excluded",
+      "question": null,
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E04",
+      "title": "Local budget and workfront",
+      "rule_ids": [
+        "R07",
+        "R08"
+      ],
+      "given": {
+        "contract": "K",
+        "activity_type": "Renewal",
+        "week": 10,
+        "cap": 3,
+        "workfronts": 1,
+        "activities": [
+          "a",
+          "b"
+        ]
+      },
+      "expected_by_interpretation": {
+        "indices_1_and_1": "FAIL workfront: two activities on one index",
+        "indices_1_and_2": "PASS local budget/workfront",
+        "indices_1_and_4": "FAIL index domain even though only two indices used"
+      },
+      "expectation_basis": "documented local checks",
+      "question": null,
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E05",
+      "title": "Do not spend two accesses on one activity/week",
+      "rule_ids": [
+        "R03"
+      ],
+      "given": {
+        "activity": "a",
+        "required_units": 2,
+        "proposed_access_weeks": [
+          10,
+          10
+        ]
+      },
+      "expected_by_interpretation": {
+        "one_access_rule": "FAIL even with ample supply and workfronts"
+      },
+      "expectation_basis": "documented activity granularity",
+      "question": null,
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E06",
+      "title": "Start week and partial-week release",
+      "rule_ids": [
+        "R02",
+        "R19"
+      ],
+      "given": {
+        "horizon_start": "2027-01-04",
+        "planned_start": "2027-01-13"
+      },
+      "expected_by_interpretation": {
+        "provisional": "release week 2; week 1 FAIL, week 2 passes week-level release only; Monday/Wednesday physical timing not established"
+      },
+      "expectation_basis": "date conversion assumption",
+      "question": "Q07",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E07",
+      "title": "Reference sample has contradictory night equalities",
+      "rule_ids": [
+        "R09",
+        "R10"
+      ],
+      "given": {
+        "week": 23,
+        "activities": [
+          "A001",
+          "A011"
+        ],
+        "observed_groups": [
+          {
+            "activity_id": "A001",
+            "week": "23",
+            "location_id": "PLAT:BET:S15:EB",
+            "co_share_group": "b2"
+          },
+          {
+            "activity_id": "A001",
+            "week": "23",
+            "location_id": "PLAT:BET:S16:EB",
+            "co_share_group": "b2"
+          },
+          {
+            "activity_id": "A011",
+            "week": "23",
+            "location_id": "PLAT:BET:S15:EB",
+            "co_share_group": "b1"
+          },
+          {
+            "activity_id": "A011",
+            "week": "23",
+            "location_id": "PLAT:BET:S16:EB",
+            "co_share_group": "b2"
+          }
+        ]
+      },
+      "expected_by_interpretation": {
+        "local_group_interpretation": "These rows alone do not violate local group accounting",
+        "one_full_night_per_access": "IMPOSSIBLE: S16 requires night(A001)=night(A011), while S15 requires them unequal"
+      },
+      "expectation_basis": "source observation plus conditional logical proof",
+      "question": "Q01",
+      "evidence": [
+        {
+          "file": "PS1/03_submission_sample/SCHEDULE_OCCUPANCY.csv",
+          "line": 7,
+          "row": {
+            "activity_id": "A001",
+            "week": "23",
+            "location_id": "PLAT:BET:S15:EB",
+            "co_share_group": "b2"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/SCHEDULE_OCCUPANCY.csv",
+          "line": 8,
+          "row": {
+            "activity_id": "A001",
+            "week": "23",
+            "location_id": "PLAT:BET:S16:EB",
+            "co_share_group": "b2"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/SCHEDULE_OCCUPANCY.csv",
+          "line": 143,
+          "row": {
+            "activity_id": "A011",
+            "week": "23",
+            "location_id": "PLAT:BET:S15:EB",
+            "co_share_group": "b1"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/SCHEDULE_OCCUPANCY.csv",
+          "line": 144,
+          "row": {
+            "activity_id": "A011",
+            "week": "23",
+            "location_id": "PLAT:BET:S16:EB",
+            "co_share_group": "b2"
+          }
+        }
+      ],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E08",
+      "title": "One workfront but a shared physical night",
+      "rule_ids": [
+        "R07",
+        "R08",
+        "R10"
+      ],
+      "given": {
+        "week": 25,
+        "contract": "C007",
+        "activities": [
+          "A040",
+          "A042"
+        ],
+        "workfronts": 1,
+        "local_indices": [
+          3,
+          1
+        ],
+        "shared_group": "b4 at SEC:BET:S15_S16:EB"
+      },
+      "expected_by_interpretation": {
+        "local_indices": "No mutual workfront breach from this pair; indices differ",
+        "simultaneous_shared_night": "FAIL: two simultaneous activities exceed the same contract/type's one workfront"
+      },
+      "expectation_basis": "source observation; physical interpretation conditional",
+      "question": "Q02",
+      "evidence": [
+        {
+          "file": "PS1/03_submission_sample/SCHEDULE_OCCUPANCY.csv",
+          "line": 531,
+          "row": {
+            "activity_id": "A040",
+            "week": "25",
+            "location_id": "SEC:BET:S15_S16:EB",
+            "co_share_group": "b4"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/SCHEDULE_OCCUPANCY.csv",
+          "line": 556,
+          "row": {
+            "activity_id": "A042",
+            "week": "25",
+            "location_id": "SEC:BET:S15_S16:EB",
+            "co_share_group": "b4"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/SCHEDULE_ACCESS.csv",
+          "line": 115,
+          "row": {
+            "activity_id": "A040",
+            "access_seq": "7",
+            "week": "25",
+            "eclo": "0",
+            "access_night": "3"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/SCHEDULE_ACCESS.csv",
+          "line": 120,
+          "row": {
+            "activity_id": "A042",
+            "access_seq": "3",
+            "week": "25",
+            "eclo": "0",
+            "access_night": "1"
+          }
+        },
+        {
+          "file": "PS1/01_data/07_PROJECT_DETAILS.csv",
+          "line": 8,
+          "row": {
+            "contract_number": "C007",
+            "contract_description": "Renewal programme 7",
+            "contract_award_date": "2026-01-13",
+            "activity_type": "Renewal",
+            "nature_of_activity": "Non-live (Consist)",
+            "contract_priority": "1",
+            "contract_completion_date": "2027-07-25",
+            "planned_completion_date": "2027-07-11",
+            "number_of_workfronts": "1",
+            "access_type": "C",
+            "number_of_maximum_access_per_week": "3"
+          }
+        },
+        {
+          "file": "PS1/01_data/08_ACTIVITY_DETAILS.csv",
+          "line": 27,
+          "row": {
+            "activity_id": "A040",
+            "contract_number": "C007",
+            "activity_type": "Renewal",
+            "start_location_id": "SEC:BET:H01_H02:EB",
+            "end_location_id": "SEC:BET:S15_S16:EB",
+            "total_accesses": "7",
+            "planned_start_date": "2027-03-29",
+            "predecessor_activity_id": "",
+            "activity_priority": "1"
+          }
+        },
+        {
+          "file": "PS1/01_data/08_ACTIVITY_DETAILS.csv",
+          "line": 29,
+          "row": {
+            "activity_id": "A042",
+            "contract_number": "C007",
+            "activity_type": "Renewal",
+            "start_location_id": "SEC:BET:S15_S16:EB",
+            "end_location_id": "SEC:BET:S17_S18:EB",
+            "total_accesses": "3",
+            "planned_start_date": "2027-06-07",
+            "predecessor_activity_id": "",
+            "activity_priority": "2"
+          }
+        }
+      ],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E09",
+      "title": "Exact buffer locations and terminal",
+      "rule_ids": [
+        "R04",
+        "R11",
+        "R12"
+      ],
+      "given": {
+        "line_order": [
+          "S01",
+          "S02",
+          "S03",
+          "S04"
+        ],
+        "activity": "Non-live (Consist) at SEC:ALP:S02_S03:EB",
+        "work_locations": [
+          "SEC:ALP:S02_S03:EB",
+          "PLAT:ALP:S02:EB",
+          "PLAT:ALP:S03:EB"
+        ],
+        "buffer_count": 1
+      },
+      "expected_by_interpretation": {
+        "candidate_tunnel_hop_with_outer_platforms": [
+          "SEC:ALP:S01_S02:EB",
+          "PLAT:ALP:S01:EB",
+          "SEC:ALP:S03_S04:EB",
+          "PLAT:ALP:S04:EB"
+        ],
+        "candidate_tunnels_only": [
+          "SEC:ALP:S01_S02:EB",
+          "SEC:ALP:S03_S04:EB"
+        ],
+        "selected_geometry": "UNVERIFIED; neither candidate adopted",
+        "terminal_variant": "Move work to S01-S02; confirm truncate-versus-reject when no upstream sector exists"
+      },
+      "expectation_basis": "alternative candidate extra-buffer sets; not authoritative footprints",
+      "question": "Q03",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E10",
+      "title": "How much of a Live footprint mirrors?",
+      "rule_ids": [
+        "R11",
+        "R13"
+      ],
+      "given": {
+        "work": "SEC:ALP:S01_S02:EB",
+        "nature": "Live",
+        "candidate_same_bound_protected_station_range": "S01 through S04 after two downstream tunnel hops"
+      },
+      "expected_by_interpretation": {
+        "required_effect": "Opposite-bound closure is required",
+        "work_only_mirror_candidate": [
+          "SEC:ALP:S01_S02:WB",
+          "PLAT:ALP:S01:WB",
+          "PLAT:ALP:S02:WB"
+        ],
+        "full_footprint_mirror_candidate": "Also mirror S02-S03, S03-S04 and S03/S04 platforms WB",
+        "selected_extent": "UNVERIFIED pending exact mapping"
+      },
+      "expectation_basis": "opposite-bound principle documented; extent unresolved",
+      "question": "Q03",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E11",
+      "title": "Interchange coupling is not shared capacity",
+      "rule_ids": [
+        "R14",
+        "R15"
+      ],
+      "given": {
+        "variant_1": "Non-live jobs on ALP and BET H01-H02",
+        "variant_2": "Live work directly on ALP H01-H02 EB",
+        "variant_3": "Live work outside hub; only its candidate buffer reaches H01"
+      },
+      "expected_by_interpretation": {
+        "variant_1": "Separate capacity ledgers under selected detailed-section interpretation",
+        "variant_2": "Cross-line protection required; request exact Beta tunnel/platform/bound set and whether buffers extend beyond hubs",
+        "variant_3": "Trigger UNVERIFIED; do not infer from geographic contact alone"
+      },
+      "expectation_basis": "mixed documented principle and unconfigured geometry",
+      "question": "Q03",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E12",
+      "title": "Sharing is not automatically transitive",
+      "rule_ids": [
+        "R16"
+      ],
+      "given": {
+        "same_week": 10,
+        "A_B": "share group at X",
+        "B_C": "share group at Y",
+        "A_C": "protected footprints intersect at Z; no common local group at Z"
+      },
+      "expected_by_interpretation": {
+        "selected_local_exemption": "No A-C exemption at Z; actual violation still depends on timing/geometry",
+        "global_component_exemption": "Would exempt A-C if an organiser-defined shared-possession component rule permits it",
+        "official": "UNKNOWN"
+      },
+      "expectation_basis": "alternative interpretation test",
+      "question": "Q04",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E13",
+      "title": "A weekly footprint overlap is insufficient",
+      "rule_ids": [
+        "R17"
+      ],
+      "given": {
+        "two_activities": "incompatible protected footprints overlap",
+        "week": 10
+      },
+      "expected_by_interpretation": {
+        "explicit_same_night": "Conflict under full-night model",
+        "explicit_different_nights": "No simultaneous protection conflict from this pair",
+        "only_week_and_local_labels": "UNVERIFIED; retain a candidate intersection, not a confirmed breach"
+      },
+      "expectation_basis": "conditional temporal reasoning, not an official checker",
+      "question": "Q05",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E14",
+      "title": "Predecessor finishing week",
+      "rule_ids": [
+        "R18"
+      ],
+      "given": {
+        "predecessor": "P",
+        "successor": "S",
+        "P_full_workload_finish_week": 2
+      },
+      "expected_by_interpretation": {
+        "selected_S_week_2": "FAIL",
+        "selected_S_week_3": "PASS dependency only",
+        "alternative_intraweek_model": "S in week 2 could pass if P finishes before S starts; missing timestamps prevent proving it",
+        "unknown_predecessor_or_cycle": "INPUT ERROR under selected policy"
+      },
+      "expectation_basis": "provisional strict-next-week ordering",
+      "question": "Q06",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E15",
+      "title": "Week boundaries and contract completion",
+      "rule_ids": [
+        "R19",
+        "R21",
+        "R31"
+      ],
+      "given": {
+        "horizon_start": "2027-01-04",
+        "weeks": 30,
+        "two_activity_last_weeks": [
+          1,
+          2
+        ]
+      },
+      "expected_by_interpretation": {
+        "week_1_end": "2027-01-10",
+        "week_30_end": "2027-08-01",
+        "contract_finish": "2027-01-17 under last-week-end convention",
+        "week_31": "Outside selected horizon; hypothetical week end 2027-08-08 is not permission to schedule there",
+        "non_Sunday_deadline": "May create partial-week lateness under selected convention; request official date convention"
+      },
+      "expectation_basis": "provisional calendar arithmetic",
+      "question": "Q07",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E16",
+      "title": "No invented capacity",
+      "rule_ids": [
+        "R20",
+        "R21"
+      ],
+      "given": {
+        "capacity_at_L": 0,
+        "location_M": "absent",
+        "request_week": 31,
+        "horizon_weeks": 30
+      },
+      "expected_by_interpretation": {
+        "L_one_group_in_A": "FAIL capacity",
+        "M": "INPUT ERROR, not capacity 0 or infinity",
+        "week_31": "FAIL selected horizon; an extended model requires confirmed supply and calendar rules"
+      },
+      "expectation_basis": "explicit development assumptions",
+      "question": "Q08",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E17",
+      "title": "Hard scenario limits override heuristic advice",
+      "rule_ids": [
+        "R22",
+        "R23",
+        "R34"
+      ],
+      "given": {
+        "case_A": "One ECLO access",
+        "case_B": "Priority-3 contract finishes seven days after planned date"
+      },
+      "expected_by_interpretation": {
+        "A": "FAIL even if it reduces delay",
+        "B": "FAIL even if the delay would have a low penalty",
+        "no_feasible_result": "Report outcome honestly; do not convert either hard rule to a soft penalty"
+      },
+      "expectation_basis": "explicit scenario definitions preferred over inconsistent heuristic prose",
+      "question": "Q09",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E18",
+      "title": "C ECLO calendar span",
+      "rule_ids": [
+        "R25"
+      ],
+      "given": {
+        "scenario": "C",
+        "affected_lines": "explicitly provided for this isolated test; geometry is not inferred"
+      },
+      "expected_by_interpretation": {
+        "same_line_weeks_10_11": "PASS",
+        "same_line_weeks_10_12": "FAIL",
+        "same_line_week_10_only": "PASS",
+        "no_ECLO": "PASS window check",
+        "ALP_10_BET_12_without_cross_line": "PASS independent windows",
+        "add_cross_line_week_12": "FAIL ALP becomes {10,12}",
+        "scenario_B_weeks_10_12": "No C-window restriction"
+      },
+      "expectation_basis": "documented span check with stipulated affected lines",
+      "question": null,
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E19",
+      "title": "One shared possession, two ECLO activities",
+      "rule_ids": [
+        "R26"
+      ],
+      "given": {
+        "scenario": "B",
+        "activities": [
+          "a",
+          "b"
+        ],
+        "required_each": 1.5,
+        "eclo_each": 1,
+        "locations": [
+          "L"
+        ],
+        "same_local_group": true,
+        "excess": 0,
+        "access_type_each": "C"
+      },
+      "expected_by_interpretation": {
+        "selected_per_activity": "2 ECLO accesses; penalty 10; 1.5 units credited to each",
+        "per_physical_possession": "1 physical ECLO night; penalty 5 if that is the official accounting unit",
+        "official": "UNKNOWN"
+      },
+      "expectation_basis": "provisional penalty-counting comparison",
+      "question": "Q10",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E20",
+      "title": "Mixed ECLO flags in one group",
+      "rule_ids": [
+        "R27"
+      ],
+      "given": {
+        "activities": [
+          "a",
+          "b"
+        ],
+        "same_local_group": true,
+        "eclo_flags": [
+          0,
+          1
+        ]
+      },
+      "expected_by_interpretation": {
+        "selected_uniform_policy": "FAIL profile-specific rule, not a confirmed official violation",
+        "alternative_individual_duration_policy": "Could allow mixed flags with credits 1 and 1.5; must be confirmed"
+      },
+      "expectation_basis": "stricter provisional development choice",
+      "question": "Q10",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E21",
+      "title": "Activity and contract delay are different",
+      "rule_ids": [
+        "R28",
+        "R31"
+      ],
+      "given": {
+        "contract_priority": 3,
+        "two_activities": [
+          {
+            "late_days": 7,
+            "activity_priority": 1
+          },
+          {
+            "late_days": 14,
+            "activity_priority": 3
+          }
+        ],
+        "excess_units": 2,
+        "eclo_activity_accesses": 3
+      },
+      "expected_by_interpretation": {
+        "contract_late_days": 14,
+        "raw_activity_late_days": 21,
+        "selected_activity_weighted_delay": "23.1",
+        "alternative_contract_weighted_delay": "14",
+        "selected_C_score": "52.1",
+        "alternative_C_score": "43",
+        "B_component_score": "29 but this late schedule is infeasible in B"
+      },
+      "expectation_basis": "hand arithmetic under clearly separated candidate formulas",
+      "question": "Q09",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E22",
+      "title": "Reference sample score reconciliation",
+      "rule_ids": [
+        "R28",
+        "R31"
+      ],
+      "given": {
+        "sample_scenario": "A",
+        "late_activities": [
+          {
+            "activity_id": "A035",
+            "contract": "C006",
+            "late_days": 7,
+            "weighted": "9.1"
+          },
+          {
+            "activity_id": "A036",
+            "contract": "C006",
+            "late_days": 14,
+            "weighted": "18.2"
+          },
+          {
+            "activity_id": "A038",
+            "contract": "C006",
+            "late_days": 7,
+            "weighted": "7"
+          },
+          {
+            "activity_id": "A059",
+            "contract": "C010",
+            "late_days": 7,
+            "weighted": "7"
+          },
+          {
+            "activity_id": "A075",
+            "contract": "C014",
+            "late_days": 7,
+            "weighted": "7"
+          }
+        ],
+        "calendar_assumption": "R19",
+        "planned_date_assumption": "R31"
+      },
+      "expected_by_interpretation": {
+        "contract_days_from_RESULTS": 28,
+        "activity_days": 42,
+        "candidate_activity_weighted_score": "48.3",
+        "candidate_contract_weighted_score": "28",
+        "official_objective": "UNKNOWN; request validator JSON/formula version"
+      },
+      "expectation_basis": "source counts plus conditional independent arithmetic",
+      "question": "Q09",
+      "evidence": [
+        {
+          "file": "PS1/03_submission_sample/RESULTS.csv",
+          "line": 2,
+          "row": {
+            "scenario": "A",
+            "contract_number": "C001",
+            "simulated_completion_date": "2027-06-13",
+            "overrun_days": "0"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/RESULTS.csv",
+          "line": 3,
+          "row": {
+            "scenario": "A",
+            "contract_number": "C002",
+            "simulated_completion_date": "2027-07-04",
+            "overrun_days": "0"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/RESULTS.csv",
+          "line": 4,
+          "row": {
+            "scenario": "A",
+            "contract_number": "C003",
+            "simulated_completion_date": "2027-07-04",
+            "overrun_days": "0"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/RESULTS.csv",
+          "line": 5,
+          "row": {
+            "scenario": "A",
+            "contract_number": "C004",
+            "simulated_completion_date": "2027-07-18",
+            "overrun_days": "0"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/RESULTS.csv",
+          "line": 6,
+          "row": {
+            "scenario": "A",
+            "contract_number": "C005",
+            "simulated_completion_date": "2027-03-21",
+            "overrun_days": "0"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/RESULTS.csv",
+          "line": 7,
+          "row": {
+            "scenario": "A",
+            "contract_number": "C006",
+            "simulated_completion_date": "2027-07-18",
+            "overrun_days": "14"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/RESULTS.csv",
+          "line": 8,
+          "row": {
+            "scenario": "A",
+            "contract_number": "C007",
+            "simulated_completion_date": "2027-07-04",
+            "overrun_days": "0"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/RESULTS.csv",
+          "line": 9,
+          "row": {
+            "scenario": "A",
+            "contract_number": "C008",
+            "simulated_completion_date": "2027-07-18",
+            "overrun_days": "0"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/RESULTS.csv",
+          "line": 10,
+          "row": {
+            "scenario": "A",
+            "contract_number": "C009",
+            "simulated_completion_date": "2027-06-27",
+            "overrun_days": "0"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/RESULTS.csv",
+          "line": 11,
+          "row": {
+            "scenario": "A",
+            "contract_number": "C010",
+            "simulated_completion_date": "2027-05-23",
+            "overrun_days": "7"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/RESULTS.csv",
+          "line": 12,
+          "row": {
+            "scenario": "A",
+            "contract_number": "C011",
+            "simulated_completion_date": "2027-07-11",
+            "overrun_days": "0"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/RESULTS.csv",
+          "line": 13,
+          "row": {
+            "scenario": "A",
+            "contract_number": "C012",
+            "simulated_completion_date": "2027-07-04",
+            "overrun_days": "0"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/RESULTS.csv",
+          "line": 14,
+          "row": {
+            "scenario": "A",
+            "contract_number": "C013",
+            "simulated_completion_date": "2027-05-30",
+            "overrun_days": "0"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/RESULTS.csv",
+          "line": 15,
+          "row": {
+            "scenario": "A",
+            "contract_number": "C014",
+            "simulated_completion_date": "2027-07-25",
+            "overrun_days": "7"
+          }
+        }
+      ],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E23",
+      "title": "A scalar objective is not lexicographic priority",
+      "rule_ids": [
+        "R29"
+      ],
+      "given": {
+        "alternative_X": "one P1 activity 7 days late, activity priority 3",
+        "alternative_Y": "one P2 activity 77 days late, activity priority 3",
+        "other_penalties": 0,
+        "scenario": "A or C"
+      },
+      "expected_by_interpretation": {
+        "weighted_sum": "X=700, Y=770, so X wins",
+        "strict_priority_first": "Y wins because it avoids any P1 delay",
+        "selected": "weighted_sum provisionally; organiser confirmation required"
+      },
+      "expectation_basis": "mathematical counterexample to strict-priority prose",
+      "question": "Q09",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E24",
+      "title": "Export excludes derived protection in the sample",
+      "rule_ids": [
+        "R04",
+        "R30"
+      ],
+      "given": {
+        "activity": "A074",
+        "week": 21,
+        "sample_working_rows": [
+          {
+            "activity_id": "A074",
+            "week": "21",
+            "location_id": "PLAT:ALP:H01:EB",
+            "co_share_group": "b1"
+          },
+          {
+            "activity_id": "A074",
+            "week": "21",
+            "location_id": "PLAT:ALP:H02:EB",
+            "co_share_group": "b1"
+          },
+          {
+            "activity_id": "A074",
+            "week": "21",
+            "location_id": "SEC:ALP:H01_H02:EB",
+            "co_share_group": "b1"
+          }
+        ]
+      },
+      "expected_by_interpretation": {
+        "selected_export": "Three ALP EB working-location rows only",
+        "internal_protection": "Keep opposite-bound/cross-line/buffer effects separately; actual expansion still unresolved",
+        "official_expander": "UNKNOWN"
+      },
+      "expectation_basis": "observed sample format, not complete protection proof",
+      "question": "Q03",
+      "evidence": [
+        {
+          "file": "PS1/03_submission_sample/SCHEDULE_OCCUPANCY.csv",
+          "line": 924,
+          "row": {
+            "activity_id": "A074",
+            "week": "21",
+            "location_id": "PLAT:ALP:H01:EB",
+            "co_share_group": "b1"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/SCHEDULE_OCCUPANCY.csv",
+          "line": 925,
+          "row": {
+            "activity_id": "A074",
+            "week": "21",
+            "location_id": "PLAT:ALP:H02:EB",
+            "co_share_group": "b1"
+          }
+        },
+        {
+          "file": "PS1/03_submission_sample/SCHEDULE_OCCUPANCY.csv",
+          "line": 926,
+          "row": {
+            "activity_id": "A074",
+            "week": "21",
+            "location_id": "SEC:ALP:H01_H02:EB",
+            "co_share_group": "b1"
+          }
+        }
+      ],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E25",
+      "title": "Do not fabricate Scenario C supply",
+      "rule_ids": [
+        "R24",
+        "R32",
+        "R34"
+      ],
+      "given": {
+        "C_nominal_supply": 1,
+        "proposed_groups": 3
+      },
+      "expected_by_interpretation": {
+        "provided_supply": "FAIL: excess 2 exceeds C allowance 1",
+        "invented_amended_supply_2": "Would pass capacity with excess 1, but that input change is unauthorised",
+        "selected": "Use provided supply, label scenario-input applicability provisional, request official C manifest"
+      },
+      "expectation_basis": "documented allowance plus provisional input applicability",
+      "question": "Q11",
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    },
+    {
+      "id": "E26",
+      "title": "Output sets and label renaming",
+      "rule_ids": [
+        "R09",
+        "R33"
+      ],
+      "given": {
+        "scenarios": [
+          "A",
+          "B",
+          "C"
+        ],
+        "group_rename": "At one fixed location/week rename each distinct label bijectively"
+      },
+      "expected_by_interpretation": {
+        "output_files": "3 CSVs per scenario, 9 total; do not mix scenario labels within RESULTS",
+        "renaming": "Local feasibility and score unchanged; never merge two labels or apply a numeric weekday meaning",
+        "hidden_instances": "Different IDs/counts are not a reason for rejection; supported schema/domain governs"
+      },
+      "expectation_basis": "documented output and label scope",
+      "question": null,
+      "evidence": [],
+      "official_result": null,
+      "scope": "Isolated rule example, not a complete eight-CSV instance or full feasibility verdict"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "assumptions": [
+    "at most one access per activity per week",
+    "Sunday completion dates",
+    "relax all resource, protection, predecessor and group constraints",
+    "C allows at most two ECLO accesses per activity",
+    "activity-level weighted-delay interpretation",
+    "ECLO penalty counted per activity access"
+  ],
+  "activities": [
+    {
+      "activity": "A036",
+      "contract": "C006",
+      "units": 7,
+      "start_week": 22,
+      "due_week": 26,
+      "available_weeks": 5,
+      "A_earliest_finish": 28,
+      "A_min_delay": 14,
+      "A_delay_cost": 18.2,
+      "C_earliest_finish": 27,
+      "C_min_delay": 7,
+      "C_delay_cost": 9.1,
+      "C_cost_choices": [
+        {
+          "eclo": 0,
+          "weeks": 7,
+          "delay_days": 14,
+          "total_cost": 18.2
+        },
+        {
+          "eclo": 1,
+          "weeks": 7,
+          "delay_days": 14,
+          "total_cost": 23.2
+        },
+        {
+          "eclo": 2,
+          "weeks": 6,
+          "delay_days": 7,
+          "total_cost": 19.1
+        }
+      ],
+      "B_min_eclo": 4,
+      "B_individually_possible": true
+    },
+    {
+      "activity": "A059",
+      "contract": "C010",
+      "units": 7,
+      "start_week": 14,
+      "due_week": 19,
+      "available_weeks": 6,
+      "A_earliest_finish": 20,
+      "A_min_delay": 7,
+      "A_delay_cost": 7,
+      "C_earliest_finish": 19,
+      "C_min_delay": 0,
+      "C_delay_cost": 0,
+      "C_cost_choices": [
+        {
+          "eclo": 0,
+          "weeks": 7,
+          "delay_days": 7,
+          "total_cost": 7
+        },
+        {
+          "eclo": 1,
+          "weeks": 7,
+          "delay_days": 7,
+          "total_cost": 12
+        },
+        {
+          "eclo": 2,
+          "weeks": 6,
+          "delay_days": 0,
+          "total_cost": 10
+        }
+      ],
+      "B_min_eclo": 2,
+      "B_individually_possible": true
+    }
+  ],
+  "A_delay_lower_bound": 25.2,
+  "C_delay_lower_bound": 9.1,
+  "C_delay_plus_eclo_lower_bound": 25.2,
+  "B_min_eclo": 6,
+  "B_eclo_cost_lower_bound": 30
+}

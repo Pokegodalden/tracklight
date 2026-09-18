@@ -1,0 +1,97 @@
+{
+  "review_date": "2026-09-18",
+  "python": "3.12.14",
+  "ortools": "9.15.6755",
+  "tests": {
+    "passed": 128,
+    "log_sha256": "4399d2e2ad8aece36752f318412c68b83853345ca7fea4f7dcd06ff10877dc1c"
+  },
+  "source_sha256": {
+    "__init__.py": "513fe13f53f0e5774b85ff928cb37c827ed18aa9f0c904dcf1f4649c863c605c",
+    "baseline_scheduler.py": "a6e446189b3d5fa33f19f684f7949a5bb059a4fd79734abdec92f701609f35f8",
+    "importer.py": "282033fc04d11b84e14c765dc3e3a19d37d2df247a62dce98ac3f391cbb0e364",
+    "network.py": "f975fce802510fe75c48525b5a7c817f8eef93ff0e928c36b6122fd4332ce309",
+    "night_diagnostic.py": "41e811075bb1728082766efbb1e306e978316dbde6bf82bfb369adae3a3c17e2",
+    "optimizer.py": "a412009984665d93689b19b0364da3b24278da00fb3e8bbd083198e1838830b4",
+    "schema.py": "5ac4bed57015cbd2d367852c4666e69c4da3b07679c97a6ef905e0bdce53177e",
+    "validator.py": "3048ba067236435fb9a4f702e04bd905daadc8d6a71b90ffc2846983a61895a3",
+    "webapp.py": "f8d6d92f546bcdb06b26967b15abe1dcce076071812c95c0de5986d6ed4597a4",
+    "workspace.py": "2ea6d38de0f852ac590ad34b9d155c8a8498a89888838a8565972ef566ac2c98",
+    "web/app.js": "bbaaf6cc5ee5252ce2026adbbd50bdfe25e36fda3e0bede1317dcc1247cc9335",
+    "web/index.html": "ecda652aa14f08606a951a4840b220167bf20e205876847c09cd1558845cdeca",
+    "web/style.css": "96067b52e3be6c156098560d74b246ef50975e7b3b20d752278a0799ca70f61d"
+  },
+  "scenarios": {
+    "A": {
+      "all_work_complete": true,
+      "weekly_violations": 0,
+      "conditional_night_status": "ASSIGNED_FOR_MODELLED_RELATIONS",
+      "score_tenths": 252,
+      "best_bound_tenths": 252.0,
+      "relative_gap": 0,
+      "round_trip_report_equal": true,
+      "zip_bytes_and_metadata_equal": true,
+      "current_source_fingerprints_match": true,
+      "schedule_sha256": {
+        "SCHEDULE_ACCESS.csv": "f9b8daf8e3cb2aaf15570a29fc2080e10fa801dcf7b3e7f16fd64b3f56a71fce",
+        "SCHEDULE_OCCUPANCY.csv": "1fd87efba9896fd7f7a6e7a3f6b42233974676cd12861d2c18adb0df369dfa3e",
+        "RESULTS.csv": "be4307fa4850cde040c11f2e96d9e20fe19ea1099504cca783ced6b63f2d0c6b"
+      },
+      "official_validation": "NOT_RUN",
+      "full_feasibility_established": false
+    },
+    "B": {
+      "all_work_complete": true,
+      "weekly_violations": 0,
+      "conditional_night_status": "ASSIGNED_FOR_MODELLED_RELATIONS",
+      "score_tenths": 350,
+      "best_bound_tenths": 350.0,
+      "relative_gap": 0,
+      "round_trip_report_equal": true,
+      "zip_bytes_and_metadata_equal": true,
+      "current_source_fingerprints_match": true,
+      "schedule_sha256": {
+        "SCHEDULE_ACCESS.csv": "2ba8d9e9b9bd4b1356239ee1da45c0b2e19c3a82c93f936aebfb6b566c03e7fe",
+        "SCHEDULE_OCCUPANCY.csv": "4b5e82f85545dbd31bb9f055a9970544ee801f2b197946b6bc8e3137a97688cc",
+        "RESULTS.csv": "3d27392ecb8cbd3670eba354807410f2b82324fd3d5dbbeebfda72652e02b17b"
+      },
+      "official_validation": "NOT_RUN",
+      "full_feasibility_established": false
+    },
+    "C": {
+      "all_work_complete": true,
+      "weekly_violations": 0,
+      "conditional_night_status": "ASSIGNED_FOR_MODELLED_RELATIONS",
+      "score_tenths": 252,
+      "best_bound_tenths": 252.0,
+      "relative_gap": 0,
+      "round_trip_report_equal": true,
+      "zip_bytes_and_metadata_equal": true,
+      "current_source_fingerprints_match": true,
+      "schedule_sha256": {
+        "SCHEDULE_ACCESS.csv": "59049bff05318dcdcf6e25a9a88165397bc6edabcaaaf8491d56a8baf80b4c3d",
+        "SCHEDULE_OCCUPANCY.csv": "f210a9c99f82dcafb20ac58102db321f8d1a2a85afdaf7dade5ff5c793a222bc",
+        "RESULTS.csv": "e7a394736b0740dae31831dbbe04d66316376fb0329299e1884f9e2464f5e2d3"
+      },
+      "official_validation": "NOT_RUN",
+      "full_feasibility_established": false
+    }
+  },
+  "frozen_pack_verification": {
+    "passed": true,
+    "files_checked": 15
+  },
+  "rule_pack_verification": {
+    "passed": true,
+    "rules": 34,
+    "examples": 26
+  },
+  "browser_checks": {
+    "refresh_preserves_selected_run_and_count": true,
+    "new_server_session_loads_cleanly": true,
+    "no_solution_shows_no_allocation_and_disables_csv_export": true,
+    "invalid_week_999_inspects_at_week_30_without_changing_input": true,
+    "final_build_scenario_A_objective": 25.2
+  },
+  "scope": "Review of Steps 5 and 6 only; model guarantees and provisional checks, not official acceptance."
+}

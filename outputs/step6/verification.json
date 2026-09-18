@@ -1,0 +1,57 @@
+{
+  "tests": [
+    "121",
+    "13.977"
+  ],
+  "test_result": "OK",
+  "python_version": "3.12.14",
+  "ortools_version": "9.15.6755",
+  "requirements_sha256": "415cf09eae09086e217e51fef04e69adaa8cac4b0a6af36f8e7ac41863e68df4",
+  "runs": {
+    "A": {
+      "all_work_complete": true,
+      "weekly_violations": 0,
+      "night_diagnostic_status": "ASSIGNED_FOR_MODELLED_RELATIONS",
+      "objective_tenths": 252,
+      "bound_tenths": 252.0,
+      "round_trip_report_equal": true,
+      "code_fingerprints_match_final_files": true,
+      "csv_sha256": {
+        "SCHEDULE_ACCESS.csv": "3153b0c9fff39487d8d7caee99b201a4ac1a3edd5f059e7938111d90f590594f",
+        "SCHEDULE_OCCUPANCY.csv": "55a29b58bd7b4cb1e634378695f2a4fc491fefbc6cb3c3f13ef649343245307d",
+        "RESULTS.csv": "0e4fce3fdf5aebe168a4fa20520213c446d89864cd3e3c0234ea679f9d04de83"
+      },
+      "official_validation": "NOT_RUN"
+    },
+    "B": {
+      "all_work_complete": true,
+      "weekly_violations": 0,
+      "night_diagnostic_status": "ASSIGNED_FOR_MODELLED_RELATIONS",
+      "objective_tenths": 350,
+      "bound_tenths": 350.0,
+      "round_trip_report_equal": true,
+      "code_fingerprints_match_final_files": true,
+      "csv_sha256": {
+        "SCHEDULE_ACCESS.csv": "623f7bc663eeff783d119cdeeb76ddb166992967bf7b4ebf17f94e6666874948",
+        "SCHEDULE_OCCUPANCY.csv": "e23d3bc83dc109a2b32e283eaff07ddb0e087b339ff152fc73765e1a7bdf3ecc",
+        "RESULTS.csv": "3d27392ecb8cbd3670eba354807410f2b82324fd3d5dbbeebfda72652e02b17b"
+      },
+      "official_validation": "NOT_RUN"
+    },
+    "C": {
+      "all_work_complete": true,
+      "weekly_violations": 0,
+      "night_diagnostic_status": "ASSIGNED_FOR_MODELLED_RELATIONS",
+      "objective_tenths": 252,
+      "bound_tenths": 252.0,
+      "round_trip_report_equal": true,
+      "code_fingerprints_match_final_files": true,
+      "csv_sha256": {
+        "SCHEDULE_ACCESS.csv": "3ec2bd2981ca7b10b0bd96e373dbab4cda9f64e2c8baf10e50b0c84dc2ac1626",
+        "SCHEDULE_OCCUPANCY.csv": "cfd52917a1e3e15158e65a8277e361709725318acb71b8805103f008c8c56e6a",
+        "RESULTS.csv": "b8d33b337597fa197f2c95b67da2ca5da7603cacd47f539edce3b6c082488484"
+      },
+      "official_validation": "NOT_RUN"
+    }
+  }
+}

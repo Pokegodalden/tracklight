@@ -1,0 +1,2 @@
+# Preserve exact bytes: source packs and verification reports contain file hashes.
+* -text

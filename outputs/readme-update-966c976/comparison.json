@@ -1,0 +1,59 @@
+{
+  "sample": {
+    "SCHEDULE_ACCESS.csv": true,
+    "SCHEDULE_OCCUPANCY.csv": true,
+    "RESULTS.csv": true,
+    "report_equal": true
+  },
+  "sample_dependencies": [
+    {
+      "predecessor": "A003",
+      "successor": "A004",
+      "predecessor_last_week": 16,
+      "successor_first_week": 21,
+      "strictly_later": true
+    },
+    {
+      "predecessor": "A012",
+      "successor": "A013",
+      "predecessor_last_week": 20,
+      "successor_first_week": 22,
+      "strictly_later": true
+    },
+    {
+      "predecessor": "A037",
+      "successor": "A038",
+      "predecessor_last_week": 9,
+      "successor_first_week": 10,
+      "strictly_later": true
+    },
+    {
+      "predecessor": "A048",
+      "successor": "A049",
+      "predecessor_last_week": 3,
+      "successor_first_week": 8,
+      "strictly_later": true
+    },
+    {
+      "predecessor": "A050",
+      "successor": "A051",
+      "predecessor_last_week": 18,
+      "successor_first_week": 26,
+      "strictly_later": true
+    },
+    {
+      "predecessor": "A065",
+      "successor": "A066",
+      "predecessor_last_week": 20,
+      "successor_first_week": 25,
+      "strictly_later": true
+    }
+  ],
+  "baseline": {
+    "SCHEDULE_ACCESS.csv": true,
+    "SCHEDULE_OCCUPANCY.csv": true,
+    "RESULTS.csv": true,
+    "report_equal": true
+  },
+  "original_profile_sha256": "6ac94593281312611639894e8c3ff85b9716288a29763b7721eba006a89bd724"
+}

@@ -1,0 +1,33 @@
+{
+  "run_id": "3eeb27e393d34cc39ad5b33379c2b282",
+  "label": "Optimised draft",
+  "scenario": "A",
+  "input_data_sha256": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+  "submission_ready": false,
+  "rule_profile": {
+    "profile_id": "ps1-provisional-0.2.0",
+    "profile_sha256": "a4f79f7e20bc4e6dbc6c07de64e1a090d443b00a5ddf81b6c04a926f143eda8e",
+    "source_updates": [
+      {
+        "file": "data/source_updates/966c976005db2e3e40a691cff268fdb8f396a5df/PS1_README.md",
+        "sha256": "e7d8f9457e62a1732fc7986cea57ad5fbd595e7cabe2e8b789e673c8335bd253",
+        "commit": "966c976005db2e3e40a691cff268fdb8f396a5df",
+        "url": "https://github.com/aochinwen/NebulaX-Hackathon-ProblemStatement/blob/966c976005db2e3e40a691cff268fdb8f396a5df/PS1/PS1_README.md"
+      }
+    ]
+  },
+  "optimiser_version": "ps1-cpsat-0.1.0",
+  "purpose": "Review or partial-draft export; not official acceptance or operational authority.",
+  "round_trip_report_equal": true,
+  "bytes_preserved": true,
+  "schedule_sha256": {
+    "SCHEDULE_ACCESS.csv": "4f1e7b64f8ccead46b0767a943eae5de17e8448bbbf8c0602fbf69ce4c74bb21",
+    "SCHEDULE_OCCUPANCY.csv": "f6f3d5b02bb61eb6cfc68d3536e6f75ee6f9497c71d22a5aff086e5d2a039655",
+    "RESULTS.csv": "74b3fba37d1a8ffe1764b404209a2562ccd46c8c1b5ab53191a2b6a5236c4751"
+  },
+  "source_sha256": {
+    "workspace.py": "1298f35ab3205f6a15073dfe2859adf59a160f965cac231739e1b664efbbdb8c",
+    "baseline_scheduler.py": "a6e446189b3d5fa33f19f684f7949a5bb059a4fd79734abdec92f701609f35f8",
+    "optimizer.py": "a7ca15a34108732747f18ae46b321530a147af2e6140107fe3e01c12a3a1843d"
+  }
+}

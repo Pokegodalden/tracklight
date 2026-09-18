@@ -1,0 +1,138 @@
+Step 3 review verification — 18 September 2026
+Importer 0.1.1; Step 2 profile 0.1.0 unchanged.
+Scope: regression tests, frozen baseline integrity, rule-pack consistency and baseline import.
+
+tests — exit 0
+test_changed_input_creates_new_identity (test_baseline.BaselineIntegrityTests.test_changed_input_creates_new_identity) ... ok
+test_changed_role_cannot_redefine_eight_input_identity (test_baseline.BaselineIntegrityTests.test_changed_role_cannot_redefine_eight_input_identity) ... ok
+test_changed_source_before_publication_is_rejected (test_baseline.BaselineIntegrityTests.test_changed_source_before_publication_is_rejected) ... ok
+test_destination_inside_source_is_rejected (test_baseline.BaselineIntegrityTests.test_destination_inside_source_is_rejected) ... ok
+test_extra_reference_does_not_change_eight_input_identity (test_baseline.BaselineIntegrityTests.test_extra_reference_does_not_change_eight_input_identity) ... ok
+test_freeze_preserves_bytes_and_rerun_preserves_manifest (test_baseline.BaselineIntegrityTests.test_freeze_preserves_bytes_and_rerun_preserves_manifest) ... ok
+test_interrupted_copy_does_not_publish_partial_snapshot (test_baseline.BaselineIntegrityTests.test_interrupted_copy_does_not_publish_partial_snapshot) ... ok
+test_invalid_utf8_file_returns_a_failure_report (test_baseline.BaselineIntegrityTests.test_invalid_utf8_file_returns_a_failure_report) ... ok
+test_malformed_json_cli_is_nonzero_without_traceback (test_baseline.BaselineIntegrityTests.test_malformed_json_cli_is_nonzero_without_traceback) ... ok
+test_manifest_fingerprint_change_is_detected (test_baseline.BaselineIntegrityTests.test_manifest_fingerprint_change_is_detected) ... ok
+test_missing_file_is_detected (test_baseline.BaselineIntegrityTests.test_missing_file_is_detected) ... ok
+test_missing_manifest_returns_a_failure_report (test_baseline.BaselineIntegrityTests.test_missing_manifest_returns_a_failure_report) ... ok
+test_non_object_manifest_returns_a_failure_report (test_baseline.BaselineIntegrityTests.test_non_object_manifest_returns_a_failure_report) ... ok
+test_path_traversal_in_manifest_is_rejected (test_baseline.BaselineIntegrityTests.test_path_traversal_in_manifest_is_rejected) ... ok
+test_relocated_pristine_snapshot_verifies (test_baseline.BaselineIntegrityTests.test_relocated_pristine_snapshot_verifies) ... ok
+test_same_length_byte_change_is_detected (test_baseline.BaselineIntegrityTests.test_same_length_byte_change_is_detected) ... ok
+test_unclosed_csv_quote_is_rejected (test_baseline.BaselineIntegrityTests.test_unclosed_csv_quote_is_rejected) ... ok
+test_unlisted_file_is_detected (test_baseline.BaselineIntegrityTests.test_unlisted_file_is_detected) ... ok
+test_unsupported_manifest_version_fails (test_baseline.BaselineIntegrityTests.test_unsupported_manifest_version_fails) ... ok
+test_all_sample_occupancy_spans_reconcile (test_importer.ImporterTests.test_all_sample_occupancy_spans_reconcile) ... ok
+test_atomic_bundle_replaces_old_model_after_failed_import (test_importer.ImporterTests.test_atomic_bundle_replaces_old_model_after_failed_import) ... ok
+test_baseline_counts_identity_and_unknown_protection (test_importer.ImporterTests.test_baseline_counts_identity_and_unknown_protection) ... ok
+test_branch_is_rejected_instead_of_choosing_a_route (test_importer.ImporterTests.test_branch_is_rejected_instead_of_choosing_a_route) ... ok
+test_changed_profile_is_rejected_before_modelling (test_importer.ImporterTests.test_changed_profile_is_rejected_before_modelling) ... ok
+test_cli_bad_input_returns_nonzero_and_actionable_report (test_importer.ImporterTests.test_cli_bad_input_returns_nonzero_and_actionable_report) ... ok
+test_conflicting_contract_dates_fail (test_importer.ImporterTests.test_conflicting_contract_dates_fail) ... ok
+test_cross_line_platform_and_reversed_spans_fail_explicitly (test_importer.ImporterTests.test_cross_line_platform_and_reversed_spans_fail_explicitly) ... ok
+test_csv_parser_error_points_to_bad_record_start (test_importer.ImporterTests.test_csv_parser_error_points_to_bad_record_start) ... ok
+test_cycle_has_a_concrete_witness (test_importer.ImporterTests.test_cycle_has_a_concrete_witness) ... ok
+test_dates_outside_horizon_are_preserved_as_warnings (test_importer.ImporterTests.test_dates_outside_horizon_are_preserved_as_warnings) ... ok
+test_directory_permission_failure_returns_structured_result (test_importer.ImporterTests.test_directory_permission_failure_returns_structured_result) ... ok
+test_disconnect_is_not_bridged_by_sequence (test_importer.ImporterTests.test_disconnect_is_not_bridged_by_sequence) ... ok
+test_duplicate_key_reports_source_line (test_importer.ImporterTests.test_duplicate_key_reports_source_line) ... ok
+test_empty_and_missing_file_fail (test_importer.ImporterTests.test_empty_and_missing_file_fail) ... ok
+test_failed_publication_preserves_previous_bundle_and_cleans_temporary (test_importer.ImporterTests.test_failed_publication_preserves_previous_bundle_and_cleans_temporary) ... ok
+test_gapped_shuffled_sector_sequence_does_not_create_links (test_importer.ImporterTests.test_gapped_shuffled_sector_sequence_does_not_create_links) ... ok
+test_generated_location_collision_cannot_merge_two_lines (test_importer.ImporterTests.test_generated_location_collision_cannot_merge_two_lines) ... ok
+test_interchange_and_bound_capacity_stay_separate (test_importer.ImporterTests.test_interchange_and_bound_capacity_stay_separate) ... ok
+test_malformed_encoding_header_and_width (test_importer.ImporterTests.test_malformed_encoding_header_and_width) ... ok
+test_midweek_release_and_horizon_end (test_importer.ImporterTests.test_midweek_release_and_horizon_end) ... ok
+test_new_identifiers_counts_and_project_type_pairs (test_importer.ImporterTests.test_new_identifiers_counts_and_project_type_pairs) ... ok
+test_numeric_date_category_and_whitespace_errors (test_importer.ImporterTests.test_numeric_date_category_and_whitespace_errors) ... ok
+test_reused_importer_does_not_retain_missing_file_or_change_prior_result (test_importer.ImporterTests.test_reused_importer_does_not_retain_missing_file_or_change_prior_result) ... ok
+test_self_dependency_is_a_cycle (test_importer.ImporterTests.test_self_dependency_is_a_cycle) ... ok
+test_shared_capacity_and_wrong_bound_metadata_rejected (test_importer.ImporterTests.test_shared_capacity_and_wrong_bound_metadata_rejected) ... ok
+test_smaller_one_line_instance_and_reordered_headers (test_importer.ImporterTests.test_smaller_one_line_instance_and_reordered_headers) ... ok
+test_third_duplicate_still_points_to_first_occurrence (test_importer.ImporterTests.test_third_duplicate_still_points_to_first_occurrence) ... ok
+test_unknown_and_overflowing_horizon_fail (test_importer.ImporterTests.test_unknown_and_overflowing_horizon_fail) ... ok
+test_unknown_project_type_and_predecessor (test_importer.ImporterTests.test_unknown_project_type_and_predecessor) ... ok
+test_workload_uses_exact_half_units_without_rounding (test_importer.ImporterTests.test_workload_uses_exact_half_units_without_rounding) ... ok
+test_zero_supply_is_preserved_missing_supply_fails (test_importer.ImporterTests.test_zero_supply_is_preserved_missing_supply_fails) ... ok
+test_broken_rule_example_link_is_detected (test_rule_pack.RulePackTests.test_broken_rule_example_link_is_detected) ... ok
+test_changed_source_evidence_is_detected (test_rule_pack.RulePackTests.test_changed_source_evidence_is_detected) ... ok
+test_deferred_rule_cannot_silently_become_enforced (test_rule_pack.RulePackTests.test_deferred_rule_cannot_silently_become_enforced) ... ok
+test_official_result_cannot_be_invented (test_rule_pack.RulePackTests.test_official_result_cannot_be_invented) ... ok
+test_pack_and_selected_evidence_agree (test_rule_pack.RulePackTests.test_pack_and_selected_evidence_agree) ... ok
+test_profile_cannot_claim_unknown_checks_pass (test_rule_pack.RulePackTests.test_profile_cannot_claim_unknown_checks_pass) ... ok
+test_wrong_sample_score_is_detected (test_rule_pack.RulePackTests.test_wrong_sample_score_is_detected) ... ok
+test_wrong_spec_fingerprint_is_detected (test_rule_pack.RulePackTests.test_wrong_spec_fingerprint_is_detected) ... ok
+
+----------------------------------------------------------------------
+Ran 59 tests in 6.067s
+
+OK
+
+baseline — exit 0
+{
+  "snapshot_id": "ps1-0dfd901f97bf579f",
+  "passed": true,
+  "files_checked": 15,
+  "issues": []
+}
+
+rule_pack — exit 0
+{
+  "scope": "Specification consistency, source evidence and selected arithmetic only; not official feasibility",
+  "version": "0.1.0",
+  "passed": true,
+  "rule_count": 34,
+  "rule_status_counts": {
+    "documented": 15,
+    "provisional": 16,
+    "deferred": 3
+  },
+  "example_count": 26,
+  "question_count": 12,
+  "exact_source_records_checked": 28,
+  "selected_checks": {
+    "E07_equality_contradiction": true,
+    "E07_identical_work_spans": true,
+    "E08_workfront_contradiction": true,
+    "E15_week_boundaries": true,
+    "E21_candidate_score_arithmetic": true,
+    "E22_late_activity_records": true,
+    "E22_all_contract_completion_dates": true,
+    "E22_distinct_delay_totals": true,
+    "E24_working_rows_only": true
+  },
+  "spec_sha256": {
+    "rules.json": "32bd5fc4ab794a366ab63403662983be34ca8e12c5464e1124bb555a41f5be65",
+    "examples.json": "aec53e6e82872cb677a9286dd52bfa3ccb08cb99027dec082c59df4e2f31dfb6",
+    "profile.json": "6ac94593281312611639894e8c3ff85b9716288a29763b7721eba006a89bd724"
+  },
+  "issues": []
+}
+
+import — exit 0
+{
+  "status": "IMPORTED_WITH_UNVERIFIED_RULES",
+  "input_valid": true,
+  "schedule_feasibility": "NOT_EVALUATED",
+  "protection_validation": "UNVERIFIED",
+  "official_validation": "NOT_RUN",
+  "counts": {
+    "lines": 2,
+    "station_line_memberships": 20,
+    "distinct_stations": 18,
+    "sectors": 18,
+    "bookable_locations": 76,
+    "contracts": 14,
+    "project_type_rows": 14,
+    "activities": 54,
+    "workload_units_scaled": 384,
+    "dependency_edges": 6,
+    "network_incidence_links": 72
+  },
+  "issues": [],
+  "unconfigured_rules": [
+    "R12",
+    "R15",
+    "R17"
+  ]
+}

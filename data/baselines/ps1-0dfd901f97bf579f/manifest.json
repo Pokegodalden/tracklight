@@ -1,0 +1,247 @@
+{
+  "manifest_version": 1,
+  "snapshot_id": "ps1-0dfd901f97bf579f",
+  "pack_sha256": "0dfd901f97bf579f74d739a39946e6e25eb30af53f639991e3d39876834450af",
+  "input_data_sha256": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+  "identity_method": "SHA-256 of UTF-8 sorted path<TAB>file_sha256<LF> records",
+  "created_utc": "2026-09-18T03:53:32.379681+00:00",
+  "files": [
+    {
+      "path": "PS1/01_data/01_LINES.csv",
+      "role": "input",
+      "size_bytes": 49,
+      "sha256": "b6e60b0e7726e4266efd059bf5061b3b3a2c9825ae7dd85a6431f41b81b383e7",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\PS1\\01_data\\01_LINES.csv",
+      "csv_columns": [
+        "line_code",
+        "line_name"
+      ],
+      "csv_data_rows": 2
+    },
+    {
+      "path": "PS1/01_data/02_STATIONS.csv",
+      "role": "input",
+      "size_bytes": 282,
+      "sha256": "4a27d6508defd03e8c833133b523390ac8850a1c1717f309033e40f364720e24",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\PS1\\01_data\\02_STATIONS.csv",
+      "csv_columns": [
+        "station_id",
+        "line_code",
+        "seq",
+        "is_interchange"
+      ],
+      "csv_data_rows": 20
+    },
+    {
+      "path": "PS1/01_data/03_SECTORS.csv",
+      "role": "input",
+      "size_bytes": 649,
+      "sha256": "643fdb2bd317126b42572fafcce8f8108008e8e9c7b71c08dfd31cec11c3ee34",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\PS1\\01_data\\03_SECTORS.csv",
+      "csv_columns": [
+        "sector_id",
+        "line_code",
+        "from_station_id",
+        "to_station_id",
+        "seq",
+        "is_shared"
+      ],
+      "csv_data_rows": 18
+    },
+    {
+      "path": "PS1/01_data/04_LOCATION_SUPPLY.csv",
+      "role": "input",
+      "size_bytes": 3210,
+      "sha256": "9d8a92d6ffd340f40dae28302ed6f88958f8661e2b046bb6b4e0b79c385be1e6",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\PS1\\01_data\\04_LOCATION_SUPPLY.csv",
+      "csv_columns": [
+        "location_id",
+        "location_kind",
+        "line_code",
+        "bound",
+        "supply_capacity"
+      ],
+      "csv_data_rows": 76
+    },
+    {
+      "path": "PS1/01_data/05_BUFFER_LOCATION.csv",
+      "role": "input",
+      "size_bytes": 114,
+      "sha256": "4b9fe7fd6a1f9128bd6e83405496dc64a8028f997bb1fcd28355582a6d554de0",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\PS1\\01_data\\05_BUFFER_LOCATION.csv",
+      "csv_columns": [
+        "nature_of_works",
+        "up_to_buffer_sectors",
+        "opposite_bound_required"
+      ],
+      "csv_data_rows": 3
+    },
+    {
+      "path": "PS1/01_data/06_PARAMETERS.csv",
+      "role": "input",
+      "size_bytes": 52,
+      "sha256": "9400b7b082069c56b8cae85d56994cf06fe08ae54fcd116ff6edc890034cc8e6",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\PS1\\01_data\\06_PARAMETERS.csv",
+      "csv_columns": [
+        "key",
+        "value"
+      ],
+      "csv_data_rows": 2
+    },
+    {
+      "path": "PS1/01_data/07_PROJECT_DETAILS.csv",
+      "role": "input",
+      "size_bytes": 1583,
+      "sha256": "393f0dcc7e7b9a54f0eff12eb0dd0122dbd74f4b4b8b73b7676f9f232fb8a4c7",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\PS1\\01_data\\07_PROJECT_DETAILS.csv",
+      "csv_columns": [
+        "contract_number",
+        "contract_description",
+        "contract_award_date",
+        "activity_type",
+        "nature_of_activity",
+        "contract_priority",
+        "contract_completion_date",
+        "planned_completion_date",
+        "number_of_workfronts",
+        "access_type",
+        "number_of_maximum_access_per_week"
+      ],
+      "csv_data_rows": 14
+    },
+    {
+      "path": "PS1/01_data/08_ACTIVITY_DETAILS.csv",
+      "role": "input",
+      "size_bytes": 4174,
+      "sha256": "6a1ef90cd3bed93a8970ef49454e9c02e0c1df93ce8e0f0f4b071563cfb43e30",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\PS1\\01_data\\08_ACTIVITY_DETAILS.csv",
+      "csv_columns": [
+        "activity_id",
+        "contract_number",
+        "activity_type",
+        "start_location_id",
+        "end_location_id",
+        "total_accesses",
+        "planned_start_date",
+        "predecessor_activity_id",
+        "activity_priority"
+      ],
+      "csv_data_rows": 54
+    },
+    {
+      "path": "PS1/02_references/PS1.drawio",
+      "role": "reference",
+      "size_bytes": 141135,
+      "sha256": "aa10dc61d8764be4ab16968071d2610a9ea9bb4dc5e5c2b62eb0baab297bf248",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\PS1\\02_references\\PS1.drawio"
+    },
+    {
+      "path": "PS1/02_references/network_diagram.svg",
+      "role": "reference",
+      "size_bytes": 11835,
+      "sha256": "3508d1ba6eaa5dd3351a9c2f23d5fa975809d63de24b38f98aba3a0630d61e98",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\PS1\\02_references\\network_diagram.svg"
+    },
+    {
+      "path": "PS1/03_submission_sample/RESULTS.csv",
+      "role": "sample_output",
+      "size_bytes": 345,
+      "sha256": "b815b93c64cd429c1cd000da71e364f3bd5198356ad88b2abaf58d00ffa422cc",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\PS1\\03_submission_sample\\RESULTS.csv",
+      "csv_columns": [
+        "scenario",
+        "contract_number",
+        "simulated_completion_date",
+        "overrun_days"
+      ],
+      "csv_data_rows": 14
+    },
+    {
+      "path": "PS1/03_submission_sample/SCHEDULE_ACCESS.csv",
+      "role": "sample_output",
+      "size_bytes": 2706,
+      "sha256": "fef1f07f28819804c82c8051d282fc332bb1094f24d5ebeb799c23bcbf22c843",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\PS1\\03_submission_sample\\SCHEDULE_ACCESS.csv",
+      "csv_columns": [
+        "activity_id",
+        "access_seq",
+        "week",
+        "eclo",
+        "access_night"
+      ],
+      "csv_data_rows": 192
+    },
+    {
+      "path": "PS1/03_submission_sample/SCHEDULE_OCCUPANCY.csv",
+      "role": "sample_output",
+      "size_bytes": 26056,
+      "sha256": "efd33d33573d722db3f87e8d2bbc9af6fe7b6deaab504e8d97f2d7ac58116cf3",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\PS1\\03_submission_sample\\SCHEDULE_OCCUPANCY.csv",
+      "csv_columns": [
+        "activity_id",
+        "week",
+        "location_id",
+        "co_share_group"
+      ],
+      "csv_data_rows": 928
+    },
+    {
+      "path": "PS1/PS1_README.md",
+      "role": "brief",
+      "size_bytes": 28058,
+      "sha256": "b4b6e2072ea27dfe40d785b80b606e9297392df43124f69316e27b3b5c254d0f",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\PS1\\PS1_README.md"
+    },
+    {
+      "path": "README.md",
+      "role": "brief",
+      "size_bytes": 10830,
+      "sha256": "44e36f70c29234d4377e7b3b3ed94d6b8a6d17933667596174fce34c2e129a43",
+      "source_path": "C:\\Users\\pokeg\\Downloads\\README.md"
+    }
+  ],
+  "additional_paths": [],
+  "baseline": {
+    "observed": {
+      "lines": 2,
+      "station_line_memberships": 20,
+      "distinct_stations": 18,
+      "sectors": 18,
+      "bookable_locations": 76,
+      "contracts": 14,
+      "activities": 54,
+      "workload_standard_equivalent_units": "192"
+    },
+    "expected_from_workflow": {
+      "lines": 2,
+      "station_line_memberships": 20,
+      "distinct_stations": 18,
+      "sectors": 18,
+      "bookable_locations": 76,
+      "contracts": 14,
+      "activities": 54,
+      "workload_standard_equivalent_units": "192"
+    },
+    "counts_match_workflow": true,
+    "line_codes": [
+      "ALP",
+      "BET"
+    ],
+    "horizon": {
+      "start": "2027-01-04",
+      "weeks": 30,
+      "inclusive_end": "2027-08-01",
+      "end_derivation": "start + 7 * weeks - 1 days; not a completion-date rule",
+      "dated_operational_access_calendar_supplied": false
+    },
+    "sample_rows": {
+      "RESULTS": 14,
+      "SCHEDULE_ACCESS": 192,
+      "SCHEDULE_OCCUPANCY": 928
+    },
+    "sample_scenarios": [
+      "A"
+    ],
+    "scope": "Inventory, CSV structure and baseline counts only; no scheduling feasibility checks"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "scope": "Specification consistency, source evidence and selected arithmetic only; not official feasibility",
+  "version": "0.2.0",
+  "passed": true,
+  "rule_count": 34,
+  "rule_status_counts": {
+    "documented": 16,
+    "provisional": 15,
+    "deferred": 3
+  },
+  "example_count": 26,
+  "question_count": 12,
+  "exact_source_records_checked": 28,
+  "selected_checks": {
+    "E07_equality_contradiction": true,
+    "E07_identical_work_spans": true,
+    "E08_workfront_contradiction": true,
+    "E15_week_boundaries": true,
+    "E21_candidate_score_arithmetic": true,
+    "E22_late_activity_records": true,
+    "E22_all_contract_completion_dates": true,
+    "E22_distinct_delay_totals": true,
+    "E24_working_rows_only": true
+  },
+  "spec_sha256": {
+    "rules.json": "aec3766575cd057a84531066eebd24f44c45f2e16d21874e2c439f10a264f8b3",
+    "examples.json": "ef767bdbf8021affd13fd9cd4699175a6b109f87f36d9af2410d113fca57886c",
+    "profile.json": "a4f79f7e20bc4e6dbc6c07de64e1a090d443b00a5ddf81b6c04a926f143eda8e"
+  },
+  "issues": []
+}

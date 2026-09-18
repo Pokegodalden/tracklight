@@ -1,0 +1,109 @@
+{
+  "method": "Independent PowerShell Get-FileHash and Import-Csv",
+  "checked_utc": "2026-09-18T03:57:08.0631332Z",
+  "snapshot_id": "ps1-0dfd901f97bf579f",
+  "file_checks": [
+    {
+      "path": "PS1/01_data/01_LINES.csv",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": true
+    },
+    {
+      "path": "PS1/01_data/02_STATIONS.csv",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": true
+    },
+    {
+      "path": "PS1/01_data/03_SECTORS.csv",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": true
+    },
+    {
+      "path": "PS1/01_data/04_LOCATION_SUPPLY.csv",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": true
+    },
+    {
+      "path": "PS1/01_data/05_BUFFER_LOCATION.csv",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": true
+    },
+    {
+      "path": "PS1/01_data/06_PARAMETERS.csv",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": true
+    },
+    {
+      "path": "PS1/01_data/07_PROJECT_DETAILS.csv",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": true
+    },
+    {
+      "path": "PS1/01_data/08_ACTIVITY_DETAILS.csv",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": true
+    },
+    {
+      "path": "PS1/02_references/PS1.drawio",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": null
+    },
+    {
+      "path": "PS1/02_references/network_diagram.svg",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": null
+    },
+    {
+      "path": "PS1/03_submission_sample/RESULTS.csv",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": true
+    },
+    {
+      "path": "PS1/03_submission_sample/SCHEDULE_ACCESS.csv",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": true
+    },
+    {
+      "path": "PS1/03_submission_sample/SCHEDULE_OCCUPANCY.csv",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": true
+    },
+    {
+      "path": "PS1/PS1_README.md",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": null
+    },
+    {
+      "path": "README.md",
+      "source_equals_manifest": true,
+      "copy_equals_manifest": true,
+      "csv_rows_match": null
+    }
+  ],
+  "counts": {
+    "lines": 2,
+    "station_line_memberships": 20,
+    "distinct_stations": 18,
+    "sectors": 18,
+    "bookable_locations": 76,
+    "contracts": 14,
+    "activities": 54,
+    "workload_standard_equivalent_units": 192.0
+  },
+  "counts_match_manifest": true,
+  "passed": true
+}

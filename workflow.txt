@@ -1,0 +1,431 @@
+LTA NEBULAX PS1 - REVISED PROJECT WORKFLOW
+Prepared: 18 September 2026
+Revised after Step 1 review: 18 September 2026
+Scope: Railway Track Access Optimisation, PS1 only.
+Purpose: Project plan. This document does not certify a schedule.
+
+README UPDATE ADOPTED: 966c976005db2e3e40a691cff268fdb8f396a5df
+Active profile: specs/ps1/v0.2.0; original v0.1.0 and inputs remain preserved.
+Section 2.4 rule 3 confirms finish-to-start precedence: the successor's first
+access must be in a strictly later week than the predecessor's last scheduled
+access. Cross-contract links are allowed; cycles are prohibited. This confirms
+the existing implementation (internal R18) and resolves Q06. Other organiser
+questions remain open; no official validator result is available.
+Current review/questions: outputs/readme-update-966c976/.
+
+PROJECT OUTCOME
+
+Build an explainable scheduler that accounts for every activity, generates
+scenario-appropriate track-access allocations, compares alternatives, supports
+controlled replanning, and exports the three required submission files.
+
+Mandatory final submission from PS1_README section 4: public-test CSV results,
+a hosted live web app accepting hidden eight-CSV instances, a three-minute
+YouTube demonstration, and a GitLab repository URL with source/setup documentation.
+Section 2.6 requires a separate three-file result set for each of A, B and C.
+Replanning is a selected bonus feature, not an official core submission gate.
+
+Core user journey:
+Import -> assess data and rules -> schedule -> explain conflicts/trade-offs ->
+review or revise -> independently validate -> export and verify.
+
+Use the eight supplied CSVs as the benchmark inputs. Public operator material
+informs product design; it does not override the PS1 brief or define the judges'
+unpublished implementation. Resolve contradictory challenge material through
+an organiser clarification or a versioned official tool and its documentation.
+
+
+CRITIQUE OF THE PREVIOUS WORKFLOW
+
+1. It moved too quickly from an ambiguous brief to a full scheduling engine.
+   Change: introduce small rule examples and a physical-night consistency check
+   before fixing the optimisation model. Continue independent interface and
+   data work while clarifications are outstanding.
+
+2. "Independent validation" was underspecified. A checker that repeats the
+   solver's calculations can repeat the same mistake.
+   Change: reconstruct occupancy and accounting from exported decisions, use
+   hand-calculated cases, and compare with official outputs when available.
+
+3. A greedy baseline was presented as if it could always schedule all work.
+   Change: use it as an initial solution and comparison. A failed heuristic is
+   not proof of infeasibility. Never hide unfinished work or relax safety rules
+   to force a complete result.
+
+4. The plan did not sufficiently distinguish a weekly allocation from a
+   physically executable night plan.
+   Change: label local weekly checks, physical-night checks and official
+   validation separately. Counts of available nights do not identify which
+   calendar nights are available across different locations.
+
+5. It could encourage optimising an unconfirmed aggregate score.
+   Change: preserve the individual delay, excess-access and ECLO components;
+   version the scoring interpretation and compare alternative interpretations.
+   Do not introduce a new objective into the official score.
+
+6. UI, AI and live-data extensions competed with submission essentials.
+   Change: deliver an import-to-export vertical slice first, then all three
+   scenarios and replanning. Add external data or conversational AI only after
+   correctness and submission readiness are demonstrated.
+
+7. The approval workflow risked implying integration with operational control.
+   Change: the prototype offers planner review and approval recording. Actual
+   track-entry authorisation, traction-power control and handback execution
+   remain outside the hackathon system unless explicitly integrated later.
+
+8. Build responsibilities and completion gates were unclear.
+   Change: every step below has outputs, an acceptance gate and tool needs.
+   One person can own several roles; no team size is assumed.
+
+
+TOOLS AND PLUGINS: WHAT IS ACTUALLY NEEDED
+
+No new plugin is required to execute the core workflow.
+
+Available capabilities:
+- Local file/terminal tools: application development, data processing, tests,
+  exports and local version control. Runtime/package availability must be checked.
+- Built-in web research: official guidance and public documentation.
+- Spreadsheets skill: CSV inspection or optional analysis workbooks.
+- PDF skill: reading the provided guides and any relevant reference PDFs.
+- Browser automation: testing the application's user-facing workflow.
+- Codex file/browser preview: reviewing local reports and the running interface.
+
+Development dependencies, not plugins:
+- Python and its CSV/data-processing libraries are suitable for the core.
+- OR-Tools CP-SAT is a proposed optimisation library, not an installed capability
+  assumed by this plan. Verify the runtime, licence and package availability
+  during setup. Record dependency versions once chosen.
+- A web UI framework and test runner should be selected after checking the
+  team's skills and environment. Avoid introducing a complex stack for its own sake.
+- Git is useful for reproducible code and rule changes; check availability first.
+
+Optional apps/plugins:
+- Notion: shared requirements and assumption register, if the team wants it.
+- Teams: organiser/team clarification discussions, if already used by the team.
+- Outlook Email: sending approved clarification questions, if requested.
+- SharePoint: shared artefacts, if it is the team's chosen storage location.
+- Figma: optional interface design; available skills do not prove a connected
+  Figma account. Confirm tool/account access before using it.
+- Presentations: optional final slide deck, if a deck is needed.
+
+The recommended Notion, Teams, Outlook and SharePoint plugins are currently
+listed as not installed. None is a prerequisite. Local files are sufficient.
+Do not install/connect apps or send messages as an implicit part of this plan.
+DataMall uses an API connection; it does not require a dedicated plugin.
+Keep account keys in server-side secret configuration if integration is built,
+not in source code, browser bundles, logs, exports or this workflow.
+
+
+STEP 1 - FREEZE THE INPUTS AND DEFINE ACCEPTANCE
+Owner: requirements/validation lead.
+
+Actions:
+- Inventory the supplied README files, eight CSVs, reference diagrams and three
+  sample submission files. Record hashes and retain untouched originals.
+- Record known input counts: 2 lines, 18 distinct station IDs, 76 bookable
+  locations, 14 contracts, 54 activities and 192 standard-equivalent work units.
+- Define delivery as complete workload plus scenario compliance and reproducible
+  exports. A claimed optimum requires solver evidence.
+- Track the official validator/expander as a missing external dependency.
+- Record the benchmark's 30-week horizon and distinguish it from a dated
+  operational access calendar, which has not been supplied.
+
+Outputs: input manifest, acceptance checklist, dependency register.
+Gate: the team can identify exactly which input version produced a result.
+Tools/plugins: local file tools; Spreadsheets/PDF skills as needed. No new plugin.
+
+
+STEP 2 - RESOLVE RULES WITH SMALL EXAMPLES
+Owner: requirements lead, reviewed by validation lead.
+
+Actions:
+- Create a rule register: rule ID, source, interpretation, status, example,
+  enforcement location and organiser response/version.
+- Prioritise these questions:
+  a. One common physical night across an activity's full span.
+  b. Relationship between co_share_group, access_night and workfront concurrency.
+  c. Exact buffer, opposite-bound and Live interchange expansion.
+  d. Local versus transitive sharing exemptions.
+  e. Calendar-date/week-end completion conventions remain open. Predecessor
+     timing is resolved by README 966c976: strictly later week than the last
+     scheduled predecessor access, including cross-contract links.
+  f. Delay aggregation and ECLO counting per activity versus shared possession.
+  g. Repeating supply, beyond-horizon access and Scenario C's amended inputs.
+- Prepare minimal examples and expected pass/fail or numerical answers.
+- Use the Week 23 A001/A011 grouping and Week 25 A040/A042 workfront examples
+  from the existing audit when seeking organiser clarification.
+- Request the validator/expander version, invocation, sample validation report,
+  scenario input manifests and submission/runtime requirements.
+- Keep unresolved interpretations configurable and disclosed. Do not claim
+  equivalence to the judges while those interpretations remain unverified.
+
+Outputs: rule register, small example pack, versioned provisional rule profile.
+Gate: each rule has a documented interpretation, explicit assumption, or an
+  unresolved policy returning UNVERIFIED. Unresolved protection semantics block
+  full-feasibility claims, but do not block independent importer/network work.
+Tools/plugins: local text files and built-in web research. Optional Notion for
+  the register; Teams or Outlook only for explicitly authorised communications.
+
+
+STEP 3 - BUILD THE IMPORTER AND NETWORK MODEL
+Owner: data/backend developer.
+
+Actions:
+- Validate keys, foreign keys, dates, categories, numeric limits and dependencies.
+- Detect dependency cycles and unknown predecessor IDs.
+- Enforce documented strict later-week precedence across contracts (README 2.4
+  rule 3). Reject same-week sequencing; use the predecessor's last scheduled
+  access even if its workload threshold was reached earlier.
+- Keep activity_type, access_type and nature_of_works distinct.
+- Use line-aware station/location identities, including interchange platforms.
+- Derive work spans from the supplied topology; do not join lines by consecutive
+  sector sequence numbers or infer shared capacity from station names.
+- Model working span, protection footprint and supply consumption separately.
+- Preserve data provenance and return actionable import errors.
+
+Outputs: normalised internal records, network representation, import report.
+Gate: all supplied records reconcile with the baseline counts; malformed inputs
+  fail visibly without silent correction or invented values.
+Tools/plugins: local development runtime; CSV libraries; Spreadsheets skill
+  for inspection. No external service or new plugin.
+
+
+STEP 4 - BUILD VALIDATION AND A PHYSICAL-NIGHT DIAGNOSTIC
+Owner: validation developer; reviewed separately from solver implementation.
+
+Actions:
+- Check workload, release dates, legal sharing, capacity, contract allocations,
+  workfront limits, dependencies, protection and ECLO rules under the chosen profile.
+- Reconstruct expected occupancy from activity-access decisions and compare it
+  with submitted occupancy. Missing rows must not conceal a conflict.
+- Reconcile RESULTS with independently calculated activity/contract completion.
+- Represent findings with rule ID, activities, location/week, observed values,
+  expected values and an explanation.
+- Separately attempt a common-night assignment: sharing implies the same night,
+  distinct groups at one location imply different nights, and workfront/protection
+  checks apply on those assigned nights, under the stated full-night interpretation.
+- Treat this as an abstract consistency check until actual night availability
+  is provided. Abstract night labels are not calendar dates or access permits.
+- Report a small conflicting example where possible; do not claim the smallest
+  conflict set unless minimality has actually been checked.
+
+Outputs: structured validation report and physical-night diagnostic.
+Gate: hand-calculated valid/invalid cases behave correctly; direct sample checks
+  reconcile; conditional sample issues remain explicitly conditional.
+Tools/plugins: local test runner; optional constraint solver for night assignment.
+  No plugin required. The official validator remains a separate dependency.
+
+
+STEP 5 - DELIVER THE FIRST COMPLETE VERTICAL SLICE
+Owner: backend and interface developers.
+
+Actions:
+- Import the sample schedule, display it, explain selected allocations, validate
+  it and export it again. Preserve the sample rather than silently repairing it.
+- Build only the essential interface: import summary, weekly location timeline,
+  activity detail, conflict list and export/validation status.
+- Use a web interface for the final submission. Assess hosting requirements and
+  the hidden-instance upload path early; a local CLI is only an internal tool.
+- Then add a simple Scenario A constructive scheduler as the initial baseline.
+- Record any unfinished workload and why the heuristic could not place it.
+  Never confuse this result with a proof that no valid schedule exists.
+- Restore server-session runs after browser refresh without consuming another
+  run slot. Server restart still requires exported work to be re-imported.
+- Inspect findings at their own week; clamp the timeline to the supplied horizon
+  while retaining invalid submitted values in findings and activity detail.
+- Pin implementation fingerprints for the session and each run. Stop scheduling
+  and export if source files change; require server restart and fresh import.
+
+Outputs: working import-to-export prototype and baseline scheduling method.
+Gate: exported decisions survive a round-trip check; every activity remains
+  visible; incomplete schedules cannot be labelled complete submissions.
+  Check input identity, rule evidence and source provenance as well as the report.
+Tools/plugins: local backend/UI development, browser automation and Codex preview.
+  Figma is optional and should not delay a functioning interface.
+
+
+STEP 6 - OPTIMISE ALL REQUIRED SCENARIOS
+Owner: optimisation developer.
+
+Actions:
+- Implement and verify Scenario A first, then B and C using explicit scenario
+  configurations rather than scattered rule switches.
+- A: nominal supply is strict, ECLO forbidden, permitted delay optimised.
+- B: planned dates are strict; excess supply and ECLO incur specified penalties.
+- C: enforce its capacity allowance and independent line ECLO windows, including
+  cross-line Live effects, using the authoritative input manifest.
+- Preserve the challenge's workload yield rather than substituting a real-world
+  hours estimate. Use exact scaled units where useful to avoid rounding errors.
+- Retain a complete validated incumbent when one is available.
+- Report feasible, proven optimal, proven infeasible, or no solution found within
+  the limit. State the time limit and objective bound/gap where available.
+- If full delivery is infeasible under the selected rules, provide evidence and
+  permitted alternatives; never drop activities or weaken protection silently.
+- Keep score components visible and version the aggregate formula.
+- Publish generated CSVs only after re-import confirms complete workload, checked
+  weekly rules, a successful conditional night assignment, objective agreement
+  and the additional Scenario C construction policy. Failed candidates must leave
+  neither a selectable run nor its temporary directory; preserve the parent.
+- Retained incumbents must retain their night-assignment evidence. Reject an
+  objective bound that contradicts the independently checked schedule score.
+- Until the affected-line map and C input manifest are confirmed, label C as an
+  experiment on the supplied inputs. Live ECLO currently constrains every input
+  line conservatively. This policy is not an organiser-confirmed protection map.
+
+Outputs: A/B/C schedules, score breakdowns, solver status and validation reports.
+Gate: every result advertised as feasible passes the independent checker; any
+  optimality claim is supported by the solver under that rule interpretation.
+  Current results establish feasibility/optimality only for the disclosed model.
+  Missing protection and stronger construction assumptions mean its bounds are
+  not bounds on the full unknown PS1 problem. Official acceptance remains open.
+Tools/plugins: local Python/runtime and installed, pinned OR-Tools dependency. No AI or
+  external app required. Obtain official validation tools separately.
+
+
+STEP 7 - EXPLAIN ALTERNATIVES AND SUPPORT PLANNER REVIEW
+Owner: interface developer with requirements lead.
+
+Actions:
+- Show work spans, protection effects, sharing partners, workloads and deadlines.
+- For each conflict, offer candidate changes and validate them before presenting
+  them as feasible alternatives. A generic suggestion is not a checked solution.
+- Compare delay, ECLO, excess access, completion and changed allocations.
+- Identify unchanged inputs/rules when comparing results so the comparison is fair.
+- Allow review comments and recorded planner decisions; show the exact schedule
+  version reviewed. Do not imply an operational track-entry authorisation.
+
+Outputs: understandable conflict explanations and alternative comparison view.
+Gate: a reviewer can explain one conflict and the consequence of each alternative
+  without understanding the solver's implementation.
+Tools/plugins: local UI, browser testing. Figma optional; no new app necessary.
+
+
+STEP 8 - ADD CONTROLLED REPLANNING
+Owner: optimisation/backend developer.
+Priority: selected bonus scope; defer if mandatory submission readiness is at risk.
+
+Actions:
+- Support longer remaining workload, a weekly supply change, an urgent activity,
+  and locked allocations as distinct change types.
+- Preserve the original schedule and inputs; create a new version for each change.
+- Freeze completed work and respect explicit locks. Optimise remaining workload.
+- Recheck the complete affected schedule, including indirect sharing, protection
+  and dependency effects; locality must not hide a downstream conflict.
+- Minimise churn after the official objective, for example as a tie-break, unless
+  a different trade-off is explicitly selected for a separately labelled experiment.
+- Explain infeasible locks; suggest which decisions could be reconsidered and
+  let the planner choose. Never remove locks silently.
+- Provide a validated before/after comparison and rollback.
+
+Outputs: one reproducible disruption-and-recovery demonstration.
+Gate: the revision completes required work where feasible, respects locks, and
+  accurately identifies changed allocations and their consequences.
+Tools/plugins: local solver, storage/versioning and browser tests. No new plugin.
+
+
+STEP 9 - ADD OPTIONAL ENRICHMENT ONLY AFTER CORE ACCEPTANCE
+Owner: integration developer, if time permits.
+
+Option A - DataMall ECLO impact example:
+- Inspect actual authenticated response schemas, identifiers and date coverage.
+- Use a separate real-network example or an approved mapping; do not attach real
+  ridership to fictional ALP/BET locations without a justified mapping.
+- Estimate affected-hour demand transparently, with appropriate monthly-total
+  normalisation and clearly stated assumptions. Avoid double-counting journeys.
+- Keep this estimate separate from the official PS1 objective.
+- Cache a dated snapshot for demonstrations; core scheduling must work offline.
+
+Option B - Conversational explanation:
+- Use validated structured results to answer "why?" and summarise alternatives.
+- Convert natural-language changes into reviewable structured proposals.
+- Apply a proposal only through the normal change and validation workflow.
+- Exclude credentials and unnecessary personal data from model inputs.
+
+Outputs: at most one polished optional feature before adding another.
+Gate: the feature adds a measurable user benefit and cannot alter core results
+  through an unavailable API or an unchecked generated answer.
+Tools/plugins: DataMall via an ordinary API client; no dedicated plugin needed.
+  An LLM API/account is optional and requires separate setup if selected.
+  OBU, calendar integration and collaboration plugins are deferred.
+
+
+STEP 10 - VERIFY EXPORTS, PACKAGE AND DEMONSTRATE
+Owner: validation lead and presenter.
+
+Actions:
+- Export RESULTS.csv, SCHEDULE_ACCESS.csv and SCHEDULE_OCCUPANCY.csv with the
+  required schema for each of A/B/C: three separate sets, nine CSVs total.
+  Keep diagnostics in separate files.
+- Re-import exports and rerun accounting/occupancy checks.
+- Run the official validator when available; retain its version and exact report.
+  If unavailable, state that official acceptance has not been established.
+- Include a reproducibility manifest: input fingerprints, rules/scoring version,
+  scenario, package versions, solver settings, runtime and known limitations.
+- Test important rule boundaries, one disruption workflow and one reproducible
+  end-to-end export. Avoid large low-value test suites or cosmetic-only tests.
+- Measure baseline versus optimised outcomes using identical inputs and rules.
+  Report actual runtime and changes; do not invent operational time savings.
+- Demonstrate: import -> conflict -> alternatives -> select -> disruption ->
+  replan -> export -> validation evidence.
+- Complete the hosted web app and verify a fresh hidden-style eight-CSV upload,
+  live scheduling and visualisation within the confirmed resource limits.
+- Prepare and publish the required three-minute YouTube walkthrough and GitLab
+  repository with complete source, solver and setup instructions. Establish the
+  accounts, visibility and deployment destination before publication.
+- If bonus replanning is deferred, demonstrate the core scenario comparison and
+  validation flow instead; do not let the bonus delay mandatory deliverables.
+
+Outputs: A/B/C submission files, hosted app URL, three-minute YouTube URL,
+  GitLab repository URL, run instructions and validation evidence. A slide deck
+  is optional and does not replace the video.
+Gate: another person can reproduce the result and distinguish measured facts,
+  assumptions, solver guarantees and unresolved official checks.
+Tools/plugins: local tools, browser automation, official validator when supplied.
+  Hosting, GitLab and YouTube accounts are required for their respective URLs;
+  no particular connector is assumed. Presentations skill optional for slides;
+  SharePoint optional for team storage.
+
+
+DELIVERY PRIORITIES AND STOP RULES
+
+Milestone 1: inputs + rule examples + checker + sample round-trip interface.
+Milestone 2: complete Scenario A baseline and improved schedule.
+Milestone 3: verified B/C behaviour and scenario comparison.
+Milestone 4: reproducible submission package, hosted app, video and GitLab URL.
+Milestone 5: controlled replanning, then at most one optional AI/DataMall feature,
+  when mandatory delivery is secure. Bonus work may proceed earlier only when
+  it does not put milestone 4 at risk.
+
+Keep requirements clarification active throughout. Data/import/interface tasks
+can proceed alongside it, but disputed semantics must remain disclosed.
+
+If time is tight, cut OBU, DataMall, conversational AI, account integrations,
+advanced map styling and slide polish before cutting workload conservation,
+scenario compliance, explanations, export correctness or validation evidence.
+Bonus replanning may also be deferred before compromising required submissions.
+
+Do not label a weekly allocation "dispatch-ready" merely because it passes
+local checks. Do not label a schedule "officially valid" without official evidence.
+Do not label a schedule "optimal" merely because it is the best one found.
+
+
+REFERENCE MATERIAL
+
+Local challenge sources:
+- Supplied PS1_README.md, eight input CSVs, diagrams and sample submission CSVs.
+- outputs/PS1_prebuild_audit.md and outputs/PS1_organiser_questions.md in this workspace.
+
+Operational context, not replacements for challenge rules:
+- SMRT/PCCW TAMS announcement:
+  https://www.lpstech.com/site/en/news-entry/20210816
+- SBS Transit 2025 Operations Review:
+  https://www.sbstransit.com.sg/Uploads/Investor_Relations/Annual_Report/2025/Operations%20Review.pdf
+- LTA/SMRT service adjustments and ECLO example:
+  https://www.lta.gov.sg/content/ltagov/en/newsroom/2023/10/news-releases/service_adjustments_on_CCL_and_TEL.html
+- Network Rail possession planning context (UK practice, not Singapore rules):
+  https://www.networkrail.co.uk/wp-content/uploads/2019/12/Access-Set-Up-Pack-Up-Possessions.pdf
+- OR-Tools scheduling modelling reference:
+  https://developers.google.com/optimization/scheduling/job_shop
+- DataMall API documentation:
+  https://datamall.lta.gov.sg/content/dam/datamall/datasets/LTA_DataMall_API_User_Guide.pdf

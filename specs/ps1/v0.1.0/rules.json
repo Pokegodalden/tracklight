@@ -1,0 +1,1198 @@
+{
+  "version": "0.1.0",
+  "snapshot_id": "ps1-0dfd901f97bf579f",
+  "pack_sha256": "0dfd901f97bf579f74d739a39946e6e25eb30af53f639991e3d39876834450af",
+  "input_data_sha256": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+  "status_definitions": {
+    "documented": "Explicit in the frozen source, not independently confirmed by organiser or official executable.",
+    "provisional": "Selected development interpretation, with alternatives/questions retained.",
+    "deferred": "No authoritative operational choice. Explicit policy returns UNVERIFIED and blocks a full-feasibility claim."
+  },
+  "rules": [
+    {
+      "id": "R01",
+      "title": "Complete workload and yield",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 1",
+          "anchor": "**Workload Conservation:**",
+          "line": 85
+        }
+      ],
+      "decision": "All activities must reach at least their required workload. Standard=1 and ECLO=1.5 units; surplus caused by the final indivisible access is permitted by >=. No dropping work.",
+      "selected_policy": {
+        "required_coverage": "all_activities",
+        "unit_scale": 2,
+        "standard_yield": 2,
+        "eclo_yield": 3,
+        "comparison": ">="
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "workload ledger / solver / checker",
+      "examples": [
+        "E01"
+      ],
+      "organiser_question": null,
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R02",
+      "title": "Earliest start week",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 2",
+          "anchor": "**Planned Start Date:**",
+          "line": 86
+        }
+      ],
+      "decision": "Do not schedule before the planned-start week. Date-to-week conversion follows provisional R19; no intraweek start time is asserted.",
+      "selected_policy": {
+        "release_constraint": "week >= planned_start_week",
+        "calendar_rule": "R19"
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "calendar adapter / solver / checker",
+      "examples": [
+        "E06"
+      ],
+      "organiser_question": null,
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R03",
+      "title": "One access per activity per week",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 9",
+          "anchor": "Since an activity gets at most one access-night per week",
+          "line": 93
+        }
+      ],
+      "decision": "Apply at most one activity access per week in all scenarios. The sentence appears in the C explanation but describes the activity granularity without a scenario qualifier.",
+      "selected_policy": {
+        "max_accesses_per_activity_week": 1
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "solver / checker",
+      "examples": [
+        "E05"
+      ],
+      "organiser_question": null,
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R04",
+      "title": "Working-span expansion",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.2",
+          "anchor": "A job that runs from one station to another must book every tunnel sector",
+          "line": 56
+        }
+      ],
+      "decision": "For the supplied SEC endpoints, include every tunnel between them and all incident platforms on the same line/bound. Platform endpoints, reversed spans and disconnected/branching paths need explicit handling in Step 3; reject unsupported cases rather than invent a route.",
+      "selected_policy": {
+        "sec_span": "inclusive_tunnels_and_incident_platforms",
+        "unsupported_path": "input_error"
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "span expander / export checker",
+      "examples": [
+        "E09",
+        "E24"
+      ],
+      "organiser_question": "Q03",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R05",
+      "title": "Legal sharing composition",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 4",
+          "anchor": "**Possession Locations & Legal Mixes:**",
+          "line": 88
+        }
+      ],
+      "decision": "Within one location/week/group: PM alone, one PC plus zero to three C, or one to four C. No PM+C, two PC, or fifth participant. Access type is independent of nature of works.",
+      "selected_policy": {
+        "allowed": [
+          {
+            "PM": 1
+          },
+          {
+            "PC": 1,
+            "C_max": 3
+          },
+          {
+            "C_max": 4
+          }
+        ]
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "group builder / checker",
+      "examples": [
+        "E02"
+      ],
+      "organiser_question": null,
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R06",
+      "title": "Location capacity and excess accounting",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 5",
+          "anchor": "Same `(location_id, week, co_share_group)`",
+          "line": 89
+        },
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.7",
+          "anchor": "summed across location-weeks",
+          "line": 195
+        }
+      ],
+      "decision": "Count distinct occupied groups per location/week, not activity rows. Excess is max(0, groups-supply), summed over location-weeks. A physical possession crossing three locations can therefore incur three excess units.",
+      "selected_policy": {
+        "count": "distinct_group_per_location_week",
+        "excess": "sum(max(0,groups-supply))"
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "capacity ledger / solver / checker",
+      "examples": [
+        "E03"
+      ],
+      "organiser_question": null,
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R07",
+      "title": "Contract-local allocation indices",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.6",
+          "anchor": "accounting index per contract+type+week",
+          "line": 154
+        },
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 6",
+          "anchor": "**Weekly Allocation:**",
+          "line": 90
+        }
+      ],
+      "decision": "Use the supplied cap for (contract_number,activity_type,week). Indices are integers 1..cap. Equal indices in different contracts do not establish a common night.",
+      "selected_policy": {
+        "scope": [
+          "contract_number",
+          "activity_type",
+          "week"
+        ],
+        "index_domain": "1..supplied_cap"
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "contract ledger / solver / checker",
+      "examples": [
+        "E04",
+        "E08"
+      ],
+      "organiser_question": null,
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R08",
+      "title": "Local workfront limit",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 7",
+          "anchor": "**Workfronts:**",
+          "line": 91
+        }
+      ],
+      "decision": "Count distinct activities per contract/type/week/access_night and enforce supplied workfronts. This check alone does not establish physical-night consistency (R10).",
+      "selected_policy": {
+        "count": "distinct_activities_per_contract_type_week_access_night"
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "resource ledger / solver / checker",
+      "examples": [
+        "E04",
+        "E08"
+      ],
+      "organiser_question": null,
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R09",
+      "title": "Sharing-label scope",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 5",
+          "anchor": "Same `(location_id, week, co_share_group)`",
+          "line": 89
+        },
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.6",
+          "anchor": "an arbitrary label like `b1`, `b2`",
+          "line": 158
+        }
+      ],
+      "decision": "Labels are scoped to location and week. Never treat b1 as a globally named weekday or possession. Consistent renaming within each location/week leaves local accounting unchanged.",
+      "selected_policy": {
+        "scope": [
+          "location_id",
+          "week",
+          "co_share_group"
+        ],
+        "global_label_identity": false
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "group model / checker",
+      "examples": [
+        "E07",
+        "E26"
+      ],
+      "organiser_question": null,
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R10",
+      "title": "Common physical night",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "1",
+          "anchor": "a works controller could dispatch against",
+          "line": 20
+        },
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 5",
+          "anchor": "separate possessions on separate nights",
+          "line": 89
+        }
+      ],
+      "decision": "Use local weekly accounting for the provisional benchmark model. Separately diagnose one-full-night-per-access consistency. Do not impose an unconfirmed global-night constraint on the benchmark or call local success dispatch-ready.",
+      "selected_policy": {
+        "benchmark": "local_weekly_accounting",
+        "physical_night_check": "separate_diagnostic",
+        "dispatch_ready": false
+      },
+      "enforcement_mode": "diagnostic",
+      "enforcement_location": "model adapter / future night diagnostic / UI",
+      "examples": [
+        "E07",
+        "E08"
+      ],
+      "organiser_question": "Q01",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R11",
+      "title": "Buffer class parameters",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/01_data/05_BUFFER_LOCATION.csv",
+          "section": "buffer table",
+          "anchor": "nature_of_works,up_to_buffer_sectors",
+          "line": 1
+        }
+      ],
+      "decision": "Read nature-of-works buffer counts from the supplied table: Live 2, Consist 1, Others 0; only Live requires opposite bound. These counts do not specify the whole expansion algorithm.",
+      "selected_policy": {
+        "source_table": "05_BUFFER_LOCATION.csv",
+        "join": "nature_of_activity -> nature_of_works"
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "rule input adapter",
+      "examples": [
+        "E09",
+        "E10"
+      ],
+      "organiser_question": null,
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R12",
+      "title": "Buffer geometry and terminal treatment",
+      "status": "deferred",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 3",
+          "anchor": "**Closures and Buffers:**",
+          "line": 87
+        }
+      ],
+      "decision": "No authoritative selection between tunnel-hop/platform-edge interpretations. Request exact affected-location sets, including terminals. Until configured, protection coverage is unverified, not passed; do not run an all-rules-feasible claim.",
+      "selected_policy": {
+        "geometry": null,
+        "terminal_policy": null,
+        "missing_policy_result": "UNVERIFIED"
+      },
+      "enforcement_mode": "unverified",
+      "enforcement_location": "protection expander / checker readiness",
+      "examples": [
+        "E09"
+      ],
+      "organiser_question": "Q03",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R13",
+      "title": "Live opposite-bound effect",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 3",
+          "anchor": "Live` mirrors closure to opposite bound",
+          "line": 87
+        }
+      ],
+      "decision": "A Live closure affects the opposite bound. Whether and how the expanded buffer mirrors remains unconfigured with R12. Non-Live does not acquire this effect.",
+      "selected_policy": {
+        "live_requires_opposite_bound": true,
+        "extent_dependency": "R12"
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "protection expander",
+      "examples": [
+        "E10"
+      ],
+      "organiser_question": null,
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R14",
+      "title": "Independent interchange capacity",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.2",
+          "anchor": "physically two adjacent tunnels, not one shared track",
+          "line": 58
+        },
+        {
+          "file": "PS1/01_data/03_SECTORS.csv",
+          "section": "sector table",
+          "anchor": "SEC:ALP:H01_H02,ALP,H01,H02,5,0",
+          "line": 6
+        }
+      ],
+      "decision": "Prefer detailed section 2.2 and the supplied is_shared=0 rows over the opening shared-track narrative. ALP/BET tunnel and platform capacity remain separate; Live protection can couple them. Do not map fictional hubs to real stations.",
+      "selected_policy": {
+        "capacity": "separate_by_line_bound_location",
+        "live_coupling": "protection_only"
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "network model / capacity ledger",
+      "examples": [
+        "E11"
+      ],
+      "organiser_question": "Q03",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R15",
+      "title": "Live interchange trigger and footprint",
+      "status": "deferred",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.2",
+          "anchor": "**The one exception — `Live`:**",
+          "line": 61
+        }
+      ],
+      "decision": "Cross-line Live effects are required when applicable, but work-span versus buffer-contact triggering and exact propagation are unresolved. Require an explicit mapping before a complete protection check.",
+      "selected_policy": {
+        "cross_line_live_effect_required": true,
+        "trigger": null,
+        "affected_locations": null,
+        "missing_policy_result": "UNVERIFIED"
+      },
+      "enforcement_mode": "unverified",
+      "enforcement_location": "protection expander / ECLO affected-line resolver",
+      "examples": [
+        "E11"
+      ],
+      "organiser_question": "Q03",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R16",
+      "title": "Sharing exemption extent",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.1 item 5",
+          "anchor": "PC` and `C` are already buffer-free against each other",
+          "line": 41
+        },
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 5",
+          "anchor": "exempt from each other's closures",
+          "line": 89
+        }
+      ],
+      "decision": "Provisionally recognise exemption only for the same group at the same location/week. Do not propagate A-B and B-C into A-C automatically or exempt every PC/C pair everywhere. Broader exemptions need confirmation; dependent protection checks remain unverified with R12/R17.",
+      "selected_policy": {
+        "exemption_scope": "same_local_group",
+        "transitive": false,
+        "global_type_only_exemption": false
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "compatibility/protection checker",
+      "examples": [
+        "E12"
+      ],
+      "organiser_question": "Q04",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R17",
+      "title": "Protection comparison time",
+      "status": "deferred",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 3",
+          "anchor": "no external activity may enter it that night",
+          "line": 87
+        }
+      ],
+      "decision": "Neither overlapping weekly footprints nor matching local labels alone proves simultaneity. Keep potential intersections as candidates. A definite temporal protection verdict requires a confirmed night relation or official weekly rule.",
+      "selected_policy": {
+        "comparison_time_model": null,
+        "unmapped_overlap": "UNVERIFIED",
+        "weekly_overlap_is_violation": false
+      },
+      "enforcement_mode": "unverified",
+      "enforcement_location": "protection conflict evaluator",
+      "examples": [
+        "E13"
+      ],
+      "organiser_question": "Q05",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R18",
+      "title": "Predecessor ordering",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/01_data/08_ACTIVITY_DETAILS.csv",
+          "section": "activity schema",
+          "anchor": "predecessor_activity_id",
+          "line": 1
+        }
+      ],
+      "decision": "For a nonblank predecessor, provisionally require its entire workload to finish in an earlier week. Treat unknown IDs/cycles as input errors; do not silently drop dependency edges. Same-week sequencing is not representable yet.",
+      "selected_policy": {
+        "relation": "successor_first_week > predecessor_last_week",
+        "unknown_or_cycle": "input_error"
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "dependency graph / solver / checker",
+      "examples": [
+        "E14"
+      ],
+      "organiser_question": "Q06",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R19",
+      "title": "Calendar conversion and completion date",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/01_data/06_PARAMETERS.csv",
+          "section": "horizon parameters",
+          "anchor": "horizon_start,2027-01-04",
+          "line": 2
+        },
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 2",
+          "anchor": "planned start week",
+          "line": 86
+        }
+      ],
+      "decision": "Use seven-day buckets anchored at horizon_start. Release week=floor((date-start)/7)+1. Completion=start+7*last_week-1 days; this matches all 14 sample results but does not prove hidden-date semantics. Out-of-horizon cases follow R21.",
+      "selected_policy": {
+        "week_days": 7,
+        "release_rounding": "floor_plus_one",
+        "completion": "last_day_of_last_week"
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "calendar adapter / metrics",
+      "examples": [
+        "E06",
+        "E15"
+      ],
+      "organiser_question": "Q07",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R20",
+      "title": "Static supply repeats within horizon",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/01_data/04_LOCATION_SUPPLY.csv",
+          "section": "supply schema",
+          "anchor": "location_id,location_kind,line_code,bound,supply_capacity",
+          "line": 1
+        }
+      ],
+      "decision": "Repeat each supplied location capacity in each in-horizon week. Zero is a real capacity; an absent location is an input error, not unlimited supply. Weekly overrides will be explicit future changes, not invented input columns.",
+      "selected_policy": {
+        "repeat_within_horizon": true,
+        "missing_location": "input_error"
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "supply adapter / capacity ledger",
+      "examples": [
+        "E03",
+        "E16"
+      ],
+      "organiser_question": "Q08",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R21",
+      "title": "Horizon extension",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/01_data/06_PARAMETERS.csv",
+          "section": "horizon parameters",
+          "anchor": "horizon_weeks,30",
+          "line": 3
+        }
+      ],
+      "decision": "Keep accesses in weeks 1..horizon_weeks until extension and its supply are authorised. Never invent extra weeks to hide infeasibility; report horizon-limited results as conditional.",
+      "selected_policy": {
+        "min_week": 1,
+        "max_week": "horizon_weeks",
+        "extend": false
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "calendar validation / solver domain",
+      "examples": [
+        "E15",
+        "E16"
+      ],
+      "organiser_question": "Q08",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R22",
+      "title": "Scenario A policy",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.5 A",
+          "anchor": "**Scenario A (Strict Supply, Flexible Schedule):**",
+          "line": 99
+        }
+      ],
+      "decision": "No supply excess and no ECLO. Delay may occur; objective interpretation is R28. Never relax workload or protection to produce a result.",
+      "selected_policy": {
+        "max_excess_per_location_week": 0,
+        "eclo_allowed": false,
+        "planned_date_hard": false
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "scenario adapter / solver / checker",
+      "examples": [
+        "E03",
+        "E17"
+      ],
+      "organiser_question": null,
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R23",
+      "title": "Scenario B policy",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.5 B",
+          "anchor": "**Scenario B (Strict Schedule, Flexible Supply):**",
+          "line": 100
+        }
+      ],
+      "decision": "Planned completion is hard. Excess capacity is soft with no stated numeric ceiling. ECLO may occur in any week. Prose suggesting P3 slip in B conflicts with the explicit hard deadline; retain the hard deadline.",
+      "selected_policy": {
+        "max_excess_per_location_week": null,
+        "eclo_allowed": true,
+        "planned_date_hard": true,
+        "eclo_window_weeks": null
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "scenario adapter / solver / checker",
+      "examples": [
+        "E03",
+        "E17"
+      ],
+      "organiser_question": "Q09",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R24",
+      "title": "Scenario C capacity policy",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.5 C",
+          "anchor": "up to 1 excess access-night per location-week",
+          "line": 101
+        }
+      ],
+      "decision": "Allow at most one excess group per location/week above the supplied capacity, penalise every excess unit, permit delayed completion. Do not bake an additional supply increase into this allowance.",
+      "selected_policy": {
+        "max_excess_per_location_week": 1,
+        "eclo_allowed": true,
+        "planned_date_hard": false
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "scenario adapter / solver / checker",
+      "examples": [
+        "E03",
+        "E25"
+      ],
+      "organiser_question": null,
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R25",
+      "title": "Scenario C ECLO span and affected lines",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 9",
+          "anchor": "one continuous span of at most 2 calendar weeks",
+          "line": 93
+        }
+      ],
+      "decision": "For each affected line, ECLO weeks must fit in at most two adjacent week buckets. Empty/single-week sets are allowed. Different lines choose independently; cross-line Live accesses must fit both. Determining affected lines depends on unresolved R15.",
+      "selected_policy": {
+        "max_span_weeks": 2,
+        "condition": "max_week-min_week <= 1",
+        "line_windows_independent": true,
+        "cross_line_live": "both_windows"
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "ECLO checker / solver",
+      "examples": [
+        "E18"
+      ],
+      "organiser_question": null,
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R26",
+      "title": "ECLO penalty unit",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.5 ECLO",
+          "anchor": "per ECLO-night used",
+          "line": 107
+        },
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.7 detail",
+          "anchor": "total access-nights across all activities",
+          "line": 199
+        }
+      ],
+      "decision": "Provisionally charge 5 per eclo=1 activity-access row. Also expose the count separately; do not deduplicate by local groups across locations and call that physical nights. The alternative physical-possession price remains open.",
+      "selected_policy": {
+        "unit": "activity_access",
+        "penalty": 5
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "score calculator",
+      "examples": [
+        "E19"
+      ],
+      "organiser_question": "Q10",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R27",
+      "title": "Mixed ECLO flags within a shared group",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.4 rule 5",
+          "anchor": "one possession (one access-night slot)",
+          "line": 89
+        }
+      ],
+      "decision": "Until clarified, require equal ECLO flags within a local sharing group. This is an explicitly stricter development choice, not a proven official constraint. Do not infer an extra ECLO award for a member flagged standard.",
+      "selected_policy": {
+        "uniform_eclo_within_local_group": true
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "group builder / checker",
+      "examples": [
+        "E20"
+      ],
+      "organiser_question": "Q10",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R28",
+      "title": "Delay formula and metrics",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.5 formula",
+          "anchor": "\\text{Score}_{A}",
+          "line": 115
+        },
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.7",
+          "anchor": "summed per overrunning activity",
+          "line": 198
+        }
+      ],
+      "decision": "Primary development score uses per-activity weighted planned-date lateness (100/10/1)*(1.3/1.2/1.0)*days. Separately report contract-day lateness and its contract-weighted total. A=delay, B=7*excess+5*ECLO, C=delay+7*excess+5*ECLO. Numeric scores remain provisional; unknown protection prevents a full-feasibility claim.",
+      "selected_policy": {
+        "formula_id": "ps1-activity-delay-provisional-0.1.0",
+        "contract_weights": {
+          "1": 100,
+          "2": 10,
+          "3": 1
+        },
+        "activity_multiplier_tenths": {
+          "1": 13,
+          "2": 12,
+          "3": 10
+        },
+        "delay_aggregation": "per_activity",
+        "excess_weight": 7,
+        "eclo_weight": 5,
+        "official": false
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "score calculator / comparison UI",
+      "examples": [
+        "E21",
+        "E22"
+      ],
+      "organiser_question": "Q09",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R29",
+      "title": "Weighted priority versus strict precedence",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.5",
+          "anchor": "Contract tier decides which band you're in",
+          "line": 110
+        },
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.5 formula",
+          "anchor": "\\text{Score}_{C}",
+          "line": 125
+        }
+      ],
+      "decision": "Minimise the scalar penalty; do not silently impose lexicographic contract priorities or a fixed ECLO-before-capacity heuristic. Aggregate weighted trade-offs can contradict prose saying never delay higher tiers. Compare alternatives under the chosen formula, not the prose's incomparable batch-cost ratios.",
+      "selected_policy": {
+        "priority_mode": "weighted_sum",
+        "lexicographic_priority": false,
+        "fixed_lever_order": false
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "objective adapter / alternative ranking",
+      "examples": [
+        "E23"
+      ],
+      "organiser_question": "Q09",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R30",
+      "title": "Occupancy export versus protection",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.6",
+          "anchor": "**`SCHEDULE_OCCUPANCY.csv`**",
+          "line": 156
+        }
+      ],
+      "decision": "Export work-span rows only as the sample does. Keep buffers/mirrors/cross-line effects in separate derived records; do not count them as extra submitted working rows without expander confirmation.",
+      "selected_policy": {
+        "export": "working_span_only",
+        "protection": "separate_derived_records"
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "exporter / export checker",
+      "examples": [
+        "E24"
+      ],
+      "organiser_question": "Q03",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R31",
+      "title": "Results aggregation and target date",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.6",
+          "anchor": "**`RESULTS.csv`**",
+          "line": 159
+        },
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.3",
+          "anchor": "planned_completion_date` (target)",
+          "line": 72
+        }
+      ],
+      "decision": "One result per scenario/contract; complete at the maximum finishing week across its activities/types, using R19. Overrun=max(0, completion-planned_completion_date); keep contractual dates separate. Multiple project rows with conflicting planned dates require clarification rather than an arbitrary first match.",
+      "selected_policy": {
+        "completion": "max_activity_finish_per_contract",
+        "overrun_target": "planned_completion_date",
+        "negative_overrun": 0,
+        "ambiguous_contract_dates": "input_error"
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "results exporter / metrics",
+      "examples": [
+        "E15",
+        "E21",
+        "E22"
+      ],
+      "organiser_question": "Q07",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R32",
+      "title": "Scenario input identity",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.5 C",
+          "anchor": "a Scenario C instance generated with amended, higher local supply",
+          "line": 101
+        }
+      ],
+      "decision": "Develop A/B/C against the same frozen eight CSVs until another manifest is supplied. Label C input applicability provisional. Never edit the baseline or fabricate the amended C capacities.",
+      "selected_policy": {
+        "development_inputs": "same_frozen_eight_files",
+        "C_input_applicability": "unconfirmed",
+        "invent_amended_supply": false
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "run configuration / provenance",
+      "examples": [
+        "E25"
+      ],
+      "organiser_question": "Q11",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R33",
+      "title": "Output contract and unsupported instances",
+      "status": "documented",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "2.6",
+          "anchor": "three scenario answer keys",
+          "line": 163
+        },
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "4",
+          "anchor": "hidden test instance (the 8 CSV instance files)",
+          "line": 236
+        }
+      ],
+      "decision": "Three CSVs per scenario, exact documented columns. The eventual importer must accept supported unseen IDs/counts, not just the sample. Endpoint/category variations and solve-time limits still need organiser confirmation; reject unsupported structures clearly.",
+      "selected_policy": {
+        "scenarios": [
+          "A",
+          "B",
+          "C"
+        ],
+        "files_per_scenario": 3,
+        "hardcoded_sample_ids": false
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "import contract / exporter / hosted UI",
+      "examples": [
+        "E26"
+      ],
+      "organiser_question": "Q12",
+      "organiser_response": null,
+      "official_rule_version": null
+    },
+    {
+      "id": "R34",
+      "title": "No fabricated success under congestion",
+      "status": "provisional",
+      "sources": [
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "1",
+          "anchor": "**Keep Scheduling Under Congestion**",
+          "line": 26
+        },
+        {
+          "file": "PS1/PS1_README.md",
+          "section": "1",
+          "anchor": "**Feasibility First**",
+          "line": 25
+        }
+      ],
+      "decision": "Persist in searching permitted alternatives, but distinguish timeout from proven infeasibility under selected assumptions. The brief's request not to declare impossibility cannot authorise dropping work, exceeding hard scenario limits or claiming an unchecked feasible result.",
+      "selected_policy": {
+        "safety_relaxation": false,
+        "drop_workload": false,
+        "outcomes": [
+          "feasible_under_profile",
+          "optimal_under_profile",
+          "infeasible_under_profile",
+          "no_solution_within_limit",
+          "unverified_rules"
+        ]
+      },
+      "enforcement_mode": "enforce",
+      "enforcement_location": "run-status reporting",
+      "examples": [
+        "E17",
+        "E25"
+      ],
+      "organiser_question": "Q12",
+      "organiser_response": null,
+      "official_rule_version": null
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q01",
+      "priority": "P0",
+      "examples": [
+        "E07"
+      ],
+      "question": "Must every activity access use one common physical night over its full span, or does the judged model check local location/week packing only?",
+      "requested_response": "Return a physical-night assignment for Week 23 A001/A011, a corrected sample, or explicit confirmation of local-only validation. Equal at S16 and unequal at S15 cannot both hold under the full-night interpretation.",
+      "sent": false,
+      "response": null
+    },
+    {
+      "id": "Q02",
+      "priority": "P0",
+      "examples": [
+        "E08"
+      ],
+      "question": "Which field defines simultaneous work for a contract's workfront cap?",
+      "requested_response": "Explain Week 25 A040/A042 (C007 workfront=1, local nights 3/1, shared b4). State whether shared groups override local indices and supply expected pass/fail.",
+      "sent": false,
+      "response": null
+    },
+    {
+      "id": "Q03",
+      "priority": "P0",
+      "examples": [
+        "E09",
+        "E10",
+        "E11",
+        "E24"
+      ],
+      "question": "Please specify the complete protection-expansion algorithm and export scope.",
+      "requested_response": "Return exact working/buffer/mirrored/cross-line location lists for E09-E11, including a terminal, a buffer touching an interchange, and direct hub work. Confirm platform inclusion, trigger, propagation limit, capacity treatment, and whether occupancy exports remain working-span-only as E24 shows. Confirm separate line capacities from section 2.2.",
+      "sent": false,
+      "response": null
+    },
+    {
+      "id": "Q04",
+      "priority": "P0",
+      "examples": [
+        "E12"
+      ],
+      "question": "Is the sharing exemption local to a group/location, pairwise across a possession, or transitive across linked groups?",
+      "requested_response": "Give a verdict for A-B at X and B-C at Y with an A-C protected intersection at Z. Clarify the scope of the PC/C buffer-free prose.",
+      "sent": false,
+      "response": null
+    },
+    {
+      "id": "Q05",
+      "priority": "P0",
+      "examples": [
+        "E13"
+      ],
+      "question": "How does the validator determine whether two protected footprints overlap in time?",
+      "requested_response": "Specify the comparison key or required night mapping. Give pass/fail for same night, different nights, and only weekly/group information. Do not rely on identical label strings across locations.",
+      "sent": false,
+      "response": null
+    },
+    {
+      "id": "Q06",
+      "priority": "P1",
+      "examples": [
+        "E14"
+      ],
+      "question": "Is predecessor_activity_id enforced, and may a successor start in the predecessor's finishing week?",
+      "requested_response": "Return E14 outcomes and treatment of cycles, unknown IDs, full-workload completion and same-week sequencing.",
+      "sent": false,
+      "response": null
+    },
+    {
+      "id": "Q07",
+      "priority": "P1",
+      "examples": [
+        "E06",
+        "E15",
+        "E21",
+        "E22"
+      ],
+      "question": "What are the exact date-to-week and completion conventions?",
+      "requested_response": "Confirm partial-week planned starts, week-end completion, planned versus contractual overrun target, and contract aggregation across activity types. Supply a non-Monday start/non-Sunday deadline example.",
+      "sent": false,
+      "response": null
+    },
+    {
+      "id": "Q08",
+      "priority": "P1",
+      "examples": [
+        "E16"
+      ],
+      "question": "Does static supply repeat weekly, and may schedules extend beyond horizon_weeks?",
+      "requested_response": "Specify capacity/calendar beyond the horizon, missing-location handling and whether any actual weekday availability is supplied. Confirm extension policy separately for A/B/C.",
+      "sent": false,
+      "response": null
+    },
+    {
+      "id": "Q09",
+      "priority": "P0",
+      "examples": [
+        "E17",
+        "E21",
+        "E22",
+        "E23"
+      ],
+      "question": "Which formula and priority policy are authoritative?",
+      "requested_response": "Return official sample metrics/objective and formula version: contract days 28 versus activity days 42 versus weighted activity 48.3. Resolve E21's 23.1 versus 14 delay score, E23's scalar versus lexicographic ranking, and the B hard deadline versus prose suggesting P3 slip. Confirm 7 per excess unit and 5 per ECLO unit; the heuristic table compares different batch quantities.",
+      "sent": false,
+      "response": null
+    },
+    {
+      "id": "Q10",
+      "priority": "P1",
+      "examples": [
+        "E19",
+        "E20"
+      ],
+      "question": "How are ECLO yield, penalties and flags handled for co-sharing activities?",
+      "requested_response": "For two activities in one ECLO possession, state penalty 10 or 5 (or another documented rule), each activity's credited workload, and whether mixed 0/1 flags are legal. Define possession identity if used for deduplication.",
+      "sent": false,
+      "response": null
+    },
+    {
+      "id": "Q11",
+      "priority": "P1",
+      "examples": [
+        "E25"
+      ],
+      "question": "Which input files belong to A, B and C?",
+      "requested_response": "Provide authoritative scenario manifests/checksums or confirm all use the supplied eight files. If C has amended supply, provide that file; also provide B/C sample outputs if available.",
+      "sent": false,
+      "response": null
+    },
+    {
+      "id": "Q12",
+      "priority": "P0",
+      "examples": [
+        "E17",
+        "E25",
+        "E26"
+      ],
+      "question": "Please provide official tooling and the hidden-instance execution contract.",
+      "requested_response": "Provide validator/expander package or repository, version/commit, exact commands, sample validator JSON, limits on solve time/memory/file sizes and allowed schema/category/path variations. Confirm how an infeasible or timed-out instance should be reported without weakening hard constraints.",
+      "sent": false,
+      "response": null
+    }
+  ]
+}

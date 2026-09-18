@@ -1,0 +1,3700 @@
+{
+  "interpretation": "Sensitivity check only: whole-week protection; one shared work location exempts pair; buffers expanded by adjacent sectors and endpoints; Live crossover only at H01-H02.",
+  "closure_pairs": [
+    {
+      "week": 22,
+      "a": "A001",
+      "b": "A007",
+      "overlap": [
+        "PLAT:BET:H02:EB",
+        "PLAT:BET:S15:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 23,
+      "a": "A001",
+      "b": "A042",
+      "overlap": [
+        "PLAT:BET:S15:EB",
+        "PLAT:BET:S16:EB",
+        "PLAT:BET:S17:EB",
+        "PLAT:BET:S18:EB",
+        "SEC:BET:S15_S16:EB",
+        "SEC:BET:S16_S17:EB",
+        "SEC:BET:S17_S18:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": [
+        "PLAT:BET:S15:EB",
+        "PLAT:BET:S16:EB",
+        "PLAT:BET:S17:EB",
+        "SEC:BET:S15_S16:EB",
+        "SEC:BET:S16_S17:EB"
+      ]
+    },
+    {
+      "week": 18,
+      "a": "A008",
+      "b": "A017",
+      "overlap": [
+        "PLAT:BET:S16:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 18,
+      "a": "A008",
+      "b": "A057",
+      "overlap": [
+        "PLAT:BET:S16:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 18,
+      "a": "A009",
+      "b": "A014",
+      "overlap": [
+        "PLAT:ALP:S07:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 18,
+      "a": "A012",
+      "b": "A039",
+      "overlap": [
+        "PLAT:BET:S14:WB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 11,
+      "a": "A003",
+      "b": "A038",
+      "overlap": [
+        "PLAT:BET:S17:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 11,
+      "a": "A038",
+      "b": "A041",
+      "overlap": [
+        "PLAT:BET:S17:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 11,
+      "a": "A046",
+      "b": "A069",
+      "overlap": [
+        "PLAT:ALP:H02:WB",
+        "PLAT:ALP:S05:WB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 12,
+      "a": "A046",
+      "b": "A069",
+      "overlap": [
+        "PLAT:ALP:H02:WB",
+        "PLAT:ALP:S05:WB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 13,
+      "a": "A003",
+      "b": "A019",
+      "overlap": [
+        "PLAT:BET:S16:EB",
+        "PLAT:BET:S17:EB",
+        "SEC:BET:S16_S17:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": [
+        "PLAT:BET:S16:EB"
+      ]
+    },
+    {
+      "week": 13,
+      "a": "A019",
+      "b": "A040",
+      "overlap": [
+        "PLAT:BET:S16:EB",
+        "PLAT:BET:S17:EB",
+        "SEC:BET:S16_S17:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": [
+        "PLAT:BET:S16:EB"
+      ]
+    },
+    {
+      "week": 14,
+      "a": "A003",
+      "b": "A019",
+      "overlap": [
+        "PLAT:BET:S16:EB",
+        "PLAT:BET:S17:EB",
+        "SEC:BET:S16_S17:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": [
+        "PLAT:BET:S16:EB"
+      ]
+    },
+    {
+      "week": 16,
+      "a": "A007",
+      "b": "A011",
+      "overlap": [
+        "PLAT:BET:H02:EB",
+        "PLAT:BET:S15:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 16,
+      "a": "A012",
+      "b": "A039",
+      "overlap": [
+        "PLAT:BET:S14:WB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 21,
+      "a": "A025",
+      "b": "A074",
+      "overlap": [
+        "PLAT:ALP:S03:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 17,
+      "a": "A008",
+      "b": "A017",
+      "overlap": [
+        "PLAT:BET:S16:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 17,
+      "a": "A008",
+      "b": "A040",
+      "overlap": [
+        "PLAT:BET:S16:EB",
+        "PLAT:BET:S17:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 17,
+      "a": "A008",
+      "b": "A057",
+      "overlap": [
+        "PLAT:BET:S16:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 17,
+      "a": "A009",
+      "b": "A014",
+      "overlap": [
+        "PLAT:ALP:S07:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 17,
+      "a": "A012",
+      "b": "A039",
+      "overlap": [
+        "PLAT:BET:S14:WB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 19,
+      "a": "A008",
+      "b": "A060",
+      "overlap": [
+        "PLAT:BET:S16:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 20,
+      "a": "A008",
+      "b": "A017",
+      "overlap": [
+        "PLAT:BET:S16:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 20,
+      "a": "A008",
+      "b": "A040",
+      "overlap": [
+        "PLAT:BET:S16:EB",
+        "PLAT:BET:S17:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 20,
+      "a": "A008",
+      "b": "A057",
+      "overlap": [
+        "PLAT:BET:S16:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 25,
+      "a": "A042",
+      "b": "A057",
+      "overlap": [
+        "PLAT:BET:H02:EB",
+        "PLAT:BET:S15:EB",
+        "PLAT:BET:S16:EB",
+        "SEC:BET:H02_S15:EB",
+        "SEC:BET:S15_S16:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": [
+        "PLAT:BET:S15:EB",
+        "PLAT:BET:S16:EB",
+        "SEC:BET:S15_S16:EB"
+      ]
+    },
+    {
+      "week": 25,
+      "a": "A056",
+      "b": "A066",
+      "overlap": [
+        "PLAT:ALP:H02:WB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 26,
+      "a": "A009",
+      "b": "A072",
+      "overlap": [
+        "PLAT:ALP:H02:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 26,
+      "a": "A036",
+      "b": "A043",
+      "overlap": [
+        "PLAT:BET:H01:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 24,
+      "a": "A036",
+      "b": "A043",
+      "overlap": [
+        "PLAT:BET:H01:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 24,
+      "a": "A042",
+      "b": "A055",
+      "overlap": [
+        "PLAT:BET:H02:EB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 10,
+      "a": "A046",
+      "b": "A058",
+      "overlap": [
+        "PLAT:ALP:H02:WB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    },
+    {
+      "week": 9,
+      "a": "A046",
+      "b": "A058",
+      "overlap": [
+        "PLAT:ALP:H02:WB"
+      ],
+      "same_line_bound": true,
+      "span_overlap": []
+    }
+  ],
+  "protected_pairs": [
+    {
+      "week": 22,
+      "a": "A001",
+      "b": "A007",
+      "overlap": [
+        "PLAT:BET:H02:EB",
+        "PLAT:BET:S15:EB",
+        "SEC:BET:H02_S15:EB"
+      ]
+    },
+    {
+      "week": 22,
+      "a": "A004",
+      "b": "A009",
+      "overlap": [
+        "PLAT:ALP:H02:EB"
+      ]
+    },
+    {
+      "week": 23,
+      "a": "A001",
+      "b": "A042",
+      "overlap": [
+        "PLAT:BET:H02:EB",
+        "PLAT:BET:S15:EB",
+        "PLAT:BET:S16:EB",
+        "PLAT:BET:S17:EB",
+        "PLAT:BET:S18:EB",
+        "SEC:BET:H02_S15:EB",
+        "SEC:BET:S15_S16:EB",
+        "SEC:BET:S16_S17:EB",
+        "SEC:BET:S17_S18:EB"
+      ]
+    },
+    {
+      "week": 23,
+      "a": "A004",
+      "b": "A009",
+      "overlap": [
+        "PLAT:ALP:H02:EB"
+      ]
+    },
+    {
+      "week": 18,
+      "a": "A002",
+      "b": "A012",
+      "overlap": [
+        "PLAT:BET:S14:WB"
+      ]
+    },
+    {
+      "week": 18,
+      "a": "A008",
+      "b": "A017",
+      "overlap": [
+        "PLAT:BET:S16:EB"
+      ]
+    },
+    {
+      "week": 18,
+      "a": "A008",
+      "b": "A057",
+      "overlap": [
+        "PLAT:BET:S16:EB"
+      ]
+    },
+    {
+      "week": 18,
+      "a": "A009",
+      "b": "A014",
+      "overlap": [
+        "PLAT:ALP:S07:EB"
+      ]
+    },
+    {
+      "week": 18,
+      "a": "A012",
+      "b": "A039",
+      "overlap": [
+        "PLAT:BET:S14:WB"
+      ]
+    },
+    {
+      "week": 11,
+      "a": "A003",
+      "b": "A038",
+      "overlap": [
+        "PLAT:BET:S17:EB"
+      ]
+    },
+    {
+      "week": 11,
+      "a": "A031",
+      "b": "A069",
+      "overlap": [
+        "PLAT:ALP:S05:WB"
+      ]
+    },
+    {
+      "week": 11,
+      "a": "A038",
+      "b": "A041",
+      "overlap": [
+        "PLAT:BET:S17:EB"
+      ]
+    },
+    {
+      "week": 11,
+      "a": "A046",
+      "b": "A069",
+      "overlap": [
+        "PLAT:ALP:H02:WB",
+        "PLAT:ALP:S05:WB",
+        "SEC:ALP:H02_S05:WB"
+      ]
+    },
+    {
+      "week": 12,
+      "a": "A046",
+      "b": "A069",
+      "overlap": [
+        "PLAT:ALP:H02:WB",
+        "PLAT:ALP:S05:WB",
+        "SEC:ALP:H02_S05:WB"
+      ]
+    },
+    {
+      "week": 13,
+      "a": "A003",
+      "b": "A019",
+      "overlap": [
+        "PLAT:BET:S16:EB",
+        "PLAT:BET:S17:EB",
+        "SEC:BET:S16_S17:EB"
+      ]
+    },
+    {
+      "week": 13,
+      "a": "A019",
+      "b": "A040",
+      "overlap": [
+        "PLAT:BET:S16:EB",
+        "PLAT:BET:S17:EB",
+        "SEC:BET:S16_S17:EB"
+      ]
+    },
+    {
+      "week": 14,
+      "a": "A003",
+      "b": "A019",
+      "overlap": [
+        "PLAT:BET:S16:EB",
+        "PLAT:BET:S17:EB",
+        "SEC:BET:S16_S17:EB"
+      ]
+    },
+    {
+      "week": 16,
+      "a": "A007",
+      "b": "A011",
+      "overlap": [
+        "PLAT:BET:H02:EB",
+        "PLAT:BET:S15:EB",
+        "SEC:BET:H02_S15:EB"
+      ]
+    },
+    {
+      "week": 16,
+      "a": "A012",
+      "b": "A021",
+      "overlap": [
+        "PLAT:BET:S14:WB"
+      ]
+    },
+    {
+      "week": 16,
+      "a": "A012",
+      "b": "A039",
+      "overlap": [
+        "PLAT:BET:S14:WB"
+      ]
+    },
+    {
+      "week": 21,
+      "a": "A025",
+      "b": "A074",
+      "overlap": [
+        "PLAT:ALP:S03:EB",
+        "PLAT:ALP:S04:EB",
+        "SEC:ALP:S03_S04:EB"
+      ]
+    },
+    {
+      "week": 17,
+      "a": "A008",
+      "b": "A017",
+      "overlap": [
+        "PLAT:BET:S16:EB"
+      ]
+    },
+    {
+      "week": 17,
+      "a": "A008",
+      "b": "A040",
+      "overlap": [
+        "PLAT:BET:S16:EB",
+        "PLAT:BET:S17:EB",
+        "SEC:BET:S16_S17:EB"
+      ]
+    },
+    {
+      "week": 17,
+      "a": "A008",
+      "b": "A057",
+      "overlap": [
+        "PLAT:BET:S16:EB"
+      ]
+    },
+    {
+      "week": 17,
+      "a": "A009",
+      "b": "A014",
+      "overlap": [
+        "PLAT:ALP:S07:EB"
+      ]
+    },
+    {
+      "week": 17,
+      "a": "A012",
+      "b": "A021",
+      "overlap": [
+        "PLAT:BET:S14:WB"
+      ]
+    },
+    {
+      "week": 17,
+      "a": "A012",
+      "b": "A039",
+      "overlap": [
+        "PLAT:BET:S14:WB"
+      ]
+    },
+    {
+      "week": 19,
+      "a": "A008",
+      "b": "A060",
+      "overlap": [
+        "PLAT:BET:S16:EB"
+      ]
+    },
+    {
+      "week": 20,
+      "a": "A008",
+      "b": "A017",
+      "overlap": [
+        "PLAT:BET:S16:EB"
+      ]
+    },
+    {
+      "week": 20,
+      "a": "A008",
+      "b": "A040",
+      "overlap": [
+        "PLAT:BET:S16:EB",
+        "PLAT:BET:S17:EB",
+        "SEC:BET:S16_S17:EB"
+      ]
+    },
+    {
+      "week": 20,
+      "a": "A008",
+      "b": "A057",
+      "overlap": [
+        "PLAT:BET:S16:EB"
+      ]
+    },
+    {
+      "week": 20,
+      "a": "A012",
+      "b": "A065",
+      "overlap": [
+        "PLAT:BET:S14:WB"
+      ]
+    },
+    {
+      "week": 25,
+      "a": "A013",
+      "b": "A066",
+      "overlap": [
+        "PLAT:ALP:H02:WB"
+      ]
+    },
+    {
+      "week": 25,
+      "a": "A042",
+      "b": "A057",
+      "overlap": [
+        "PLAT:BET:H02:EB",
+        "PLAT:BET:S15:EB",
+        "PLAT:BET:S16:EB",
+        "SEC:BET:H02_S15:EB",
+        "SEC:BET:S15_S16:EB"
+      ]
+    },
+    {
+      "week": 25,
+      "a": "A046",
+      "b": "A066",
+      "overlap": [
+        "PLAT:ALP:H02:WB"
+      ]
+    },
+    {
+      "week": 25,
+      "a": "A056",
+      "b": "A066",
+      "overlap": [
+        "PLAT:ALP:H02:WB"
+      ]
+    },
+    {
+      "week": 26,
+      "a": "A009",
+      "b": "A072",
+      "overlap": [
+        "PLAT:ALP:H02:EB"
+      ]
+    },
+    {
+      "week": 26,
+      "a": "A013",
+      "b": "A070",
+      "overlap": [
+        "PLAT:ALP:H02:WB"
+      ]
+    },
+    {
+      "week": 26,
+      "a": "A036",
+      "b": "A043",
+      "overlap": [
+        "PLAT:BET:H01:EB"
+      ]
+    },
+    {
+      "week": 24,
+      "a": "A036",
+      "b": "A043",
+      "overlap": [
+        "PLAT:BET:H01:EB"
+      ]
+    },
+    {
+      "week": 24,
+      "a": "A042",
+      "b": "A055",
+      "overlap": [
+        "PLAT:BET:H02:EB"
+      ]
+    },
+    {
+      "week": 10,
+      "a": "A046",
+      "b": "A058",
+      "overlap": [
+        "PLAT:ALP:H02:WB"
+      ]
+    },
+    {
+      "week": 9,
+      "a": "A046",
+      "b": "A058",
+      "overlap": [
+        "PLAT:ALP:H02:WB"
+      ]
+    }
+  ],
+  "live": [
+    {
+      "activity": "A074",
+      "week": 21,
+      "work": [
+        "PLAT:ALP:H01:EB",
+        "PLAT:ALP:H02:EB",
+        "SEC:ALP:H01_H02:EB"
+      ],
+      "inferred_protected": [
+        "PLAT:ALP:H01:EB",
+        "PLAT:ALP:H01:WB",
+        "PLAT:ALP:H02:EB",
+        "PLAT:ALP:H02:WB",
+        "PLAT:ALP:S03:EB",
+        "PLAT:ALP:S03:WB",
+        "PLAT:ALP:S04:EB",
+        "PLAT:ALP:S04:WB",
+        "PLAT:ALP:S05:EB",
+        "PLAT:ALP:S05:WB",
+        "PLAT:ALP:S06:EB",
+        "PLAT:ALP:S06:WB",
+        "PLAT:BET:H01:EB",
+        "PLAT:BET:H01:WB",
+        "PLAT:BET:H02:EB",
+        "PLAT:BET:H02:WB",
+        "SEC:ALP:H01_H02:EB",
+        "SEC:ALP:H01_H02:WB",
+        "SEC:ALP:H02_S05:EB",
+        "SEC:ALP:H02_S05:WB",
+        "SEC:ALP:S03_S04:EB",
+        "SEC:ALP:S03_S04:WB",
+        "SEC:ALP:S04_H01:EB",
+        "SEC:ALP:S04_H01:WB",
+        "SEC:ALP:S05_S06:EB",
+        "SEC:ALP:S05_S06:WB",
+        "SEC:BET:H01_H02:EB",
+        "SEC:BET:H01_H02:WB"
+      ],
+      "other_activities": [
+        "A004",
+        "A008",
+        "A025",
+        "A074"
+      ],
+      "other_work_inside": [
+        {
+          "activity": "A004",
+          "locations": [
+            "PLAT:ALP:H01:EB",
+            "PLAT:ALP:S03:EB",
+            "PLAT:ALP:S04:EB",
+            "SEC:ALP:S03_S04:EB",
+            "SEC:ALP:S04_H01:EB"
+          ]
+        },
+        {
+          "activity": "A025",
+          "locations": [
+            "PLAT:ALP:S03:EB"
+          ]
+        }
+      ]
+    },
+    {
+      "activity": "A075",
+      "week": 29,
+      "work": [
+        "PLAT:BET:H01:WB",
+        "PLAT:BET:H02:WB",
+        "SEC:BET:H01_H02:WB"
+      ],
+      "inferred_protected": [
+        "PLAT:ALP:H01:EB",
+        "PLAT:ALP:H01:WB",
+        "PLAT:ALP:H02:EB",
+        "PLAT:ALP:H02:WB",
+        "PLAT:BET:H01:EB",
+        "PLAT:BET:H01:WB",
+        "PLAT:BET:H02:EB",
+        "PLAT:BET:H02:WB",
+        "PLAT:BET:S13:EB",
+        "PLAT:BET:S13:WB",
+        "PLAT:BET:S14:EB",
+        "PLAT:BET:S14:WB",
+        "PLAT:BET:S15:EB",
+        "PLAT:BET:S15:WB",
+        "PLAT:BET:S16:EB",
+        "PLAT:BET:S16:WB",
+        "SEC:ALP:H01_H02:EB",
+        "SEC:ALP:H01_H02:WB",
+        "SEC:BET:H01_H02:EB",
+        "SEC:BET:H01_H02:WB",
+        "SEC:BET:H02_S15:EB",
+        "SEC:BET:H02_S15:WB",
+        "SEC:BET:S13_S14:EB",
+        "SEC:BET:S13_S14:WB",
+        "SEC:BET:S14_H01:EB",
+        "SEC:BET:S14_H01:WB",
+        "SEC:BET:S15_S16:EB",
+        "SEC:BET:S15_S16:WB"
+      ],
+      "other_activities": [
+        "A075"
+      ],
+      "other_work_inside": []
+    }
+  ],
+  "co_shared_different_local_indices": [
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 22,
+      "group": "b2",
+      "local_indices": {
+        "A001": 3,
+        "A017": 2,
+        "A040": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 22,
+      "group": "b2",
+      "local_indices": {
+        "A001": 3,
+        "A017": 2,
+        "A040": 3
+      }
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 22,
+      "group": "b4",
+      "local_indices": {
+        "A001": 3,
+        "A017": 2,
+        "A040": 3
+      }
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 23,
+      "group": "b4",
+      "local_indices": {
+        "A001": 3,
+        "A011": 3,
+        "A057": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 11,
+      "group": "b1",
+      "local_indices": {
+        "A003": 1,
+        "A041": 2
+      }
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 12,
+      "group": "b2",
+      "local_indices": {
+        "A003": 1,
+        "A041": 2
+      }
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 13,
+      "group": "b1",
+      "local_indices": {
+        "A003": 1,
+        "A040": 1,
+        "A060": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 13,
+      "group": "b1",
+      "local_indices": {
+        "A003": 1,
+        "A060": 3
+      }
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 13,
+      "group": "b1",
+      "local_indices": {
+        "A003": 1,
+        "A060": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 16,
+      "group": "b1",
+      "local_indices": {
+        "A003": 3,
+        "A007": 1,
+        "A040": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 16,
+      "group": "b1",
+      "local_indices": {
+        "A003": 3,
+        "A007": 1,
+        "A040": 1,
+        "A057": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 16,
+      "group": "b2",
+      "local_indices": {
+        "A003": 3,
+        "A011": 3,
+        "A040": 1,
+        "A057": 1
+      }
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 16,
+      "group": "b1",
+      "local_indices": {
+        "A003": 3,
+        "A007": 1,
+        "A040": 1
+      }
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 16,
+      "group": "b2",
+      "local_indices": {
+        "A003": 3,
+        "A040": 1,
+        "A057": 1
+      }
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 16,
+      "group": "b4",
+      "local_indices": {
+        "A003": 3,
+        "A011": 3,
+        "A040": 1
+      }
+    },
+    {
+      "location": "PLAT:ALP:H01:EB",
+      "week": 21,
+      "group": "b1",
+      "local_indices": {
+        "A004": 3,
+        "A074": 2
+      }
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 15,
+      "group": "b1",
+      "local_indices": {
+        "A007": 2,
+        "A057": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 17,
+      "group": "b1",
+      "local_indices": {
+        "A007": 1,
+        "A017": 1,
+        "A040": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 17,
+      "group": "b1",
+      "local_indices": {
+        "A007": 1,
+        "A017": 1,
+        "A040": 3,
+        "A057": 1
+      }
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 17,
+      "group": "b1",
+      "local_indices": {
+        "A007": 1,
+        "A017": 1,
+        "A040": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 18,
+      "group": "b1",
+      "local_indices": {
+        "A007": 1,
+        "A017": 1,
+        "A057": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 22,
+      "group": "b1",
+      "local_indices": {
+        "A007": 3,
+        "A017": 2,
+        "A036": 1,
+        "A040": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 22,
+      "group": "b1",
+      "local_indices": {
+        "A007": 3,
+        "A017": 2,
+        "A040": 3
+      }
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 22,
+      "group": "b1",
+      "local_indices": {
+        "A007": 3,
+        "A017": 2,
+        "A040": 3
+      }
+    },
+    {
+      "location": "PLAT:ALP:S05:EB",
+      "week": 18,
+      "group": "b1",
+      "local_indices": {
+        "A009": 2,
+        "A054": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 23,
+      "group": "b1",
+      "local_indices": {
+        "A011": 3,
+        "A042": 1,
+        "A057": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:S15:WB",
+      "week": 17,
+      "group": "b2",
+      "local_indices": {
+        "A012": 1,
+        "A064": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:H02:WB",
+      "week": 18,
+      "group": "b1",
+      "local_indices": {
+        "A012": 1,
+        "A049": 2
+      }
+    },
+    {
+      "location": "PLAT:BET:S15:WB",
+      "week": 18,
+      "group": "b1",
+      "local_indices": {
+        "A012": 1,
+        "A049": 2
+      }
+    },
+    {
+      "location": "PLAT:ALP:S05:WB",
+      "week": 23,
+      "group": "b1",
+      "local_indices": {
+        "A013": 1,
+        "A056": 3
+      }
+    },
+    {
+      "location": "PLAT:ALP:S06:WB",
+      "week": 23,
+      "group": "b2",
+      "local_indices": {
+        "A013": 1,
+        "A056": 3
+      }
+    },
+    {
+      "location": "SEC:ALP:S05_S06:WB",
+      "week": 23,
+      "group": "b4",
+      "local_indices": {
+        "A013": 1,
+        "A056": 3
+      }
+    },
+    {
+      "location": "PLAT:ALP:S05:WB",
+      "week": 25,
+      "group": "b1",
+      "local_indices": {
+        "A013": 1,
+        "A046": 2,
+        "A056": 3
+      }
+    },
+    {
+      "location": "PLAT:ALP:S06:WB",
+      "week": 25,
+      "group": "b1",
+      "local_indices": {
+        "A013": 1,
+        "A046": 2
+      }
+    },
+    {
+      "location": "SEC:ALP:S05_S06:WB",
+      "week": 25,
+      "group": "b4",
+      "local_indices": {
+        "A013": 1,
+        "A046": 2,
+        "A056": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 17,
+      "group": "b2",
+      "local_indices": {
+        "A017": 1,
+        "A040": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 17,
+      "group": "b2",
+      "local_indices": {
+        "A017": 1,
+        "A040": 3
+      }
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 17,
+      "group": "b4",
+      "local_indices": {
+        "A017": 1,
+        "A040": 3,
+        "A057": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 18,
+      "group": "b2",
+      "local_indices": {
+        "A017": 1,
+        "A057": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 18,
+      "group": "b2",
+      "local_indices": {
+        "A017": 1,
+        "A057": 3
+      }
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 18,
+      "group": "b2",
+      "local_indices": {
+        "A017": 1,
+        "A057": 3
+      }
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 18,
+      "group": "b4",
+      "local_indices": {
+        "A017": 1,
+        "A057": 3
+      }
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 22,
+      "group": "b2",
+      "local_indices": {
+        "A017": 2,
+        "A040": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 24,
+      "group": "b1",
+      "local_indices": {
+        "A017": 3,
+        "A036": 1,
+        "A055": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 24,
+      "group": "b1",
+      "local_indices": {
+        "A017": 3,
+        "A043": 3,
+        "A055": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 24,
+      "group": "b2",
+      "local_indices": {
+        "A017": 3,
+        "A042": 1,
+        "A043": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 24,
+      "group": "b2",
+      "local_indices": {
+        "A017": 3,
+        "A042": 1,
+        "A043": 3
+      }
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 24,
+      "group": "b1",
+      "local_indices": {
+        "A017": 3,
+        "A055": 1
+      }
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 24,
+      "group": "b4",
+      "local_indices": {
+        "A017": 3,
+        "A042": 1,
+        "A043": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 25,
+      "group": "b1",
+      "local_indices": {
+        "A017": 2,
+        "A036": 1,
+        "A040": 3,
+        "A073": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 25,
+      "group": "b1",
+      "local_indices": {
+        "A017": 2,
+        "A040": 3,
+        "A057": 1,
+        "A073": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "week": 25,
+      "group": "b2",
+      "local_indices": {
+        "A017": 2,
+        "A040": 3,
+        "A042": 1,
+        "A073": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 25,
+      "group": "b1",
+      "local_indices": {
+        "A017": 2,
+        "A057": 1
+      }
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "week": 25,
+      "group": "b1",
+      "local_indices": {
+        "A017": 2,
+        "A040": 3,
+        "A073": 1
+      }
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 25,
+      "group": "b1",
+      "local_indices": {
+        "A017": 2,
+        "A057": 1
+      }
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 25,
+      "group": "b1",
+      "local_indices": {
+        "A017": 2,
+        "A057": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:H01:EB",
+      "week": 26,
+      "group": "b1",
+      "local_indices": {
+        "A017": 3,
+        "A036": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "week": 26,
+      "group": "b1",
+      "local_indices": {
+        "A017": 3,
+        "A043": 2
+      }
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 26,
+      "group": "b2",
+      "local_indices": {
+        "A017": 3,
+        "A043": 2
+      }
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 26,
+      "group": "b2",
+      "local_indices": {
+        "A017": 3,
+        "A043": 2
+      }
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 26,
+      "group": "b4",
+      "local_indices": {
+        "A017": 3,
+        "A043": 2
+      }
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 13,
+      "group": "b2",
+      "local_indices": {
+        "A019": 2,
+        "A060": 3
+      }
+    },
+    {
+      "location": "SEC:ALP:S03_S04:WB",
+      "week": 26,
+      "group": "b4",
+      "local_indices": {
+        "A023": 1,
+        "A035": 2,
+        "A070": 2
+      }
+    },
+    {
+      "location": "PLAT:ALP:S03:WB",
+      "week": 27,
+      "group": "b1",
+      "local_indices": {
+        "A023": 3,
+        "A035": 3,
+        "A070": 1
+      }
+    },
+    {
+      "location": "PLAT:ALP:S04:WB",
+      "week": 27,
+      "group": "b1",
+      "local_indices": {
+        "A023": 3,
+        "A070": 1
+      }
+    },
+    {
+      "location": "SEC:ALP:S03_S04:WB",
+      "week": 27,
+      "group": "b4",
+      "local_indices": {
+        "A035": 3,
+        "A070": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:S17:EB",
+      "week": 27,
+      "group": "b2",
+      "local_indices": {
+        "A038": 1,
+        "A071": 3
+      }
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 13,
+      "group": "b3",
+      "local_indices": {
+        "A040": 1,
+        "A060": 3
+      }
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "week": 25,
+      "group": "b2",
+      "local_indices": {
+        "A040": 3,
+        "A042": 1
+      }
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "week": 25,
+      "group": "b2",
+      "local_indices": {
+        "A040": 3,
+        "A073": 1
+      }
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "week": 25,
+      "group": "b4",
+      "local_indices": {
+        "A040": 3,
+        "A042": 1
+      }
+    },
+    {
+      "location": "PLAT:BET:S17:EB",
+      "week": 24,
+      "group": "b2",
+      "local_indices": {
+        "A042": 1,
+        "A043": 3
+      }
+    },
+    {
+      "location": "SEC:BET:S16_S17:EB",
+      "week": 24,
+      "group": "b4",
+      "local_indices": {
+        "A042": 1,
+        "A043": 3
+      }
+    }
+  ],
+  "activity_week_with_location_specific_groups": [
+    {
+      "activity": "A001",
+      "week": 22,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A001",
+      "week": 23,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A002",
+      "week": 18,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A003",
+      "week": 12,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A003",
+      "week": 16,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A004",
+      "week": 21,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A004",
+      "week": 23,
+      "groups": [
+        "b1",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A006",
+      "week": 4,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A006",
+      "week": 5,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A008",
+      "week": 17,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A008",
+      "week": 18,
+      "groups": [
+        "b1",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A008",
+      "week": 19,
+      "groups": [
+        "b1",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A008",
+      "week": 20,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A008",
+      "week": 21,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A009",
+      "week": 17,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A009",
+      "week": 18,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A009",
+      "week": 20,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A009",
+      "week": 22,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A009",
+      "week": 23,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A009",
+      "week": 25,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A009",
+      "week": 26,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A011",
+      "week": 16,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A011",
+      "week": 23,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A012",
+      "week": 2,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A012",
+      "week": 4,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A012",
+      "week": 17,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A012",
+      "week": 18,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A012",
+      "week": 20,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A013",
+      "week": 22,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A013",
+      "week": 23,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A013",
+      "week": 24,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A013",
+      "week": 25,
+      "groups": [
+        "b1",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A013",
+      "week": 26,
+      "groups": [
+        "b1",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A014",
+      "week": 13,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A014",
+      "week": 14,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A014",
+      "week": 15,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A014",
+      "week": 16,
+      "groups": [
+        "b1",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A014",
+      "week": 17,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A014",
+      "week": 18,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A014",
+      "week": 19,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A017",
+      "week": 17,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A017",
+      "week": 18,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A017",
+      "week": 20,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A017",
+      "week": 22,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A017",
+      "week": 24,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A017",
+      "week": 25,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A017",
+      "week": 26,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A019",
+      "week": 13,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A019",
+      "week": 14,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A020",
+      "week": 13,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A020",
+      "week": 14,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A021",
+      "week": 15,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A021",
+      "week": 17,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A023",
+      "week": 22,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A023",
+      "week": 23,
+      "groups": [
+        "b2",
+        "b3"
+      ]
+    },
+    {
+      "activity": "A023",
+      "week": 24,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A023",
+      "week": 25,
+      "groups": [
+        "b1",
+        "b3"
+      ]
+    },
+    {
+      "activity": "A023",
+      "week": 26,
+      "groups": [
+        "b1",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A023",
+      "week": 27,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A025",
+      "week": 8,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A025",
+      "week": 10,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A025",
+      "week": 12,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A025",
+      "week": 13,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A025",
+      "week": 14,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A025",
+      "week": 20,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A025",
+      "week": 21,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A028",
+      "week": 9,
+      "groups": [
+        "b1",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A028",
+      "week": 11,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A031",
+      "week": 10,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A031",
+      "week": 11,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A035",
+      "week": 1,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A035",
+      "week": 26,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A035",
+      "week": 27,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A036",
+      "week": 22,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A036",
+      "week": 25,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A036",
+      "week": 27,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A036",
+      "week": 28,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A037",
+      "week": 8,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A037",
+      "week": 9,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A038",
+      "week": 10,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A038",
+      "week": 11,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A038",
+      "week": 27,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A039",
+      "week": 12,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A039",
+      "week": 13,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A039",
+      "week": 14,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A039",
+      "week": 15,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A039",
+      "week": 16,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A039",
+      "week": 17,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A039",
+      "week": 18,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A040",
+      "week": 13,
+      "groups": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    {
+      "activity": "A040",
+      "week": 14,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A040",
+      "week": 16,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A040",
+      "week": 17,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A040",
+      "week": 20,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A040",
+      "week": 22,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A040",
+      "week": 25,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A041",
+      "week": 11,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A041",
+      "week": 12,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A042",
+      "week": 24,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A042",
+      "week": 25,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A043",
+      "week": 24,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A043",
+      "week": 26,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A046",
+      "week": 9,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A046",
+      "week": 10,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A046",
+      "week": 11,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A046",
+      "week": 12,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A046",
+      "week": 25,
+      "groups": [
+        "b1",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A047",
+      "week": 27,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A047",
+      "week": 28,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A048",
+      "week": 1,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A048",
+      "week": 2,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A048",
+      "week": 3,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A049",
+      "week": 8,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A049",
+      "week": 10,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A049",
+      "week": 16,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A049",
+      "week": 18,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A049",
+      "week": 20,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A050",
+      "week": 17,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A050",
+      "week": 18,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A051",
+      "week": 26,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A051",
+      "week": 27,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A054",
+      "week": 17,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A055",
+      "week": 24,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A056",
+      "week": 23,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A056",
+      "week": 25,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A057",
+      "week": 15,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A057",
+      "week": 16,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A057",
+      "week": 17,
+      "groups": [
+        "b1",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A057",
+      "week": 18,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A057",
+      "week": 20,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A057",
+      "week": 23,
+      "groups": [
+        "b1",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A058",
+      "week": 2,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A058",
+      "week": 3,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A058",
+      "week": 6,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A058",
+      "week": 7,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A058",
+      "week": 8,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A058",
+      "week": 9,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A058",
+      "week": 10,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A059",
+      "week": 14,
+      "groups": [
+        "b1",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A059",
+      "week": 15,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A059",
+      "week": 16,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A059",
+      "week": 17,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A059",
+      "week": 18,
+      "groups": [
+        "b1",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A059",
+      "week": 19,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A059",
+      "week": 20,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A060",
+      "week": 13,
+      "groups": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    {
+      "activity": "A060",
+      "week": 14,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A060",
+      "week": 19,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A061",
+      "week": 4,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A061",
+      "week": 5,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A061",
+      "week": 6,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A061",
+      "week": 7,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A061",
+      "week": 8,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A061",
+      "week": 9,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A061",
+      "week": 10,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A063",
+      "week": 5,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A064",
+      "week": 17,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A065",
+      "week": 20,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A066",
+      "week": 25,
+      "groups": [
+        "b1",
+        "b3",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A069",
+      "week": 11,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A069",
+      "week": 12,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A070",
+      "week": 15,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A070",
+      "week": 16,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A070",
+      "week": 20,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A070",
+      "week": 26,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A070",
+      "week": 27,
+      "groups": [
+        "b1",
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A071",
+      "week": 27,
+      "groups": [
+        "b2",
+        "b4"
+      ]
+    },
+    {
+      "activity": "A072",
+      "week": 26,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    },
+    {
+      "activity": "A073",
+      "week": 25,
+      "groups": [
+        "b1",
+        "b2"
+      ]
+    }
+  ],
+  "same_contract_same_night": [
+    {
+      "contract": "C001",
+      "week": 22,
+      "local_night": 3,
+      "activities": [
+        "A001",
+        "A007"
+      ]
+    },
+    {
+      "contract": "C001",
+      "week": 23,
+      "local_night": 3,
+      "activities": [
+        "A001",
+        "A004"
+      ]
+    },
+    {
+      "contract": "C001",
+      "week": 18,
+      "local_night": 1,
+      "activities": [
+        "A002",
+        "A007"
+      ]
+    },
+    {
+      "contract": "C005",
+      "week": 11,
+      "local_night": 1,
+      "activities": [
+        "A028",
+        "A031"
+      ]
+    },
+    {
+      "contract": "C010",
+      "week": 6,
+      "local_night": 3,
+      "activities": [
+        "A058",
+        "A061"
+      ]
+    },
+    {
+      "contract": "C010",
+      "week": 7,
+      "local_night": 1,
+      "activities": [
+        "A058",
+        "A061"
+      ]
+    },
+    {
+      "contract": "C010",
+      "week": 8,
+      "local_night": 1,
+      "activities": [
+        "A058",
+        "A061"
+      ]
+    },
+    {
+      "contract": "C010",
+      "week": 9,
+      "local_night": 1,
+      "activities": [
+        "A058",
+        "A061"
+      ]
+    },
+    {
+      "contract": "C010",
+      "week": 10,
+      "local_night": 1,
+      "activities": [
+        "A058",
+        "A061"
+      ]
+    },
+    {
+      "contract": "C010",
+      "week": 14,
+      "local_night": 1,
+      "activities": [
+        "A059",
+        "A060"
+      ]
+    },
+    {
+      "contract": "C010",
+      "week": 19,
+      "local_night": 3,
+      "activities": [
+        "A059",
+        "A060"
+      ]
+    },
+    {
+      "contract": "C010",
+      "week": 5,
+      "local_night": 1,
+      "activities": [
+        "A061",
+        "A063"
+      ]
+    }
+  ],
+  "hotspots": [
+    {
+      "location": "PLAT:BET:H01:EB",
+      "capacity": 1,
+      "groups": 24,
+      "occupied_weeks": 24,
+      "saturated_weeks": 24,
+      "activity_rows": 43
+    },
+    {
+      "location": "PLAT:BET:H02:EB",
+      "capacity": 1,
+      "groups": 22,
+      "occupied_weeks": 22,
+      "saturated_weeks": 22,
+      "activity_rows": 48
+    },
+    {
+      "location": "SEC:BET:H01_H02:EB",
+      "capacity": 1,
+      "groups": 21,
+      "occupied_weeks": 21,
+      "saturated_weeks": 21,
+      "activity_rows": 36
+    },
+    {
+      "location": "PLAT:ALP:H01:WB",
+      "capacity": 1,
+      "groups": 21,
+      "occupied_weeks": 21,
+      "saturated_weeks": 21,
+      "activity_rows": 21
+    },
+    {
+      "location": "PLAT:ALP:H02:WB",
+      "capacity": 1,
+      "groups": 15,
+      "occupied_weeks": 15,
+      "saturated_weeks": 15,
+      "activity_rows": 15
+    },
+    {
+      "location": "SEC:ALP:H01_H02:WB",
+      "capacity": 1,
+      "groups": 13,
+      "occupied_weeks": 13,
+      "saturated_weeks": 13,
+      "activity_rows": 13
+    },
+    {
+      "location": "PLAT:BET:H02:WB",
+      "capacity": 1,
+      "groups": 10,
+      "occupied_weeks": 10,
+      "saturated_weeks": 10,
+      "activity_rows": 13
+    },
+    {
+      "location": "PLAT:BET:S16:EB",
+      "capacity": 2,
+      "groups": 27,
+      "occupied_weeks": 18,
+      "saturated_weeks": 9,
+      "activity_rows": 45
+    },
+    {
+      "location": "SEC:BET:H01_H02:WB",
+      "capacity": 1,
+      "groups": 8,
+      "occupied_weeks": 8,
+      "saturated_weeks": 8,
+      "activity_rows": 8
+    },
+    {
+      "location": "PLAT:ALP:H01:EB",
+      "capacity": 1,
+      "groups": 8,
+      "occupied_weeks": 8,
+      "saturated_weeks": 8,
+      "activity_rows": 9
+    },
+    {
+      "location": "PLAT:BET:H01:WB",
+      "capacity": 1,
+      "groups": 8,
+      "occupied_weeks": 8,
+      "saturated_weeks": 8,
+      "activity_rows": 8
+    },
+    {
+      "location": "PLAT:BET:S15:EB",
+      "capacity": 2,
+      "groups": 29,
+      "occupied_weeks": 23,
+      "saturated_weeks": 6,
+      "activity_rows": 51
+    },
+    {
+      "location": "PLAT:ALP:H02:EB",
+      "capacity": 1,
+      "groups": 6,
+      "occupied_weeks": 6,
+      "saturated_weeks": 6,
+      "activity_rows": 6
+    },
+    {
+      "location": "SEC:BET:H02_S15:EB",
+      "capacity": 2,
+      "groups": 26,
+      "occupied_weeks": 22,
+      "saturated_weeks": 4,
+      "activity_rows": 39
+    },
+    {
+      "location": "SEC:ALP:H01_H02:EB",
+      "capacity": 1,
+      "groups": 4,
+      "occupied_weeks": 4,
+      "saturated_weeks": 4,
+      "activity_rows": 4
+    },
+    {
+      "location": "PLAT:ALP:S04:WB",
+      "capacity": 2,
+      "groups": 28,
+      "occupied_weeks": 26,
+      "saturated_weeks": 2,
+      "activity_rows": 31
+    },
+    {
+      "location": "SEC:BET:H02_S15:WB",
+      "capacity": 2,
+      "groups": 11,
+      "occupied_weeks": 9,
+      "saturated_weeks": 2,
+      "activity_rows": 12
+    },
+    {
+      "location": "PLAT:BET:S13:WB",
+      "capacity": 2,
+      "groups": 10,
+      "occupied_weeks": 8,
+      "saturated_weeks": 2,
+      "activity_rows": 12
+    },
+    {
+      "location": "PLAT:ALP:S03:WB",
+      "capacity": 2,
+      "groups": 25,
+      "occupied_weeks": 24,
+      "saturated_weeks": 1,
+      "activity_rows": 29
+    },
+    {
+      "location": "PLAT:BET:S17:EB",
+      "capacity": 2,
+      "groups": 19,
+      "occupied_weeks": 18,
+      "saturated_weeks": 1,
+      "activity_rows": 22
+    },
+    {
+      "location": "PLAT:ALP:S06:WB",
+      "capacity": 2,
+      "groups": 17,
+      "occupied_weeks": 16,
+      "saturated_weeks": 1,
+      "activity_rows": 21
+    },
+    {
+      "location": "PLAT:BET:S14:EB",
+      "capacity": 2,
+      "groups": 12,
+      "occupied_weeks": 11,
+      "saturated_weeks": 1,
+      "activity_rows": 12
+    },
+    {
+      "location": "PLAT:BET:S15:WB",
+      "capacity": 2,
+      "groups": 10,
+      "occupied_weeks": 9,
+      "saturated_weeks": 1,
+      "activity_rows": 13
+    },
+    {
+      "location": "PLAT:BET:S12:WB",
+      "capacity": 2,
+      "groups": 9,
+      "occupied_weeks": 8,
+      "saturated_weeks": 1,
+      "activity_rows": 12
+    },
+    {
+      "location": "SEC:BET:S15_S16:EB",
+      "capacity": 4,
+      "groups": 26,
+      "occupied_weeks": 18,
+      "saturated_weeks": 0,
+      "activity_rows": 43
+    },
+    {
+      "location": "SEC:ALP:S03_S04:WB",
+      "capacity": 4,
+      "groups": 25,
+      "occupied_weeks": 24,
+      "saturated_weeks": 0,
+      "activity_rows": 29
+    },
+    {
+      "location": "SEC:ALP:S04_H01:WB",
+      "capacity": 2,
+      "groups": 21,
+      "occupied_weeks": 21,
+      "saturated_weeks": 0,
+      "activity_rows": 21
+    },
+    {
+      "location": "SEC:BET:S12_S13:WB",
+      "capacity": 4,
+      "groups": 12,
+      "occupied_weeks": 8,
+      "saturated_weeks": 0,
+      "activity_rows": 12
+    },
+    {
+      "location": "SEC:BET:S16_S17:EB",
+      "capacity": 4,
+      "groups": 12,
+      "occupied_weeks": 11,
+      "saturated_weeks": 0,
+      "activity_rows": 14
+    },
+    {
+      "location": "SEC:ALP:S06_S07:WB",
+      "capacity": 4,
+      "groups": 11,
+      "occupied_weeks": 11,
+      "saturated_weeks": 0,
+      "activity_rows": 11
+    },
+    {
+      "location": "SEC:BET:S11_S12:WB",
+      "capacity": 4,
+      "groups": 11,
+      "occupied_weeks": 7,
+      "saturated_weeks": 0,
+      "activity_rows": 11
+    },
+    {
+      "location": "SEC:BET:S17_S18:EB",
+      "capacity": 4,
+      "groups": 11,
+      "occupied_weeks": 11,
+      "saturated_weeks": 0,
+      "activity_rows": 11
+    },
+    {
+      "location": "PLAT:ALP:S03:EB",
+      "capacity": 2,
+      "groups": 11,
+      "occupied_weeks": 11,
+      "saturated_weeks": 0,
+      "activity_rows": 12
+    },
+    {
+      "location": "PLAT:ALP:S05:WB",
+      "capacity": 2,
+      "groups": 11,
+      "occupied_weeks": 11,
+      "saturated_weeks": 0,
+      "activity_rows": 14
+    },
+    {
+      "location": "PLAT:ALP:S07:WB",
+      "capacity": 2,
+      "groups": 11,
+      "occupied_weeks": 11,
+      "saturated_weeks": 0,
+      "activity_rows": 11
+    },
+    {
+      "location": "PLAT:BET:S18:EB",
+      "capacity": 2,
+      "groups": 11,
+      "occupied_weeks": 11,
+      "saturated_weeks": 0,
+      "activity_rows": 11
+    },
+    {
+      "location": "SEC:ALP:S05_S06:EB",
+      "capacity": 4,
+      "groups": 9,
+      "occupied_weeks": 9,
+      "saturated_weeks": 0,
+      "activity_rows": 9
+    },
+    {
+      "location": "SEC:ALP:S05_S06:WB",
+      "capacity": 4,
+      "groups": 9,
+      "occupied_weeks": 9,
+      "saturated_weeks": 0,
+      "activity_rows": 12
+    },
+    {
+      "location": "SEC:ALP:S07_S08:WB",
+      "capacity": 4,
+      "groups": 9,
+      "occupied_weeks": 9,
+      "saturated_weeks": 0,
+      "activity_rows": 9
+    },
+    {
+      "location": "PLAT:ALP:S05:EB",
+      "capacity": 2,
+      "groups": 9,
+      "occupied_weeks": 9,
+      "saturated_weeks": 0,
+      "activity_rows": 11
+    },
+    {
+      "location": "PLAT:ALP:S06:EB",
+      "capacity": 2,
+      "groups": 9,
+      "occupied_weeks": 9,
+      "saturated_weeks": 0,
+      "activity_rows": 9
+    },
+    {
+      "location": "PLAT:ALP:S08:WB",
+      "capacity": 2,
+      "groups": 9,
+      "occupied_weeks": 9,
+      "saturated_weeks": 0,
+      "activity_rows": 9
+    },
+    {
+      "location": "SEC:ALP:S04_H01:EB",
+      "capacity": 2,
+      "groups": 8,
+      "occupied_weeks": 8,
+      "saturated_weeks": 0,
+      "activity_rows": 8
+    },
+    {
+      "location": "SEC:BET:S14_H01:EB",
+      "capacity": 2,
+      "groups": 8,
+      "occupied_weeks": 8,
+      "saturated_weeks": 0,
+      "activity_rows": 9
+    },
+    {
+      "location": "PLAT:ALP:S04:EB",
+      "capacity": 2,
+      "groups": 8,
+      "occupied_weeks": 8,
+      "saturated_weeks": 0,
+      "activity_rows": 8
+    },
+    {
+      "location": "SEC:ALP:S01_S02:EB",
+      "capacity": 4,
+      "groups": 7,
+      "occupied_weeks": 7,
+      "saturated_weeks": 0,
+      "activity_rows": 7
+    },
+    {
+      "location": "SEC:ALP:S02_S03:EB",
+      "capacity": 4,
+      "groups": 7,
+      "occupied_weeks": 7,
+      "saturated_weeks": 0,
+      "activity_rows": 7
+    },
+    {
+      "location": "SEC:ALP:S07_S08:EB",
+      "capacity": 4,
+      "groups": 7,
+      "occupied_weeks": 7,
+      "saturated_weeks": 0,
+      "activity_rows": 7
+    },
+    {
+      "location": "SEC:BET:S13_S14:WB",
+      "capacity": 4,
+      "groups": 7,
+      "occupied_weeks": 7,
+      "saturated_weeks": 0,
+      "activity_rows": 7
+    },
+    {
+      "location": "PLAT:ALP:S01:EB",
+      "capacity": 2,
+      "groups": 7,
+      "occupied_weeks": 7,
+      "saturated_weeks": 0,
+      "activity_rows": 7
+    },
+    {
+      "location": "PLAT:ALP:S02:EB",
+      "capacity": 2,
+      "groups": 7,
+      "occupied_weeks": 7,
+      "saturated_weeks": 0,
+      "activity_rows": 7
+    },
+    {
+      "location": "PLAT:ALP:S07:EB",
+      "capacity": 2,
+      "groups": 7,
+      "occupied_weeks": 7,
+      "saturated_weeks": 0,
+      "activity_rows": 7
+    },
+    {
+      "location": "PLAT:ALP:S08:EB",
+      "capacity": 2,
+      "groups": 7,
+      "occupied_weeks": 7,
+      "saturated_weeks": 0,
+      "activity_rows": 7
+    },
+    {
+      "location": "PLAT:BET:S11:WB",
+      "capacity": 2,
+      "groups": 7,
+      "occupied_weeks": 7,
+      "saturated_weeks": 0,
+      "activity_rows": 11
+    },
+    {
+      "location": "PLAT:BET:S14:WB",
+      "capacity": 2,
+      "groups": 7,
+      "occupied_weeks": 7,
+      "saturated_weeks": 0,
+      "activity_rows": 7
+    },
+    {
+      "location": "SEC:BET:S15_S16:WB",
+      "capacity": 4,
+      "groups": 6,
+      "occupied_weeks": 6,
+      "saturated_weeks": 0,
+      "activity_rows": 6
+    },
+    {
+      "location": "PLAT:BET:S16:WB",
+      "capacity": 2,
+      "groups": 6,
+      "occupied_weeks": 6,
+      "saturated_weeks": 0,
+      "activity_rows": 6
+    },
+    {
+      "location": "SEC:ALP:S03_S04:EB",
+      "capacity": 4,
+      "groups": 5,
+      "occupied_weeks": 5,
+      "saturated_weeks": 0,
+      "activity_rows": 5
+    },
+    {
+      "location": "SEC:ALP:S02_S03:WB",
+      "capacity": 4,
+      "groups": 4,
+      "occupied_weeks": 4,
+      "saturated_weeks": 0,
+      "activity_rows": 4
+    },
+    {
+      "location": "SEC:ALP:H02_S05:EB",
+      "capacity": 2,
+      "groups": 4,
+      "occupied_weeks": 4,
+      "saturated_weeks": 0,
+      "activity_rows": 4
+    },
+    {
+      "location": "SEC:ALP:H02_S05:WB",
+      "capacity": 2,
+      "groups": 4,
+      "occupied_weeks": 4,
+      "saturated_weeks": 0,
+      "activity_rows": 4
+    },
+    {
+      "location": "SEC:BET:S13_S14:EB",
+      "capacity": 4,
+      "groups": 4,
+      "occupied_weeks": 4,
+      "saturated_weeks": 0,
+      "activity_rows": 4
+    },
+    {
+      "location": "PLAT:ALP:S02:WB",
+      "capacity": 2,
+      "groups": 4,
+      "occupied_weeks": 4,
+      "saturated_weeks": 0,
+      "activity_rows": 4
+    },
+    {
+      "location": "PLAT:BET:S13:EB",
+      "capacity": 2,
+      "groups": 4,
+      "occupied_weeks": 4,
+      "saturated_weeks": 0,
+      "activity_rows": 4
+    },
+    {
+      "location": "SEC:BET:S17_S18:WB",
+      "capacity": 4,
+      "groups": 2,
+      "occupied_weeks": 2,
+      "saturated_weeks": 0,
+      "activity_rows": 2
+    },
+    {
+      "location": "PLAT:BET:S17:WB",
+      "capacity": 2,
+      "groups": 2,
+      "occupied_weeks": 2,
+      "saturated_weeks": 0,
+      "activity_rows": 2
+    },
+    {
+      "location": "PLAT:BET:S18:WB",
+      "capacity": 2,
+      "groups": 2,
+      "occupied_weeks": 2,
+      "saturated_weeks": 0,
+      "activity_rows": 2
+    },
+    {
+      "location": "SEC:ALP:S01_S02:WB",
+      "capacity": 4,
+      "groups": 0,
+      "occupied_weeks": 0,
+      "saturated_weeks": 0,
+      "activity_rows": 0
+    },
+    {
+      "location": "SEC:ALP:S06_S07:EB",
+      "capacity": 4,
+      "groups": 0,
+      "occupied_weeks": 0,
+      "saturated_weeks": 0,
+      "activity_rows": 0
+    },
+    {
+      "location": "SEC:BET:S11_S12:EB",
+      "capacity": 4,
+      "groups": 0,
+      "occupied_weeks": 0,
+      "saturated_weeks": 0,
+      "activity_rows": 0
+    },
+    {
+      "location": "SEC:BET:S12_S13:EB",
+      "capacity": 4,
+      "groups": 0,
+      "occupied_weeks": 0,
+      "saturated_weeks": 0,
+      "activity_rows": 0
+    },
+    {
+      "location": "SEC:BET:S14_H01:WB",
+      "capacity": 2,
+      "groups": 0,
+      "occupied_weeks": 0,
+      "saturated_weeks": 0,
+      "activity_rows": 0
+    },
+    {
+      "location": "SEC:BET:S16_S17:WB",
+      "capacity": 4,
+      "groups": 0,
+      "occupied_weeks": 0,
+      "saturated_weeks": 0,
+      "activity_rows": 0
+    },
+    {
+      "location": "PLAT:ALP:S01:WB",
+      "capacity": 2,
+      "groups": 0,
+      "occupied_weeks": 0,
+      "saturated_weeks": 0,
+      "activity_rows": 0
+    },
+    {
+      "location": "PLAT:BET:S11:EB",
+      "capacity": 2,
+      "groups": 0,
+      "occupied_weeks": 0,
+      "saturated_weeks": 0,
+      "activity_rows": 0
+    },
+    {
+      "location": "PLAT:BET:S12:EB",
+      "capacity": 2,
+      "groups": 0,
+      "occupied_weeks": 0,
+      "saturated_weeks": 0,
+      "activity_rows": 0
+    }
+  ]
+}
