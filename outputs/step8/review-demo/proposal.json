@@ -1,0 +1,13 @@
+{
+  "completed_through_week": 10,
+  "locked_activity_ids": [
+    "A002"
+  ],
+  "changes": [
+    {
+      "type": "workload",
+      "activity_id": "A001",
+      "additional_units": 1
+    }
+  ]
+}

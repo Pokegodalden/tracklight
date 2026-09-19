@@ -1,0 +1,652 @@
+{
+  "version": "ps1-replan-0.1.0",
+  "parent_run_id": "a597676cd63748b2a7b00b2d0331efa9",
+  "parent_snapshot": {
+    "version": "f73d2752732521f29646309887c0307c0e4002dc8d4763541defdcabaa65ae0f",
+    "input_data_sha256": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+    "scenario": "A",
+    "rule_profile": {
+      "profile_id": "ps1-provisional-0.2.0",
+      "profile_sha256": "a4f79f7e20bc4e6dbc6c07de64e1a090d443b00a5ddf81b6c04a926f143eda8e",
+      "source_updates": [
+        {
+          "file": "data/source_updates/966c976005db2e3e40a691cff268fdb8f396a5df/PS1_README.md",
+          "sha256": "e7d8f9457e62a1732fc7986cea57ad5fbd595e7cabe2e8b789e673c8335bd253",
+          "commit": "966c976005db2e3e40a691cff268fdb8f396a5df",
+          "url": "https://github.com/aochinwen/NebulaX-Hackathon-ProblemStatement/blob/966c976005db2e3e40a691cff268fdb8f396a5df/PS1/PS1_README.md"
+        }
+      ]
+    },
+    "source_sha256": {
+      "__init__.py": "513fe13f53f0e5774b85ff928cb37c827ed18aa9f0c904dcf1f4649c863c605c",
+      "baseline_scheduler.py": "a6e446189b3d5fa33f19f684f7949a5bb059a4fd79734abdec92f701609f35f8",
+      "hosted.py": "0a68314315a825b1f9cf2fa161ea30af110f75ce95ad003d6e88a987b2350508",
+      "importer.py": "282033fc04d11b84e14c765dc3e3a19d37d2df247a62dce98ac3f391cbb0e364",
+      "network.py": "f975fce802510fe75c48525b5a7c817f8eef93ff0e928c36b6122fd4332ce309",
+      "night_diagnostic.py": "41e811075bb1728082766efbb1e306e978316dbde6bf82bfb369adae3a3c17e2",
+      "optimizer.py": "6248f8d5c3f24d8f753176fc80a072dbfb381e3ae8020e599063739a1a36837e",
+      "planner.py": "220b0d377ae584a3ef6fdc0162367b187cae45d00ccb2e681bd48b6849b9ad65",
+      "replan.py": "1f679d09f0e94c5e15d3559d3906651fda3a050fd6cdada360d7a3046eb682af",
+      "schema.py": "5ac4bed57015cbd2d367852c4666e69c4da3b07679c97a6ef905e0bdce53177e",
+      "validator.py": "38ab5a5ece38a72a57553c17813ef6ef3dd6c95b3fa18d3eb20ef5aa837aa188",
+      "webapp.py": "9364925443999864f6067807d55b266cc5654d1ed09fc85ed6f0bbf631d1c3c0",
+      "workspace.py": "c2c1f622e8617d75f86a391b0c87b08ac7ed4099ed33474c346f0476240e14b5",
+      "web/app.js": "80ce97719cd3c2000c583abf2926a0dd769f5fd82d2f92468512f73cff01f1c1",
+      "web/index.html": "e45f3e6d9b3231760147db0c86ce1a5cbc8914efe9f6109ef854958532d5a01e",
+      "web/style.css": "82ba7c2334044c399eb07ef52b3dbc3bc7d24b344bc9f306b2e23e1b9ffefa82"
+    },
+    "schedule_sha256": {
+      "RESULTS.csv": "e44ed4bb744435e6a6d8561b55602774ec14275640725ac0db1f1dce3dcda58c",
+      "SCHEDULE_ACCESS.csv": "a1540ab6190f7deab12ecd63d51d585769de97d1d509ee9c1cdcffdc7e86f573",
+      "SCHEDULE_OCCUPANCY.csv": "bb5f591f65b521daaf8d7079c005745e36705122a4e21c6cef8dc8c34dd35e36"
+    }
+  },
+  "proposal": {
+    "completed_through_week": 10,
+    "locked_activity_ids": [
+      "A002"
+    ],
+    "changes": [
+      {
+        "type": "workload",
+        "activity_id": "A001",
+        "additional_units": 1
+      }
+    ]
+  },
+  "context": {
+    "completed_through_week": 10,
+    "locked_activity_ids": [
+      "A002"
+    ],
+    "weekly_supply": [],
+    "scope": "Planner-declared completed weeks as scheduled; nominal weekly supply overlay. Scenario B/C excess allowances still apply. No actual dates or operational authority."
+  },
+  "lock_diagnostic": null,
+  "status": "CHECKED_REVISION",
+  "comparison": {
+    "version": "ps1-planner-0.1.0",
+    "base_run_id": "a597676cd63748b2a7b00b2d0331efa9",
+    "candidate_run_id": "b71ff5f3cf234170925ed4a4e258b6c1",
+    "base_snapshot": {
+      "version": "f73d2752732521f29646309887c0307c0e4002dc8d4763541defdcabaa65ae0f",
+      "input_data_sha256": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+      "scenario": "A",
+      "rule_profile": {
+        "profile_id": "ps1-provisional-0.2.0",
+        "profile_sha256": "a4f79f7e20bc4e6dbc6c07de64e1a090d443b00a5ddf81b6c04a926f143eda8e",
+        "source_updates": [
+          {
+            "file": "data/source_updates/966c976005db2e3e40a691cff268fdb8f396a5df/PS1_README.md",
+            "sha256": "e7d8f9457e62a1732fc7986cea57ad5fbd595e7cabe2e8b789e673c8335bd253",
+            "commit": "966c976005db2e3e40a691cff268fdb8f396a5df",
+            "url": "https://github.com/aochinwen/NebulaX-Hackathon-ProblemStatement/blob/966c976005db2e3e40a691cff268fdb8f396a5df/PS1/PS1_README.md"
+          }
+        ]
+      },
+      "source_sha256": {
+        "__init__.py": "513fe13f53f0e5774b85ff928cb37c827ed18aa9f0c904dcf1f4649c863c605c",
+        "baseline_scheduler.py": "a6e446189b3d5fa33f19f684f7949a5bb059a4fd79734abdec92f701609f35f8",
+        "hosted.py": "0a68314315a825b1f9cf2fa161ea30af110f75ce95ad003d6e88a987b2350508",
+        "importer.py": "282033fc04d11b84e14c765dc3e3a19d37d2df247a62dce98ac3f391cbb0e364",
+        "network.py": "f975fce802510fe75c48525b5a7c817f8eef93ff0e928c36b6122fd4332ce309",
+        "night_diagnostic.py": "41e811075bb1728082766efbb1e306e978316dbde6bf82bfb369adae3a3c17e2",
+        "optimizer.py": "6248f8d5c3f24d8f753176fc80a072dbfb381e3ae8020e599063739a1a36837e",
+        "planner.py": "220b0d377ae584a3ef6fdc0162367b187cae45d00ccb2e681bd48b6849b9ad65",
+        "replan.py": "1f679d09f0e94c5e15d3559d3906651fda3a050fd6cdada360d7a3046eb682af",
+        "schema.py": "5ac4bed57015cbd2d367852c4666e69c4da3b07679c97a6ef905e0bdce53177e",
+        "validator.py": "38ab5a5ece38a72a57553c17813ef6ef3dd6c95b3fa18d3eb20ef5aa837aa188",
+        "webapp.py": "9364925443999864f6067807d55b266cc5654d1ed09fc85ed6f0bbf631d1c3c0",
+        "workspace.py": "c2c1f622e8617d75f86a391b0c87b08ac7ed4099ed33474c346f0476240e14b5",
+        "web/app.js": "80ce97719cd3c2000c583abf2926a0dd769f5fd82d2f92468512f73cff01f1c1",
+        "web/index.html": "e45f3e6d9b3231760147db0c86ce1a5cbc8914efe9f6109ef854958532d5a01e",
+        "web/style.css": "82ba7c2334044c399eb07ef52b3dbc3bc7d24b344bc9f306b2e23e1b9ffefa82"
+      },
+      "schedule_sha256": {
+        "RESULTS.csv": "e44ed4bb744435e6a6d8561b55602774ec14275640725ac0db1f1dce3dcda58c",
+        "SCHEDULE_ACCESS.csv": "a1540ab6190f7deab12ecd63d51d585769de97d1d509ee9c1cdcffdc7e86f573",
+        "SCHEDULE_OCCUPANCY.csv": "bb5f591f65b521daaf8d7079c005745e36705122a4e21c6cef8dc8c34dd35e36"
+      }
+    },
+    "candidate_snapshot": {
+      "version": "1984487a28118aeaba8ef22d4e70b0cfa3d3cffc5968cb14b2ab23ba934cc3b6",
+      "input_data_sha256": "ebd9880dc44f2e250386e462ecf4c299a4f809e3d72b1da7dbbda45851b37e6f",
+      "scenario": "A",
+      "rule_profile": {
+        "profile_id": "ps1-provisional-0.2.0",
+        "profile_sha256": "a4f79f7e20bc4e6dbc6c07de64e1a090d443b00a5ddf81b6c04a926f143eda8e",
+        "source_updates": [
+          {
+            "file": "data/source_updates/966c976005db2e3e40a691cff268fdb8f396a5df/PS1_README.md",
+            "sha256": "e7d8f9457e62a1732fc7986cea57ad5fbd595e7cabe2e8b789e673c8335bd253",
+            "commit": "966c976005db2e3e40a691cff268fdb8f396a5df",
+            "url": "https://github.com/aochinwen/NebulaX-Hackathon-ProblemStatement/blob/966c976005db2e3e40a691cff268fdb8f396a5df/PS1/PS1_README.md"
+          }
+        ]
+      },
+      "source_sha256": {
+        "__init__.py": "513fe13f53f0e5774b85ff928cb37c827ed18aa9f0c904dcf1f4649c863c605c",
+        "baseline_scheduler.py": "a6e446189b3d5fa33f19f684f7949a5bb059a4fd79734abdec92f701609f35f8",
+        "hosted.py": "0a68314315a825b1f9cf2fa161ea30af110f75ce95ad003d6e88a987b2350508",
+        "importer.py": "282033fc04d11b84e14c765dc3e3a19d37d2df247a62dce98ac3f391cbb0e364",
+        "network.py": "f975fce802510fe75c48525b5a7c817f8eef93ff0e928c36b6122fd4332ce309",
+        "night_diagnostic.py": "41e811075bb1728082766efbb1e306e978316dbde6bf82bfb369adae3a3c17e2",
+        "optimizer.py": "6248f8d5c3f24d8f753176fc80a072dbfb381e3ae8020e599063739a1a36837e",
+        "planner.py": "220b0d377ae584a3ef6fdc0162367b187cae45d00ccb2e681bd48b6849b9ad65",
+        "replan.py": "1f679d09f0e94c5e15d3559d3906651fda3a050fd6cdada360d7a3046eb682af",
+        "schema.py": "5ac4bed57015cbd2d367852c4666e69c4da3b07679c97a6ef905e0bdce53177e",
+        "validator.py": "38ab5a5ece38a72a57553c17813ef6ef3dd6c95b3fa18d3eb20ef5aa837aa188",
+        "webapp.py": "9364925443999864f6067807d55b266cc5654d1ed09fc85ed6f0bbf631d1c3c0",
+        "workspace.py": "c2c1f622e8617d75f86a391b0c87b08ac7ed4099ed33474c346f0476240e14b5",
+        "web/app.js": "80ce97719cd3c2000c583abf2926a0dd769f5fd82d2f92468512f73cff01f1c1",
+        "web/index.html": "e45f3e6d9b3231760147db0c86ce1a5cbc8914efe9f6109ef854958532d5a01e",
+        "web/style.css": "82ba7c2334044c399eb07ef52b3dbc3bc7d24b344bc9f306b2e23e1b9ffefa82"
+      },
+      "schedule_sha256": {
+        "RESULTS.csv": "e44ed4bb744435e6a6d8561b55602774ec14275640725ac0db1f1dce3dcda58c",
+        "SCHEDULE_ACCESS.csv": "48ec3298ffbc33eed161092fa832cbf5f41e89950394ebb16d3c20dfd90d3f25",
+        "SCHEDULE_OCCUPANCY.csv": "5abf52835793cd9f3aed0a493f05c35e3d4e4817e5496412fbe518574ba33c65"
+      },
+      "planning_context": {
+        "completed_through_week": 10,
+        "locked_activity_ids": [
+          "A002"
+        ],
+        "weekly_supply": [],
+        "scope": "Planner-declared completed weeks as scheduled; nominal weekly supply overlay. Scenario B/C excess allowances still apply. No actual dates or operational authority."
+      }
+    },
+    "same_inputs": false,
+    "same_rules": true,
+    "same_implementation": true,
+    "same_scenario": true,
+    "same_planning_context": false,
+    "scores_comparable": false,
+    "comparison_note": "Changed requirements or planning constraints: component differences describe consequences, not a fair score improvement.",
+    "before": {
+      "status": "CHECKED_MODEL_PLAN",
+      "checked_model_plan": true,
+      "full_feasibility_established": false,
+      "official_validation": "NOT_RUN",
+      "operational_authorisation": false,
+      "required_activities": 54,
+      "complete_activities": 54,
+      "covered_units": 192.0,
+      "required_units": 192.0,
+      "activity_delay_days": 21,
+      "contract_delay_days": 21,
+      "weighted_delay": 25.2,
+      "eclo_accesses": 0,
+      "excess_slots": 0,
+      "score": 25.2,
+      "weekly_violations": 0,
+      "night_conflict_weeks": 0,
+      "night_status": "ASSIGNED_FOR_MODELLED_RELATIONS",
+      "c_window_check": null,
+      "completion_date": "2027-07-18"
+    },
+    "after": {
+      "status": "CHECKED_MODEL_PLAN",
+      "checked_model_plan": true,
+      "full_feasibility_established": false,
+      "official_validation": "NOT_RUN",
+      "operational_authorisation": false,
+      "required_activities": 54,
+      "complete_activities": 54,
+      "covered_units": 193.0,
+      "required_units": 193.0,
+      "activity_delay_days": 21,
+      "contract_delay_days": 21,
+      "weighted_delay": 25.2,
+      "eclo_accesses": 0,
+      "excess_slots": 0,
+      "score": 25.2,
+      "weekly_violations": 0,
+      "night_conflict_weeks": 0,
+      "night_status": "ASSIGNED_FOR_MODELLED_RELATIONS",
+      "c_window_check": null,
+      "completion_date": "2027-07-18"
+    },
+    "deltas": {
+      "complete_activities": 0,
+      "covered_units": 1.0,
+      "activity_delay_days": 0,
+      "contract_delay_days": 0,
+      "weighted_delay": 0.0,
+      "eclo_accesses": 0,
+      "excess_slots": 0,
+      "weekly_violations": 0,
+      "night_conflict_weeks": 0,
+      "score": null
+    },
+    "changed_activity_count": 1,
+    "changes": [
+      {
+        "activity_id": "A001",
+        "changed": [
+          "accesses",
+          "sharing",
+          "same_project_night"
+        ],
+        "before": {
+          "accesses": [
+            {
+              "week": 22,
+              "eclo": 0
+            },
+            {
+              "week": 23,
+              "eclo": 0
+            }
+          ],
+          "sharing": [
+            {
+              "week": 22,
+              "location_id": "PLAT:BET:S15:EB",
+              "partners": [
+                "A017",
+                "A040",
+                "A057"
+              ]
+            },
+            {
+              "week": 22,
+              "location_id": "PLAT:BET:S16:EB",
+              "partners": [
+                "A017",
+                "A040",
+                "A057"
+              ]
+            },
+            {
+              "week": 22,
+              "location_id": "PLAT:BET:S17:EB",
+              "partners": []
+            },
+            {
+              "week": 22,
+              "location_id": "SEC:BET:S15_S16:EB",
+              "partners": [
+                "A017",
+                "A040",
+                "A057"
+              ]
+            },
+            {
+              "week": 22,
+              "location_id": "SEC:BET:S16_S17:EB",
+              "partners": []
+            },
+            {
+              "week": 23,
+              "location_id": "PLAT:BET:S15:EB",
+              "partners": [
+                "A011",
+                "A042"
+              ]
+            },
+            {
+              "week": 23,
+              "location_id": "PLAT:BET:S16:EB",
+              "partners": [
+                "A011",
+                "A042"
+              ]
+            },
+            {
+              "week": 23,
+              "location_id": "PLAT:BET:S17:EB",
+              "partners": [
+                "A011",
+                "A042"
+              ]
+            },
+            {
+              "week": 23,
+              "location_id": "SEC:BET:S15_S16:EB",
+              "partners": [
+                "A011",
+                "A042"
+              ]
+            },
+            {
+              "week": 23,
+              "location_id": "SEC:BET:S16_S17:EB",
+              "partners": [
+                "A011",
+                "A042"
+              ]
+            }
+          ],
+          "same_project_night": [
+            {
+              "week": 22,
+              "partners": []
+            },
+            {
+              "week": 23,
+              "partners": []
+            }
+          ]
+        },
+        "after": {
+          "accesses": [
+            {
+              "week": 21,
+              "eclo": 0
+            },
+            {
+              "week": 22,
+              "eclo": 0
+            },
+            {
+              "week": 23,
+              "eclo": 0
+            }
+          ],
+          "sharing": [
+            {
+              "week": 21,
+              "location_id": "PLAT:BET:S15:EB",
+              "partners": []
+            },
+            {
+              "week": 21,
+              "location_id": "PLAT:BET:S16:EB",
+              "partners": []
+            },
+            {
+              "week": 21,
+              "location_id": "PLAT:BET:S17:EB",
+              "partners": []
+            },
+            {
+              "week": 21,
+              "location_id": "SEC:BET:S15_S16:EB",
+              "partners": []
+            },
+            {
+              "week": 21,
+              "location_id": "SEC:BET:S16_S17:EB",
+              "partners": []
+            },
+            {
+              "week": 22,
+              "location_id": "PLAT:BET:S15:EB",
+              "partners": [
+                "A017",
+                "A040",
+                "A057"
+              ]
+            },
+            {
+              "week": 22,
+              "location_id": "PLAT:BET:S16:EB",
+              "partners": [
+                "A017",
+                "A040",
+                "A057"
+              ]
+            },
+            {
+              "week": 22,
+              "location_id": "PLAT:BET:S17:EB",
+              "partners": []
+            },
+            {
+              "week": 22,
+              "location_id": "SEC:BET:S15_S16:EB",
+              "partners": [
+                "A017",
+                "A040",
+                "A057"
+              ]
+            },
+            {
+              "week": 22,
+              "location_id": "SEC:BET:S16_S17:EB",
+              "partners": []
+            },
+            {
+              "week": 23,
+              "location_id": "PLAT:BET:S15:EB",
+              "partners": [
+                "A011",
+                "A042"
+              ]
+            },
+            {
+              "week": 23,
+              "location_id": "PLAT:BET:S16:EB",
+              "partners": [
+                "A011",
+                "A042"
+              ]
+            },
+            {
+              "week": 23,
+              "location_id": "PLAT:BET:S17:EB",
+              "partners": [
+                "A011",
+                "A042"
+              ]
+            },
+            {
+              "week": 23,
+              "location_id": "SEC:BET:S15_S16:EB",
+              "partners": [
+                "A011",
+                "A042"
+              ]
+            },
+            {
+              "week": 23,
+              "location_id": "SEC:BET:S16_S17:EB",
+              "partners": [
+                "A011",
+                "A042"
+              ]
+            }
+          ],
+          "same_project_night": [
+            {
+              "week": 21,
+              "partners": []
+            },
+            {
+              "week": 22,
+              "partners": []
+            },
+            {
+              "week": 23,
+              "partners": []
+            }
+          ]
+        },
+        "before_completion": "2027-06-13",
+        "after_completion": "2027-06-13"
+      }
+    ],
+    "before_contracts": [
+      {
+        "contract_number": "C001",
+        "completion_date": "2027-06-13",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C002",
+        "completion_date": "2027-07-04",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C003",
+        "completion_date": "2027-06-20",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C004",
+        "completion_date": "2027-07-11",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C005",
+        "completion_date": "2027-03-14",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C006",
+        "completion_date": "2027-07-18",
+        "overrun_days": 14
+      },
+      {
+        "contract_number": "C007",
+        "completion_date": "2027-07-11",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C008",
+        "completion_date": "2027-07-11",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C009",
+        "completion_date": "2027-06-27",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C010",
+        "completion_date": "2027-05-23",
+        "overrun_days": 7
+      },
+      {
+        "contract_number": "C011",
+        "completion_date": "2027-07-04",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C012",
+        "completion_date": "2027-07-11",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C013",
+        "completion_date": "2027-05-30",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C014",
+        "completion_date": "2027-07-18",
+        "overrun_days": 0
+      }
+    ],
+    "after_contracts": [
+      {
+        "contract_number": "C001",
+        "completion_date": "2027-06-13",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C002",
+        "completion_date": "2027-07-04",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C003",
+        "completion_date": "2027-06-20",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C004",
+        "completion_date": "2027-07-11",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C005",
+        "completion_date": "2027-03-14",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C006",
+        "completion_date": "2027-07-18",
+        "overrun_days": 14
+      },
+      {
+        "contract_number": "C007",
+        "completion_date": "2027-07-11",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C008",
+        "completion_date": "2027-07-11",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C009",
+        "completion_date": "2027-06-27",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C010",
+        "completion_date": "2027-05-23",
+        "overrun_days": 7
+      },
+      {
+        "contract_number": "C011",
+        "completion_date": "2027-07-04",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C012",
+        "completion_date": "2027-07-11",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C013",
+        "completion_date": "2027-05-30",
+        "overrun_days": 0
+      },
+      {
+        "contract_number": "C014",
+        "completion_date": "2027-07-18",
+        "overrun_days": 0
+      }
+    ],
+    "scope": "Planning review only. Full protection and official acceptance remain unverified; this is not track-entry authorisation.",
+    "disruption": {
+      "proposal": {
+        "completed_through_week": 10,
+        "locked_activity_ids": [
+          "A002"
+        ],
+        "changes": [
+          {
+            "type": "workload",
+            "activity_id": "A001",
+            "additional_units": 1
+          }
+        ]
+      },
+      "planning_context": {
+        "completed_through_week": 10,
+        "locked_activity_ids": [
+          "A002"
+        ],
+        "weekly_supply": [],
+        "scope": "Planner-declared completed weeks as scheduled; nominal weekly supply overlay. Scenario B/C excess allowances still apply. No actual dates or operational authority."
+      },
+      "base_input_identity": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+      "revised_input_identity": "ebd9880dc44f2e250386e462ecf4c299a4f809e3d72b1da7dbbda45851b37e6f"
+    }
+  },
+  "scope": "Planning review only. Full protection and official acceptance remain unverified; this is not track-entry authorisation.",
+  "rollback_note": "Return to the preserved parent; its old requirements still apply. Rollback does not resolve the disruption.",
+  "lock_audit": {
+    "passed": true,
+    "completed_through_week": 10,
+    "locked_activity_ids": [
+      "A002"
+    ],
+    "errors": [],
+    "scope": "Weeks, ECLO, occupancy and sharing relationships; arbitrary CSV group/index labels are not physical dates."
+  }
+}

@@ -1,0 +1,2 @@
+# Optional local walkthrough renderer, separate from the web service.
+imageio-ffmpeg==0.6.0

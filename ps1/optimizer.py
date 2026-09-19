@@ -12,7 +12,7 @@ from time import perf_counter
 
 from .validator import check_schedule
 
-VERSION = 'ps1-cpsat-0.1.1'
+VERSION = 'ps1-cpsat-0.2.0'
 MODEL_ID = 'weekly-core-nights-0.1.0'
 MAX_ASSIGNMENTS = 60000
 MAX_LOCATION_MEMBERSHIPS = 300000
@@ -85,7 +85,7 @@ def _incumbent(model, tables, scenario):
     return {'tables': tables, 'report': report, 'nights': nights}, 'Complete model-compatible incumbent retained as a fallback.'
 
 
-def optimise(model, scenario, *, seconds=30, workers=1, seed=0, incumbent=None):
+def optimise(model, scenario, *, seconds=30, workers=1, seed=0, incumbent=None, replanning=None):
     if scenario not in SCENARIOS:
         raise ValueError('Choose scenario A, B or C.')
     if isinstance(seconds, bool) or not isinstance(seconds, (int,float)) or not math.isfinite(seconds) or not 0 < seconds <= 300:
@@ -136,6 +136,12 @@ def optimise(model, scenario, *, seconds=30, workers=1, seed=0, incumbent=None):
         meta.update(status='INFEASIBLE_MODEL', solver_status='PRECHECK_INFEASIBLE', elapsed_seconds=perf_counter()-started)
         return {'tables':None,'optimisation':meta}
     prior, prior_reason = _incumbent(model,incumbent,scenario)
+    if prior and replanning:
+        from .replan import audit
+        candidate_view = dict(replanning['parent'], model=model, tables=prior['tables'])
+        if not audit(replanning['parent'], candidate_view, replanning['context'])['passed']:
+            prior = None
+            prior_reason = 'Parent is not compatible with the requested completed work and locks.'
     meta['incumbent_policy'] = prior_reason
     cp = cp_model.CpModel()
     x, used, eclo, finish = {}, {}, {}, {}
@@ -184,9 +190,10 @@ def optimise(model, scenario, *, seconds=30, workers=1, seed=0, incumbent=None):
             for a in jobs:
                 cp.add(eclo[a,w] == flag).only_enforce_if(x[a,w,n])
         local_nights[l,w].append(on)
+    overrides = {(r['location_id'], r['week']):r['capacity'] for r in model.get('weekly_supply_overrides', [])}
     extras = []
     for (l,w), values in local_nights.items():
-        cap = locations[l]['supply_capacity']
+        cap = overrides.get((l,w), locations[l]['supply_capacity'])
         if config.capacity_extra is not None:
             cp.add(sum(values) <= cap+config.capacity_extra)
         extra = cp.new_int_var(0,7,f'extra:{l}:{w}')
@@ -221,7 +228,24 @@ def optimise(model, scenario, *, seconds=30, workers=1, seed=0, incumbent=None):
         cp.add_max_equality(late,[0,7*finish[a]-1-target])
         delays.append(late*{1:100,2:10,3:1}[p['contract_priority']]*{1:13,2:12,3:10}[row['activity_priority']])
     objective = (sum(delays) if config.delay_cost else 0) + (70*sum(extras)+50*sum(eclo.values()) if config.eclo_allowed else 0)
-    cp.minimize(objective)
+    weight = 1
+    churn = 0
+    if replanning:
+        from .replan import constrain
+        churn = constrain(cp, model, used, eclo, x, replanning)
+        weight = len(activities)+1
+        meta['replanning_objective'] = {'order':['provisional_scenario_score', 'changed_activity_count'], 'weight':weight,
+            'scope':'Exact lexicographic order. Changes include weeks, ECLO and sharing relationships. Optimality only if the combined model is proven optimal.'}
+    cp.minimize(objective*weight+churn)
+    if replanning and not prior:
+        parent = replanning['parent']
+        known_nights = {(a, w['week']):n for w in parent['validation']['report']['physical_night_diagnostic']['weeks']
+                        for a,n in w['assignment'].items()}
+        known_rows = {(r['activity_id'],r['week']):r for r in parent['tables']['SCHEDULE_ACCESS.csv']}
+        for (a,w,n),v in x.items():
+            cp.add_hint(v, int(known_nights.get((a,w)) == n))
+        for key,v in eclo.items():
+            cp.add_hint(v, known_rows[key]['eclo'] if key in known_rows else 0)
     if prior:
         known = {(r['activity_id'],r['week']):r for r in prior['tables']['SCHEDULE_ACCESS.csv']}
         for (a,w,n),v in x.items():
@@ -238,6 +262,9 @@ def optimise(model, scenario, *, seconds=30, workers=1, seed=0, incumbent=None):
     bound = solver.best_objective_bound if status in (cp_model.OPTIMAL,cp_model.FEASIBLE,cp_model.UNKNOWN) else None
     if bound is not None and not math.isfinite(bound):
         raise RuntimeError('Solver returned a non-finite objective bound; result withheld.')
+    if replanning and bound is not None:
+        meta['combined_best_bound'] = bound
+        bound = math.floor(bound/weight)
     meta.update(solver_status=solver.status_name(status), solver_seconds=solver.wall_time,
                 best_bound_tenths=max(0,bound) if bound is not None else None,
                 variables=len(cp.proto.variables), constraints=len(cp.proto.constraints), branches=solver.num_branches,
@@ -247,7 +274,10 @@ def optimise(model, scenario, *, seconds=30, workers=1, seed=0, incumbent=None):
         rows = [(a,w,n,int(solver.value(eclo[a,w]))) for (a,w,n),v in x.items() if solver.value(v)]
         tables = _tables(model,scenario,rows,spans)
         report = check_schedule(model,tables,scenario,search_budget=5000)
-        raw_objective = int(round(solver.objective_value))
+        raw_objective = int(solver.value(objective))
+        if replanning:
+            meta['changed_activity_count'] = int(solver.value(churn))
+            meta['churn_optimality_proven'] = status == cp_model.OPTIMAL
         if not _accepted(report) or report['metrics']['score_tenths'] != raw_objective or (scenario=='C' and not window_check(model,tables)['passed']):
             raise RuntimeError('Optimiser output failed the independent checker or objective reconciliation; candidate withheld.')
         # Standard accesses can have zero marginal objective cost. Remove redundant
@@ -263,6 +293,9 @@ def optimise(model, scenario, *, seconds=30, workers=1, seed=0, incumbent=None):
                 else:
                     retained.append(r)
         meta.update(raw_solver_objective_tenths=raw_objective, removed_redundant_accesses=len(rows)-len(retained))
+        if replanning:
+            retained = rows  # Post-solve pruning could break locks or worsen the secondary objective.
+            meta['removed_redundant_accesses'] = 0
         rows = retained
         tables = _tables(model,scenario,rows,spans)
         report = check_schedule(model,tables,scenario,search_budget=5000)
@@ -284,6 +317,19 @@ def optimise(model, scenario, *, seconds=30, workers=1, seed=0, incumbent=None):
         meta['status']='NO_SOLUTION_WITHIN_LIMIT'
     else:
         raise RuntimeError('CP-SAT rejected the model: '+solver.solution_info())
+    if tables is not None and replanning:
+        from .replan import audit
+        from .planner import allocation_details
+        candidate_view = dict(replanning['parent'], model=model, tables=tables)
+        meta['lock_audit'] = audit(replanning['parent'], candidate_view, replanning['context'])
+        if not meta['lock_audit']['passed']:
+            raise RuntimeError('Independent completed-work/lock audit failed; candidate withheld.')
+        old, new = allocation_details(replanning['parent']), allocation_details(candidate_view)
+        changes = sum(old.get(a) != new.get(a) for a in set(old)|set(new))
+        if meta.get('changed_activity_count', changes) != changes:
+            raise RuntimeError('Solver churn differs from independent allocation comparison; candidate withheld.')
+        meta['changed_activity_count'] = changes
+        meta.setdefault('churn_optimality_proven', False)
     if tables is not None:
         meta['metrics'] = report['metrics']
         meta['conditional_night_status'] = report['physical_night_diagnostic']['status']

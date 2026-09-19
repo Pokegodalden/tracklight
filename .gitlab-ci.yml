@@ -1,0 +1,10 @@
+image: python:3.12-slim
+stages: [verify]
+verify:
+  stage: verify
+  script:
+    - pip install -r requirements-hosted.txt
+    - python tools/baseline.py verify data/baselines/ps1-0dfd901f97bf579f
+    - python tools/rule_pack.py
+    - python -m unittest discover -s tests -v
+  timeout: 15m

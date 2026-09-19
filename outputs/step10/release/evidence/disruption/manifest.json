@@ -1,0 +1,98 @@
+{
+  "run_id": "301b910e9a084a81baa692aef5891dda",
+  "label": "Replanned draft",
+  "scenario": "A",
+  "input_data_sha256": "ebd9880dc44f2e250386e462ecf4c299a4f809e3d72b1da7dbbda45851b37e6f",
+  "submission_ready": false,
+  "rule_profile": {
+    "profile_id": "ps1-provisional-0.2.0",
+    "profile_sha256": "a4f79f7e20bc4e6dbc6c07de64e1a090d443b00a5ddf81b6c04a926f143eda8e",
+    "source_updates": [
+      {
+        "file": "data/source_updates/966c976005db2e3e40a691cff268fdb8f396a5df/PS1_README.md",
+        "sha256": "e7d8f9457e62a1732fc7986cea57ad5fbd595e7cabe2e8b789e673c8335bd253",
+        "commit": "966c976005db2e3e40a691cff268fdb8f396a5df",
+        "url": "https://github.com/aochinwen/NebulaX-Hackathon-ProblemStatement/blob/966c976005db2e3e40a691cff268fdb8f396a5df/PS1/PS1_README.md"
+      }
+    ]
+  },
+  "optimiser_version": "ps1-cpsat-0.2.0",
+  "purpose": "Review or partial-draft export; not official acceptance or operational authority.",
+  "round_trip_report_equal": true,
+  "bytes_preserved": true,
+  "schedule_sha256": {
+    "SCHEDULE_ACCESS.csv": "48ec3298ffbc33eed161092fa832cbf5f41e89950394ebb16d3c20dfd90d3f25",
+    "SCHEDULE_OCCUPANCY.csv": "5abf52835793cd9f3aed0a493f05c35e3d4e4817e5496412fbe518574ba33c65",
+    "RESULTS.csv": "e44ed4bb744435e6a6d8561b55602774ec14275640725ac0db1f1dce3dcda58c"
+  },
+  "source_sha256": {
+    "__init__.py": "513fe13f53f0e5774b85ff928cb37c827ed18aa9f0c904dcf1f4649c863c605c",
+    "baseline_scheduler.py": "a6e446189b3d5fa33f19f684f7949a5bb059a4fd79734abdec92f701609f35f8",
+    "hosted.py": "0a68314315a825b1f9cf2fa161ea30af110f75ce95ad003d6e88a987b2350508",
+    "importer.py": "282033fc04d11b84e14c765dc3e3a19d37d2df247a62dce98ac3f391cbb0e364",
+    "network.py": "f975fce802510fe75c48525b5a7c817f8eef93ff0e928c36b6122fd4332ce309",
+    "night_diagnostic.py": "41e811075bb1728082766efbb1e306e978316dbde6bf82bfb369adae3a3c17e2",
+    "optimizer.py": "6248f8d5c3f24d8f753176fc80a072dbfb381e3ae8020e599063739a1a36837e",
+    "planner.py": "220b0d377ae584a3ef6fdc0162367b187cae45d00ccb2e681bd48b6849b9ad65",
+    "replan.py": "1f679d09f0e94c5e15d3559d3906651fda3a050fd6cdada360d7a3046eb682af",
+    "schema.py": "5ac4bed57015cbd2d367852c4666e69c4da3b07679c97a6ef905e0bdce53177e",
+    "validator.py": "38ab5a5ece38a72a57553c17813ef6ef3dd6c95b3fa18d3eb20ef5aa837aa188",
+    "webapp.py": "9364925443999864f6067807d55b266cc5654d1ed09fc85ed6f0bbf631d1c3c0",
+    "workspace.py": "6c05effcb16f67da8f2af75df85b91466c362048745c7b24e9183fafc49e5d22",
+    "web/app.js": "80ce97719cd3c2000c583abf2926a0dd769f5fd82d2f92468512f73cff01f1c1",
+    "web/index.html": "e45f3e6d9b3231760147db0c86ce1a5cbc8914efe9f6109ef854958532d5a01e",
+    "web/style.css": "82ba7c2334044c399eb07ef52b3dbc3bc7d24b344bc9f306b2e23e1b9ffefa82"
+  },
+  "schedule_snapshot": {
+    "version": "db75b50335afcdb1e7ef0a33173a11a96e9c96962c76a641963273691f055164",
+    "input_data_sha256": "ebd9880dc44f2e250386e462ecf4c299a4f809e3d72b1da7dbbda45851b37e6f",
+    "scenario": "A",
+    "rule_profile": {
+      "profile_id": "ps1-provisional-0.2.0",
+      "profile_sha256": "a4f79f7e20bc4e6dbc6c07de64e1a090d443b00a5ddf81b6c04a926f143eda8e",
+      "source_updates": [
+        {
+          "file": "data/source_updates/966c976005db2e3e40a691cff268fdb8f396a5df/PS1_README.md",
+          "sha256": "e7d8f9457e62a1732fc7986cea57ad5fbd595e7cabe2e8b789e673c8335bd253",
+          "commit": "966c976005db2e3e40a691cff268fdb8f396a5df",
+          "url": "https://github.com/aochinwen/NebulaX-Hackathon-ProblemStatement/blob/966c976005db2e3e40a691cff268fdb8f396a5df/PS1/PS1_README.md"
+        }
+      ]
+    },
+    "source_sha256": {
+      "__init__.py": "513fe13f53f0e5774b85ff928cb37c827ed18aa9f0c904dcf1f4649c863c605c",
+      "baseline_scheduler.py": "a6e446189b3d5fa33f19f684f7949a5bb059a4fd79734abdec92f701609f35f8",
+      "hosted.py": "0a68314315a825b1f9cf2fa161ea30af110f75ce95ad003d6e88a987b2350508",
+      "importer.py": "282033fc04d11b84e14c765dc3e3a19d37d2df247a62dce98ac3f391cbb0e364",
+      "network.py": "f975fce802510fe75c48525b5a7c817f8eef93ff0e928c36b6122fd4332ce309",
+      "night_diagnostic.py": "41e811075bb1728082766efbb1e306e978316dbde6bf82bfb369adae3a3c17e2",
+      "optimizer.py": "6248f8d5c3f24d8f753176fc80a072dbfb381e3ae8020e599063739a1a36837e",
+      "planner.py": "220b0d377ae584a3ef6fdc0162367b187cae45d00ccb2e681bd48b6849b9ad65",
+      "replan.py": "1f679d09f0e94c5e15d3559d3906651fda3a050fd6cdada360d7a3046eb682af",
+      "schema.py": "5ac4bed57015cbd2d367852c4666e69c4da3b07679c97a6ef905e0bdce53177e",
+      "validator.py": "38ab5a5ece38a72a57553c17813ef6ef3dd6c95b3fa18d3eb20ef5aa837aa188",
+      "webapp.py": "9364925443999864f6067807d55b266cc5654d1ed09fc85ed6f0bbf631d1c3c0",
+      "workspace.py": "6c05effcb16f67da8f2af75df85b91466c362048745c7b24e9183fafc49e5d22",
+      "web/app.js": "80ce97719cd3c2000c583abf2926a0dd769f5fd82d2f92468512f73cff01f1c1",
+      "web/index.html": "e45f3e6d9b3231760147db0c86ce1a5cbc8914efe9f6109ef854958532d5a01e",
+      "web/style.css": "82ba7c2334044c399eb07ef52b3dbc3bc7d24b344bc9f306b2e23e1b9ffefa82"
+    },
+    "schedule_sha256": {
+      "RESULTS.csv": "e44ed4bb744435e6a6d8561b55602774ec14275640725ac0db1f1dce3dcda58c",
+      "SCHEDULE_ACCESS.csv": "48ec3298ffbc33eed161092fa832cbf5f41e89950394ebb16d3c20dfd90d3f25",
+      "SCHEDULE_OCCUPANCY.csv": "5abf52835793cd9f3aed0a493f05c35e3d4e4817e5496412fbe518574ba33c65"
+    },
+    "planning_context": {
+      "completed_through_week": 10,
+      "locked_activity_ids": [
+        "A002"
+      ],
+      "weekly_supply": [],
+      "scope": "Planner-declared completed weeks as scheduled; nominal weekly supply overlay. Scenario B/C excess allowances still apply. No actual dates or operational authority."
+    }
+  },
+  "planner_review_sha256": "467a05e68dcadfeee04e1368360651c9e2a0a1e1e6bc575a9675cece78c47762",
+  "alternative_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+  "planning_context_sha256": "855e9b0f04c1572dc98f316583f3201985409ee1746208bd472fdf01bf796571",
+  "replanning_sha256": "67a0c33c798f7470a4088d3944a64597259eba87a429b6994009176ec16d1fb5"
+}

@@ -296,6 +296,8 @@ Actions:
   version reviewed. Do not imply an operational track-entry authorisation.
 
 Outputs: understandable conflict explanations and alternative comparison view.
+Implementation evidence: outputs/step7/README.md and outputs/step7/review-demo/.
+Step 7 implementation is complete; its subsequent critique is reserved for the user.
 Gate: a reviewer can explain one conflict and the consequence of each alternative
   without understanding the solver's implementation.
 Tools/plugins: local UI, browser testing. Figma optional; no new app necessary.
@@ -319,6 +321,9 @@ Actions:
 - Provide a validated before/after comparison and rollback.
 
 Outputs: one reproducible disruption-and-recovery demonstration.
+Implementation evidence: outputs/step8/README.md and outputs/step8/review-demo/.
+Completed-week and allocation-lock semantics, supply overlays and remaining limits
+are documented there. Subsequent critique and Step 9 remain for the user.
 Gate: the revision completes required work where feasible, respects locks, and
   accurately identifies changed allocations and their consequences.
 Tools/plugins: local solver, storage/versioning and browser tests. No new plugin.
@@ -388,6 +393,12 @@ Tools/plugins: local tools, browser automation, official validator when supplied
 
 
 DELIVERY PRIORITIES AND STOP RULES
+
+Implementation status (19 September 2026): Step 9 skipped by user request.
+Step 10 local implementation and delivery evidence are in outputs/step10/README.md.
+Public-host verification, GitLab publication and YouTube publication remain open;
+their destination/account details must be established. Local URLs are not public
+submission URLs. Do not mark the overall Step 10 delivery gate complete yet.
 
 Milestone 1: inputs + rule examples + checker + sample round-trip interface.
 Milestone 2: complete Scenario A baseline and improved schedule.

@@ -1,0 +1,19 @@
+{
+  "snapshot_version": "dd25ea95d0578be91ff2a7d21c18a36225064e1b82709db580740ed170cfd8f1",
+  "scope": "Planning review only. Full protection and official acceptance remain unverified; this is not track-entry authorisation.",
+  "identity_assurance": "Self-entered reviewer name; no authentication or signature.",
+  "current_decision": "needs_changes",
+  "records": [
+    {
+      "reviewer": "Demonstration reviewer",
+      "decision": "needs_changes",
+      "note": "Automated demonstration: Week 23 requires A001 and A011 to be both together and apart. Request a checked replacement.",
+      "request_id": "demo-base",
+      "id": "35707f43e64644e4ba61e7f58a4a9b31",
+      "run_id": "e8fbcfa145d845c4a23b670bd801f568",
+      "snapshot_version": "dd25ea95d0578be91ff2a7d21c18a36225064e1b82709db580740ed170cfd8f1",
+      "recorded_at": "2026-09-19T00:38:03.341523+00:00",
+      "operational_authorisation": false
+    }
+  ]
+}

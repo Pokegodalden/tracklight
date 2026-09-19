@@ -1,0 +1,12 @@
+{
+  "step_9": "SKIPPED_BY_USER",
+  "step_10": "LOCAL_IMPLEMENTATION_READY_PUBLICATION_PENDING",
+  "local_preview": "http://127.0.0.1:8780/",
+  "hosted_url": null,
+  "gitlab_url": null,
+  "youtube_url": null,
+  "required_information": ["Hosting destination and budget", "GitLab namespace and visibility", "YouTube channel and visibility", "Confirmed resource limits, if provided"],
+  "official_validation": "UNAVAILABLE_NOT_RUN",
+  "full_protection": "UNVERIFIED",
+  "external_publication_performed": false
+}

@@ -11,8 +11,18 @@ Development follows [workflow.txt](workflow.txt), one reviewed step at a time.
 Steps 5 and 6 have now been reviewed and corrected. See the [interface/export
 review](outputs/step5/review.md), [solver review](outputs/step6/review.md) and
 [regenerated A/B/C results](outputs/step6/reviewed-runs/summary.json).
-The current reviewed preview runs at http://127.0.0.1:8768; earlier preview
-processes and historical reports have been left intact.
+Step 7 adds checked alternatives, plan comparisons and versioned planner review.
+See the [implementation report](outputs/step7/README.md) and
+[reproducible demonstration](outputs/step7/review-demo/summary.json).
+Step 8 adds controlled disruptions, completed-work freezing, allocation locks,
+score-first churn minimisation and rollback. See the
+[implementation and demonstration](outputs/step8/README.md).
+Step 9 is skipped at the user's request. Step 10 adds the deployment service,
+bounded background jobs, durable isolated sessions, A/B/C delivery files and a
+three-minute walkthrough. See the [Step 10 delivery report](outputs/step10/README.md)
+and [deployment instructions](docs/deployment.md). Public hosting, GitLab and
+YouTube publication remain pending destination/account details and host checks.
+The current local preview runs at http://127.0.0.1:8780. Earlier reports remain historical.
 
 The [README update review](outputs/readme-update-966c976/README.md) adopts upstream
 commit `966c976005db2e3e40a691cff268fdb8f396a5df`. Active rule profile:
@@ -40,19 +50,29 @@ acceptance remain unverified. [Step 6 results and scope](outputs/step6/README.md
 Start the app from this project directory using its Python 3.12 virtual environment:
 
 ```text
-.\.venv\Scripts\python.exe -m ps1.webapp --port 8768
+.\.venv\Scripts\python.exe -m ps1.hosted --local --port 8780 --data-dir .tracklight
 ```
 
-Open http://127.0.0.1:8768. Browser refresh restores the selected server-session
-run; a fresh server session loads the supplied sample automatically. Use
+Open http://127.0.0.1:8780. Browser refresh resumes pending work and restores
+saved runs. A fresh browser session loads the supplied sample automatically. Use
 **Create Scenario A baseline** to create a separate run, or **Import CSV files**
 for another eight-file input instance. **Optimise scenario** solves A, B or C
 with a bounded search and shows the score, lower bound and model assumptions.
+Use **Review alternatives** on a conflict to search for a checked replacement.
+**Compare & review** shows its wider allocation changes and records comments
+and planning recommendations against the exact schedule version.
+From a checked plan, **Controlled replanning** creates a separate revision for
+extra workload, weekly nominal supply or an urgent activity, while preserving
+declared completed weeks and locked allocations. Export its complete ZIP: the
+three schedule CSVs alone do not contain disruption context.
 Exports are review packs, not accepted
-submissions. Export before stopping the server; runs use temporary local storage.
+submissions. The hosted service persists completed runs across restarts using its
+data directory and the same browser cookie; sessions expire after 24 hours.
+Export before expiry. The older `ps1.webapp --port 8770` remains a temporary-storage
+development server. Do not expose it publicly.
 
 On a fresh checkout, first run `python -m venv .venv`, then
-`.\.venv\Scripts\python.exe -m pip install -r requirements.txt`.
+`.\.venv\Scripts\python.exe -m pip install -r requirements-hosted.txt`.
 OR-Tools and its dependencies are pinned in [requirements.txt](requirements.txt).
 Run the test suite with `.\.venv\Scripts\python.exe -m unittest discover -s tests -v`.
 

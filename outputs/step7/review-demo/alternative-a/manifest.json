@@ -1,0 +1,84 @@
+{
+  "run_id": "59a7491a9e5d4ac998bc52412f65a829",
+  "label": "Checked alternative",
+  "scenario": "A",
+  "input_data_sha256": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+  "submission_ready": false,
+  "rule_profile": {
+    "profile_id": "ps1-provisional-0.2.0",
+    "profile_sha256": "a4f79f7e20bc4e6dbc6c07de64e1a090d443b00a5ddf81b6c04a926f143eda8e",
+    "source_updates": [
+      {
+        "file": "data/source_updates/966c976005db2e3e40a691cff268fdb8f396a5df/PS1_README.md",
+        "sha256": "e7d8f9457e62a1732fc7986cea57ad5fbd595e7cabe2e8b789e673c8335bd253",
+        "commit": "966c976005db2e3e40a691cff268fdb8f396a5df",
+        "url": "https://github.com/aochinwen/NebulaX-Hackathon-ProblemStatement/blob/966c976005db2e3e40a691cff268fdb8f396a5df/PS1/PS1_README.md"
+      }
+    ]
+  },
+  "optimiser_version": "ps1-cpsat-0.1.1",
+  "purpose": "Review or partial-draft export; not official acceptance or operational authority.",
+  "round_trip_report_equal": true,
+  "bytes_preserved": true,
+  "schedule_sha256": {
+    "SCHEDULE_ACCESS.csv": "989a1a9bcba321e08fc40cb35e7d59d7a82a416d62444a82d33dd2e5ae0ebd9a",
+    "SCHEDULE_OCCUPANCY.csv": "4496727f81bf8749bf959c7275027cb6e2ebc850554214004b8999e255fad7ec",
+    "RESULTS.csv": "8a58539d99087db614fc06b5da8889c756a45ce02587a0d0e18d07a985f92463"
+  },
+  "source_sha256": {
+    "__init__.py": "513fe13f53f0e5774b85ff928cb37c827ed18aa9f0c904dcf1f4649c863c605c",
+    "baseline_scheduler.py": "a6e446189b3d5fa33f19f684f7949a5bb059a4fd79734abdec92f701609f35f8",
+    "importer.py": "282033fc04d11b84e14c765dc3e3a19d37d2df247a62dce98ac3f391cbb0e364",
+    "network.py": "f975fce802510fe75c48525b5a7c817f8eef93ff0e928c36b6122fd4332ce309",
+    "night_diagnostic.py": "41e811075bb1728082766efbb1e306e978316dbde6bf82bfb369adae3a3c17e2",
+    "optimizer.py": "a412009984665d93689b19b0364da3b24278da00fb3e8bbd083198e1838830b4",
+    "planner.py": "b35465de30bb3c40c5565c1a8795ff0c5fd30c3feb9ec005cd5a80491745cebe",
+    "schema.py": "5ac4bed57015cbd2d367852c4666e69c4da3b07679c97a6ef905e0bdce53177e",
+    "validator.py": "3048ba067236435fb9a4f702e04bd905daadc8d6a71b90ffc2846983a61895a3",
+    "webapp.py": "feb506d9f0bafba2f1746253f0fa1624db9427b85f3dec0426c1289989001936",
+    "workspace.py": "9661e66c03e13bdbad92fe86d12dcd391e594fdca2e1ba7714bf51202ed28ba6",
+    "web/app.js": "5af738c170b97cfbc4c04c0399f547c72abcd8668be6b4acb966226274cb2773",
+    "web/index.html": "0ea8104b7f883269826af398d44db7a417a8b5bbab089fe5a0215246fdbf55a6",
+    "web/style.css": "737dd1f8e1d66f55e035cfbdeb3f3d828624bb2ef677b3e09986f5ad18497498"
+  },
+  "schedule_snapshot": {
+    "version": "25475a7c19fba8a0aa775a0fcd75c9b7c546e47bca05c5b6bf9ddafb7c01869f",
+    "input_data_sha256": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+    "scenario": "A",
+    "rule_profile": {
+      "profile_id": "ps1-provisional-0.2.0",
+      "profile_sha256": "a4f79f7e20bc4e6dbc6c07de64e1a090d443b00a5ddf81b6c04a926f143eda8e",
+      "source_updates": [
+        {
+          "file": "data/source_updates/966c976005db2e3e40a691cff268fdb8f396a5df/PS1_README.md",
+          "sha256": "e7d8f9457e62a1732fc7986cea57ad5fbd595e7cabe2e8b789e673c8335bd253",
+          "commit": "966c976005db2e3e40a691cff268fdb8f396a5df",
+          "url": "https://github.com/aochinwen/NebulaX-Hackathon-ProblemStatement/blob/966c976005db2e3e40a691cff268fdb8f396a5df/PS1/PS1_README.md"
+        }
+      ]
+    },
+    "source_sha256": {
+      "__init__.py": "513fe13f53f0e5774b85ff928cb37c827ed18aa9f0c904dcf1f4649c863c605c",
+      "baseline_scheduler.py": "a6e446189b3d5fa33f19f684f7949a5bb059a4fd79734abdec92f701609f35f8",
+      "importer.py": "282033fc04d11b84e14c765dc3e3a19d37d2df247a62dce98ac3f391cbb0e364",
+      "network.py": "f975fce802510fe75c48525b5a7c817f8eef93ff0e928c36b6122fd4332ce309",
+      "night_diagnostic.py": "41e811075bb1728082766efbb1e306e978316dbde6bf82bfb369adae3a3c17e2",
+      "optimizer.py": "a412009984665d93689b19b0364da3b24278da00fb3e8bbd083198e1838830b4",
+      "planner.py": "b35465de30bb3c40c5565c1a8795ff0c5fd30c3feb9ec005cd5a80491745cebe",
+      "schema.py": "5ac4bed57015cbd2d367852c4666e69c4da3b07679c97a6ef905e0bdce53177e",
+      "validator.py": "3048ba067236435fb9a4f702e04bd905daadc8d6a71b90ffc2846983a61895a3",
+      "webapp.py": "feb506d9f0bafba2f1746253f0fa1624db9427b85f3dec0426c1289989001936",
+      "workspace.py": "9661e66c03e13bdbad92fe86d12dcd391e594fdca2e1ba7714bf51202ed28ba6",
+      "web/app.js": "5af738c170b97cfbc4c04c0399f547c72abcd8668be6b4acb966226274cb2773",
+      "web/index.html": "0ea8104b7f883269826af398d44db7a417a8b5bbab089fe5a0215246fdbf55a6",
+      "web/style.css": "737dd1f8e1d66f55e035cfbdeb3f3d828624bb2ef677b3e09986f5ad18497498"
+    },
+    "schedule_sha256": {
+      "RESULTS.csv": "8a58539d99087db614fc06b5da8889c756a45ce02587a0d0e18d07a985f92463",
+      "SCHEDULE_ACCESS.csv": "989a1a9bcba321e08fc40cb35e7d59d7a82a416d62444a82d33dd2e5ae0ebd9a",
+      "SCHEDULE_OCCUPANCY.csv": "4496727f81bf8749bf959c7275027cb6e2ebc850554214004b8999e255fad7ec"
+    }
+  },
+  "planner_review_sha256": "8b419a14c0ee7e8009e416088b37bd21558ce0f33ec365dc921e6270b0a189b7",
+  "alternative_sha256": "d19e401f48a825c90bc86dac914ad33cfb8f31b5a87525da9dc68a3cd179530a"
+}

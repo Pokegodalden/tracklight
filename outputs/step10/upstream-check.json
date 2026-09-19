@@ -1,0 +1,22 @@
+{
+  "tree_commit": "966c976005db2e3e40a691cff268fdb8f396a5df",
+  "readme_sha256": "e7d8f9457e62a1732fc7986cea57ad5fbd595e7cabe2e8b789e673c8335bd253",
+  "matches_reviewed_readme": true,
+  "ps1_paths": [
+    "PS1/01_data/01_LINES.csv",
+    "PS1/01_data/02_STATIONS.csv",
+    "PS1/01_data/03_SECTORS.csv",
+    "PS1/01_data/04_LOCATION_SUPPLY.csv",
+    "PS1/01_data/05_BUFFER_LOCATION.csv",
+    "PS1/01_data/06_PARAMETERS.csv",
+    "PS1/01_data/07_PROJECT_DETAILS.csv",
+    "PS1/01_data/08_ACTIVITY_DETAILS.csv",
+    "PS1/02_references/PS1.drawio",
+    "PS1/02_references/network_diagram.svg",
+    "PS1/03_submission_sample/RESULTS.csv",
+    "PS1/03_submission_sample/SCHEDULE_ACCESS.csv",
+    "PS1/03_submission_sample/SCHEDULE_OCCUPANCY.csv",
+    "PS1/PS1_README.md"
+  ],
+  "validator_paths": []
+}

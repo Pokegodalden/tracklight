@@ -6,3 +6,11 @@ node_modules/
 .env.*
 !.env.example
 .publish/
+
+.tracklight/
+outputs/step10/runtime/
+outputs/step10/*.mp4
+outputs/step10/*.wav
+outputs/step10/video-render/
+outputs/step10/reproduction/
+outputs/step10/tracklight-source.zip

@@ -1,0 +1,14 @@
+*
+!Dockerfile
+!requirements.txt
+!requirements-hosted.txt
+!ps1/
+!ps1/**
+!web/
+!web/**
+!specs/
+!specs/**
+!data/
+!data/**
+**/__pycache__/
+**/*.pyc

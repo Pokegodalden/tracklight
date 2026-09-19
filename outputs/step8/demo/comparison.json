@@ -1,0 +1,2444 @@
+{
+  "version": "ps1-planner-0.1.0",
+  "base_run_id": "730bead96bf84724902649f84139d7c9",
+  "candidate_run_id": "c36f0f7a5c7247328124c0f2d5127ff9",
+  "base_snapshot": {
+    "version": "488c0c754fe8baf77801c28b5cde0b1fef7b03d01bef8afe3ee9a904bcd8e76a",
+    "input_data_sha256": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+    "scenario": "A",
+    "rule_profile": {
+      "profile_id": "ps1-provisional-0.2.0",
+      "profile_sha256": "a4f79f7e20bc4e6dbc6c07de64e1a090d443b00a5ddf81b6c04a926f143eda8e",
+      "source_updates": [
+        {
+          "file": "data/source_updates/966c976005db2e3e40a691cff268fdb8f396a5df/PS1_README.md",
+          "sha256": "e7d8f9457e62a1732fc7986cea57ad5fbd595e7cabe2e8b789e673c8335bd253",
+          "commit": "966c976005db2e3e40a691cff268fdb8f396a5df",
+          "url": "https://github.com/aochinwen/NebulaX-Hackathon-ProblemStatement/blob/966c976005db2e3e40a691cff268fdb8f396a5df/PS1/PS1_README.md"
+        }
+      ]
+    },
+    "source_sha256": {
+      "__init__.py": "513fe13f53f0e5774b85ff928cb37c827ed18aa9f0c904dcf1f4649c863c605c",
+      "baseline_scheduler.py": "a6e446189b3d5fa33f19f684f7949a5bb059a4fd79734abdec92f701609f35f8",
+      "importer.py": "282033fc04d11b84e14c765dc3e3a19d37d2df247a62dce98ac3f391cbb0e364",
+      "network.py": "f975fce802510fe75c48525b5a7c817f8eef93ff0e928c36b6122fd4332ce309",
+      "night_diagnostic.py": "41e811075bb1728082766efbb1e306e978316dbde6bf82bfb369adae3a3c17e2",
+      "optimizer.py": "6248f8d5c3f24d8f753176fc80a072dbfb381e3ae8020e599063739a1a36837e",
+      "planner.py": "220b0d377ae584a3ef6fdc0162367b187cae45d00ccb2e681bd48b6849b9ad65",
+      "replan.py": "1f679d09f0e94c5e15d3559d3906651fda3a050fd6cdada360d7a3046eb682af",
+      "schema.py": "5ac4bed57015cbd2d367852c4666e69c4da3b07679c97a6ef905e0bdce53177e",
+      "validator.py": "38ab5a5ece38a72a57553c17813ef6ef3dd6c95b3fa18d3eb20ef5aa837aa188",
+      "webapp.py": "9364925443999864f6067807d55b266cc5654d1ed09fc85ed6f0bbf631d1c3c0",
+      "workspace.py": "6c05effcb16f67da8f2af75df85b91466c362048745c7b24e9183fafc49e5d22",
+      "web/app.js": "8345278cc4dc5172d8f9b2db1eea773b36566255e818599c12159c29de25f561",
+      "web/index.html": "f813fa9587017b35b80266a40a971f2ec364991031f4d3d94356aef5dda76b90",
+      "web/style.css": "028695eb02ec2feb5708d89324b35d644d3be8ef1a9e35408eee1b73db66d978"
+    },
+    "schedule_sha256": {
+      "RESULTS.csv": "8a58539d99087db614fc06b5da8889c756a45ce02587a0d0e18d07a985f92463",
+      "SCHEDULE_ACCESS.csv": "989a1a9bcba321e08fc40cb35e7d59d7a82a416d62444a82d33dd2e5ae0ebd9a",
+      "SCHEDULE_OCCUPANCY.csv": "4496727f81bf8749bf959c7275027cb6e2ebc850554214004b8999e255fad7ec"
+    }
+  },
+  "candidate_snapshot": {
+    "version": "59582586fac7e93d85b74ac88334cda88fb1d05b11fcf1ce03d7bc7a965ea35b",
+    "input_data_sha256": "ebd9880dc44f2e250386e462ecf4c299a4f809e3d72b1da7dbbda45851b37e6f",
+    "scenario": "A",
+    "rule_profile": {
+      "profile_id": "ps1-provisional-0.2.0",
+      "profile_sha256": "a4f79f7e20bc4e6dbc6c07de64e1a090d443b00a5ddf81b6c04a926f143eda8e",
+      "source_updates": [
+        {
+          "file": "data/source_updates/966c976005db2e3e40a691cff268fdb8f396a5df/PS1_README.md",
+          "sha256": "e7d8f9457e62a1732fc7986cea57ad5fbd595e7cabe2e8b789e673c8335bd253",
+          "commit": "966c976005db2e3e40a691cff268fdb8f396a5df",
+          "url": "https://github.com/aochinwen/NebulaX-Hackathon-ProblemStatement/blob/966c976005db2e3e40a691cff268fdb8f396a5df/PS1/PS1_README.md"
+        }
+      ]
+    },
+    "source_sha256": {
+      "__init__.py": "513fe13f53f0e5774b85ff928cb37c827ed18aa9f0c904dcf1f4649c863c605c",
+      "baseline_scheduler.py": "a6e446189b3d5fa33f19f684f7949a5bb059a4fd79734abdec92f701609f35f8",
+      "importer.py": "282033fc04d11b84e14c765dc3e3a19d37d2df247a62dce98ac3f391cbb0e364",
+      "network.py": "f975fce802510fe75c48525b5a7c817f8eef93ff0e928c36b6122fd4332ce309",
+      "night_diagnostic.py": "41e811075bb1728082766efbb1e306e978316dbde6bf82bfb369adae3a3c17e2",
+      "optimizer.py": "6248f8d5c3f24d8f753176fc80a072dbfb381e3ae8020e599063739a1a36837e",
+      "planner.py": "220b0d377ae584a3ef6fdc0162367b187cae45d00ccb2e681bd48b6849b9ad65",
+      "replan.py": "1f679d09f0e94c5e15d3559d3906651fda3a050fd6cdada360d7a3046eb682af",
+      "schema.py": "5ac4bed57015cbd2d367852c4666e69c4da3b07679c97a6ef905e0bdce53177e",
+      "validator.py": "38ab5a5ece38a72a57553c17813ef6ef3dd6c95b3fa18d3eb20ef5aa837aa188",
+      "webapp.py": "9364925443999864f6067807d55b266cc5654d1ed09fc85ed6f0bbf631d1c3c0",
+      "workspace.py": "6c05effcb16f67da8f2af75df85b91466c362048745c7b24e9183fafc49e5d22",
+      "web/app.js": "8345278cc4dc5172d8f9b2db1eea773b36566255e818599c12159c29de25f561",
+      "web/index.html": "f813fa9587017b35b80266a40a971f2ec364991031f4d3d94356aef5dda76b90",
+      "web/style.css": "028695eb02ec2feb5708d89324b35d644d3be8ef1a9e35408eee1b73db66d978"
+    },
+    "schedule_sha256": {
+      "RESULTS.csv": "8a58539d99087db614fc06b5da8889c756a45ce02587a0d0e18d07a985f92463",
+      "SCHEDULE_ACCESS.csv": "01b65d2434dc8dc6807aeefecfd7cb3e121aad0f8158c84b84c6b0d40cf30a31",
+      "SCHEDULE_OCCUPANCY.csv": "79aaa2b49c4dcb508bf8e81cbe0a1ad4c2d11c31a71c25cb9077d7224df314a2"
+    },
+    "planning_context": {
+      "completed_through_week": 10,
+      "locked_activity_ids": [
+        "A002"
+      ],
+      "weekly_supply": [],
+      "scope": "Planner-declared completed weeks as scheduled; nominal weekly supply overlay. Scenario B/C excess allowances still apply. No actual dates or operational authority."
+    }
+  },
+  "same_inputs": false,
+  "same_rules": true,
+  "same_implementation": true,
+  "same_scenario": true,
+  "same_planning_context": false,
+  "scores_comparable": false,
+  "comparison_note": "Changed requirements or planning constraints: component differences describe consequences, not a fair score improvement.",
+  "before": {
+    "status": "CHECKED_MODEL_PLAN",
+    "checked_model_plan": true,
+    "full_feasibility_established": false,
+    "official_validation": "NOT_RUN",
+    "operational_authorisation": false,
+    "required_activities": 54,
+    "complete_activities": 54,
+    "covered_units": 192.0,
+    "required_units": 192.0,
+    "activity_delay_days": 21,
+    "contract_delay_days": 21,
+    "weighted_delay": 25.2,
+    "eclo_accesses": 0,
+    "excess_slots": 0,
+    "score": 25.2,
+    "weekly_violations": 0,
+    "night_conflict_weeks": 0,
+    "night_status": "ASSIGNED_FOR_MODELLED_RELATIONS",
+    "c_window_check": null,
+    "completion_date": "2027-07-18"
+  },
+  "after": {
+    "status": "CHECKED_MODEL_PLAN",
+    "checked_model_plan": true,
+    "full_feasibility_established": false,
+    "official_validation": "NOT_RUN",
+    "operational_authorisation": false,
+    "required_activities": 54,
+    "complete_activities": 54,
+    "covered_units": 193.0,
+    "required_units": 193.0,
+    "activity_delay_days": 21,
+    "contract_delay_days": 21,
+    "weighted_delay": 25.2,
+    "eclo_accesses": 0,
+    "excess_slots": 0,
+    "score": 25.2,
+    "weekly_violations": 0,
+    "night_conflict_weeks": 0,
+    "night_status": "ASSIGNED_FOR_MODELLED_RELATIONS",
+    "c_window_check": null,
+    "completion_date": "2027-07-18"
+  },
+  "deltas": {
+    "complete_activities": 0,
+    "covered_units": 1.0,
+    "activity_delay_days": 0,
+    "contract_delay_days": 0,
+    "weighted_delay": 0.0,
+    "eclo_accesses": 0,
+    "excess_slots": 0,
+    "weekly_violations": 0,
+    "night_conflict_weeks": 0,
+    "score": null
+  },
+  "changed_activity_count": 4,
+  "changes": [
+    {
+      "activity_id": "A001",
+      "changed": [
+        "accesses",
+        "sharing",
+        "same_project_night"
+      ],
+      "before": {
+        "accesses": [
+          {
+            "week": 21,
+            "eclo": 0
+          },
+          {
+            "week": 22,
+            "eclo": 0
+          }
+        ],
+        "sharing": [
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A017",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A017",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:S17:EB",
+            "partners": []
+          },
+          {
+            "week": 21,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A017",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "SEC:BET:S16_S17:EB",
+            "partners": []
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A011",
+              "A037"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A011",
+              "A019",
+              "A037"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S17:EB",
+            "partners": [
+              "A011",
+              "A019",
+              "A037"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A011",
+              "A037"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:S16_S17:EB",
+            "partners": [
+              "A011",
+              "A019",
+              "A037"
+            ]
+          }
+        ],
+        "same_project_night": [
+          {
+            "week": 21,
+            "partners": [
+              "A007"
+            ]
+          },
+          {
+            "week": 22,
+            "partners": []
+          }
+        ]
+      },
+      "after": {
+        "accesses": [
+          {
+            "week": 21,
+            "eclo": 0
+          },
+          {
+            "week": 22,
+            "eclo": 0
+          },
+          {
+            "week": 23,
+            "eclo": 0
+          }
+        ],
+        "sharing": [
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A017",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A017",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:S17:EB",
+            "partners": []
+          },
+          {
+            "week": 21,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A017",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "SEC:BET:S16_S17:EB",
+            "partners": []
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A011",
+              "A037"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A011",
+              "A019",
+              "A037"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S17:EB",
+            "partners": [
+              "A011",
+              "A019",
+              "A037"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A011",
+              "A037"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:S16_S17:EB",
+            "partners": [
+              "A011",
+              "A019",
+              "A037"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A017",
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A017",
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:S17:EB",
+            "partners": []
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A017",
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:S16_S17:EB",
+            "partners": []
+          }
+        ],
+        "same_project_night": [
+          {
+            "week": 21,
+            "partners": [
+              "A007"
+            ]
+          },
+          {
+            "week": 22,
+            "partners": []
+          },
+          {
+            "week": 23,
+            "partners": []
+          }
+        ]
+      },
+      "before_completion": "2027-06-06",
+      "after_completion": "2027-06-13"
+    },
+    {
+      "activity_id": "A017",
+      "changed": [
+        "sharing"
+      ],
+      "before": {
+        "accesses": [
+          {
+            "week": 17,
+            "eclo": 0
+          },
+          {
+            "week": 18,
+            "eclo": 0
+          },
+          {
+            "week": 19,
+            "eclo": 0
+          },
+          {
+            "week": 20,
+            "eclo": 0
+          },
+          {
+            "week": 21,
+            "eclo": 0
+          },
+          {
+            "week": 22,
+            "eclo": 0
+          },
+          {
+            "week": 23,
+            "eclo": 0
+          }
+        ],
+        "sharing": [
+          {
+            "week": 17,
+            "location_id": "PLAT:BET:H01:EB",
+            "partners": [
+              "A007",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A057",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A057",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A057"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "SEC:BET:H01_H02:EB",
+            "partners": [
+              "A007",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A057",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A057"
+            ]
+          },
+          {
+            "week": 18,
+            "location_id": "PLAT:BET:H01:EB",
+            "partners": [
+              "A007",
+              "A040",
+              "A061"
+            ]
+          },
+          {
+            "week": 18,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A040",
+              "A061"
+            ]
+          },
+          {
+            "week": 18,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A040",
+              "A061"
+            ]
+          },
+          {
+            "week": 18,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A040"
+            ]
+          },
+          {
+            "week": 18,
+            "location_id": "SEC:BET:H01_H02:EB",
+            "partners": [
+              "A007",
+              "A040",
+              "A061"
+            ]
+          },
+          {
+            "week": 18,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A040",
+              "A061"
+            ]
+          },
+          {
+            "week": 18,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A040"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "PLAT:BET:H01:EB",
+            "partners": [
+              "A007",
+              "A040"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "SEC:BET:H01_H02:EB",
+            "partners": [
+              "A007",
+              "A040"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 20,
+            "location_id": "PLAT:BET:H01:EB",
+            "partners": [
+              "A003",
+              "A007",
+              "A040"
+            ]
+          },
+          {
+            "week": 20,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A003",
+              "A007",
+              "A040"
+            ]
+          },
+          {
+            "week": 20,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A003",
+              "A040"
+            ]
+          },
+          {
+            "week": 20,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A003",
+              "A040"
+            ]
+          },
+          {
+            "week": 20,
+            "location_id": "SEC:BET:H01_H02:EB",
+            "partners": [
+              "A003",
+              "A007",
+              "A040"
+            ]
+          },
+          {
+            "week": 20,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A003",
+              "A040"
+            ]
+          },
+          {
+            "week": 20,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A003",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:H01:EB",
+            "partners": [
+              "A007",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A001",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A001",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "SEC:BET:H01_H02:EB",
+            "partners": [
+              "A007",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A001",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:H01:EB",
+            "partners": [
+              "A036",
+              "A055",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A043",
+              "A055",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A043",
+              "A071",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A043",
+              "A071"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:H01_H02:EB",
+            "partners": [
+              "A055",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A043",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A043",
+              "A071"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:H01:EB",
+            "partners": [
+              "A036"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A043",
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A043",
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A043",
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:H01_H02:EB",
+            "partners": []
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A043",
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A043",
+              "A057"
+            ]
+          }
+        ],
+        "same_project_night": [
+          {
+            "week": 17,
+            "partners": []
+          },
+          {
+            "week": 18,
+            "partners": []
+          },
+          {
+            "week": 19,
+            "partners": []
+          },
+          {
+            "week": 20,
+            "partners": []
+          },
+          {
+            "week": 21,
+            "partners": []
+          },
+          {
+            "week": 22,
+            "partners": []
+          },
+          {
+            "week": 23,
+            "partners": []
+          }
+        ]
+      },
+      "after": {
+        "accesses": [
+          {
+            "week": 17,
+            "eclo": 0
+          },
+          {
+            "week": 18,
+            "eclo": 0
+          },
+          {
+            "week": 19,
+            "eclo": 0
+          },
+          {
+            "week": 20,
+            "eclo": 0
+          },
+          {
+            "week": 21,
+            "eclo": 0
+          },
+          {
+            "week": 22,
+            "eclo": 0
+          },
+          {
+            "week": 23,
+            "eclo": 0
+          }
+        ],
+        "sharing": [
+          {
+            "week": 17,
+            "location_id": "PLAT:BET:H01:EB",
+            "partners": [
+              "A007",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A057",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A057",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A057"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "SEC:BET:H01_H02:EB",
+            "partners": [
+              "A007",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A057",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A057"
+            ]
+          },
+          {
+            "week": 18,
+            "location_id": "PLAT:BET:H01:EB",
+            "partners": [
+              "A007",
+              "A040",
+              "A061"
+            ]
+          },
+          {
+            "week": 18,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A040",
+              "A061"
+            ]
+          },
+          {
+            "week": 18,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A040",
+              "A061"
+            ]
+          },
+          {
+            "week": 18,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A040"
+            ]
+          },
+          {
+            "week": 18,
+            "location_id": "SEC:BET:H01_H02:EB",
+            "partners": [
+              "A007",
+              "A040",
+              "A061"
+            ]
+          },
+          {
+            "week": 18,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A040",
+              "A061"
+            ]
+          },
+          {
+            "week": 18,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A040"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "PLAT:BET:H01:EB",
+            "partners": [
+              "A007",
+              "A040"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "SEC:BET:H01_H02:EB",
+            "partners": [
+              "A007",
+              "A040"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 20,
+            "location_id": "PLAT:BET:H01:EB",
+            "partners": [
+              "A003",
+              "A007",
+              "A040"
+            ]
+          },
+          {
+            "week": 20,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A003",
+              "A007",
+              "A040"
+            ]
+          },
+          {
+            "week": 20,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A003",
+              "A040"
+            ]
+          },
+          {
+            "week": 20,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A003",
+              "A040"
+            ]
+          },
+          {
+            "week": 20,
+            "location_id": "SEC:BET:H01_H02:EB",
+            "partners": [
+              "A003",
+              "A007",
+              "A040"
+            ]
+          },
+          {
+            "week": 20,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A003",
+              "A040"
+            ]
+          },
+          {
+            "week": 20,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A003",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:H01:EB",
+            "partners": [
+              "A007",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A001",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A001",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "SEC:BET:H01_H02:EB",
+            "partners": [
+              "A007",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A001",
+              "A040",
+              "A057"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:H01:EB",
+            "partners": [
+              "A036",
+              "A055",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A043",
+              "A055",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A043",
+              "A071",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A043",
+              "A071"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:H01_H02:EB",
+            "partners": [
+              "A055",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A043",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A043",
+              "A071"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:H01:EB",
+            "partners": [
+              "A036"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A001",
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A001",
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:H01_H02:EB",
+            "partners": []
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A001",
+              "A057"
+            ]
+          }
+        ],
+        "same_project_night": [
+          {
+            "week": 17,
+            "partners": []
+          },
+          {
+            "week": 18,
+            "partners": []
+          },
+          {
+            "week": 19,
+            "partners": []
+          },
+          {
+            "week": 20,
+            "partners": []
+          },
+          {
+            "week": 21,
+            "partners": []
+          },
+          {
+            "week": 22,
+            "partners": []
+          },
+          {
+            "week": 23,
+            "partners": []
+          }
+        ]
+      },
+      "before_completion": "2027-06-13",
+      "after_completion": "2027-06-13"
+    },
+    {
+      "activity_id": "A043",
+      "changed": [
+        "accesses",
+        "sharing",
+        "same_project_night"
+      ],
+      "before": {
+        "accesses": [
+          {
+            "week": 22,
+            "eclo": 0
+          },
+          {
+            "week": 23,
+            "eclo": 0
+          }
+        ],
+        "sharing": [
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A017",
+              "A055",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A017",
+              "A071",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A017",
+              "A071"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S17:EB",
+            "partners": [
+              "A071"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A017",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A017",
+              "A071"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:S16_S17:EB",
+            "partners": [
+              "A071"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A017",
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A017",
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A017",
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:S17:EB",
+            "partners": []
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A017",
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A017",
+              "A057"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:S16_S17:EB",
+            "partners": []
+          }
+        ],
+        "same_project_night": [
+          {
+            "week": 22,
+            "partners": []
+          },
+          {
+            "week": 23,
+            "partners": []
+          }
+        ]
+      },
+      "after": {
+        "accesses": [
+          {
+            "week": 22,
+            "eclo": 0
+          },
+          {
+            "week": 24,
+            "eclo": 0
+          }
+        ],
+        "sharing": [
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A017",
+              "A055",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A017",
+              "A071",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A017",
+              "A071"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "PLAT:BET:S17:EB",
+            "partners": [
+              "A071"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A017",
+              "A073"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A017",
+              "A071"
+            ]
+          },
+          {
+            "week": 22,
+            "location_id": "SEC:BET:S16_S17:EB",
+            "partners": [
+              "A071"
+            ]
+          },
+          {
+            "week": 24,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": []
+          },
+          {
+            "week": 24,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": []
+          },
+          {
+            "week": 24,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": []
+          },
+          {
+            "week": 24,
+            "location_id": "PLAT:BET:S17:EB",
+            "partners": []
+          },
+          {
+            "week": 24,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": []
+          },
+          {
+            "week": 24,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": []
+          },
+          {
+            "week": 24,
+            "location_id": "SEC:BET:S16_S17:EB",
+            "partners": []
+          }
+        ],
+        "same_project_night": [
+          {
+            "week": 22,
+            "partners": []
+          },
+          {
+            "week": 24,
+            "partners": []
+          }
+        ]
+      },
+      "before_completion": "2027-06-13",
+      "after_completion": "2027-06-20"
+    },
+    {
+      "activity_id": "A057",
+      "changed": [
+        "sharing"
+      ],
+      "before": {
+        "accesses": [
+          {
+            "week": 15,
+            "eclo": 0
+          },
+          {
+            "week": 16,
+            "eclo": 0
+          },
+          {
+            "week": 17,
+            "eclo": 0
+          },
+          {
+            "week": 19,
+            "eclo": 0
+          },
+          {
+            "week": 21,
+            "eclo": 0
+          },
+          {
+            "week": 23,
+            "eclo": 0
+          },
+          {
+            "week": 25,
+            "eclo": 0
+          }
+        ],
+        "sharing": [
+          {
+            "week": 15,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A040",
+              "A060"
+            ]
+          },
+          {
+            "week": 15,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A040",
+              "A060"
+            ]
+          },
+          {
+            "week": 15,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A040",
+              "A060"
+            ]
+          },
+          {
+            "week": 15,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A040",
+              "A060"
+            ]
+          },
+          {
+            "week": 15,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A040",
+              "A060"
+            ]
+          },
+          {
+            "week": 16,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A003",
+              "A007"
+            ]
+          },
+          {
+            "week": 16,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A003"
+            ]
+          },
+          {
+            "week": 16,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A003"
+            ]
+          },
+          {
+            "week": 16,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A003"
+            ]
+          },
+          {
+            "week": 16,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A003"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A017",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A017",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A017"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A017",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A017"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A001",
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A001",
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A001",
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A017",
+              "A043"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A017",
+              "A043"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A017",
+              "A043"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A017",
+              "A043"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A017",
+              "A043"
+            ]
+          },
+          {
+            "week": 25,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": []
+          },
+          {
+            "week": 25,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": []
+          },
+          {
+            "week": 25,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": []
+          },
+          {
+            "week": 25,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": []
+          },
+          {
+            "week": 25,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": []
+          }
+        ],
+        "same_project_night": [
+          {
+            "week": 15,
+            "partners": []
+          },
+          {
+            "week": 16,
+            "partners": []
+          },
+          {
+            "week": 17,
+            "partners": []
+          },
+          {
+            "week": 19,
+            "partners": []
+          },
+          {
+            "week": 21,
+            "partners": []
+          },
+          {
+            "week": 23,
+            "partners": []
+          },
+          {
+            "week": 25,
+            "partners": []
+          }
+        ]
+      },
+      "after": {
+        "accesses": [
+          {
+            "week": 15,
+            "eclo": 0
+          },
+          {
+            "week": 16,
+            "eclo": 0
+          },
+          {
+            "week": 17,
+            "eclo": 0
+          },
+          {
+            "week": 19,
+            "eclo": 0
+          },
+          {
+            "week": 21,
+            "eclo": 0
+          },
+          {
+            "week": 23,
+            "eclo": 0
+          },
+          {
+            "week": 25,
+            "eclo": 0
+          }
+        ],
+        "sharing": [
+          {
+            "week": 15,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A040",
+              "A060"
+            ]
+          },
+          {
+            "week": 15,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A040",
+              "A060"
+            ]
+          },
+          {
+            "week": 15,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A040",
+              "A060"
+            ]
+          },
+          {
+            "week": 15,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A040",
+              "A060"
+            ]
+          },
+          {
+            "week": 15,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A040",
+              "A060"
+            ]
+          },
+          {
+            "week": 16,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A003",
+              "A007"
+            ]
+          },
+          {
+            "week": 16,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A003"
+            ]
+          },
+          {
+            "week": 16,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A003"
+            ]
+          },
+          {
+            "week": 16,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A003"
+            ]
+          },
+          {
+            "week": 16,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A003"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A017",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A017",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A017"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A017",
+              "A061"
+            ]
+          },
+          {
+            "week": 17,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A017"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 19,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A007",
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A001",
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A001",
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 21,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A001",
+              "A017",
+              "A040"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": [
+              "A017"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": [
+              "A001",
+              "A017"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": [
+              "A001",
+              "A017"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": [
+              "A017"
+            ]
+          },
+          {
+            "week": 23,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": [
+              "A001",
+              "A017"
+            ]
+          },
+          {
+            "week": 25,
+            "location_id": "PLAT:BET:H02:EB",
+            "partners": []
+          },
+          {
+            "week": 25,
+            "location_id": "PLAT:BET:S15:EB",
+            "partners": []
+          },
+          {
+            "week": 25,
+            "location_id": "PLAT:BET:S16:EB",
+            "partners": []
+          },
+          {
+            "week": 25,
+            "location_id": "SEC:BET:H02_S15:EB",
+            "partners": []
+          },
+          {
+            "week": 25,
+            "location_id": "SEC:BET:S15_S16:EB",
+            "partners": []
+          }
+        ],
+        "same_project_night": [
+          {
+            "week": 15,
+            "partners": []
+          },
+          {
+            "week": 16,
+            "partners": []
+          },
+          {
+            "week": 17,
+            "partners": []
+          },
+          {
+            "week": 19,
+            "partners": []
+          },
+          {
+            "week": 21,
+            "partners": []
+          },
+          {
+            "week": 23,
+            "partners": []
+          },
+          {
+            "week": 25,
+            "partners": []
+          }
+        ]
+      },
+      "before_completion": "2027-06-27",
+      "after_completion": "2027-06-27"
+    }
+  ],
+  "before_contracts": [
+    {
+      "contract_number": "C001",
+      "completion_date": "2027-06-13",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C002",
+      "completion_date": "2027-07-04",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C003",
+      "completion_date": "2027-06-13",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C004",
+      "completion_date": "2027-07-11",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C005",
+      "completion_date": "2027-03-14",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C006",
+      "completion_date": "2027-07-18",
+      "overrun_days": 14
+    },
+    {
+      "contract_number": "C007",
+      "completion_date": "2027-07-04",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C008",
+      "completion_date": "2027-07-18",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C009",
+      "completion_date": "2027-06-27",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C010",
+      "completion_date": "2027-05-23",
+      "overrun_days": 7
+    },
+    {
+      "contract_number": "C011",
+      "completion_date": "2027-07-11",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C012",
+      "completion_date": "2027-07-04",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C013",
+      "completion_date": "2027-05-16",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C014",
+      "completion_date": "2027-06-27",
+      "overrun_days": 0
+    }
+  ],
+  "after_contracts": [
+    {
+      "contract_number": "C001",
+      "completion_date": "2027-06-13",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C002",
+      "completion_date": "2027-07-04",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C003",
+      "completion_date": "2027-06-13",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C004",
+      "completion_date": "2027-07-11",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C005",
+      "completion_date": "2027-03-14",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C006",
+      "completion_date": "2027-07-18",
+      "overrun_days": 14
+    },
+    {
+      "contract_number": "C007",
+      "completion_date": "2027-07-04",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C008",
+      "completion_date": "2027-07-18",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C009",
+      "completion_date": "2027-06-27",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C010",
+      "completion_date": "2027-05-23",
+      "overrun_days": 7
+    },
+    {
+      "contract_number": "C011",
+      "completion_date": "2027-07-11",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C012",
+      "completion_date": "2027-07-04",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C013",
+      "completion_date": "2027-05-16",
+      "overrun_days": 0
+    },
+    {
+      "contract_number": "C014",
+      "completion_date": "2027-06-27",
+      "overrun_days": 0
+    }
+  ],
+  "scope": "Planning review only. Full protection and official acceptance remain unverified; this is not track-entry authorisation.",
+  "disruption": {
+    "proposal": {
+      "completed_through_week": 10,
+      "locked_activity_ids": [
+        "A002"
+      ],
+      "changes": [
+        {
+          "type": "workload",
+          "activity_id": "A001",
+          "additional_units": 1
+        }
+      ]
+    },
+    "planning_context": {
+      "completed_through_week": 10,
+      "locked_activity_ids": [
+        "A002"
+      ],
+      "weekly_supply": [],
+      "scope": "Planner-declared completed weeks as scheduled; nominal weekly supply overlay. Scenario B/C excess allowances still apply. No actual dates or operational authority."
+    },
+    "base_input_identity": "2c66b645033c6949c8262e974333663abef18ade8a7f151e0210d290f0baf64e",
+    "revised_input_identity": "ebd9880dc44f2e250386e462ecf4c299a4f809e3d72b1da7dbbda45851b37e6f"
+  }
+}

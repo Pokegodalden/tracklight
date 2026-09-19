@@ -1,0 +1,59 @@
+{
+  "verified_at_utc": "2026-09-19T01:59:01.527463+00:00",
+  "tests_passed": 159,
+  "new_replanning_tests": 16,
+  "test_log_sha256": "12adfe34d74f0246cd0588e7dfa914073fbd54c0e093193867e0e0a0efe0d798",
+  "javascript_syntax": "PASS",
+  "frozen_snapshot_files_checked": 15,
+  "frozen_snapshot_passed": true,
+  "rule_profile": "0.2.0",
+  "rule_pack_passed": true,
+  "final_source_hashes_match_demo": true,
+  "demo_status": "CHECKED_REVISION",
+  "demo_changed_activity_count": 4,
+  "demo_lock_audit": {
+    "passed": true,
+    "completed_through_week": 10,
+    "locked_activity_ids": [
+      "A002"
+    ],
+    "errors": [],
+    "scope": "Weeks, ECLO, occupancy and sharing relationships; arbitrary CSV group/index labels are not physical dates."
+  },
+  "export_reports_reproduced": true,
+  "export_context_hashes_verified": true,
+  "rollback_verified": true,
+  "browser_checks": {
+    "url": "http://127.0.0.1:8770/",
+    "unchecked_sample_replanning_disabled": true,
+    "checked_parent_generated": true,
+    "workload_revision_submitted_with_completed_week": 10,
+    "locked_activity_ids": [
+      "A002"
+    ],
+    "revision_complete": true,
+    "changed_activity_count": 4,
+    "lock_audit_passed": true,
+    "comparison_declares_changed_inputs_and_constraints": true,
+    "aggregate_score_delta_suppressed": true,
+    "export_confirmed_round_trip_checked": true,
+    "rollback_selected_original_and_retained_revision": true,
+    "revision_restored_after_refresh": true,
+    "supply_and_urgent_forms_rendered": true,
+    "allocation_details_expanded": true,
+    "console_errors": [],
+    "visual_check": "Replanning form and comparison inspected at current browser viewport; long allocation table scrolls horizontally."
+  },
+  "official_validation": "NOT_RUN",
+  "full_feasibility_established": false,
+  "public_cli_validation": {
+    "status": "UNVERIFIED",
+    "physical_night_status": "ASSIGNED_FOR_MODELLED_RELATIONS",
+    "score_decimal": "25.2",
+    "planning_context_argument_used": true
+  },
+  "preview_health": {
+    "status": "ready",
+    "scope": "local_step8"
+  }
+}

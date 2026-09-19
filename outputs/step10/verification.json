@@ -1,0 +1,62 @@
+{
+  "tests": {
+    "passed": 166,
+    "failed": 0,
+    "log": "test-results.txt"
+  },
+  "browser": {
+    "origin": "http://127.0.0.1:8780",
+    "eight_csv_upload": true,
+    "synthetic_renamed_instance_solve": true,
+    "refresh_during_background_job": true,
+    "conflict_to_checked_alternative": true,
+    "disruption_and_independent_lock_audit": true,
+    "export_action": true,
+    "return_to_parent_retains_both_versions": true
+  },
+  "clean_source_reproduction": {
+    "passed": true,
+    "files_verified": 510,
+    "checks": [
+      {
+        "command": [
+          "tools/baseline.py",
+          "verify",
+          "data/baselines/ps1-0dfd901f97bf579f"
+        ],
+        "exit_code": 0,
+        "log": "reproduction/check-0.log"
+      },
+      {
+        "command": [
+          "tools/rule_pack.py"
+        ],
+        "exit_code": 0,
+        "log": "reproduction/check-1.log"
+      },
+      {
+        "command": [
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-v"
+        ],
+        "exit_code": 0,
+        "log": "reproduction/check-2.log"
+      }
+    ],
+    "environment": "Fresh extracted directory; existing pinned Python 3.12 virtual environment. No container or fresh dependency install claimed.",
+    "combined_log": "reproduction-results.txt"
+  },
+  "container_build": "NOT_RUN_DOCKER_UNAVAILABLE",
+  "actual_host_resource_verification": "PENDING_DESTINATION",
+  "gitlab_ci": "NOT_RUN_UNPUBLISHED",
+  "official_validation": "NOT_RUN_UNAVAILABLE",
+  "release_integrity": {
+    "all_manifest_hashes_match": true,
+    "runtime_source_matches_manifest": true,
+    "submission_csv_count": 9
+  }
+}

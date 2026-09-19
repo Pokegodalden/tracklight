@@ -16,7 +16,7 @@ import sys
 from .importer import import_directory, parse_value, sha, write_result
 from .night_diagnostic import diagnose, validate_options
 
-VERSION = "ps1-validation-0.2.0"
+VERSION = "ps1-validation-0.3.0"
 SCHEMAS = {
     "SCHEDULE_ACCESS.csv": {"activity_id": "id", "access_seq": "positive", "week": "positive", "eclo": "flag", "access_night": "positive"},
     "SCHEDULE_OCCUPANCY.csv": {"activity_id": "id", "week": "positive", "location_id": "id", "co_share_group": "text"},
@@ -214,7 +214,7 @@ def check_schedule(model, tables, scenario, night_limit=7, search_budget=50000):
             if len(flags) > 1:
                 emit("R27", "mixed_eclo_group", "Provisional R27 requires equal ECLO flags within a local group.", activities=jobs, location=l, week=w, observed=sorted(flags))
         for (l, w), labels in sorted(by_location.items()):
-            supply = locations[l]["supply_capacity"]
+            supply = next((r["capacity"] for r in model.get("weekly_supply_overrides", []) if r["location_id"] == l and r["week"] == w), locations[l]["supply_capacity"])
             extra = max(0, len(labels)-supply)
             excess += extra
             capacity_rows.append({"location_id": l, "week": w, "groups": len(labels), "supply": supply, "excess": extra})
@@ -323,11 +323,17 @@ def check_schedule(model, tables, scenario, night_limit=7, search_budget=50000):
     return finish(metrics, diagnostic)
 
 
-def validate_schedule(input_directory, schedule_directory, scenario, night_limit=7, search_budget=50000):
+def validate_schedule(input_directory, schedule_directory, scenario, night_limit=7, search_budget=50000, weekly_supply=None):
     validate_options(night_limit, search_budget)
     if scenario not in ("A", "B", "C"):
         raise ValueError("Choose scenario A, B or C explicitly.")
     imported = import_directory(input_directory)
+    if weekly_supply:
+        from .replan import supply_overrides
+        if not imported['report']['input_valid']:
+            raise ValueError('Cannot apply planning supply to invalid inputs.')
+        supply_overrides(imported['model'], weekly_supply)
+        imported['model']['weekly_supply_overrides'] = weekly_supply
     tables, hashes, parse_issues = read_schedules(schedule_directory)
     input_findings = []
     for issue in imported["report"]["issues"]:
@@ -350,7 +356,7 @@ def validate_schedule(input_directory, schedule_directory, scenario, night_limit
     return {"version": VERSION, "scenario": scenario, "report": report,
             "input_report": imported["report"], "provenance": {"input": imported["provenance"],
             "schedule_directory": str(Path(schedule_directory).resolve()), "schedule_files_sha256": hashes,
-            "schedule_sha256": identity, "night_limit": night_limit, "search_budget_per_week": search_budget,
+            "schedule_sha256": identity, "weekly_supply_overrides": weekly_supply or [], "night_limit": night_limit, "search_budget_per_week": search_budget,
             "validator_source_sha256": {name: sha(Path(__file__).with_name(name).read_bytes()) for name in ("validator.py", "night_diagnostic.py")}}}
 
 
@@ -362,11 +368,13 @@ def main():
     parser.add_argument("--output", type=Path)
     parser.add_argument("--night-limit", type=int, choices=range(1, 8), default=7)
     parser.add_argument("--search-budget", type=int, default=50000)
+    parser.add_argument("--planning-context", type=Path, help="Explicit Step 8 planning-context.json for weekly supply overrides; not an organiser CSV.")
     args = parser.parse_args()
     try:
         if args.search_budget < 0:
             raise ValueError("Search budget must be nonnegative.")
-        result = validate_schedule(args.input_directory, args.schedule_directory, args.scenario, args.night_limit, args.search_budget)
+        result = validate_schedule(args.input_directory, args.schedule_directory, args.scenario, args.night_limit, args.search_budget,
+                                   json.loads(args.planning_context.read_text(encoding='utf-8'))['weekly_supply'] if args.planning_context else None)
         if args.output:
             if args.output.resolve().is_relative_to(args.schedule_directory.resolve()):
                 raise ValueError("Output must be outside the schedule input directory.")

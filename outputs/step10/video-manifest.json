@@ -1,0 +1,14 @@
+{
+  "duration_seconds": 180,
+  "scenes": 9,
+  "resolution": "1280x720",
+  "frames_per_second": 24,
+  "ffmpeg_version": "7.1-essentials_build-www.gyan.dev",
+  "source": "Actual browser screenshots; waits compressed. No external music or footage.",
+  "audio": "silent; explanatory on-screen captions",
+  "youtube_publication": "NOT_PUBLISHED",
+  "sha256": "7df9bcbe3c5713006f85f68dfed51a142bf7668d70515c928f5886aa08a42ee1",
+  "full_decode_passed": true,
+  "container_duration_seconds": 180.02,
+  "visual_review": "Intro and revision frames inspected after correcting Windows newline spacing; text fits and 16:9 aspect confirmed."
+}

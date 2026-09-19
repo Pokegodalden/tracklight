@@ -1,0 +1,65 @@
+{
+  "verified_at_utc": "2026-09-19T00:45:57.665442+00:00",
+  "tests": {
+    "passed": 143,
+    "log_sha256": "d63381fbc63a87f4d0b511bd35acc6fed1b9e745693dff037c2c57b22bc291ef"
+  },
+  "javascript_syntax": "PASS",
+  "frozen_snapshot": {
+    "passed": true,
+    "files_checked": 15
+  },
+  "rule_pack": {
+    "passed": true,
+    "version": "0.2.0"
+  },
+  "source_hashes_match_final_demo": true,
+  "independent_revalidation": {
+    "sample": {
+      "report_reproduced": true,
+      "export_hashes_verified": true,
+      "review_records": 1,
+      "snapshot_version": "c5ae11b66d7d592ad9aa1f58b54520dca249a9119c63023bf5a7fbbcca3f9df9",
+      "status": "UNVERIFIED",
+      "night_status": "INCONSISTENT_UNDER_ASSUMPTIONS"
+    },
+    "alternative-a": {
+      "report_reproduced": true,
+      "export_hashes_verified": true,
+      "review_records": 1,
+      "snapshot_version": "25475a7c19fba8a0aa775a0fcd75c9b7c546e47bca05c5b6bf9ddafb7c01869f",
+      "status": "UNVERIFIED",
+      "night_status": "ASSIGNED_FOR_MODELLED_RELATIONS"
+    },
+    "policy-b": {
+      "report_reproduced": true,
+      "export_hashes_verified": true,
+      "review_records": 0,
+      "snapshot_version": "15fe81db8327d18715aa5377cffe66f8246e811c9336e1fc2663a4e12ec3677c",
+      "status": "UNVERIFIED",
+      "night_status": "ASSIGNED_FOR_MODELLED_RELATIONS"
+    }
+  },
+  "browser_checks": {
+    "url": "http://127.0.0.1:8769/",
+    "conflict_explanation": "Week 23 A001/A011 same PLAT:BET:S16:EB, separate PLAT:BET:S15:EB",
+    "recommendation_disabled_for_conflicted_sample": true,
+    "alternative_complete": true,
+    "conditional_conflict_weeks_before": 14,
+    "conditional_conflict_weeks_after": 0,
+    "changed_activity_count": 52,
+    "score_before": 48.3,
+    "score_after": 25.2,
+    "decimal_delta_display": -23.1,
+    "review_restored_after_refresh": true,
+    "run_count_after_refresh": 2,
+    "review_identity": "Browser test reviewer; clearly labelled demonstration, not real sign-off",
+    "browser_candidate_snapshot": "f6feb0d2ab610bbe98ed268a758a8c518d28faf82af938621562baf9adf1932f",
+    "export_confirmation": "Review pack exported; round-trip checked; not an official submission",
+    "changed_allocations_expanded": true,
+    "console_errors": [],
+    "visual_inspection": "Comparison table, version identity, review form and history render without overlap at the existing desktop viewport"
+  },
+  "official_validation": "NOT_RUN",
+  "full_feasibility_established": false
+}

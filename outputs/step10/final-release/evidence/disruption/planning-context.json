@@ -1,0 +1,8 @@
+{
+  "completed_through_week": 10,
+  "locked_activity_ids": [
+    "A002"
+  ],
+  "weekly_supply": [],
+  "scope": "Planner-declared completed weeks as scheduled; nominal weekly supply overlay. Scenario B/C excess allowances still apply. No actual dates or operational authority."
+}

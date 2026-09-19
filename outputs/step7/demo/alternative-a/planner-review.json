@@ -1,0 +1,19 @@
+{
+  "snapshot_version": "ac3bc84ec34ed3206fc4fe6f0f1169554f489248e9712564850ab1a6441e833f",
+  "scope": "Planning review only. Full protection and official acceptance remain unverified; this is not track-entry authorisation.",
+  "identity_assurance": "Self-entered reviewer name; no authentication or signature.",
+  "current_decision": "recommend_for_planning",
+  "records": [
+    {
+      "reviewer": "Demonstration reviewer",
+      "decision": "recommend_for_planning",
+      "note": "Automated demonstration only: implemented checks pass. Review changed allocations and obtain unresolved protection evidence before any operational decision.",
+      "request_id": "demo-candidate",
+      "id": "0fda4da0c06c4e71b6b66061558ce1a9",
+      "run_id": "6a03f77ee8b94e94bb24722fb92e8447",
+      "snapshot_version": "ac3bc84ec34ed3206fc4fe6f0f1169554f489248e9712564850ab1a6441e833f",
+      "recorded_at": "2026-09-19T00:38:12.814629+00:00",
+      "operational_authorisation": false
+    }
+  ]
+}

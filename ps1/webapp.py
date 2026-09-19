@@ -65,7 +65,7 @@ class Handler(BaseHTTPRequestHandler):
                 kind = {"index.html": "text/html", "app.js": "text/javascript", "style.css": "text/css"}[name]
                 self.send(200, content, kind+"; charset=utf-8")
             elif path == "/api/health":
-                self.send(200, {"status": "ready", "scope": "local_step6"})
+                self.send(200, {"status": "ready", "scope": "local_step8"})
             elif path.startswith("/api/export/"):
                 id = path.removeprefix("/api/export/")
                 data, _ = self.server.workspace.export(id)
@@ -99,6 +99,23 @@ class Handler(BaseHTTPRequestHandler):
                 view = self.server.workspace.summaries()
             elif path == '/api/run':
                 view = self.server.workspace.get(body.get('id', ''))['view']
+            elif path == '/api/replan':
+                seconds = body.get('seconds', 30)
+                if type(seconds) not in (int, float) or not 1 <= seconds <= 60:
+                    raise RunError('Use a search limit from 1 to 60 seconds.')
+                view = self.server.workspace.replan(body.get('id', ''), body.get('version'), body.get('proposal'), seconds=seconds)
+            elif path == '/api/rollback':
+                view = self.server.workspace.rollback(body.get('id', ''), body.get('version'))
+            elif path == '/api/compare':
+                view = self.server.workspace.compare(body.get('base_id', ''), body.get('candidate_id', ''))
+            elif path == '/api/review':
+                view = self.server.workspace.record_review(body.get('id', ''), body.get('version'),
+                    body.get('reviewer'), body.get('decision'), body.get('note'), body.get('request_id'))
+            elif path == '/api/alternative':
+                seconds = body.get('seconds', 30)
+                if type(seconds) not in (int, float) or not 1 <= seconds <= 60:
+                    raise RunError('The local alternative search supports a time limit of 1..60 seconds.')
+                view = self.server.workspace.alternative(body.get('id', ''), body.get('version'), body.get('conflict_id'), seconds)
             elif path == "/api/import":
                 view = self.server.workspace.create(decode_upload(body.get("files")), body.get("scenario", "A"), "Uploaded schedule" if len(body.get("files", [])) == 11 else "Uploaded inputs")
             elif path == "/api/generate":
