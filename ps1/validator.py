@@ -17,6 +17,12 @@ from .importer import import_directory, parse_value, sha, write_result
 from .night_diagnostic import diagnose, validate_options
 
 VERSION = "ps1-validation-0.3.0"
+# Delay weighting and the non-delay score rates, named once so that presentation
+# code can cite them instead of copying the literals.
+CONTRACT_PRIORITY_WEIGHT = {1: 100, 2: 10, 3: 1}
+ACTIVITY_PRIORITY_WEIGHT = {1: 13, 2: 12, 3: 10}
+EXCESS_SLOT_TENTHS = 70
+ECLO_ACCESS_TENTHS = 50
 SCHEMAS = {
     "SCHEDULE_ACCESS.csv": {"activity_id": "id", "access_seq": "positive", "week": "positive", "eclo": "flag", "access_night": "positive"},
     "SCHEDULE_OCCUPANCY.csv": {"activity_id": "id", "week": "positive", "location_id": "id", "co_share_group": "text"},
@@ -256,7 +262,7 @@ def check_schedule(model, tables, scenario, night_limit=7, search_budget=50000):
         emit("R31", "missing_result", f"RESULTS omits contract {c}.")
     contract_details, activity_days, weighted_tenths, contract_days, contract_weighted = [], 0, 0, 0, 0
     all_complete = all(v is not None for v in completion.values())
-    weights, multiplier = {1: 100, 2: 10, 3: 1}, {1: 13, 2: 12, 3: 10}
+    weights, multiplier = CONTRACT_PRIORITY_WEIGHT, ACTIVITY_PRIORITY_WEIGHT
     for id, a in acts.items():
         p = projects[tuple(a["project_key"])]
         if completion[id] is not None:
@@ -294,7 +300,7 @@ def check_schedule(model, tables, scenario, night_limit=7, search_budget=50000):
     eclo = sum(r["eclo"] for r in accesses)
     total = None
     if all_complete and excess is not None:
-        total = (weighted_tenths if scenario != "B" else 0) + (70*excess+50*eclo if scenario != "A" else 0)
+        total = (weighted_tenths if scenario != "B" else 0) + (EXCESS_SLOT_TENTHS*excess+ECLO_ACCESS_TENTHS*eclo if scenario != "A" else 0)
     metrics = {"scope": "Provisional arithmetic, not a feasibility or official-score verdict.",
                "workload_unit_scale": 2, "workload": workload, "contracts": contract_details,
                "all_work_complete": all_complete, "activity_delay_days": activity_days if all_complete else None,

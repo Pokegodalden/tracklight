@@ -53,6 +53,7 @@ def prepare(parent, files, proposal):
         raise ValueError('Specify a disruption, a completed week or an explicit lock.')
     rows = list(csv.DictReader(io.StringIO(files['08_ACTIVITY_DETAILS.csv'].decode('utf-8-sig'))))
     by_id = {r['activity_id']: r for r in rows}
+    project_rows = list(csv.DictReader(io.StringIO(files['07_PROJECT_DETAILS.csv'].decode('utf-8-sig'))))
     overrides = supply_overrides(parent['model'], previous.get('weekly_supply', []))
     seen = set()
     for change in changes:
@@ -87,16 +88,44 @@ def prepare(parent, files, proposal):
             if date.fromisoformat(row['planned_start_date']) < earliest:
                 raise ValueError('An urgent activity cannot start before the first uncompleted week.')
             rows.append(row); by_id[a] = row; key = (kind, a)
+        elif kind == 'activity_priority':
+            if set(change) != {'type', 'activity_id', 'priority'} or change['activity_id'] not in activities:
+                raise ValueError('Activity priority changes require an existing activity_id and priority.')
+            a = change['activity_id']; value = change['priority']
+            if isinstance(value, bool) or type(value) is not int or value not in (1, 2, 3):
+                raise ValueError('Priority must be the integer 1, 2 or 3.')
+            if activities[a]['activity_priority'] == value:
+                raise ValueError(f'Activity {a} already has priority {value}.')
+            by_id[a]['activity_priority'] = str(value)
+            key = (kind, a)
+        elif kind == 'contract_priority':
+            if set(change) != {'type', 'contract_number', 'priority'}:
+                raise ValueError('Contract priority changes require contract_number and priority.')
+            contract = change['contract_number']; value = change['priority']
+            if isinstance(value, bool) or type(value) is not int or value not in (1, 2, 3):
+                raise ValueError('Priority must be the integer 1, 2 or 3.')
+            affected = [r for r in project_rows if r['contract_number'] == contract]
+            if not affected:
+                raise ValueError('Contract priority changes require an existing contract_number.')
+            if all(r['contract_priority'] == str(value) for r in affected):
+                raise ValueError(f'Contract {contract} already has priority {value}.')
+            # The importer requires contract-level priority to agree across every
+            # activity type, so every row for this contract moves together.
+            for r in affected:
+                r['contract_priority'] = str(value)
+            key = (kind, contract)
         else:
-            raise ValueError('Change type must be workload, weekly_supply or urgent_activity. Locks use locked_activity_ids.')
+            raise ValueError('Change type must be workload, weekly_supply, urgent_activity, activity_priority or contract_priority. Locks use locked_activity_ids.')
         if key in seen:
             raise ValueError('Duplicate change target. Combine it into one explicit change.')
         seen.add(key)
     revised = dict(files)
-    if any(c['type'] in ('workload', 'urgent_activity') for c in changes):
-        stream = io.StringIO(newline=''); writer = csv.DictWriter(stream, fieldnames=list(SCHEMAS['08_ACTIVITY_DETAILS.csv']), lineterminator='\r\n')
-        writer.writeheader(); writer.writerows(rows)
-        revised['08_ACTIVITY_DETAILS.csv'] = stream.getvalue().encode()
+    for name, table, kinds in (('08_ACTIVITY_DETAILS.csv', rows, ('workload', 'urgent_activity', 'activity_priority')),
+                               ('07_PROJECT_DETAILS.csv', project_rows, ('contract_priority',))):
+        if any(c['type'] in kinds for c in changes):
+            stream = io.StringIO(newline=''); writer = csv.DictWriter(stream, fieldnames=list(SCHEMAS[name]), lineterminator='\r\n')
+            writer.writeheader(); writer.writerows(table)
+            revised[name] = stream.getvalue().encode()
     context = {'completed_through_week': cutoff, 'locked_activity_ids': sorted(locks),
                'weekly_supply': [{'location_id':l, 'week':w, 'capacity':c} for (l,w),c in sorted(overrides.items())],
                'scope': 'Planner-declared completed weeks as scheduled; nominal weekly supply overlay. Scenario B/C excess allowances still apply. No actual dates or operational authority.'}

@@ -49,18 +49,138 @@ function load(run) {
   const weeks = report()?.physical_night_diagnostic?.weeks || [];
   $("conflictWeek").replaceChildren(...weeks.map(w => option(w.week, `Week ${w.week}${w.status === "INCONSISTENT_UNDER_ASSUMPTIONS" ? " · review" : ""}`)));
   $("conflictWeek").value = String(weeks.find(w=>w.week===23)?.week || weeks.find(w=>w.conflicts.length)?.week || weeks[0]?.week || "");
-  renderMetrics(); renderTimeline(); renderDetails(); renderActivities(); renderChecks(); renderSolver(); renderPlanning(); renderReplan(); controls();
+  renderVerdict(); renderScoreHero(); renderMetrics(); renderScoreBreakdown(); renderContractDelays(); renderBottlenecks(); renderChangeStrip();
+  renderTimeline(); renderDetails(); renderActivities(); renderChecks(); renderSolver(); renderPlanning(); renderReplan(); controls();
+  autoCompare();
+}
+function figure(label, value, note, cls) {
+  const card = el("article","metric");
+  card.append(el("div","metric-label",label), el("div",`metric-value ${cls||""}`,String(value)), el("div","metric-note",note));
+  return card;
 }
 function renderMetrics() {
-  const run = state.run, r = report(), acts = run.model.activities;
-  const required = acts.reduce((s,a)=>s+a.workload_units_scaled/2,0), supplied = acts.reduce((s,a)=>s+Math.min(covered(a),a.workload_units_scaled/2),0);
-  const violations = r?.findings.filter(f=>f.severity==="violation" || f.severity==="error").length;
-  const conflictWeeks = r?.physical_night_diagnostic?.weeks?.filter(w=>w.status==="INCONSISTENT_UNDER_ASSUMPTIONS").length;
-  const cards = [["ACTIVITIES", acts.length, `${new Set(acts.map(a=>a.contract_number)).size} contracts · all requests visible`, ""],
-    ["WORK ALLOCATED", `${supplied} / ${required}`, "Standard-equivalent units covered", "teal-text"],
-    ["WEEKLY VIOLATIONS", violations ?? "—", r ? "Under the provisional rule profile" : "Load or generate a schedule to check", ""],
-    ["WEEKS TO REVIEW", conflictWeeks ?? "—", "Conditional full-night diagnostic", "purple-text"]];
-  $("metrics").replaceChildren(...cards.map(([label,value,note,cls])=>{ const card = el("article","metric"); card.append(el("div","metric-label",label),el("div",`metric-value ${cls}`,value),el("div","metric-note",note)); return card; }));
+  const e = state.run?.explanation; if (!e) return;
+  const s = state.run.planning.summary, scheduled = state.run.tables !== null;
+  const late = e.contracts.filter(c => !c.on_time && c.overrun_days !== null);
+  const days = s.contract_delay_days ?? e.contracts.reduce((t,c) => t+(c.overrun_days||0), 0);
+  const excess = e.bottlenecks.total_excess;
+  $("metrics").replaceChildren(
+    figure("WORK SCHEDULED", scheduled && s.complete_activities !== null ? `${s.complete_activities} / ${s.required_activities}` : "—",
+           "Activities with their full workload placed", scheduled && s.complete_activities === s.required_activities ? "teal-text" : ""),
+    figure("CONTRACTS LATE", scheduled ? late.length : "—",
+           late.length ? `Worst: ${late[0].contract_number}, ${late[0].overrun_days} days` : scheduled ? "Every contract meets its planned date" : "No schedule loaded",
+           late.length ? "warn-text" : "teal-text"),
+    figure("TOTAL DAYS LATE", scheduled && days !== null ? days : "—",
+           "Summed contract overrun", days ? "warn-text" : "teal-text"),
+    figure("ACCESS PRESSURE", scheduled ? excess : "—",
+           excess ? "Location-weeks above nominal supply" : "No location exceeds nominal supply",
+           excess ? "warn-text" : "teal-text"));
+}
+function renderVerdict() {
+  const e = state.run?.explanation, box = $("verdict"); box.replaceChildren(); if (!e) return;
+  const v = e.verdict;
+  box.className = `verdict ${v.state}`;
+  box.append(el("span","verdict-mark",{checked:"✓",review:"!",none:"·"}[v.state] || "·"));
+  const body = el("div","verdict-body");
+  body.append(el("strong","",v.headline), el("p","",v.detail));
+  if (v.blocking.length > 1) { const list = el("ul","verdict-blocking"); for (const item of v.blocking.slice(0,4)) list.append(el("li","",item)); body.append(list); }
+  box.append(body);
+  $("situationCaveat").textContent = v.caveats.join(" ");
+}
+function renderScoreHero() {
+  const e = state.run?.explanation, box = $("scoreHero"); box.replaceChildren(); if (!e) return;
+  const s = e.score;
+  box.append(el("div","hero-label","PROVISIONAL SCORE"), el("div","hero-value",s.total === null ? "—" : s.total.toFixed(1)), el("p","hero-headline",s.headline));
+  const scale = el("div","hero-scale");
+  scale.append(el("span","scale-item","0 = ideal"));
+  if (s.best_possible !== null) scale.append(el("span","scale-item",`${s.best_possible.toFixed(1)} = best possible here`));
+  box.append(scale);
+  if (s.at_best_possible) box.append(el("p","hero-badge","No better score is possible for these inputs."));
+  else if (s.best_possible_note) box.append(el("p","hero-note",s.best_possible_note));
+  const more = el("details","hero-more");
+  more.append(el("summary","","What would a score of 0 mean?"), el("p","",s.zero_means), el("p","",s.scenario_note));
+  box.append(more);
+}
+function renderScoreBreakdown() {
+  const e = state.run?.explanation, box = $("scoreBreakdown"); box.replaceChildren(); if (!e) return;
+  const s = e.score;
+  if (s.total === null) { box.append(el("p","empty","No score yet. Every activity needs its full workload scheduled before a score can be calculated.")); return; }
+  if (!s.total) { box.append(el("p","empty","Nothing is charged: no lateness, no access above nominal supply and no engineering hours.")); return; }
+  const bar = el("div","stacked-bar");
+  for (const c of s.components) { if (c.counted_tenths <= 0) continue; const seg = el("div",`seg seg-${c.key}`); seg.style.width = `${Math.max(2,100*c.share)}%`; seg.title = `${c.label}: ${c.value.toFixed(1)}`; bar.append(seg); }
+  box.append(bar);
+  const rows = el("div","breakdown-rows");
+  for (const c of s.components) {
+    const row = el("div",`breakdown-row${c.counted_tenths > 0 ? "" : " muted-row"}`), head = el("div","breakdown-head");
+    head.append(el("i",`dot dot-${c.key}`), el("b","",c.label), el("span","breakdown-value",c.charged ? c.value.toFixed(1) : "not charged"));
+    row.append(head, el("p","breakdown-note",`${c.quantity ?? 0} ${c.unit}. ${c.explanation}`));
+    rows.append(row);
+  }
+  box.append(rows);
+}
+function renderContractDelays() {
+  const e = state.run?.explanation, box = $("contractDelays"); box.replaceChildren(); if (!e) return;
+  const late = e.contracts.filter(c => !c.on_time && c.overrun_days !== null);
+  $("delayTag").textContent = e.contracts.length ? `${late.length} of ${e.contracts.length} late` : "—";
+  if (!e.contracts.length) { box.append(el("p","empty","No contract completion data yet. Schedule the work to see delivery dates.")); return; }
+  if (!late.length) { box.append(el("p","empty","Every contract finishes on or before its planned date.")); return; }
+  const worst = Math.max(...late.map(c => c.overrun_days));
+  for (const c of late.slice(0,10)) {
+    const row = el("div","delay-row"), head = el("div","delay-head");
+    head.append(el("b","",c.contract_number), el("span",`prio prio-${c.contract_priority}`,`Priority ${c.contract_priority}`), el("span","delay-days",`${c.overrun_days} days late`));
+    const track = el("div","bar-track"), fill = el("div",`bar-fill prio-fill-${c.contract_priority}`);
+    fill.style.width = `${Math.max(3,100*c.overrun_days/worst)}%`; track.append(fill);
+    row.append(head, track, el("small","",`Planned ${c.planned_completion_date} · finishing ${c.completion_date}`));
+    if (c.late_activities.length) {
+      const more = el("details"), wrap = el("div","inspect-row");
+      inspectButtons(wrap, c.late_activities.map(a => a.activity_id));
+      more.append(el("summary","",`${c.late_activities.length} late activit${c.late_activities.length === 1 ? "y" : "ies"}`), wrap);
+      row.append(more);
+    }
+    box.append(row);
+  }
+}
+function renderBottlenecks() {
+  const e = state.run?.explanation, box = $("bottleneckList"); box.replaceChildren(); if (!e) return;
+  const b = e.bottlenecks;
+  $("bottleneckTag").textContent = b.total_excess ? `${b.total_excess} over supply` : b.evaluated_location_weeks ? "within supply" : "—";
+  box.append(el("p","bottleneck-headline",b.headline));
+  if (!b.pressure_points.length) { box.append(el("p","empty","No track occupancy to analyse yet.")); return; }
+  for (const p of b.pressure_points.slice(0,8)) {
+    const row = el("div","bottleneck-row"), head = el("div","bottleneck-head");
+    head.append(el("b","",locationName(p.location_id)), el("span","muted-small",`Week ${p.week}`));
+    if (p.excess > 0) head.append(el("span","over-tag",`${p.excess} over`));
+    const track = el("div","bar-track"), fill = el("div",`bar-fill${p.excess > 0 ? " over-fill" : ""}`);
+    fill.style.width = `${Math.max(3,p.no_nominal_supply ? 100 : Math.min(100,100*(p.utilisation||0)))}%`; track.append(fill);
+    row.append(head, track, el("small","",p.no_nominal_supply ? `${p.groups} in use where nominal supply is zero` : `${p.groups} of ${p.supply} nominal slots used`));
+    const wrap = el("div","inspect-row"); inspectButtons(wrap, p.activities, p.week); row.append(wrap);
+    box.append(row);
+  }
+}
+function renderChangeStrip() {
+  const c = state.comparison, box = $("changeStrip"); box.replaceChildren();
+  $("changePanel").hidden = !c;
+  if (!c) return;
+  const t = c.tradeoffs;
+  if (t) {
+    box.append(el("p","change-summary",t.summary));
+    const chips = el("div","chips");
+    for (const item of t.improvements) chips.append(el("span","chip good",item.text));
+    for (const item of t.costs) chips.append(el("span","chip cost",item.text));
+    if (chips.childElementCount) box.append(chips);
+  }
+  box.append(el("p","hint",c.comparison_note));
+  const open = el("button","text-button","See the full comparison →");
+  open.addEventListener("click",()=>{renderComparison();page("review");});
+  box.append(open);
+}
+async function autoCompare() {
+  const run = state.run;
+  if (state.comparison || !run?.parent_id || !run.tables || !state.runs.some(r => r.id === run.parent_id)) return;
+  try {
+    state.comparison = await request("/api/compare",{base_id:run.parent_id,candidate_id:run.id});
+    renderChangeStrip(); renderComparison();
+  } catch (_) { /* A parent that cannot be compared simply leaves the panel hidden. */ }
 }
 function selectActivity(id, week) { state.selected = id; page("overview"); const a = state.run.model.activities.find(a=>a.activity_id===id); if (a) { const loc=state.run.model.locations.find(l=>l.location_id===a.start_location_id); if(loc){$("lineFilter").value=loc.line_code;$("boundFilter").value=loc.bound;} } if (Number.isFinite(week)) $("weekStart").value = String(Math.min(state.run.model.calendar.weeks, Math.max(1, week-2))); renderTimeline(); renderDetails(); }
 function renderTimeline() {
@@ -125,10 +245,15 @@ function renderSolver(){
   const meta=state.run?.optimisation, box=$("solverResult");box.replaceChildren();box.hidden=!meta;$("solverReport").hidden=!meta;if(!meta)return;
   const labels={OPTIMAL_MODEL_UNVERIFIED:"Optimal for the disclosed model · protection unverified",FEASIBLE_MODEL_UNVERIFIED:"Complete model solution · optimality not proved",RETAINED_INCUMBENT_UNVERIFIED:"Previous complete model solution retained",INFEASIBLE_MODEL:"No solution exists within this model",NO_SOLUTION_WITHIN_LIMIT:"No solution found within the time limit"};
   box.append(el("h3","",labels[meta.status]||human(meta.status)));
-  if(meta.objective_tenths!==null){const m=meta.metrics;box.append(el("p","",`Provisional score ${(meta.objective_tenths/10).toFixed(1)} · model lower bound ${(meta.best_bound_tenths/10).toFixed(1)} · gap ${(100*meta.relative_gap).toFixed(1)}%`));box.append(el("p","",`Activity delay: ${m.activity_delay_days} days (${(m.activity_weighted_delay_tenths/10).toFixed(1)} weighted) · excess location/week slots: ${m.excess_location_week_units} · ECLO accesses: ${m.eclo_activity_accesses}`));}
-  else{box.append(el("p","","All activities remain visible. No partial schedule is substituted. This result does not establish official PS1 infeasibility."));for(const item of meta.infeasibility_evidence||[])box.append(el("p","",`${item.activity_id||"Model"}: ${item.reason}`));}
-  box.append(el("p","",`${(meta.elapsed_seconds||0).toFixed(2)} seconds total · search limit ${meta.settings.time_limit_seconds}s · ${meta.settings.workers} workers`));
-  const details=el("details"),summary=el("summary","","Model scope and assumptions");details.append(summary);for(const text of meta.assumptions)details.append(el("p","",text));box.append(details);
+  if(meta.objective_tenths===null){box.append(el("p","","All activities remain visible. No partial schedule is substituted. This result does not establish official PS1 infeasibility."));for(const item of meta.infeasibility_evidence||[])box.append(el("p","",`${item.activity_id||"Model"}: ${item.reason}`));}
+  // Level 3: numbers an engineer wants, out of the controller's way until asked for.
+  const technical=el("details","solver-technical");technical.append(el("summary","","Optimisation detail"));
+  if(meta.objective_tenths!==null){const m=meta.metrics;
+    technical.append(el("p","",`Provisional score ${(meta.objective_tenths/10).toFixed(1)} · model lower bound ${(meta.best_bound_tenths/10).toFixed(1)} · gap ${(100*meta.relative_gap).toFixed(1)}%`));
+    technical.append(el("p","",`Activity delay: ${m.activity_delay_days} days (${(m.activity_weighted_delay_tenths/10).toFixed(1)} weighted) · excess location/week slots: ${m.excess_location_week_units} · ECLO accesses: ${m.eclo_activity_accesses}`));}
+  technical.append(el("p","",`${(meta.elapsed_seconds||0).toFixed(2)} seconds total · search limit ${meta.settings.time_limit_seconds}s · ${meta.settings.workers} workers`));
+  for(const text of meta.assumptions)technical.append(el("p","hint",text));
+  box.append(technical);
 }
 $("optimise").addEventListener("click",()=>{const scenario=$("solveScenario").value,seconds=Number($("solveSeconds").value);action(`Optimising Scenario ${scenario}… search is limited to ${seconds}s, followed by independent validation.`,async()=>{load(await request("/api/optimise",{id:state.run.id,scenario,seconds}));page("overview");});});
 $("solverReport").addEventListener("click",()=>{const payload={input_identity:state.run.input_identity,rule_profile:state.run.rule_profile,optimisation:state.run.optimisation};const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}));const link=el("a");link.href=url;link.download=`ps1-solver-${state.run.scenario}-${state.run.id.slice(0,8)}.json`;link.click();setTimeout(()=>URL.revokeObjectURL(url),60000);});
@@ -217,20 +342,44 @@ function replanControls(){
   $("reviewRevision").disabled=state.busy||!state.run?.replanning?.comparison;
   $("downloadReplan").disabled=state.busy||!state.run?.replanning;
 }
-function disruptionFields(){for(const [type,id] of [["workload","workloadFields"],["weekly_supply","supplyFields"],["urgent_activity","urgentFields"]])$(id).hidden=$("disruptionType").value!==type;}
+function disruptionFields(){for(const [type,id] of [["workload","workloadFields"],["weekly_supply","supplyFields"],["urgent_activity","urgentFields"],["contract_priority","contractPriorityFields"],["activity_priority","activityPriorityFields"]])$(id).hidden=$("disruptionType").value!==type;}
+function earliestUrgentDate(){
+  const start=new Date(state.run.model.calendar.start+"T12:00:00Z");
+  start.setUTCDate(start.getUTCDate()+7*Number($("completedWeek").value));
+  return start.toISOString().slice(0,10);
+}
+function urgentFromForm(){
+  const project=JSON.parse($("urgentProject").value||"{}");
+  return {activity_id:$("urgentId").value.trim(), contract_number:project.contract_number, activity_type:project.activity_type,
+          start_location_id:$("urgentStart").value, end_location_id:$("urgentEnd").value,
+          total_accesses:String(Number($("urgentUnits").value)), planned_start_date:$("urgentStartDate").value,
+          predecessor_activity_id:$("urgentPredecessor").value, activity_priority:String(Number($("urgentPriority").value))};
+}
 function urgentTemplate(){
   const a=state.run.model.activities.find(a=>a.activity_id===$("urgentTemplate").value);if(!a)return;
   const data={};for(const k of ["activity_id","contract_number","activity_type","start_location_id","end_location_id","total_accesses","planned_start_date","predecessor_activity_id","activity_priority"])data[k]=a[k];
   data.activity_id="URGENT01";data.total_accesses=1;data.predecessor_activity_id="";
-  const start=new Date(state.run.model.calendar.start+"T12:00:00Z");start.setUTCDate(start.getUTCDate()+7*Number($("completedWeek").value));data.planned_start_date=start.toISOString().slice(0,10);
+  data.planned_start_date=earliestUrgentDate();
   $("urgentDefinition").value=JSON.stringify(data,null,2);
+  $("urgentId").value="URGENT01";
+  $("urgentProject").value=JSON.stringify({contract_number:a.contract_number,activity_type:a.activity_type});
+  $("urgentStart").value=a.start_location_id;$("urgentEnd").value=a.end_location_id;
+  $("urgentUnits").value=1;$("urgentStartDate").value=data.planned_start_date;
+  $("urgentStartDate").min=data.planned_start_date;
+  $("urgentPredecessor").value="";$("urgentPriority").value=String(a.activity_priority);
 }
 function renderReplan(){
   const r=state.run,c=r.planning_context||{};
   $("replanEligibility").textContent=r.planning.summary.checked_model_plan?"This version passes implemented checks. Original inputs and schedule will be preserved.":"Start from a complete checked model plan: optimise or repair this draft first. A failed revision can return to its preserved parent.";
   $("completedWeek").value=c.completed_through_week||0;$("completedWeek").min=c.completed_through_week||0;$("completedWeek").max=r.model.calendar.weeks;
   $("lockActivities").value=(c.locked_activity_ids||[]).join(", ");
-  for(const id of ["workloadActivity","urgentTemplate"])$(id).replaceChildren(...r.model.activities.map(a=>option(a.activity_id,`${a.activity_id} · ${a.contract_number} · ${a.activity_type}`)));
+  for(const id of ["workloadActivity","urgentTemplate","priorityActivity"])$(id).replaceChildren(...r.model.activities.map(a=>option(a.activity_id,`${a.activity_id} · ${a.contract_number} · ${a.activity_type} · priority ${a.activity_priority}`)));
+  const contracts=[...new Map(r.model.project_types.map(p=>[p.contract_number,p])).values()];
+  $("priorityContract").replaceChildren(...contracts.map(p=>option(p.contract_number,`${p.contract_number} · now priority ${p.contract_priority}`)));
+  $("urgentProject").replaceChildren(...r.model.project_types.map(p=>option(JSON.stringify({contract_number:p.contract_number,activity_type:p.activity_type}),`${p.contract_number} · ${p.activity_type}`)));
+  const tunnels=r.model.locations.filter(l=>l.location_kind==="tunnel sector");
+  for(const id of ["urgentStart","urgentEnd"])$(id).replaceChildren(...tunnels.map(l=>option(l.location_id,l.location_id)));
+  $("urgentPredecessor").replaceChildren(option("","No predecessor"),...r.model.activities.map(a=>option(a.activity_id,a.activity_id)));
   $("supplyLocation").replaceChildren(...r.model.locations.map(l=>option(l.location_id,l.location_id)));$("supplyWeek").max=r.model.calendar.weeks;$("supplyWeek").value=Math.min(r.model.calendar.weeks,Number($("completedWeek").value)+1);
   urgentTemplate();disruptionFields();
   const box=$("replanOutcome");box.replaceChildren();
@@ -250,7 +399,9 @@ $("replanForm").addEventListener("submit",event=>{
     const type=$("disruptionType").value,changes=[];
     if(type==="workload")changes.push({type,activity_id:$("workloadActivity").value,additional_units:Number($("extraUnits").value)});
     if(type==="weekly_supply")changes.push({type,location_id:$("supplyLocation").value,week:Number($("supplyWeek").value),capacity:Number($("supplyCapacity").value)});
-    if(type==="urgent_activity")changes.push({type,activity:JSON.parse($("urgentDefinition").value)});
+    if(type==="urgent_activity")changes.push({type,activity:$("urgentUseRaw").checked?JSON.parse($("urgentDefinition").value):urgentFromForm()});
+    if(type==="contract_priority")changes.push({type,contract_number:$("priorityContract").value,priority:Number($("contractPriorityValue").value)});
+    if(type==="activity_priority")changes.push({type,activity_id:$("priorityActivity").value,priority:Number($("activityPriorityValue").value)});
     const proposal={completed_through_week:Number($("completedWeek").value),locked_activity_ids:$("lockActivities").value.split(",").map(s=>s.trim()).filter(Boolean),changes};
     load(await request("/api/replan",{id:state.run.id,version:state.run.schedule_snapshot.version,proposal,seconds:Number($("replanSeconds").value)}));page("replan");
   });

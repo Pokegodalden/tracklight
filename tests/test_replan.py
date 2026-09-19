@@ -33,6 +33,47 @@ class ReplanTests(unittest.TestCase):
     def growth(self):
         return [{'type':'workload','activity_id':'A001','additional_units':1}]
 
+    def test_activity_priority_change_rewrites_only_that_activity(self):
+        revised = self.revise([{'type':'activity_priority','activity_id':'A001','priority':1}])
+        priorities = {a['activity_id']: a['activity_priority'] for a in revised['model']['activities']}
+        self.assertEqual(priorities['A001'], 1)
+        self.assertEqual(priorities['A002'], self.parent['model']['activities'][1]['activity_priority'])
+        self.assertNotEqual(revised['input_identity'], self.parent['input_identity'])
+        self.assertTrue(revised['replanning']['lock_audit']['passed'])
+
+    def test_contract_priority_moves_every_row_of_that_contract(self):
+        original = {(p['contract_number'], p['activity_type']): p['contract_priority']
+                    for p in self.parent['model']['project_types']}
+        revised = self.revise([{'type':'contract_priority','contract_number':'C001','priority':1}])
+        updated = {(p['contract_number'], p['activity_type']): p['contract_priority']
+                   for p in revised['model']['project_types']}
+        self.assertTrue(all(v == 1 for k, v in updated.items() if k[0] == 'C001'))
+        self.assertNotEqual(original, updated)
+        # Disagreeing rows would fail the importer's contract-consistency check.
+        self.assertTrue(revised['input_report']['input_valid'])
+
+    def test_priority_changes_reject_bad_values_and_no_ops(self):
+        current = self.parent['model']['activities'][0]['activity_priority']
+        for change, message in (
+            ({'type':'activity_priority','activity_id':'A001','priority':current}, 'already has priority'),
+            ({'type':'activity_priority','activity_id':'A001','priority':4}, 'must be the integer'),
+            ({'type':'activity_priority','activity_id':'A001','priority':True}, 'must be the integer'),
+            ({'type':'activity_priority','activity_id':'NOPE','priority':1}, 'existing activity_id'),
+            ({'type':'contract_priority','contract_number':'NOPE','priority':1}, 'existing contract_number'),
+        ):
+            with self.subTest(change=change), self.assertRaises(ValueError) as caught:
+                self.revise([change])
+            self.assertIn(message, str(caught.exception))
+
+    def test_priority_change_preserves_completed_work_and_locks(self):
+        revised = self.revise([{'type':'contract_priority','contract_number':'C001','priority':1}],
+                              locks=['A002'])
+        self.assertTrue(revised['replanning']['lock_audit']['passed'])
+        self.assertEqual(audit(self.parent, revised, revised['planning_context'])['errors'], [])
+        # A priority change alters weighting, not the requirement set, so the parent
+        # schedule stays a legitimate fallback and scores are not called comparable.
+        self.assertFalse(revised['replanning']['comparison']['scores_comparable'])
+
     def urgent(self, **kwargs):
         a = self.parent['model']['activities'][0]
         fields = {k:a[k] for k in SCHEMAS['08_ACTIVITY_DETAILS.csv']}

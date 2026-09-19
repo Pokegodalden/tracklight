@@ -64,6 +64,59 @@ class PlannerTests(unittest.TestCase):
     def plan(self, **kwargs):
         return self.w.create(plan_files(self.w, self.inputs, **kwargs), kwargs.get('scenario', 'A'), 'Tiny schedule')
 
+    def test_explanation_states_verdict_score_terms_and_zero_meaning(self):
+        run = self.plan()
+        explanation = run['explanation']
+        self.assertEqual(explanation['verdict']['state'], 'checked')
+        self.assertEqual(explanation['verdict']['headline'], 'Ready for planning review')
+        self.assertFalse(explanation['verdict']['blocking'])
+        # Caveats are never dropped for a clean plan.
+        self.assertTrue(any('R12' in c for c in explanation['verdict']['caveats']))
+        score = explanation['score']
+        self.assertEqual(score['total'], 0)
+        self.assertIn('scores 0', score['headline'])
+        self.assertIn('finishes on or before its planned date', score['zero_means'])
+        self.assertEqual({c['key'] for c in score['components']}, {'delay', 'excess', 'eclo'})
+        # Scenario A charges lateness only; the other two terms are named but not counted.
+        charged = {c['key']: c['charged'] for c in score['components']}
+        self.assertEqual(charged, {'delay': True, 'excess': False, 'eclo': False})
+
+    def test_explanation_reports_late_contracts_and_the_activities_responsible(self):
+        run = self.plan(second_week=True)
+        contract = run['explanation']['contracts'][0]
+        self.assertEqual(contract['contract_number'], 'C001')
+        self.assertEqual(contract['overrun_days'], 7)
+        self.assertFalse(contract['on_time'])
+        self.assertEqual([a['activity_id'] for a in contract['late_activities']], ['A002'])
+        self.assertEqual(run['explanation']['score']['components'][0]['key'], 'delay')
+        self.assertGreater(run['explanation']['score']['total'], 0)
+
+    def test_explanation_blocks_and_stays_json_safe_without_a_schedule(self):
+        run = self.inputs
+        self.assertEqual(run['explanation']['verdict']['state'], 'none')
+        self.assertIsNone(run['explanation']['score']['total'])
+        # Infinity is not valid JSON; the whole payload must survive a round trip.
+        self.assertEqual(json.loads(json.dumps(run['explanation']))['verdict']['state'], 'none')
+
+    def test_bottlenecks_rank_by_pressure_and_name_the_activities_present(self):
+        run = self.plan()
+        bottlenecks = run['explanation']['bottlenecks']
+        self.assertEqual(bottlenecks['total_excess'], 0)
+        self.assertIn('No location exceeds its nominal supply', bottlenecks['headline'])
+        point = bottlenecks['pressure_points'][0]
+        self.assertTrue(point['activities'])
+        self.assertLessEqual(point['groups'], point['supply'] or point['groups'])
+        self.assertEqual(json.loads(json.dumps(bottlenecks))['total_excess'], 0)
+
+    def test_tradeoffs_name_the_gain_and_what_it_cost(self):
+        base, later = self.plan(), self.plan(second_week=True)
+        result = compare(later, base)
+        trade = result['tradeoffs']
+        self.assertIn('fewer days of activity lateness', trade['summary'])
+        self.assertTrue(trade['improvements'])
+        self.assertEqual(trade['improvements'][0]['key'], 'activity_delay_days')
+        self.assertTrue(trade['scores_comparable'])
+
     def test_conflict_explains_equality_and_separation_with_scoped_partners(self):
         run = self.plan(conflict=True)
         self.assertEqual(run['planning']['summary']['weekly_violations'], 0)

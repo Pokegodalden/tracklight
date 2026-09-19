@@ -165,6 +165,7 @@ class Workspace:
         view['schedule_snapshot'] = planner.snapshot(view, files)
         view['planning'] = {'version': planner.VERSION, 'summary': planner.summary(view),
                             'conflicts': planner.conflicts(view), 'activities': planner.activity_contexts(view)}
+        view['explanation'] = planner.explain(view)
         view['planner_review'] = {'snapshot_version': view['schedule_snapshot']['version'],
                                   'scope': planner.SCOPE, 'identity_assurance': 'Self-entered reviewer name; no authentication or signature.',
                                   'current_decision': None, 'records': []}
